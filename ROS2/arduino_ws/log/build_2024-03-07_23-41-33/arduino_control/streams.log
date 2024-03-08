@@ -1,0 +1,20 @@
+[2.327s] Invoking command in '/home/px/arduino_ws/build/arduino_control': PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps install_data
+[2.912s] running develop
+[3.437s] running egg_info
+[3.437s] writing arduino_control.egg-info/PKG-INFO
+[3.438s] writing dependency_links to arduino_control.egg-info/dependency_links.txt
+[3.438s] writing entry points to arduino_control.egg-info/entry_points.txt
+[3.438s] writing requirements to arduino_control.egg-info/requires.txt
+[3.439s] writing top-level names to arduino_control.egg-info/top_level.txt
+[3.442s] reading manifest file 'arduino_control.egg-info/SOURCES.txt'
+[3.444s] writing manifest file 'arduino_control.egg-info/SOURCES.txt'
+[3.448s] running build_ext
+[3.448s] Creating /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino-control.egg-link (link to .)
+[3.452s] Installing arduino_control_node script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[3.453s] Installing lidar script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[3.453s] Installing minimal_publisher script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[3.453s] Installing realsense script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[3.453s] 
+[3.453s] Installed /home/px/arduino_ws/build/arduino_control
+[3.454s] running install_data
+[3.528s] Invoked command in '/home/px/arduino_ws/build/arduino_control' returned '0': PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps install_data

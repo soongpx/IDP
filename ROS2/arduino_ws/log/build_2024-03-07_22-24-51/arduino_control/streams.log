@@ -1,0 +1,25 @@
+[1.484s] Invoking command in '/home/px/arduino_ws/src/arduino_control': CMAKE_PREFIX_PATH=/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/px/arduino_ws/install/tutorial_interfaces LD_LIBRARY_PATH=/home/px/arduino_ws/install/my_robot_interfaces/lib:/home/px/arduino_ws/install/tutorial_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/arduino_control build --build-base /home/px/arduino_ws/build/arduino_control/build install --record /home/px/arduino_ws/build/arduino_control/install.log --single-version-externally-managed
+[1.920s] running egg_info
+[1.920s] writing ../../build/arduino_control/arduino_control.egg-info/PKG-INFO
+[1.920s] writing dependency_links to ../../build/arduino_control/arduino_control.egg-info/dependency_links.txt
+[1.921s] writing entry points to ../../build/arduino_control/arduino_control.egg-info/entry_points.txt
+[1.921s] writing requirements to ../../build/arduino_control/arduino_control.egg-info/requires.txt
+[1.921s] writing top-level names to ../../build/arduino_control/arduino_control.egg-info/top_level.txt
+[1.924s] reading manifest file '../../build/arduino_control/arduino_control.egg-info/SOURCES.txt'
+[1.924s] adding license file 'LICENSE'
+[1.925s] writing manifest file '../../build/arduino_control/arduino_control.egg-info/SOURCES.txt'
+[1.925s] running build
+[1.925s] running build_py
+[1.926s] running install
+[1.926s] running install_lib
+[1.928s] running install_data
+[1.929s] running install_egg_info
+[1.932s] removing '/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control-0.0.0-py3.10.egg-info' (and everything under it)
+[1.932s] Copying ../../build/arduino_control/arduino_control.egg-info to /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control-0.0.0-py3.10.egg-info
+[1.933s] running install_scripts
+[1.970s] Installing arduino_control_node script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[1.970s] Installing lidar script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[1.970s] Installing minimal_publisher script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[1.970s] Installing realsense script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[1.971s] writing list of installed files to '/home/px/arduino_ws/build/arduino_control/install.log'
+[2.005s] Invoked command in '/home/px/arduino_ws/src/arduino_control' returned '0': CMAKE_PREFIX_PATH=/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/px/arduino_ws/install/tutorial_interfaces LD_LIBRARY_PATH=/home/px/arduino_ws/install/my_robot_interfaces/lib:/home/px/arduino_ws/install/tutorial_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/arduino_control build --build-base /home/px/arduino_ws/build/arduino_control/build install --record /home/px/arduino_ws/build/arduino_control/install.log --single-version-externally-managed

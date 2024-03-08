@@ -1,0 +1,16 @@
+[1.726s] Invoking command in '/home/px/arduino_ws/build/py_launch_example': PYTHONPATH=/home/px/arduino_ws/build/py_launch_example/prefix_override:/home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/px/arduino_ws/build/py_launch_example/build --no-deps install_data
+[2.260s] running develop
+[2.621s] running egg_info
+[2.622s] writing py_launch_example.egg-info/PKG-INFO
+[2.622s] writing dependency_links to py_launch_example.egg-info/dependency_links.txt
+[2.622s] writing entry points to py_launch_example.egg-info/entry_points.txt
+[2.622s] writing requirements to py_launch_example.egg-info/requires.txt
+[2.622s] writing top-level names to py_launch_example.egg-info/top_level.txt
+[2.625s] reading manifest file 'py_launch_example.egg-info/SOURCES.txt'
+[2.626s] writing manifest file 'py_launch_example.egg-info/SOURCES.txt'
+[2.629s] running build_ext
+[2.630s] Creating /home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages/py-launch-example.egg-link (link to .)
+[2.631s] 
+[2.631s] Installed /home/px/arduino_ws/build/py_launch_example
+[2.632s] running install_data
+[2.727s] Invoked command in '/home/px/arduino_ws/build/py_launch_example' returned '0': PYTHONPATH=/home/px/arduino_ws/build/py_launch_example/prefix_override:/home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/px/arduino_ws/build/py_launch_example/build --no-deps install_data

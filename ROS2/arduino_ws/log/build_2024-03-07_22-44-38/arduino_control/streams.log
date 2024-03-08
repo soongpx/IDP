@@ -1,0 +1,20 @@
+[1.294s] Invoking command in '/home/px/arduino_ws/build/arduino_control': AMENT_PREFIX_PATH=/home/px/arduino_ws/install/my_robot_interfaces:${AMENT_PREFIX_PATH} PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps install_data
+[1.704s] running develop
+[1.953s] running egg_info
+[1.953s] writing arduino_control.egg-info/PKG-INFO
+[1.953s] writing dependency_links to arduino_control.egg-info/dependency_links.txt
+[1.953s] writing entry points to arduino_control.egg-info/entry_points.txt
+[1.954s] writing requirements to arduino_control.egg-info/requires.txt
+[1.954s] writing top-level names to arduino_control.egg-info/top_level.txt
+[1.956s] reading manifest file 'arduino_control.egg-info/SOURCES.txt'
+[1.957s] writing manifest file 'arduino_control.egg-info/SOURCES.txt'
+[1.959s] running build_ext
+[1.959s] Creating /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino-control.egg-link (link to .)
+[1.961s] Installing arduino_control_node script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[1.961s] Installing lidar script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[1.961s] Installing minimal_publisher script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[1.961s] Installing realsense script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[1.961s] 
+[1.961s] Installed /home/px/arduino_ws/build/arduino_control
+[1.961s] running install_data
+[2.000s] Invoked command in '/home/px/arduino_ws/build/arduino_control' returned '0': AMENT_PREFIX_PATH=/home/px/arduino_ws/install/my_robot_interfaces:${AMENT_PREFIX_PATH} PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps install_data

@@ -1,0 +1,6 @@
+[console_scripts]
+arduino_control_node = arduino_control.arduino_led_node:main
+lidar = arduino_control.lidar:main
+minimal_publisher = arduino_control.publisher:main
+realsense = arduino_control.realsense:main
+

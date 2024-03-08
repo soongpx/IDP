@@ -1,0 +1,4 @@
+Invoking command in '/home/px/arduino_ws/build/my_robot_interfaces': /usr/bin/cmake --build /home/px/arduino_ws/build/my_robot_interfaces -- -j8 -l8
+Invoked command in '/home/px/arduino_ws/build/my_robot_interfaces' returned '0': /usr/bin/cmake --build /home/px/arduino_ws/build/my_robot_interfaces -- -j8 -l8
+Invoking command in '/home/px/arduino_ws/build/my_robot_interfaces': /usr/bin/cmake --install /home/px/arduino_ws/build/my_robot_interfaces
+Invoked command in '/home/px/arduino_ws/build/my_robot_interfaces' returned '0': /usr/bin/cmake --install /home/px/arduino_ws/build/my_robot_interfaces

@@ -1,0 +1,42 @@
+running develop
+Removing /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino-control.egg-link (link to .)
+running egg_info
+writing ../../build/arduino_control/arduino_control.egg-info/PKG-INFO
+writing dependency_links to ../../build/arduino_control/arduino_control.egg-info/dependency_links.txt
+writing entry points to ../../build/arduino_control/arduino_control.egg-info/entry_points.txt
+writing requirements to ../../build/arduino_control/arduino_control.egg-info/requires.txt
+writing top-level names to ../../build/arduino_control/arduino_control.egg-info/top_level.txt
+reading manifest file '../../build/arduino_control/arduino_control.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../../build/arduino_control/arduino_control.egg-info/SOURCES.txt'
+running build
+running build_py
+copying arduino_control/publisher.py -> /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control
+copying arduino_control/test.py -> /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control
+copying arduino_control/arduino_led_node.py -> /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control
+running install
+running install_lib
+creating /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control
+copying /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control/publisher.py -> /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control
+copying /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control/__init__.py -> /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control
+copying /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control/realsense.py -> /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control
+copying /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control/lidar.py -> /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control
+copying /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control/lidar_scan_x4.py -> /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control
+copying /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control/test.py -> /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control
+copying /home/px/arduino_ws/build/arduino_control/build/lib/arduino_control/arduino_led_node.py -> /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control
+byte-compiling /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control/publisher.py to publisher.cpython-310.pyc
+byte-compiling /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control/realsense.py to realsense.cpython-310.pyc
+byte-compiling /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control/lidar.py to lidar.cpython-310.pyc
+byte-compiling /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control/lidar_scan_x4.py to lidar_scan_x4.cpython-310.pyc
+byte-compiling /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control/test.py to test.cpython-310.pyc
+byte-compiling /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control/arduino_led_node.py to arduino_led_node.cpython-310.pyc
+running install_data
+running install_egg_info
+Copying ../../build/arduino_control/arduino_control.egg-info to /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino_control-0.0.0-py3.10.egg-info
+running install_scripts
+Installing arduino_control_node script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing lidar script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing minimal_publisher script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing realsense script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+writing list of installed files to '/home/px/arduino_ws/build/arduino_control/install.log'
