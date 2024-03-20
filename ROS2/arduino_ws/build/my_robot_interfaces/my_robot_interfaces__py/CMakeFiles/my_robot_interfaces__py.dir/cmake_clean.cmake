@@ -5,8 +5,14 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/my_robot_interfaces/msg/__init__.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth_s.c"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_joystick.py"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_joystick_s.c"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_laser_scan.py"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_laser_scan_s.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan_s.c"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_motor_command.py"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_motor_command_s.c"
   "CMakeFiles/my_robot_interfaces__py"
 )
 

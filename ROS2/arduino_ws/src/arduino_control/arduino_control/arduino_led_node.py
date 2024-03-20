@@ -1,71 +1,76 @@
 import rclpy
-from std_msgs.msg import String
 from rclpy.node import Node
-
+from my_robot_interfaces.msg import MotorCommand
 import serial
-import serial.tools.list_ports
-import ydlidar
+import time
 
-class ArduinoControl(Node):
 
+class LocomotionControl(Node):
     def __init__(self):
-        super().__init__('arduino_control_node')
+        super().__init__('locomotion_control')
 
-        # Find ports of MCU
+        # Initialize serial port
+        self.header_byte = 0x33
+        self.init_serial_port()
 
+        self.create_timer(0.1, self.send_data)
+        self.motor_subscription = self.create_subscription(MotorCommand, 'motor_command', self.motor_command_callback, 10)
+        self.motor_subscription
 
-        ports = ydlidar.lidarPortList()
+        # Initialize variables
+        self.target_speeds = []
 
-        port = list(ports.values()).pop(-1)
-        # arduino_ports = [
-        #     p.device
-        #     for p in serial.tools.list_ports.comports()
-        #     if 'Arduino' in p.description or 'ST' in p.description # may need tweaking to match new arduinos
-        # ]
-        # if not arduino_ports:
-        #     self.get_logger().error("No MCU found")
-        # if len(arduino_ports) > 1:
-        #     self.get_logger().warn("Multiple MCU found - using the first")
-
-        # Declare Serial Port
-        # SERIAL_PORT = arduino_ports[0] # Change this to your Arduino's serial port
-        SERIAL_PORT = port
+    def init_serial_port(self):
+        # Initialize serial port settings
+        SERIAL_PORT = '/dev/ttyACM0'  # Change this to match your Arduino's serial port
         BAUD_RATE = 115200
 
-        # Create nodes
-        self.subscription = self.create_subscription(String, 'motor_command', self.command_callback, 1)
-        self.serial_port = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
-        if not self.serial_port.is_open:
-            self.get_logger().error("Failed to open serial port.")
-            return
-        self.get_logger().info(f"Serial port {self.serial_port} opened successfully.")
+        try:
+            self.serial_port = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
+            if not self.serial_port.is_open:
+                self.get_logger().error("Failed to open serial port.")
+                return
+            if self.serial_port.readline().decode().strip() == "Start Arduino":
+                self.get_logger().info(f"Serial port {SERIAL_PORT} opened successfully.")
+            # self.serial_port.close()
+        except serial.SerialException as e:
+            self.get_logger().error(f"Serial communication error: {e}")
 
+    def get_input(self):
+        if self.serial_port.in_waiting > 0:
+            input_data = self.serial_port.read(3)
+            self.get_logger().info(f'Received data: {str(input_data[0])}, {str(input_data[1])}, {str(input_data[2])}')
+            if input_data[0] == self.header_byte and len(input_data) == 3:
+                # Process the received data
+                self.get_logger().info("Header byte matched. Processing data...")
+
+    def send_data(self):
+        try:
+            data = bytearray([self.header_byte])  # Start with the header byte
+            data.extend(speed.to_bytes(1, byteorder='big')[0] for speed in self.target_speeds)  # Append each speed
+            checksum = sum(data) % 256
+            data.append(checksum)  # Append checksum
+            self.get_logger().info(f'Sending data: {str(data[0])}, {str(data[1])}, {str(data[2])}, {str(data[3])}, {str(data[4])}, {str(data[5])}, {str(data[6])}, {str(data[7])}, {str(data[8])}')
+            self.serial_port.write(data)
+            self.get_input()
+        except serial.SerialException as e:
+            self.get_logger().error(f"Serial communication error: {e}")
+
+    def motor_command_callback(self, msg):
+        self.target_speeds = [msg.left_speed, msg.right_speed, msg.rotate_speed, msg.tilt_speed, msg.extend_speed, msg.vibrate_speed, msg.direction]
+    
     def __del__(self):
         if self.serial_port.is_open:
             self.serial_port.close()
             self.get_logger().info("Serial port closed.")
 
-    def send_command(self, command):
-        try:
-            self.get_logger().info("Unknown command received: %s" % str(command))
-            self.serial_port.write(command.to_bytes(1,'big'))
-        except serial.SerialException as e:
-            self.get_logger().error("Serial communication error: %s" % str(e))
-
-    def command_callback(self, msg):
-        # Translate ROS 2 command to Arduino command
-        ros_command = msg.data
-        if ros_command == 'forward':    
-            self.send_command(192)
-        elif ros_command == 'backward':
-            self.send_command(128)
-        elif ros_command == 'stop':
-            self.send_command(0)
-
-def main():
-    rclpy.init()
-    node = ArduinoControl()
-    rclpy.spin(node)
+def main(args=None):
+    rclpy.init(args=args)
+    node = LocomotionControl()
+    try:
+        rclpy.spin(node)
+    except KeyboardInterrupt:
+        pass
     node.destroy_node()
     rclpy.shutdown()
 

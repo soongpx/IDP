@@ -9,7 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth_s.c" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth_s.c.o" "gcc" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth_s.c.o.d"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_joystick_s.c" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_joystick_s.c.o" "gcc" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_joystick_s.c.o.d"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_laser_scan_s.c" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_laser_scan_s.c.o" "gcc" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_laser_scan_s.c.o.d"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan_s.c" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan_s.c.o" "gcc" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan_s.c.o.d"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_motor_command_s.c" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_motor_command_s.c.o" "gcc" "CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_motor_command_s.c.o.d"
   )
 
 # Targets to which this target links.

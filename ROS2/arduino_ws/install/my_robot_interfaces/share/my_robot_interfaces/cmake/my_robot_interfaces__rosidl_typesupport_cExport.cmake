@@ -54,7 +54,7 @@ endif()
 add_library(my_robot_interfaces::my_robot_interfaces__rosidl_typesupport_c SHARED IMPORTED)
 
 set_target_properties(my_robot_interfaces::my_robot_interfaces__rosidl_typesupport_c PROPERTIES
-  INTERFACE_LINK_LIBRARIES "my_robot_interfaces::my_robot_interfaces__rosidl_generator_c;std_msgs::std_msgs__rosidl_typesupport_c;builtin_interfaces::builtin_interfaces__rosidl_typesupport_c;geometry_msgs::geometry_msgs__rosidl_typesupport_c"
+  INTERFACE_LINK_LIBRARIES "my_robot_interfaces::my_robot_interfaces__rosidl_generator_c;geometry_msgs::geometry_msgs__rosidl_typesupport_c;std_msgs::std_msgs__rosidl_typesupport_c;builtin_interfaces::builtin_interfaces__rosidl_typesupport_c"
 )
 
 if(CMAKE_VERSION VERSION_LESS 2.8.12)

@@ -1,0 +1,101 @@
+import rclpy
+from rclpy.node import Node
+from std_msgs.msg import String
+from my_robot_interfaces.msg import LidarScan
+import time
+
+
+class AutonomousNode(Node):
+
+    def __init__(self):
+
+        super().__init__('AutonomousNode')
+        serial_port = '/dev/ttyACM0'
+        baud_rate = 115200
+        self.lidar_subscription = self.create_subscription(LidarScan, 'lidar_scan', self.lidar_callback, 10)
+        self.lidar_subscription
+        self.publisher_ = self.create_publisher(String, 'motor_command', 10)
+        self.timer = self.create_timer(10, self.timer_callback)
+
+    def lidar_callback(self, msg):
+        # Translate ROS 2 command to Arduino command
+        self.obstacle = msg.detected
+        forward_obstacle = 0
+        backward_obstacle = 0
+        self.forward_detected = False
+        self.backward_detected = False
+        for angle in msg.angle:
+            if (angle > 2.142 and angle < 3.142) or (angle < -2.142 and angle > -3.142):
+                forward_obstacle += 1
+            elif (angle < 1 and angle > -1):
+                backward_obstacle += 1
+        if forward_obstacle > 3:
+            self.forward_detected = True
+            self.get_logger().warn("Forward Obstacle")
+        elif backward_obstacle > 3:
+            self.backward_detected = True
+            self.get_logger().warn("Backward Obstacle")
+
+    def timer_callback(self):
+        # Step 1: Find nearest obstacle
+        lidar_data = {'angle1': 100, 'angle2': 80, 'angle3': 60}  # Replace with actual LiDAR data
+        nearest_angle, nearest_distance = self.find_nearest_obstacle(lidar_data)
+        print(f"Nearest obstacle: Angle = {nearest_angle}, Distance = {nearest_distance}cm")
+
+        # Step 2: Rotate to face nearest obstacle at front
+        self.rotate_to_face(nearest_angle)
+
+        # Step 3: Move forward until 50cm to obstacle
+        self.move_forward(nearest_distance)
+
+        # Step 4: Rotate until centre of obstacle is at left 90 degree
+        self.rotate_until_left_90_degrees()
+
+        # Step 5: Start speed differential and maintain 50cm distance with obstacle
+        self.start_speed_differential()
+
+    # Function to find nearest obstacle
+    def find_nearest_obstacle(self, lidar_data):
+        nearest_distance = float('inf')
+        nearest_angle = None
+        for angle, distance in lidar_data.items():
+            if distance < nearest_distance:
+                nearest_distance = distance
+                nearest_angle = angle
+        return nearest_angle, nearest_distance
+
+    # Function to rotate to face nearest obstacle at front
+    def rotate_to_face(self, nearest_angle):
+        # Implement rotation to face the nearest obstacle
+        print(f"Rotating to face nearest obstacle at angle {nearest_angle}")
+
+    # Function to move forward until 50cm to obstacle
+    def move_forward(self, distance_to_obstacle):
+        # Implement forward movement until the specified distance is reached
+        print(f"Moving forward until 50cm to obstacle. Current distance: {distance_to_obstacle}")
+
+    # Function to rotate until centre of obstacle is at left 90 degree
+    def rotate_until_left_90_degrees(self):
+        # Implement rotation until the centre of the obstacle is at left 90 degrees
+        print("Rotating until centre of obstacle is at left 90 degrees")
+
+    # Function to start speed differential and maintain 50cm distance with obstacle
+    def start_speed_differential(self):
+        # Implement speed differential to maintain distance with the obstacle
+        print("Starting speed differential and maintaining 50cm distance with obstacle")
+
+
+def main(args=None):
+    rclpy.init(args=args)
+    autonomous_node = AutonomousNode()  # Corrected variable name
+    try:
+        rclpy.spin(autonomous_node)  # Corrected variable name
+    except KeyboardInterrupt:
+        pass
+
+    autonomous_node.destroy_node()  # Corrected variable name
+    rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()

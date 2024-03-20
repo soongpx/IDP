@@ -17,8 +17,14 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/__init__.py" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth.py" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth_s.c" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_joystick.py" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_joystick_s.c" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_laser_scan.py" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_laser_scan_s.c" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan.py" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan_s.c" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_motor_command.py" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_motor_command_s.c" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   )
 
 

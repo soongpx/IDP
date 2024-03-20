@@ -23,10 +23,13 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-        	'arduino_control_node = arduino_control.arduino_led_node:main',
+        	'locomotion_control = arduino_control.arduino_led_node:main',
         	'minimal_publisher = arduino_control.publisher:main',
             'realsense = arduino_control.realsense:main',
             'lidar = arduino_control.lidar:main',
+            'joystick = arduino_control.joystick:main',
+            'obstacle_avoidance = arduino_control.obstacle_avoidance:main',
+            'joystick_control = arduino_control.joystick_control:main',
         ],
     },
 )

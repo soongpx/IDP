@@ -1,26 +1,33 @@
 import rclpy
 from rclpy.node import Node
-
-from std_msgs.msg import String
-
+from my_robot_interfaces.msg import MotorCommand
+from std_msgs.msg import Int32
 
 class MinimalPublisher(Node):
     def __init__(self):
         super().__init__('minimal_publisher')
-        self.publisher_ = self.create_publisher(String, 'motor_command', 10)
-        timer_period = 2  # seconds
-        self.timer = self.create_timer(timer_period, self.timer_callback)
+        self.publisher_ = self.create_publisher(MotorCommand, 'motor_command', 10)
+        self.subscription = self.create_subscription(Int32, 'motor_speed', self.speed_callback, 10)
+        self.subscription  # prevent unused variable warning
+        self.timer_period = 0.1  # seconds
+        self.timer = self.create_timer(self.timer_period, self.timer_callback)
         self.i = 0
 
+    def speed_callback(self, msg):
+        self.get_logger().info('Received motor speed: "%d"' % msg.data)
+        # You can use the received motor speed value here to adjust the command
+        self.i = msg.data
+
     def timer_callback(self):
-        msg = String()
-        if self.i % 2 == 0:
-            msg.data = 'backward'
-        else:
-            msg.data = "forward"
+        msg = MotorCommand()
+        msg.left_speed = self.i
+        msg.right_speed = 100
+        msg.rotate_speed = 50
+        msg.tilt_speed = 60
+        msg.extend_speed = 80
+        msg.vibrate_speed = 30
         self.publisher_.publish(msg)
-        self.get_logger().info('Publishing: "%s"' % msg.data)
-        self.i += 1
+        self.get_logger().info('Publishing: "%s"' % msg.left_speed)
 
 
 def main(args=None):
@@ -30,9 +37,6 @@ def main(args=None):
 
     rclpy.spin(minimal_publisher)
 
-    # Destroy the node explicitly
-    # (optional - otherwise it will be done automatically
-    # when the garbage collector destroys the node object)
     minimal_publisher.destroy_node()
     rclpy.shutdown()
 

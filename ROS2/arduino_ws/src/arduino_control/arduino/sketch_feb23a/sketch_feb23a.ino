@@ -1,70 +1,41 @@
-// Arduino sketch for controlling a DC motor via ROS 2
+#define CAMERA_BUFFER_SIZE 9
+#define CAMERA_HEADER 0x33
+uint8_t camera_buffer[CAMERA_BUFFER_SIZE];
+uint8_t camera_counter = 0;
+bool camera_data_ready = false;
 
-// Define motor control pins
-// #define MOTOR_ENA 5 // Enable pin for motor A
-// #define MOTOR_IN1 6 // Input 1 pin for motor A
-// #define MOTOR_IN2 7 // Input 2 pin for motor A
 
-// Define serial communication parameters
-#define BAUD_RATE 115200
-
-// Variables to store received commands
-int command;
-int speed;
-bool bytesarray[8] = {0,0,0,0,0,0,0,0};
 
 void setup() {
-  // Initialize serial communication
-  Serial.begin(BAUD_RATE);
-
-  // Set motor control pins as outputs
+  Serial.begin(115200);
   pinMode(13, OUTPUT);
-        digitalWrite(13, 0);
 
-  // Initially stop the motor
-  stopMotor();
 }
 
 void loop() {
-  // Check if data is available to read from serial
-  if (Serial.available()) {
-    // Read the incoming command
-    command = int(Serial.read());
+  while (Serial.available())
+  {
+    camera_buffer[camera_counter] = (uint8_t)Serial.read();
+    // The first byte is not the packet header,
+    // skip to wait till the packet header to arrive
 
-    // Execute command
-    for (int i = 7; i >= 0; i--){
-      if (command % 2 == 1) {
-        bytesarray[i] = 1;
-      } else{
-        bytesarray[i] = 0;
+    if (camera_counter == 0 && camera_buffer[0] != CAMERA_HEADER)
+      return;
+    camera_counter++;
+    if (camera_counter == CAMERA_BUFFER_SIZE)  // All packet received, bool imu_data_ready = true
+    {
+      long current = millis();
+      if (camera_buffer[3] == 50){
       }
-      command = int(command/2);
-      // if (command == 0){
-      //   break;
-      // }
-    }
-    if (bytesarray[0] == 0){
-      speed = 0;
-      stopMotor();
-    } 
-      Serial.println(bytesarray[0]);
-      Serial.println(bytesarray[1]);
-    if (bytesarray[1] == 0){
-      digitalWrite(13, 1);
-      speed = 255; // Backward at full speed
-      runMotor(speed, LOW, HIGH);
-    } else{
-      digitalWrite(13, 0);
-      speed = 255; // Forward at full speed
-      runMotor(speed, HIGH, LOW);
+      camera_counter = 0;
+      camera_data_ready = true;
+      delay(20);
+        Serial.write(0x33);
+        Serial.write(2);
+        Serial.write(5);
+      delay(20);
+      
     }
   }
-}
 
-// Function to control motor movement
-void runMotor(int speed, int dir1, int dir2) {
-}
-
-// Function to stop the motor
-void stopMotor() {
 }

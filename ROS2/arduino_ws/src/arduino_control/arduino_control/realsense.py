@@ -66,7 +66,7 @@ class DepthPublisherNode(Node):
         # cv2.imshow('Color Image', color_image)
         # cv2.imshow('Depth Image', depth_cm)
 
-    def stop(self):
+    def __del__(self):
         self.pipe.stop()
         self.destroy_node()
 
@@ -75,7 +75,6 @@ def main(args=None):
     rclpy.init(args=args)
     depth_publisher = DepthPublisherNode()
     rclpy.spin(depth_publisher)
-    depth_publisher.stop()
     rclpy.shutdown()
 
 

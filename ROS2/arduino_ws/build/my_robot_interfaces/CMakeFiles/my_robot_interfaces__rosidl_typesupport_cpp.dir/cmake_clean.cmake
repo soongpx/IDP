@@ -1,12 +1,21 @@
 file(REMOVE_RECURSE
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/fruit_depth__type_support.cpp.o"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/fruit_depth__type_support.cpp.o.d"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/joystick__type_support.cpp.o"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/joystick__type_support.cpp.o.d"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/laser_scan__type_support.cpp.o"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/laser_scan__type_support.cpp.o.d"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp.o"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp.o.d"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/motor_command__type_support.cpp.o"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/motor_command__type_support.cpp.o.d"
   "libmy_robot_interfaces__rosidl_typesupport_cpp.pdb"
   "libmy_robot_interfaces__rosidl_typesupport_cpp.so"
   "rosidl_typesupport_cpp/my_robot_interfaces/msg/fruit_depth__type_support.cpp"
+  "rosidl_typesupport_cpp/my_robot_interfaces/msg/joystick__type_support.cpp"
+  "rosidl_typesupport_cpp/my_robot_interfaces/msg/laser_scan__type_support.cpp"
   "rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp"
+  "rosidl_typesupport_cpp/my_robot_interfaces/msg/motor_command__type_support.cpp"
 )
 
 # Per-language clean rules from dependency scanning.

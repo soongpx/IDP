@@ -1,6 +1,9 @@
 [console_scripts]
-arduino_control_node = arduino_control.arduino_led_node:main
+joystick = arduino_control.joystick:main
+joystick_control = arduino_control.joystick_control:main
 lidar = arduino_control.lidar:main
+locomotion_control = arduino_control.arduino_led_node:main
 minimal_publisher = arduino_control.publisher:main
+obstacle_avoidance = arduino_control.obstacle_avoidance:main
 realsense = arduino_control.realsense:main
 

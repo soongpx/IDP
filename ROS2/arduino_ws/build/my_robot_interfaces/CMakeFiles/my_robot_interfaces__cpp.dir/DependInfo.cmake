@@ -15,10 +15,22 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/fruit_depth__builder.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/fruit_depth__struct.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/fruit_depth__traits.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/joystick__builder.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/joystick__struct.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/joystick__traits.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/laser_scan__builder.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/laser_scan__struct.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/laser_scan__traits.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/lidar_scan__builder.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/lidar_scan__struct.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/lidar_scan__traits.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/motor_command__builder.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/motor_command__struct.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/detail/motor_command__traits.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/fruit_depth.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/joystick.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/laser_scan.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/motor_command.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   )
 
 

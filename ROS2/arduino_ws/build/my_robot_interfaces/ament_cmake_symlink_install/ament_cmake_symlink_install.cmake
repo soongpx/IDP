@@ -361,14 +361,32 @@ include("/home/px/arduino_ws/build/my_robot_interfaces/ament_cmake_symlink_insta
 # install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/LidarScan.idl" "DESTINATION" "share/my_robot_interfaces/msg")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/LidarScan.idl" "DESTINATION" "share/my_robot_interfaces/msg")
 
+# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/LaserScan.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/LaserScan.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+
 # install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/FruitDepth.idl" "DESTINATION" "share/my_robot_interfaces/msg")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/FruitDepth.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+
+# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Joystick.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Joystick.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+
+# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/MotorCommand.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/MotorCommand.idl" "DESTINATION" "share/my_robot_interfaces/msg")
 
 # install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/LidarScan.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/LidarScan.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 
+# install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/LaserScan.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/LaserScan.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+
 # install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/FruitDepth.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/FruitDepth.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+
+# install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/Joystick.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/Joystick.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+
+# install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/MotorCommand.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/MotorCommand.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 
 # install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/my_robot_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/my_robot_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
