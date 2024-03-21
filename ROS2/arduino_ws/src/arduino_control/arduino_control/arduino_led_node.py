@@ -10,6 +10,7 @@ class LocomotionControl(Node):
         super().__init__('locomotion_control')
 
         # Initialize serial port
+        self.serial_port = None
         self.header_byte = 0x33
         self.init_serial_port()
 
@@ -50,19 +51,22 @@ class LocomotionControl(Node):
             data.extend(speed.to_bytes(1, byteorder='big')[0] for speed in self.target_speeds)  # Append each speed
             checksum = sum(data) % 256
             data.append(checksum)  # Append checksum
-            self.get_logger().info(f'Sending data: {str(data[0])}, {str(data[1])}, {str(data[2])}, {str(data[3])}, {str(data[4])}, {str(data[5])}, {str(data[6])}, {str(data[7])}, {str(data[8])}')
+            self.get_logger().info(
+                f'Sending data: {str(data[0])}, {str(data[1])}, {str(data[2])}, {str(data[3])}, {str(data[4])}, {str(data[5])}, {str(data[6])}, {str(data[7])}, {str(data[8])}')
             self.serial_port.write(data)
             self.get_input()
         except serial.SerialException as e:
             self.get_logger().error(f"Serial communication error: {e}")
 
     def motor_command_callback(self, msg):
-        self.target_speeds = [msg.left_speed, msg.right_speed, msg.rotate_speed, msg.tilt_speed, msg.extend_speed, msg.vibrate_speed, msg.direction]
-    
+        self.target_speeds = [msg.left_speed, msg.right_speed, msg.rotate_speed, msg.tilt_speed, msg.extend_speed,
+                              msg.vibrate_speed, msg.direction]
+
     def __del__(self):
         if self.serial_port.is_open:
             self.serial_port.close()
             self.get_logger().info("Serial port closed.")
+
 
 def main(args=None):
     rclpy.init(args=args)
@@ -73,6 +77,7 @@ def main(args=None):
         pass
     node.destroy_node()
     rclpy.shutdown()
+
 
 if __name__ == '__main__':
     main()
