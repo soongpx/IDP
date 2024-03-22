@@ -23,13 +23,4 @@ enum
 {
   WaitStart,
   CheckActionToDo,
-  CircleMove,
-  RectangleMove,
-  TriangleMove,
-  Move_Forward,
-  Move_Backward,
-  Move_Left,
-  Move_Right,
-  Rotate_Left,
-  Rotate_Right
 } state;

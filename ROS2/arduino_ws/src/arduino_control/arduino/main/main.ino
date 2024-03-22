@@ -15,8 +15,13 @@ void Serial_Init()
 void Motor_Init()
 {
   // Setup Motor Pin
-  DDRA &= 0b11111111;
+  DDRA = B11111111;
   PORTA = B00000000;
+}
+
+int mapping(int a)
+{
+  return int(a/1023*255);
 }
 
 void InputTaskCode()
@@ -60,9 +65,6 @@ void ProcessTaskCode()
       extend_speed = input_data[4];
       vibrate_speed = input_data[5];
       direction = input_data[6];
-      LeftSpeed = analogRead(Left_Pwm);
-      RightSpeed = analogRead(Right_Pwm);
-      VibrateSpeed = analogRead(Vibrate_Pwm);
       
       left_dir = 0;
       right_dir = 0;
@@ -100,17 +102,31 @@ void ProcessTaskCode()
         }
       }
 
-      if (VibrateSpeed < vibrate_speed)
-      {
-        VibrateSpeed++;
-      }
       if (LeftSpeed < left_speed)
       {
         LeftSpeed++;
       }
+      if (left_speed == 0)
+      {
+        LeftSpeed = 0;
+      }
+
       if (RightSpeed < right_speed)
       {
         RightSpeed++;
+      }
+      if (right_speed == 0)
+      {
+        RightSpeed = 0;
+      }
+
+      if (VibrateSpeed < vibrate_speed)
+      {
+        VibrateSpeed++;
+      }
+      if (vibrate_speed == 0)
+      {
+        VibrateSpeed = 0;
       }
 
       OperatingState = CheckActionToDo;
@@ -225,8 +241,6 @@ void Stop_Vibrate(){
 
 void setup()
 {
-  Serial.begin(115200);
-
   OperatingState = WaitStart; 
   InputTask.reset();     // Set InputTask Time stamp to current millis
   delay(3);
@@ -237,6 +251,8 @@ void setup()
   InputTask.enable();     // Enable Input Task to be monitored
   ProcessTask.enable();   // Enable Process Task to be monitored
   OutputTask.enable();    // Enable Output Task to be monitored
+  Serial_Init();
+  Motor_Init();
 }
 
 void loop()
