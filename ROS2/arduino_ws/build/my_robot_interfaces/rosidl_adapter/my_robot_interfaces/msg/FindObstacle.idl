@@ -1,0 +1,20 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from my_robot_interfaces/msg/FindObstacle.msg
+// generated code does not contain a copyright notice
+
+
+module my_robot_interfaces {
+  module msg {
+    struct FindObstacle {
+      float nearest_distance1;
+
+      float nearest_angle1;
+
+      float nearest_distance2;
+
+      float nearest_angle2;
+
+      boolean reach;
+    };
+  };
+};

@@ -65,23 +65,23 @@ class MotorCommand(metaclass=Metaclass_MotorCommand):
     ]
 
     _fields_and_field_types = {
-        'left_speed': 'int32',
-        'right_speed': 'int32',
-        'rotate_speed': 'int32',
-        'tilt_speed': 'int32',
-        'extend_speed': 'int32',
-        'vibrate_speed': 'int32',
-        'direction': 'int32',
+        'left_speed': 'uint8',
+        'right_speed': 'uint8',
+        'rotate_speed': 'uint8',
+        'tilt_speed': 'uint8',
+        'extend_speed': 'uint8',
+        'vibrate_speed': 'uint8',
+        'direction': 'uint8',
     }
 
     SLOT_TYPES = (
-        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
-        rosidl_parser.definition.BasicType('int32'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -157,8 +157,8 @@ class MotorCommand(metaclass=Metaclass_MotorCommand):
             assert \
                 isinstance(value, int), \
                 "The 'left_speed' field must be of type 'int'"
-            assert value >= -2147483648 and value < 2147483648, \
-                "The 'left_speed' field must be an integer in [-2147483648, 2147483647]"
+            assert value >= 0 and value < 256, \
+                "The 'left_speed' field must be an unsigned integer in [0, 255]"
         self._left_speed = value
 
     @builtins.property
@@ -172,8 +172,8 @@ class MotorCommand(metaclass=Metaclass_MotorCommand):
             assert \
                 isinstance(value, int), \
                 "The 'right_speed' field must be of type 'int'"
-            assert value >= -2147483648 and value < 2147483648, \
-                "The 'right_speed' field must be an integer in [-2147483648, 2147483647]"
+            assert value >= 0 and value < 256, \
+                "The 'right_speed' field must be an unsigned integer in [0, 255]"
         self._right_speed = value
 
     @builtins.property
@@ -187,8 +187,8 @@ class MotorCommand(metaclass=Metaclass_MotorCommand):
             assert \
                 isinstance(value, int), \
                 "The 'rotate_speed' field must be of type 'int'"
-            assert value >= -2147483648 and value < 2147483648, \
-                "The 'rotate_speed' field must be an integer in [-2147483648, 2147483647]"
+            assert value >= 0 and value < 256, \
+                "The 'rotate_speed' field must be an unsigned integer in [0, 255]"
         self._rotate_speed = value
 
     @builtins.property
@@ -202,8 +202,8 @@ class MotorCommand(metaclass=Metaclass_MotorCommand):
             assert \
                 isinstance(value, int), \
                 "The 'tilt_speed' field must be of type 'int'"
-            assert value >= -2147483648 and value < 2147483648, \
-                "The 'tilt_speed' field must be an integer in [-2147483648, 2147483647]"
+            assert value >= 0 and value < 256, \
+                "The 'tilt_speed' field must be an unsigned integer in [0, 255]"
         self._tilt_speed = value
 
     @builtins.property
@@ -217,8 +217,8 @@ class MotorCommand(metaclass=Metaclass_MotorCommand):
             assert \
                 isinstance(value, int), \
                 "The 'extend_speed' field must be of type 'int'"
-            assert value >= -2147483648 and value < 2147483648, \
-                "The 'extend_speed' field must be an integer in [-2147483648, 2147483647]"
+            assert value >= 0 and value < 256, \
+                "The 'extend_speed' field must be an unsigned integer in [0, 255]"
         self._extend_speed = value
 
     @builtins.property
@@ -232,8 +232,8 @@ class MotorCommand(metaclass=Metaclass_MotorCommand):
             assert \
                 isinstance(value, int), \
                 "The 'vibrate_speed' field must be of type 'int'"
-            assert value >= -2147483648 and value < 2147483648, \
-                "The 'vibrate_speed' field must be an integer in [-2147483648, 2147483647]"
+            assert value >= 0 and value < 256, \
+                "The 'vibrate_speed' field must be an unsigned integer in [0, 255]"
         self._vibrate_speed = value
 
     @builtins.property
@@ -247,6 +247,6 @@ class MotorCommand(metaclass=Metaclass_MotorCommand):
             assert \
                 isinstance(value, int), \
                 "The 'direction' field must be of type 'int'"
-            assert value >= -2147483648 and value < 2147483648, \
-                "The 'direction' field must be an integer in [-2147483648, 2147483647]"
+            assert value >= 0 and value < 256, \
+                "The 'direction' field must be an unsigned integer in [0, 255]"
         self._direction = value

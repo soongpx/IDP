@@ -3,6 +3,7 @@ from my_robot_interfaces.msg import LidarScan, Joystick, MotorCommand
 from rclpy.node import Node
 
 
+
 class LocomotionControl(Node):
     def __init__(self):
         super().__init__('joystick_control')
@@ -11,9 +12,9 @@ class LocomotionControl(Node):
         self.joystick_subscription = self.create_subscription(Joystick, 'joystick', self.command_callback, 10)
         self.joystick_subscription
         self.obstacle_subscription = self.create_subscription(LidarScan, 'lidar_scan', self.obstacle_callback, 10)
-        self.obstacle_subscription
+        self.obstacle_subscription 
         self.motor_publisher = self.create_publisher(MotorCommand, 'motor_command', 10)
-        self.serial_sender = self.create_timer(0.1, self.send_command)
+        self.serial_sender = self.create_timer(0.01, self.send_command)
         self.ros_command = 0
         self.obstacle = False
         self.forward_detected = False
@@ -61,15 +62,15 @@ class LocomotionControl(Node):
     def command_callback(self, msg):
         # Translate ROS 2 command to Arduino command
         buttons = msg.button
-        axes = msg.axes
+        axes= msg.axes
         axes_name = msg.axes_name
         if buttons:
             for button in buttons:
-                if button == 'Up':
+                if button == 'Up':    
                     self.ros_command = 'Up'
                 elif button == 'Down':
                     self.ros_command = 'Down'
-                elif button == 'Right':
+                elif button == 'Right':    
                     self.ros_command = 'Right'
                 elif button == 'Left':
                     self.ros_command = 'Left'
@@ -86,9 +87,9 @@ class LocomotionControl(Node):
         self.forward_detected = False
         self.backward_detected = False
         for angle in msg.angle:
-            if (2.142 < angle < 3.142) or (-2.142 > angle > -3.142):
+            if (angle > 2.142 and angle < 3.142) or (angle < -2.142 and angle > -3.142):
                 forward_obstacle += 1
-            elif 1 > angle > -1:
+            elif (angle < 1 and angle > -1):
                 backward_obstacle += 1
         if forward_obstacle > 3:
             self.forward_detected = True
@@ -97,6 +98,7 @@ class LocomotionControl(Node):
             self.backward_detected = True
             self.get_logger().warn("Backward Obstacle")
 
+            
 
 def main():
     rclpy.init()
@@ -104,7 +106,6 @@ def main():
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
-
 
 if __name__ == '__main__':
     main()

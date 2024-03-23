@@ -34,7 +34,7 @@ void my_robot_interfaces__msg__MotorCommand__rosidl_typesupport_introspection_c_
 static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__msg__MotorCommand__rosidl_typesupport_introspection_c__MotorCommand_message_member_array[7] = {
   {
     "left_speed",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -51,7 +51,7 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__ms
   },
   {
     "right_speed",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -68,7 +68,7 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__ms
   },
   {
     "rotate_speed",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -85,7 +85,7 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__ms
   },
   {
     "tilt_speed",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -102,7 +102,7 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__ms
   },
   {
     "extend_speed",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -119,7 +119,7 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__ms
   },
   {
     "vibrate_speed",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
@@ -136,7 +136,7 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__ms
   },
   {
     "direction",  // name
-    rosidl_typesupport_introspection_c__ROS_TYPE_INT32,  // type
+    rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array

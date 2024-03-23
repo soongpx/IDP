@@ -1,3 +1,5 @@
+msg/FindObstacle.idl
+msg/FindObstacle.msg
 msg/FruitDepth.idl
 msg/FruitDepth.msg
 msg/Joystick.idl

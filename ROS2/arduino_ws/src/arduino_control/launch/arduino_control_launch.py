@@ -14,24 +14,24 @@ def generate_launch_description():
 
     node3 = Node(
         package='arduino_control',
-        executable='joystick',
-        name='joystick'
+        executable='find_obstacle',
+        name='find_obstacle'
     )
-    ld.add_action(node3) 
+    ld.add_action(TimerAction(period=5.0, actions=[node3])) 
 
     node2 = Node(
         package='arduino_control',
-        executable='obstacle_avoidance',
-        name='obstacle_avoidance'
+        executable='autonomous_control',
+        name='autonomous_control'
     )
-    ld.add_action(TimerAction(period=5.0, actions=[node2]))  # Add a 5-second delay before launching node2
+    ld.add_action(TimerAction(period=6.0, actions=[node2]))  # Add a 5-second delay before launching node2
 
     node4 = Node(
         package='arduino_control',
-        executable='joystick_control',
-        name='joystick_control'
+        executable='locomotion_control',
+        name='locomotion_control'
     )
-    ld.add_action(TimerAction(period=5.0, actions=[node4]))  # Add a 5-second delay before launching node4
+    ld.add_action(TimerAction(period=7.0, actions=[node4]))  # Add a 5-second delay before launching node4
 
     return ld
 

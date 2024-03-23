@@ -1,0 +1,5 @@
+float32 nearest_distance1
+float32 nearest_angle1
+float32 nearest_distance2
+float32 nearest_angle2
+bool reach

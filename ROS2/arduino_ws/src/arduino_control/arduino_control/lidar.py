@@ -7,8 +7,8 @@ import time
 class LidarControllerNode(Node):
     def __init__(self):
         super().__init__('lidar_node')
-        self.publisher = self.create_publisher(LaserScan, 'scan', 10)
-        timer_period = 0.1  # seconds (adjust as needed)
+        self.publisher = self.create_publisher(LaserScan, 'laser_scan', 10)
+        timer_period = 0.05  # seconds (adjust as needed)
         self.timer = self.create_timer(timer_period, self.process_lidar_scan)
         self.laser = None
         self.pi = 3.141592653589793238462643383279502884197
@@ -95,6 +95,9 @@ class LidarControllerNode(Node):
             self.laser.disconnecting()
         self.destroy_node()
         rclpy.shutdown()
+
+    def mapping_angle_to_360(self, angle):
+        return (angle + self.pi) * (180 / self.pi)
 
 def main(args=None):
     rclpy.init(args=args)

@@ -30,6 +30,8 @@ setup(
             'joystick = arduino_control.joystick:main',
             'obstacle_avoidance = arduino_control.obstacle_avoidance:main',
             'joystick_control = arduino_control.joystick_control:main',
+            'autonomous_control = arduino_control.autonomous_main:main',
+            'find_obstacle = arduino_control.find_obstacle:main',
         ],
     },
 )

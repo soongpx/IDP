@@ -3,6 +3,8 @@ setup.cfg
 setup.py
 arduino_control/__init__.py
 arduino_control/arduino_led_node.py
+arduino_control/autonomous_main.py
+arduino_control/find_obstacle.py
 arduino_control/joystick.py
 arduino_control/joystick_control.py
 arduino_control/lidar.py
@@ -19,4 +21,5 @@ arduino_control.egg-info/requires.txt
 arduino_control.egg-info/top_level.txt
 arduino_control.egg-info/zip-safe
 launch/arduino_control_launch.py
+launch/joystick_control_launch.py
 resource/arduino_control

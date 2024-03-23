@@ -220,4 +220,7 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c__pyext.dir/ro
  /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/joystick__functions.h \
  /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__type_support.h \
  /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__struct.h \
- /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__functions.h
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__functions.h \
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.h \
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__struct.h \
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h

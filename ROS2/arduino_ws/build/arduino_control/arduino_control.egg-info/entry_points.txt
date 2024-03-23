@@ -1,4 +1,6 @@
 [console_scripts]
+autonomous_control = arduino_control.autonomous_main:main
+find_obstacle = arduino_control.find_obstacle:main
 joystick = arduino_control.joystick:main
 joystick_control = arduino_control.joystick_control:main
 lidar = arduino_control.lidar:main

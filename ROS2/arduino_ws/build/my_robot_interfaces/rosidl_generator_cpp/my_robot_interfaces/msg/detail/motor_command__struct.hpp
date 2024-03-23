@@ -38,13 +38,13 @@ struct MotorCommand_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->left_speed = 0l;
-      this->right_speed = 0l;
-      this->rotate_speed = 0l;
-      this->tilt_speed = 0l;
-      this->extend_speed = 0l;
-      this->vibrate_speed = 0l;
-      this->direction = 0l;
+      this->left_speed = 0;
+      this->right_speed = 0;
+      this->rotate_speed = 0;
+      this->tilt_speed = 0;
+      this->extend_speed = 0;
+      this->vibrate_speed = 0;
+      this->direction = 0;
     }
   }
 
@@ -54,78 +54,78 @@ struct MotorCommand_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->left_speed = 0l;
-      this->right_speed = 0l;
-      this->rotate_speed = 0l;
-      this->tilt_speed = 0l;
-      this->extend_speed = 0l;
-      this->vibrate_speed = 0l;
-      this->direction = 0l;
+      this->left_speed = 0;
+      this->right_speed = 0;
+      this->rotate_speed = 0;
+      this->tilt_speed = 0;
+      this->extend_speed = 0;
+      this->vibrate_speed = 0;
+      this->direction = 0;
     }
   }
 
   // field types and members
   using _left_speed_type =
-    int32_t;
+    uint8_t;
   _left_speed_type left_speed;
   using _right_speed_type =
-    int32_t;
+    uint8_t;
   _right_speed_type right_speed;
   using _rotate_speed_type =
-    int32_t;
+    uint8_t;
   _rotate_speed_type rotate_speed;
   using _tilt_speed_type =
-    int32_t;
+    uint8_t;
   _tilt_speed_type tilt_speed;
   using _extend_speed_type =
-    int32_t;
+    uint8_t;
   _extend_speed_type extend_speed;
   using _vibrate_speed_type =
-    int32_t;
+    uint8_t;
   _vibrate_speed_type vibrate_speed;
   using _direction_type =
-    int32_t;
+    uint8_t;
   _direction_type direction;
 
   // setters for named parameter idiom
   Type & set__left_speed(
-    const int32_t & _arg)
+    const uint8_t & _arg)
   {
     this->left_speed = _arg;
     return *this;
   }
   Type & set__right_speed(
-    const int32_t & _arg)
+    const uint8_t & _arg)
   {
     this->right_speed = _arg;
     return *this;
   }
   Type & set__rotate_speed(
-    const int32_t & _arg)
+    const uint8_t & _arg)
   {
     this->rotate_speed = _arg;
     return *this;
   }
   Type & set__tilt_speed(
-    const int32_t & _arg)
+    const uint8_t & _arg)
   {
     this->tilt_speed = _arg;
     return *this;
   }
   Type & set__extend_speed(
-    const int32_t & _arg)
+    const uint8_t & _arg)
   {
     this->extend_speed = _arg;
     return *this;
   }
   Type & set__vibrate_speed(
-    const int32_t & _arg)
+    const uint8_t & _arg)
   {
     this->vibrate_speed = _arg;
     return *this;
   }
   Type & set__direction(
-    const int32_t & _arg)
+    const uint8_t & _arg)
   {
     this->direction = _arg;
     return *this;

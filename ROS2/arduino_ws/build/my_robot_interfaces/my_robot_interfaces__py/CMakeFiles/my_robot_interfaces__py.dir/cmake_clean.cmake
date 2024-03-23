@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "../rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/__init__.py"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_find_obstacle.py"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_find_obstacle_s.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth_s.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/_joystick.py"

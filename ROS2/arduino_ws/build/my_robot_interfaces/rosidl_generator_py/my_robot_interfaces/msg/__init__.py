@@ -1,3 +1,4 @@
+from my_robot_interfaces.msg._find_obstacle import FindObstacle  # noqa: F401
 from my_robot_interfaces.msg._fruit_depth import FruitDepth  # noqa: F401
 from my_robot_interfaces.msg._joystick import Joystick  # noqa: F401
 from my_robot_interfaces.msg._laser_scan import LaserScan  # noqa: F401

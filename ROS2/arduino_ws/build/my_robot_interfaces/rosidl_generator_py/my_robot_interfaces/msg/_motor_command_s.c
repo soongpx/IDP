@@ -56,7 +56,7 @@ bool my_robot_interfaces__msg__motor_command__convert_from_py(PyObject * _pymsg,
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->left_speed = (int32_t)PyLong_AsLong(field);
+    ros_message->left_speed = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
   {  // right_speed
@@ -65,7 +65,7 @@ bool my_robot_interfaces__msg__motor_command__convert_from_py(PyObject * _pymsg,
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->right_speed = (int32_t)PyLong_AsLong(field);
+    ros_message->right_speed = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
   {  // rotate_speed
@@ -74,7 +74,7 @@ bool my_robot_interfaces__msg__motor_command__convert_from_py(PyObject * _pymsg,
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->rotate_speed = (int32_t)PyLong_AsLong(field);
+    ros_message->rotate_speed = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
   {  // tilt_speed
@@ -83,7 +83,7 @@ bool my_robot_interfaces__msg__motor_command__convert_from_py(PyObject * _pymsg,
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->tilt_speed = (int32_t)PyLong_AsLong(field);
+    ros_message->tilt_speed = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
   {  // extend_speed
@@ -92,7 +92,7 @@ bool my_robot_interfaces__msg__motor_command__convert_from_py(PyObject * _pymsg,
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->extend_speed = (int32_t)PyLong_AsLong(field);
+    ros_message->extend_speed = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
   {  // vibrate_speed
@@ -101,7 +101,7 @@ bool my_robot_interfaces__msg__motor_command__convert_from_py(PyObject * _pymsg,
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->vibrate_speed = (int32_t)PyLong_AsLong(field);
+    ros_message->vibrate_speed = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
   {  // direction
@@ -110,7 +110,7 @@ bool my_robot_interfaces__msg__motor_command__convert_from_py(PyObject * _pymsg,
       return false;
     }
     assert(PyLong_Check(field));
-    ros_message->direction = (int32_t)PyLong_AsLong(field);
+    ros_message->direction = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
 
@@ -137,7 +137,7 @@ PyObject * my_robot_interfaces__msg__motor_command__convert_to_py(void * raw_ros
   my_robot_interfaces__msg__MotorCommand * ros_message = (my_robot_interfaces__msg__MotorCommand *)raw_ros_message;
   {  // left_speed
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->left_speed);
+    field = PyLong_FromUnsignedLong(ros_message->left_speed);
     {
       int rc = PyObject_SetAttrString(_pymessage, "left_speed", field);
       Py_DECREF(field);
@@ -148,7 +148,7 @@ PyObject * my_robot_interfaces__msg__motor_command__convert_to_py(void * raw_ros
   }
   {  // right_speed
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->right_speed);
+    field = PyLong_FromUnsignedLong(ros_message->right_speed);
     {
       int rc = PyObject_SetAttrString(_pymessage, "right_speed", field);
       Py_DECREF(field);
@@ -159,7 +159,7 @@ PyObject * my_robot_interfaces__msg__motor_command__convert_to_py(void * raw_ros
   }
   {  // rotate_speed
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->rotate_speed);
+    field = PyLong_FromUnsignedLong(ros_message->rotate_speed);
     {
       int rc = PyObject_SetAttrString(_pymessage, "rotate_speed", field);
       Py_DECREF(field);
@@ -170,7 +170,7 @@ PyObject * my_robot_interfaces__msg__motor_command__convert_to_py(void * raw_ros
   }
   {  // tilt_speed
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->tilt_speed);
+    field = PyLong_FromUnsignedLong(ros_message->tilt_speed);
     {
       int rc = PyObject_SetAttrString(_pymessage, "tilt_speed", field);
       Py_DECREF(field);
@@ -181,7 +181,7 @@ PyObject * my_robot_interfaces__msg__motor_command__convert_to_py(void * raw_ros
   }
   {  // extend_speed
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->extend_speed);
+    field = PyLong_FromUnsignedLong(ros_message->extend_speed);
     {
       int rc = PyObject_SetAttrString(_pymessage, "extend_speed", field);
       Py_DECREF(field);
@@ -192,7 +192,7 @@ PyObject * my_robot_interfaces__msg__motor_command__convert_to_py(void * raw_ros
   }
   {  // vibrate_speed
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->vibrate_speed);
+    field = PyLong_FromUnsignedLong(ros_message->vibrate_speed);
     {
       int rc = PyObject_SetAttrString(_pymessage, "vibrate_speed", field);
       Py_DECREF(field);
@@ -203,7 +203,7 @@ PyObject * my_robot_interfaces__msg__motor_command__convert_to_py(void * raw_ros
   }
   {  // direction
     PyObject * field = NULL;
-    field = PyLong_FromLong(ros_message->direction);
+    field = PyLong_FromUnsignedLong(ros_message->direction);
     {
       int rc = PyObject_SetAttrString(_pymessage, "direction", field);
       Py_DECREF(field);

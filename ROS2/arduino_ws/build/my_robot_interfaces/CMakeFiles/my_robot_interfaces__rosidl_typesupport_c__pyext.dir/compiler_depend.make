@@ -261,8 +261,15 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator
   rosidl_generator_c/my_robot_interfaces/msg/detail/joystick__functions.h \
   rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__type_support.h \
   rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__struct.h \
-  rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__functions.h
+  rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__functions.h \
+  rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.h \
+  rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__struct.h \
+  rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h
 
+
+rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__struct.h:
+
+rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.h:
 
 rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__functions.h:
 
@@ -707,6 +714,8 @@ rosidl_generator_c/my_robot_interfaces/msg/detail/joystick__type_support.h:
 /usr/include/sched.h:
 
 rosidl_generator_c/my_robot_interfaces/msg/detail/lidar_scan__type_support.h:
+
+rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h:
 
 /usr/include/python3.10/pythread.h:
 

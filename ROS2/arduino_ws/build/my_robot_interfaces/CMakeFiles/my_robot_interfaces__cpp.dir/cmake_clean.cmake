@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/my_robot_interfaces__cpp"
+  "rosidl_generator_cpp/my_robot_interfaces/msg/detail/find_obstacle__builder.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/msg/detail/find_obstacle__struct.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/msg/detail/find_obstacle__traits.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/detail/fruit_depth__builder.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/detail/fruit_depth__struct.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/detail/fruit_depth__traits.hpp"
@@ -15,6 +18,7 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/my_robot_interfaces/msg/detail/motor_command__builder.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/detail/motor_command__struct.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/detail/motor_command__traits.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/msg/find_obstacle.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/fruit_depth.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/joystick.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/laser_scan.hpp"

@@ -1,0 +1,25 @@
+[1.818s] Invoking command in '/home/px/arduino_ws/build/arduino_control': PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps install_data
+[2.335s] running develop
+[2.698s] running egg_info
+[2.699s] writing arduino_control.egg-info/PKG-INFO
+[2.699s] writing dependency_links to arduino_control.egg-info/dependency_links.txt
+[2.699s] writing entry points to arduino_control.egg-info/entry_points.txt
+[2.700s] writing requirements to arduino_control.egg-info/requires.txt
+[2.700s] writing top-level names to arduino_control.egg-info/top_level.txt
+[2.703s] reading manifest file 'arduino_control.egg-info/SOURCES.txt'
+[2.705s] writing manifest file 'arduino_control.egg-info/SOURCES.txt'
+[2.707s] running build_ext
+[2.708s] Creating /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino-control.egg-link (link to .)
+[2.709s] Installing autonomous_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.709s] Installing find_obstacle script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.709s] Installing joystick script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.710s] Installing joystick_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.710s] Installing lidar script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.710s] Installing locomotion_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.710s] Installing minimal_publisher script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.711s] Installing obstacle_avoidance script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.711s] Installing realsense script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.711s] 
+[2.711s] Installed /home/px/arduino_ws/build/arduino_control
+[2.712s] running install_data
+[2.757s] Invoked command in '/home/px/arduino_ws/build/arduino_control' returned '0': PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps install_data

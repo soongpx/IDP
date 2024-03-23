@@ -7,7 +7,8 @@
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/LaserScan.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/FruitDepth.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/Joystick.idl",
-    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/MotorCommand.idl"
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/MotorCommand.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/FindObstacle.idl"
   ],
   "ros_interface_dependencies": [
     "geometry_msgs:/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
@@ -84,6 +85,7 @@
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/FruitDepth.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Joystick.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/MotorCommand.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/FindObstacle.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl",

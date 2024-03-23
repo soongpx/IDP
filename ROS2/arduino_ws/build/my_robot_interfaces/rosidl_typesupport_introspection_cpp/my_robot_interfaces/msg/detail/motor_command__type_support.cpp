@@ -40,7 +40,7 @@ void MotorCommand_fini_function(void * message_memory)
 static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorCommand_message_member_array[7] = {
   {
     "left_speed",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -57,7 +57,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorCommand_
   },
   {
     "right_speed",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -74,7 +74,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorCommand_
   },
   {
     "rotate_speed",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -91,7 +91,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorCommand_
   },
   {
     "tilt_speed",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -108,7 +108,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorCommand_
   },
   {
     "extend_speed",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -125,7 +125,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorCommand_
   },
   {
     "vibrate_speed",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
@@ -142,7 +142,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember MotorCommand_
   },
   {
     "direction",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT32,  // type
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array

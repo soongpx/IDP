@@ -20,13 +20,13 @@ extern "C"
 /// Struct defined in msg/MotorCommand in the package my_robot_interfaces.
 typedef struct my_robot_interfaces__msg__MotorCommand
 {
-  int32_t left_speed;
-  int32_t right_speed;
-  int32_t rotate_speed;
-  int32_t tilt_speed;
-  int32_t extend_speed;
-  int32_t vibrate_speed;
-  int32_t direction;
+  uint8_t left_speed;
+  uint8_t right_speed;
+  uint8_t rotate_speed;
+  uint8_t tilt_speed;
+  uint8_t extend_speed;
+  uint8_t vibrate_speed;
+  uint8_t direction;
 } my_robot_interfaces__msg__MotorCommand;
 
 // Struct for a sequence of my_robot_interfaces__msg__MotorCommand.

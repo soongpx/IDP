@@ -71,6 +71,7 @@ CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/
 CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/FruitDepth.msg
 CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/Joystick.msg
 CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/MotorCommand.msg
+CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/FindObstacle.msg
 CMakeFiles/my_robot_interfaces: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 CMakeFiles/my_robot_interfaces: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 CMakeFiles/my_robot_interfaces: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl
