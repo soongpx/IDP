@@ -162,6 +162,15 @@ void ProcessTaskCode()
         {
           left_counter++;
         }
+      } else if (LeftSpeed > left_speed)
+      {
+        if (left_counter == 50)
+        {
+          LeftSpeed--;
+        } else
+        {
+          left_counter++;
+        }
       }
       if (left_speed == 0)
       {
@@ -173,6 +182,15 @@ void ProcessTaskCode()
         if (right_counter == 50)
         {
           RightSpeed++;
+        } else
+        {
+          right_counter++;
+        }
+      } else if (RightSpeed > right_speed)
+      {
+        if (right_counter == 50)
+        {
+          RightSpeed--;
         } else
         {
           right_counter++;

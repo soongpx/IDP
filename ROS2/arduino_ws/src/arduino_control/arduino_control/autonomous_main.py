@@ -33,6 +33,7 @@ class AutonomousNode(Node):
         self.increase_left_speed = 0
         self.increase_right_speed = 0
         self.increase_counter = 0
+        self.stop_counter1 = 0
 
     # Function to find nearest obstacle
     def find_obstacle(self, msg):
@@ -54,14 +55,19 @@ class AutonomousNode(Node):
         msg = MotorCommand()
         self.direction = 0
         if self.state == "Reaching tree":
+            self.stop_counter1 = 0
             if self.state1 == "Rotate":
                 self.rotate_to_face()
             elif self.state1 == "Forward":
                 self.move_forward()
                 print("Forward")
         elif self.state == "Rotate 90":
+            self.increase_left_speed = 0
+            self.increase_right_speed = 0
+            self.stop_counter = 0
             self.rotate_until_left_90_degrees()
-
+        elif self.state == "Speed Differential":
+            self.start_speed_differential()
 
         msg.left_speed = self.cap_255(self.left_speed)
         msg.right_speed = self.cap_255(self.right_speed)
@@ -71,12 +77,6 @@ class AutonomousNode(Node):
         msg.vibrate_speed = self.cap_255(self.vibrate_speed)
         msg.direction = self.cap_255(self.direction)
         self.publisher_.publish(msg)
-
-        # # Step 4: Rotate until centre of obstacle is at left 90 degree
-        # self.rotate_until_left_90_degrees()
-
-        # # Step 5: Start speed differential and maintain 50cm distance with obstacle
-        # self.start_speed_differential()
 
     # Function to rotate to face nearest obstacle at front
     def rotate_to_face(self):
@@ -107,20 +107,22 @@ class AutonomousNode(Node):
                 self.right_speed = 60
                 self.direction += 3
                 if self.nearest_angle1 > 0.2:
-                    if self.increase_counter == 100:
+                    if self.increase_counter >= 50:
+                        self.increase_counter = 0
                         self.increase_right_speed += 1
-                        self.right_speed += self.increase_right_speed
                     else:
                         self.increase_counter += 1
                 elif self.nearest_angle1 < -0.2:
-                    if self.increase_counter == 100:
+                    if self.increase_counter >= 50:
+                        self.increase_counter = 0
                         self.increase_left_speed += 1
-                        self.left_speed += self.increase_left_speed
                     else:
                         self.increase_counter += 1
                 else:
                     self.increase_left_speed = 0
                     self.increase_right_speed = 0
+                self.right_speed += self.increase_right_speed
+                self.left_speed += self.increase_left_speed
             else:
                 self.state = "Rotate 90"
                 self.state1 = "Rotate"
@@ -128,13 +130,41 @@ class AutonomousNode(Node):
     # Function to rotate until centre of obstacle is at left 90 degree
     def rotate_until_left_90_degrees(self):
         # Implement rotation until the centre of the obstacle is at left 90 degrees
-        
-        self.get_logger().info(("Rotating until centre of obstacle is at left 90 degrees"))
+        if (self.stop_counter1 <= 15):
+            self.left_speed = 0
+            self.right_speed = 0
+            self.stop_counter1 += 1
+        else:
+            if -1.67 < self.nearest_angle1 < -1.47:
+                self.state = "Speed Differential"
+            else:
+                self.left_speed = 60
+                self.right_speed = 60
+                self.direction += 2
+        # self.get_logger().info(("Rotating until centre of obstacle is at left 90 degrees"))
 
     # Function to start speed differential and maintain 50cm distance with obstacle
     def start_speed_differential(self):
         # Implement speed differential to maintain distance with the obstacle
-        print("Starting speed differential and maintaining 50cm distance with obstacle")
+        self.left_speed = 60
+        self.right_speed = 60 + 1
+        self.direction += 3
+        if self.nearest_distance1 < 0.3:
+            if self.increase_counter >= 10:
+                self.get_logger().info("Decreasing Speed")
+                self.increase_counter = 0
+                self.increase_right_speed -= 1
+            else:
+                self.increase_counter += 1
+        elif self.nearest_distance1 > 0.5:
+            self.get_logger().info("Increasing Speed")
+            if self.increase_counter >= 10:
+                self.increase_counter = 0
+                self.increase_right_speed += 1
+            else:
+                self.increase_counter += 1
+        self.right_speed += self.increase_right_speed
+        # self.get_logger().info("Starting speed differential and maintaining 50cm distance with obstacle")
 
 
 def main(args=None):
