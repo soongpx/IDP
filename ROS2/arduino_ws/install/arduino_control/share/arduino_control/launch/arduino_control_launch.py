@@ -11,6 +11,13 @@ def generate_launch_description():
         name='lidar'
     )
     ld.add_action(node1)
+    
+    node2 = Node(
+        package='arduino_control',
+        executable='joystick',
+        name='joystick'
+    )
+    ld.add_action(node2) 
 
     node3 = Node(
         package='arduino_control',
@@ -19,19 +26,19 @@ def generate_launch_description():
     )
     ld.add_action(TimerAction(period=5.0, actions=[node3])) 
 
-    node2 = Node(
+    node4 = Node(
         package='arduino_control',
         executable='autonomous_control',
         name='autonomous_control'
     )
-    ld.add_action(TimerAction(period=6.0, actions=[node2]))  # Add a 5-second delay before launching node2
+    ld.add_action(TimerAction(period=6.0, actions=[node4]))  # Add a 5-second delay before launching node2
 
-    node4 = Node(
+    node5 = Node(
         package='arduino_control',
         executable='locomotion_control',
         name='locomotion_control'
     )
-    ld.add_action(TimerAction(period=7.0, actions=[node4]))  # Add a 5-second delay before launching node4
+    ld.add_action(TimerAction(period=7.0, actions=[node5]))  # Add a 5-second delay before launching node4
 
     return ld
 

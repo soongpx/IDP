@@ -27,7 +27,7 @@ class FindObstacleNode(Node):
             filtered_angles = []
             filtered_distances = []
             for angle, distance in zip(self.angle, self.range):
-                if -2.7 < angle < 2.7:
+                if -2.3 < angle < 2.3:
                     filtered_angles.append(angle)
                     filtered_distances.append(distance)   
             msg.nearest_distance1 = min(filter(lambda x: x != 0, filtered_distances))
@@ -36,7 +36,7 @@ class FindObstacleNode(Node):
             msg.nearest_angle2 = 0.0
             for angle, distance in zip(filtered_angles, filtered_distances):
                 if distance != 0 and distance != msg.nearest_distance1:
-                    if abs(angle - msg.nearest_angle1) >= 1.57 and distance < msg.nearest_distance2:
+                    if abs(angle - msg.nearest_angle1) >= 1 and distance < msg.nearest_distance2:
                         msg.nearest_distance2 = distance
                         msg.nearest_angle2 = angle
 
