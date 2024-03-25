@@ -20,6 +20,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/Joystick.msg"
   "msg/MotorCommand.msg"
   "msg/FindObstacle.msg"
+  "msg/RealSense.msg"
   DEPENDENCIES geometry_msgs
   DEPENDENCIES std_msgs
  )

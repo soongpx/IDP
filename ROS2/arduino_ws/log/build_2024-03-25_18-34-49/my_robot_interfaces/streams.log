@@ -1,0 +1,55 @@
+[0.020s] Invoking command in '/home/px/arduino_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/my_robot_interfaces -- -j8 -l8
+[0.062s] -- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.286s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.297s] -- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)
+[0.346s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.350s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.359s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.378s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.403s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.593s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[0.953s] [31mCMake Error at /opt/ros/humble/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:59 (message):
+[0.953s]   execute_process(/usr/bin/python3 -m rosidl_adapter --package-name
+[0.953s]   my_robot_interfaces --arguments-file
+[0.953s]   /home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter__arguments__my_robot_interfaces.json
+[0.953s]   --output-dir
+[0.953s]   /home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces
+[0.953s]   --output-file
+[0.953s]   /home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces.idls)
+[0.953s]   returned error code 1:
+[0.954s] 
+[0.954s]   Error processing 'uint8[] R' of 'my_robot_interfaces/RealSense': ''R' is an
+[0.954s]   invalid field name.  It should have the pattern
+[0.954s]   '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$''
+[0.954s] 
+[0.954s]   Traceback (most recent call last):
+[0.954s] 
+[0.954s]     File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+[0.954s]       return _run_code(code, main_globals, None,
+[0.955s]     File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+[0.955s]       exec(code, run_globals)
+[0.955s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__main__.py", line 19, in <module>
+[0.955s]       sys.exit(main())
+[0.955s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/main.py", line 53, in main
+[0.955s]       abs_idl_file = convert_to_idl(
+[0.955s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl
+[0.955s]       return convert_msg_to_idl(
+[0.955s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl
+[0.955s]       msg = parse_message_string(package_name, input_file.stem, content)
+[0.955s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 519, in parse_message_string
+[0.956s]       fields.append(Field(
+[0.956s]     File "/opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_adapter/parser.py", line 354, in __init__
+[0.956s]       raise NameError(
+[0.956s] 
+[0.956s]   NameError: 'R' is an invalid field name.  It should have the pattern
+[0.956s]   '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$'
+[0.956s] 
+[0.956s] Call Stack (most recent call first):
+[0.956s]   /opt/ros/humble/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:130 (rosidl_adapt_interfaces)
+[0.956s]   CMakeLists.txt:16 (rosidl_generate_interfaces)
+[0.957s] 
+[0.957s] [0m
+[0.957s] -- Configuring incomplete, errors occurred!
+[0.957s] See also "/home/px/arduino_ws/build/my_robot_interfaces/CMakeFiles/CMakeOutput.log".
+[0.961s] gmake: *** [Makefile:1827: cmake_check_build_system] Error 1
+[0.964s] Invoked command in '/home/px/arduino_ws/build/my_robot_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/my_robot_interfaces -- -j8 -l8

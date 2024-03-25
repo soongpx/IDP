@@ -15,6 +15,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan_s.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/_motor_command.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_motor_command_s.c"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_real_sense.py"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_real_sense_s.c"
   "CMakeFiles/my_robot_interfaces__py"
 )
 

@@ -18,12 +18,16 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/my_robot_interfaces/msg/detail/motor_command__builder.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/detail/motor_command__struct.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/detail/motor_command__traits.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/msg/detail/real_sense__builder.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/msg/detail/real_sense__struct.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/msg/detail/real_sense__traits.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/find_obstacle.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/fruit_depth.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/joystick.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/laser_scan.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/motor_command.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/msg/real_sense.hpp"
 )
 
 # Per-language clean rules from dependency scanning.

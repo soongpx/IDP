@@ -83,6 +83,7 @@ rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__ro
 rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h: rosidl_adapter/my_robot_interfaces/msg/Joystick.idl
 rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h: rosidl_adapter/my_robot_interfaces/msg/MotorCommand.idl
 rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h: rosidl_adapter/my_robot_interfaces/msg/FindObstacle.idl
+rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h: rosidl_adapter/my_robot_interfaces/msg/RealSense.idl
 rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl
@@ -162,6 +163,9 @@ rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/motor_command_
 rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_introspection_c.h: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_introspection_c.h
 
+rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__rosidl_typesupport_introspection_c.h: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__rosidl_typesupport_introspection_c.h
+
 rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__type_support.c: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__type_support.c
 
@@ -179,6 +183,9 @@ rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/motor_command_
 
 rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c
+
+rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c
 
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__type_support.c.o: CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/flags.make
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__type_support.c.o: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__type_support.c
@@ -264,6 +271,20 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_ty
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/px/arduino_ws/build/my_robot_interfaces/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c -o CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c.s
 
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.o: CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/flags.make
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.o: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.o: CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/px/arduino_ws/build/my_robot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.o -MF CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.o.d -o CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.o -c /home/px/arduino_ws/build/my_robot_interfaces/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c
+
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/px/arduino_ws/build/my_robot_interfaces/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c > CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.i
+
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/px/arduino_ws/build/my_robot_interfaces/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c -o CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.s
+
 # Object files for target my_robot_interfaces__rosidl_typesupport_introspection_c
 my_robot_interfaces__rosidl_typesupport_introspection_c_OBJECTS = \
 "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__type_support.c.o" \
@@ -271,7 +292,8 @@ my_robot_interfaces__rosidl_typesupport_introspection_c_OBJECTS = \
 "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/fruit_depth__type_support.c.o" \
 "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/joystick__type_support.c.o" \
 "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/motor_command__type_support.c.o" \
-"CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c.o"
+"CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c.o" \
+"CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.o"
 
 # External object files for target my_robot_interfaces__rosidl_typesupport_introspection_c
 my_robot_interfaces__rosidl_typesupport_introspection_c_EXTERNAL_OBJECTS =
@@ -282,6 +304,7 @@ libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/my_rob
 libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/joystick__type_support.c.o
 libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/motor_command__type_support.c.o
 libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c.o
+libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c.o
 libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/build.make
 libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: libmy_robot_interfaces__rosidl_generator_c.so
 libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_introspection_c.so
@@ -294,7 +317,7 @@ libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: /opt/ros/humble/l
 libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: /opt/ros/humble/lib/librcutils.so
 libmy_robot_interfaces__rosidl_typesupport_introspection_c.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/px/arduino_ws/build/my_robot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C shared library libmy_robot_interfaces__rosidl_typesupport_introspection_c.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/px/arduino_ws/build/my_robot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking C shared library libmy_robot_interfaces__rosidl_typesupport_introspection_c.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -317,6 +340,8 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/depend: r
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__type_support.c
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_c.h
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/motor_command__type_support.c
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__rosidl_typesupport_introspection_c.h
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/depend: rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/real_sense__type_support.c
 	cd /home/px/arduino_ws/build/my_robot_interfaces && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/px/arduino_ws/src/my_robot_interfaces /home/px/arduino_ws/src/my_robot_interfaces /home/px/arduino_ws/build/my_robot_interfaces /home/px/arduino_ws/build/my_robot_interfaces /home/px/arduino_ws/build/my_robot_interfaces/CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/depend
 

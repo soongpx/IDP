@@ -10,3 +10,5 @@ msg/LidarScan.idl
 msg/LidarScan.msg
 msg/MotorCommand.idl
 msg/MotorCommand.msg
+msg/RealSense.idl
+msg/RealSense.msg

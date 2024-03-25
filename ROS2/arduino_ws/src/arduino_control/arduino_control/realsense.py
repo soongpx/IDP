@@ -9,13 +9,25 @@ class DepthPublisherNode(Node):
     def __init__(self):
         super().__init__('camera_depth_node')
         self.publisher = self.create_publisher(FruitDepth, 'Fruit_Depth', 10)
-        timer_period = 0.1  # seconds
+        timer_period = 0.4  # seconds
         self.timer = self.create_timer(timer_period, self.process_frames)
+        self.frame_height = 480
+        self.frame_width = 640
         self.pipe = rs.pipeline()
         self.cfg = rs.config()
-        self.cfg.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
-        self.cfg.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
-        self.pipe.start(self.cfg)
+        self.cfg.enable_stream(rs.stream.color, self.frame_width, self.frame_height, rs.format.bgr8, 30)
+        self.cfg.enable_stream(rs.stream.depth, self.frame_width, self.frame_height, rs.format.z16, 30)
+        self.cfg.enable_stream(rs.stream.accel, rs.format.motion_xyz32f, 100)  # Accelerometer data
+        self.cfg.enable_stream(rs.stream.gyro, rs.format.motion_xyz32f, 200) 
+        self.profile = self.pipe.start(self.cfg)
+        self.depth_sensor = self.profile.get_device().first_depth_sensor()
+        self.depth_scale = self.depth_sensor.get_depth_scale()
+        if self.depth_scale > 0:
+            self.get_logger().info("Camera opened successfully!")
+        self.clipping_distance_in_meters = 4  # 1 meter
+        self.clipping_distance = self.clipping_distance_in_meters / self.depth_scale
+        self.align_to = rs.stream.color
+        self.align = rs.align(self.align_to)
 
     def get_area_depth(self, depth_image):
         depth = 0
@@ -46,21 +58,7 @@ class DepthPublisherNode(Node):
         depth_image = np.asanyarray(depth_frame.get_data())
         color_image = np.asanyarray(color_frame.get_data())  # Add machine learning
 
-        depth_value = self.get_area_depth(depth_image)
-
-        if depth_value is not None:
-            depth_msg = FruitDepth()
-            depth_msg.detected = True
-            depth_msg.depth = depth_value
-            self.get_logger().info(f"{depth_value} mm is detected")
-            self.publisher.publish(depth_msg)
-        else:
-            depth_msg = FruitDepth()
-            depth_msg.detected = False
-            depth_msg.depth = float(0)
-            self.get_logger().warn("No frame is detected")
-            self.publisher.publish(depth_msg)
-
+        msg = FruitDepth()
         # depth_cm = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.5), cv2.COLORMAP_JET)
         # cv2.imshow('Color Image', color_image)
         # cv2.imshow('Depth Image', depth_cm)

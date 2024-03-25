@@ -264,8 +264,13 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_
   rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__functions.h \
   rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.h \
   rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__struct.h \
-  rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h
+  rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h \
+  rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__type_support.h \
+  rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__struct.h \
+  rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.h
 
+
+rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.h:
 
 rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__struct.h:
 
@@ -302,6 +307,8 @@ rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__type_support.h:
 /usr/include/x86_64-linux-gnu/bits/struct_stat.h:
 
 /usr/include/python3.10/cpython/bytesobject.h:
+
+rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__type_support.h:
 
 /usr/include/python3.10/cpython/odictobject.h:
 
@@ -434,6 +441,8 @@ rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__type_support.h:
 /usr/include/inttypes.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
+
+rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__struct.h:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
 

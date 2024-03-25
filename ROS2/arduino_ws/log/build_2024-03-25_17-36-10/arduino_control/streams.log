@@ -1,0 +1,35 @@
+[1.227s] Invoking command in '/home/px/arduino_ws/build/arduino_control': PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps symlink_data
+[1.796s] running develop
+[2.190s] running egg_info
+[2.190s] creating arduino_control.egg-info
+[2.191s] writing arduino_control.egg-info/PKG-INFO
+[2.191s] writing dependency_links to arduino_control.egg-info/dependency_links.txt
+[2.191s] writing entry points to arduino_control.egg-info/entry_points.txt
+[2.191s] writing requirements to arduino_control.egg-info/requires.txt
+[2.192s] writing top-level names to arduino_control.egg-info/top_level.txt
+[2.192s] writing manifest file 'arduino_control.egg-info/SOURCES.txt'
+[2.196s] reading manifest file 'arduino_control.egg-info/SOURCES.txt'
+[2.197s] writing manifest file 'arduino_control.egg-info/SOURCES.txt'
+[2.201s] running build_ext
+[2.201s] Creating /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino-control.egg-link (link to .)
+[2.203s] Installing autonomous_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.203s] Installing find_obstacle script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.203s] Installing joystick script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.203s] Installing joystick_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.203s] Installing lidar script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.203s] Installing locomotion_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.204s] Installing minimal_publisher script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.204s] Installing obstacle_avoidance script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.204s] Installing realsense script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.204s] 
+[2.204s] Installed /home/px/arduino_ws/build/arduino_control
+[2.205s] running symlink_data
+[2.205s] creating /home/px/arduino_ws/install/arduino_control/share/ament_index
+[2.205s] creating /home/px/arduino_ws/install/arduino_control/share/ament_index/resource_index
+[2.205s] creating /home/px/arduino_ws/install/arduino_control/share/ament_index/resource_index/packages
+[2.205s] symbolically linking /home/px/arduino_ws/build/arduino_control/resource/arduino_control -> /home/px/arduino_ws/install/arduino_control/share/ament_index/resource_index/packages
+[2.205s] symbolically linking /home/px/arduino_ws/build/arduino_control/package.xml -> /home/px/arduino_ws/install/arduino_control/share/arduino_control
+[2.206s] creating /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch
+[2.206s] symbolically linking /home/px/arduino_ws/build/arduino_control/launch/arduino_control_launch.py -> /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch
+[2.206s] symbolically linking /home/px/arduino_ws/build/arduino_control/launch/joystick_control_launch.py -> /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch
+[2.270s] Invoked command in '/home/px/arduino_ws/build/arduino_control' returned '0': PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps symlink_data

@@ -1,0 +1,33 @@
+running develop
+running egg_info
+creating arduino_control.egg-info
+writing arduino_control.egg-info/PKG-INFO
+writing dependency_links to arduino_control.egg-info/dependency_links.txt
+writing entry points to arduino_control.egg-info/entry_points.txt
+writing requirements to arduino_control.egg-info/requires.txt
+writing top-level names to arduino_control.egg-info/top_level.txt
+writing manifest file 'arduino_control.egg-info/SOURCES.txt'
+reading manifest file 'arduino_control.egg-info/SOURCES.txt'
+writing manifest file 'arduino_control.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino-control.egg-link (link to .)
+Installing autonomous_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing find_obstacle script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing joystick script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing joystick_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing lidar script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing locomotion_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing minimal_publisher script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing obstacle_avoidance script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+Installing realsense script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+
+Installed /home/px/arduino_ws/build/arduino_control
+running symlink_data
+creating /home/px/arduino_ws/install/arduino_control/share/ament_index
+creating /home/px/arduino_ws/install/arduino_control/share/ament_index/resource_index
+creating /home/px/arduino_ws/install/arduino_control/share/ament_index/resource_index/packages
+symbolically linking /home/px/arduino_ws/build/arduino_control/resource/arduino_control -> /home/px/arduino_ws/install/arduino_control/share/ament_index/resource_index/packages
+symbolically linking /home/px/arduino_ws/build/arduino_control/package.xml -> /home/px/arduino_ws/install/arduino_control/share/arduino_control
+creating /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch
+symbolically linking /home/px/arduino_ws/build/arduino_control/launch/arduino_control_launch.py -> /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch
+symbolically linking /home/px/arduino_ws/build/arduino_control/launch/joystick_control_launch.py -> /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch

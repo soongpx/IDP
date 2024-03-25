@@ -223,4 +223,7 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_
  /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__functions.h \
  /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.h \
  /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__struct.h \
- /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h \
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__type_support.h \
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__struct.h \
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.h

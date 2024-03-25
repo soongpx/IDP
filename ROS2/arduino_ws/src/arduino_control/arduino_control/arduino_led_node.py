@@ -25,7 +25,6 @@ class LocomotionControl(Node):
             # self.serial_port.close()
         except serial.SerialException as e:
             self.get_logger().error(f"Serial communication error: {e}")
-        self.init_serial_port()
 
         self.create_timer(0.01, self.send_data)
         self.motor_subscription = self.create_subscription(MotorCommand, 'motor_command', self.motor_command_callback, 10)

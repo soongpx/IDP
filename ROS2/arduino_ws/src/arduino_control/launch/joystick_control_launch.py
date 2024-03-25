@@ -34,6 +34,13 @@ def generate_launch_description():
     )
     ld.add_action(TimerAction(period=5.0, actions=[node4]))  # Add a 5-second delay before launching node4
 
+    node5 = Node(
+        package='arduino_control',
+        executable='locomotion_control',
+        name='locomotion_control'
+    )
+    ld.add_action(TimerAction(period=7.0, actions=[node5]))  # Add a 5-second delay before launching node4
+
     return ld
 
 

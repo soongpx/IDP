@@ -1,0 +1,577 @@
+[0.000000] (-) TimerEvent: {}
+[0.000430] (my_robot_interfaces) JobQueued: {'identifier': 'my_robot_interfaces', 'dependencies': OrderedDict()}
+[0.000658] (py_launch_example) JobQueued: {'identifier': 'py_launch_example', 'dependencies': OrderedDict()}
+[0.000690] (arduino_control) JobQueued: {'identifier': 'arduino_control', 'dependencies': OrderedDict([('my_robot_interfaces', '/home/px/arduino_ws/install/my_robot_interfaces')])}
+[0.000722] (my_robot_interfaces) JobStarted: {'identifier': 'my_robot_interfaces'}
+[0.010517] (py_launch_example) JobStarted: {'identifier': 'py_launch_example'}
+[0.023684] (my_robot_interfaces) JobProgress: {'identifier': 'my_robot_interfaces', 'progress': 'cmake'}
+[0.024112] (my_robot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '/home/px/arduino_ws/src/my_robot_interfaces', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/home/px/arduino_ws/install/my_robot_interfaces'], 'cwd': '/home/px/arduino_ws/build/my_robot_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'px'), ('LC_TIME', 'id_ID.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/px/arduino_ws/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/px'), ('CHROME_DESKTOP', 'code-url-handler.desktop'), ('OLDPWD', '/home/px'), ('TERM_PROGRAM_VERSION', '1.87.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'id_ID.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '1041'), ('SYSTEMD_EXEC_PID', '1417'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '21001'), ('PICO_TOOLCHAIN_PATH', '...'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/px/ydlidar_ros2_ws/install:/home/px/arduino_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'px'), ('JOURNAL_STREAM', '8:35909'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'px'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/opt/ros/humble/share/turtlebot3_gazebo/models:/opt/ros/humble/share/turtlebot3_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/Directory1:/home/px/.local/bin:/Directory1:/opt/ros/humble/bin:/home/px/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/px-SYSTEM-PRODUCT-NAME:@/tmp/.ICE-unix/1389,unix/px-SYSTEM-PRODUCT-NAME:/tmp/.ICE-unix/1389'), ('INVOCATION_ID', '2f30889f28d64d809bd4c2657a3e6ea7'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'id_ID.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('LC_TELEPHONE', 'id_ID.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-30cd8ca728.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('LC_NAME', 'id_ID.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'id_ID.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'id_ID.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/px/arduino_ws/build/my_robot_interfaces'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PICO_SDK_PATH', '/home/px/micro_ros_ws/src/pico-sdk'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/px/arduino_ws/build/py_launch_example:/home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages:/home/px/arduino_ws/build/arduino_control:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'id_ID.UTF-8'), ('LC_PAPER', 'id_ID.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble')]), 'shell': False}
+[0.099060] (-) TimerEvent: {}
+[0.171808] (my_robot_interfaces) StdoutLine: {'line': b'-- The C compiler identification is GNU 11.4.0\n'}
+[0.199255] (-) TimerEvent: {}
+[0.299719] (-) TimerEvent: {}
+[0.308874] (my_robot_interfaces) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 11.4.0\n'}
+[0.337799] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.399921] (-) TimerEvent: {}
+[0.479617] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.495273] (my_robot_interfaces) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.496212] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.497696] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.500012] (-) TimerEvent: {}
+[0.507066] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.600136] (-) TimerEvent: {}
+[0.652789] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.673208] (my_robot_interfaces) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.673983] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.675859] (my_robot_interfaces) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.683973] (my_robot_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.8 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.700298] (-) TimerEvent: {}
+[0.800819] (-) TimerEvent: {}
+[0.901239] (-) TimerEvent: {}
+[1.001629] (-) TimerEvent: {}
+[1.028878] (my_robot_interfaces) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter \n'}
+[1.101771] (-) TimerEvent: {}
+[1.146825] (my_robot_interfaces) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[1.201902] (-) TimerEvent: {}
+[1.214740] (my_robot_interfaces) StdoutLine: {'line': b'-- Found geometry_msgs: 4.2.3 (/opt/ros/humble/share/geometry_msgs/cmake)\n'}
+[1.296618] (my_robot_interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[1.302086] (-) TimerEvent: {}
+[1.306928] (my_robot_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[1.325220] (my_robot_interfaces) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[1.352805] (my_robot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.390895] (my_robot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.402289] (-) TimerEvent: {}
+[1.502790] (-) TimerEvent: {}
+[1.533799] (py_launch_example) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/px/arduino_ws/build/py_launch_example/build', '--no-deps', 'symlink_data'], 'cwd': '/home/px/arduino_ws/build/py_launch_example', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'px', 'LC_TIME': 'id_ID.UTF-8', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/px/arduino_ws/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/px', 'CHROME_DESKTOP': 'code-url-handler.desktop', 'OLDPWD': '/home/px', 'TERM_PROGRAM_VERSION': '1.87.2', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'id_ID.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '1041', 'SYSTEMD_EXEC_PID': '1417', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '21001', 'PICO_TOOLCHAIN_PATH': '...', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/px/ydlidar_ros2_ws/install:/home/px/arduino_ws/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'px', 'JOURNAL_STREAM': '8:35909', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'px', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': ':/opt/ros/humble/share/turtlebot3_gazebo/models:/opt/ros/humble/share/turtlebot3_gazebo/models', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/Directory1:/home/px/.local/bin:/Directory1:/opt/ros/humble/bin:/home/px/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/px-SYSTEM-PRODUCT-NAME:@/tmp/.ICE-unix/1389,unix/px-SYSTEM-PRODUCT-NAME:/tmp/.ICE-unix/1389', 'INVOCATION_ID': '2f30889f28d64d809bd4c2657a3e6ea7', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'id_ID.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Unity', 'LC_TELEPHONE': 'id_ID.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-30cd8ca728.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/opt/ros/humble', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/bin/bash', 'LC_NAME': 'id_ID.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'id_ID.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'id_ID.UTF-8', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/px/arduino_ws/build/py_launch_example', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'PICO_SDK_PATH': '/home/px/micro_ros_ws/src/pico-sdk', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/px/arduino_ws/build/py_launch_example/prefix_override:/home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages:/home/px/arduino_ws/build/py_launch_example:/home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages:/home/px/arduino_ws/build/arduino_control:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'id_ID.UTF-8', 'LC_PAPER': 'id_ID.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver'}, 'shell': False}
+[1.602908] (-) TimerEvent: {}
+[1.621464] (my_robot_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[1.703024] (-) TimerEvent: {}
+[1.803416] (-) TimerEvent: {}
+[1.904465] (-) TimerEvent: {}
+[2.004843] (-) TimerEvent: {}
+[2.105393] (-) TimerEvent: {}
+[2.131989] (py_launch_example) StdoutLine: {'line': b'running develop\n'}
+[2.205547] (-) TimerEvent: {}
+[2.306016] (-) TimerEvent: {}
+[2.348159] (my_robot_interfaces) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[2.406154] (-) TimerEvent: {}
+[2.506560] (-) TimerEvent: {}
+[2.581492] (py_launch_example) StdoutLine: {'line': b'running egg_info\n'}
+[2.581728] (py_launch_example) StdoutLine: {'line': b'creating py_launch_example.egg-info\n'}
+[2.581925] (py_launch_example) StdoutLine: {'line': b'writing py_launch_example.egg-info/PKG-INFO\n'}
+[2.582080] (py_launch_example) StdoutLine: {'line': b'writing dependency_links to py_launch_example.egg-info/dependency_links.txt\n'}
+[2.582233] (py_launch_example) StdoutLine: {'line': b'writing entry points to py_launch_example.egg-info/entry_points.txt\n'}
+[2.582456] (py_launch_example) StdoutLine: {'line': b'writing requirements to py_launch_example.egg-info/requires.txt\n'}
+[2.582630] (py_launch_example) StdoutLine: {'line': b'writing top-level names to py_launch_example.egg-info/top_level.txt\n'}
+[2.582874] (py_launch_example) StdoutLine: {'line': b"writing manifest file 'py_launch_example.egg-info/SOURCES.txt'\n"}
+[2.585421] (py_launch_example) StdoutLine: {'line': b"reading manifest file 'py_launch_example.egg-info/SOURCES.txt'\n"}
+[2.586315] (py_launch_example) StdoutLine: {'line': b"writing manifest file 'py_launch_example.egg-info/SOURCES.txt'\n"}
+[2.588420] (py_launch_example) StdoutLine: {'line': b'running build_ext\n'}
+[2.588647] (py_launch_example) StdoutLine: {'line': b'Creating /home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages/py-launch-example.egg-link (link to .)\n'}
+[2.589683] (py_launch_example) StdoutLine: {'line': b'\n'}
+[2.589855] (py_launch_example) StdoutLine: {'line': b'Installed /home/px/arduino_ws/build/py_launch_example\n'}
+[2.589961] (py_launch_example) StdoutLine: {'line': b'running symlink_data\n'}
+[2.590125] (py_launch_example) StdoutLine: {'line': b'creating /home/px/arduino_ws/install/py_launch_example/share/ament_index\n'}
+[2.590246] (py_launch_example) StdoutLine: {'line': b'creating /home/px/arduino_ws/install/py_launch_example/share/ament_index/resource_index\n'}
+[2.590333] (py_launch_example) StdoutLine: {'line': b'creating /home/px/arduino_ws/install/py_launch_example/share/ament_index/resource_index/packages\n'}
+[2.590421] (py_launch_example) StdoutLine: {'line': b'symbolically linking /home/px/arduino_ws/build/py_launch_example/resource/py_launch_example -> /home/px/arduino_ws/install/py_launch_example/share/ament_index/resource_index/packages\n'}
+[2.590519] (py_launch_example) StdoutLine: {'line': b'symbolically linking /home/px/arduino_ws/build/py_launch_example/package.xml -> /home/px/arduino_ws/install/py_launch_example/share/py_launch_example\n'}
+[2.590710] (py_launch_example) StdoutLine: {'line': b'creating /home/px/arduino_ws/install/py_launch_example/share/py_launch_example/launch\n'}
+[2.590806] (py_launch_example) StdoutLine: {'line': b'symbolically linking /home/px/arduino_ws/build/py_launch_example/launch/my_script_launch.py -> /home/px/arduino_ws/install/py_launch_example/share/py_launch_example/launch\n'}
+[2.606678] (-) TimerEvent: {}
+[2.640676] (py_launch_example) CommandEnded: {'returncode': 0}
+[2.662164] (py_launch_example) JobEnded: {'identifier': 'py_launch_example', 'rc': 0}
+[2.706814] (-) TimerEvent: {}
+[2.807289] (-) TimerEvent: {}
+[2.907772] (-) TimerEvent: {}
+[3.008442] (-) TimerEvent: {}
+[3.108848] (-) TimerEvent: {}
+[3.185498] (my_robot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[3.208985] (-) TimerEvent: {}
+[3.309473] (-) TimerEvent: {}
+[3.409930] (-) TimerEvent: {}
+[3.510387] (-) TimerEvent: {}
+[3.516432] (my_robot_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[3.561313] (my_robot_interfaces) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") \n'}
+[3.565275] (my_robot_interfaces) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[3.610496] (-) TimerEvent: {}
+[3.612330] (my_robot_interfaces) StdoutLine: {'line': b'-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") \n'}
+[3.612550] (my_robot_interfaces) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[3.612657] (my_robot_interfaces) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[3.612752] (my_robot_interfaces) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/x86_64-linux-gnu/libpython3.10.so\n'}
+[3.652228] (my_robot_interfaces) StdoutLine: {'line': b'-- Found PythonExtra: .so  \n'}
+[3.710642] (-) TimerEvent: {}
+[3.764287] (my_robot_interfaces) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.12.10 (/opt/ros/humble/share/ament_lint_auto/cmake)\n'}
+[3.803845] (my_robot_interfaces) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[3.805812] (my_robot_interfaces) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[3.810766] (-) TimerEvent: {}
+[3.811828] (my_robot_interfaces) StdoutLine: {'line': b'-- Configuring done\n'}
+[3.878740] (my_robot_interfaces) StdoutLine: {'line': b'-- Generating done\n'}
+[3.882395] (my_robot_interfaces) StdoutLine: {'line': b'-- Build files have been written to: /home/px/arduino_ws/build/my_robot_interfaces\n'}
+[3.896191] (my_robot_interfaces) CommandEnded: {'returncode': 0}
+[3.897199] (my_robot_interfaces) JobProgress: {'identifier': 'my_robot_interfaces', 'progress': 'build'}
+[3.898590] (my_robot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/px/arduino_ws/build/my_robot_interfaces', '--', '-j8', '-l8'], 'cwd': '/home/px/arduino_ws/build/my_robot_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'px'), ('LC_TIME', 'id_ID.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/px/arduino_ws/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/px'), ('CHROME_DESKTOP', 'code-url-handler.desktop'), ('OLDPWD', '/home/px'), ('TERM_PROGRAM_VERSION', '1.87.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'id_ID.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '1041'), ('SYSTEMD_EXEC_PID', '1417'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '21001'), ('PICO_TOOLCHAIN_PATH', '...'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/px/ydlidar_ros2_ws/install:/home/px/arduino_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'px'), ('JOURNAL_STREAM', '8:35909'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'px'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/opt/ros/humble/share/turtlebot3_gazebo/models:/opt/ros/humble/share/turtlebot3_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/Directory1:/home/px/.local/bin:/Directory1:/opt/ros/humble/bin:/home/px/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/px-SYSTEM-PRODUCT-NAME:@/tmp/.ICE-unix/1389,unix/px-SYSTEM-PRODUCT-NAME:/tmp/.ICE-unix/1389'), ('INVOCATION_ID', '2f30889f28d64d809bd4c2657a3e6ea7'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'id_ID.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('LC_TELEPHONE', 'id_ID.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-30cd8ca728.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('LC_NAME', 'id_ID.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'id_ID.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'id_ID.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/px/arduino_ws/build/my_robot_interfaces'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PICO_SDK_PATH', '/home/px/micro_ros_ws/src/pico-sdk'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/px/arduino_ws/build/py_launch_example:/home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages:/home/px/arduino_ws/build/arduino_control:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'id_ID.UTF-8'), ('LC_PAPER', 'id_ID.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble')]), 'shell': False}
+[3.910919] (-) TimerEvent: {}
+[3.968368] (my_robot_interfaces) StdoutLine: {'line': b'[  1%] \x1b[34m\x1b[1mGenerating C code for ROS interfaces\x1b[0m\n'}
+[3.984897] (my_robot_interfaces) StdoutLine: {'line': b'[  2%] \x1b[34m\x1b[1mGenerating C++ code for ROS interfaces\x1b[0m\n'}
+[3.999708] (my_robot_interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_symlink_my_robot_interfaces\n'}
+[4.011043] (-) TimerEvent: {}
+[4.111397] (-) TimerEvent: {}
+[4.211856] (-) TimerEvent: {}
+[4.312257] (-) TimerEvent: {}
+[4.412606] (-) TimerEvent: {}
+[4.464765] (my_robot_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[4.465421] (my_robot_interfaces) StdoutLine: {'line': b'creating my_robot_interfaces.egg-info\n'}
+[4.465776] (my_robot_interfaces) StdoutLine: {'line': b'writing my_robot_interfaces.egg-info/PKG-INFO\n'}
+[4.466131] (my_robot_interfaces) StdoutLine: {'line': b'writing dependency_links to my_robot_interfaces.egg-info/dependency_links.txt\n'}
+[4.466353] (my_robot_interfaces) StdoutLine: {'line': b'writing top-level names to my_robot_interfaces.egg-info/top_level.txt\n'}
+[4.466659] (my_robot_interfaces) StdoutLine: {'line': b"writing manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'\n"}
+[4.469731] (my_robot_interfaces) StdoutLine: {'line': b"reading manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'\n"}
+[4.470785] (my_robot_interfaces) StdoutLine: {'line': b"writing manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'\n"}
+[4.508411] (my_robot_interfaces) StdoutLine: {'line': b'[  2%] Built target ament_cmake_python_build_my_robot_interfaces_egg\n'}
+[4.512711] (-) TimerEvent: {}
+[4.613086] (-) TimerEvent: {}
+[4.713518] (-) TimerEvent: {}
+[4.813951] (-) TimerEvent: {}
+[4.914355] (-) TimerEvent: {}
+[5.014812] (-) TimerEvent: {}
+[5.102916] (my_robot_interfaces) StdoutLine: {'line': b'[  2%] Built target my_robot_interfaces__cpp\n'}
+[5.114955] (-) TimerEvent: {}
+[5.125942] (my_robot_interfaces) StdoutLine: {'line': b'[  4%] \x1b[34m\x1b[1mGenerating C++ type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.131121] (my_robot_interfaces) StdoutLine: {'line': b'[  5%] \x1b[34m\x1b[1mGenerating C++ type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.189003] (my_robot_interfaces) StdoutLine: {'line': b'[  7%] \x1b[34m\x1b[1mGenerating C++ introspection for ROS interfaces\x1b[0m\n'}
+[5.215083] (-) TimerEvent: {}
+[5.216572] (my_robot_interfaces) StdoutLine: {'line': b'[  8%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/lidar_scan__functions.c.o\x1b[0m\n'}
+[5.217286] (my_robot_interfaces) StdoutLine: {'line': b'[  9%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__functions.c.o\x1b[0m\n'}
+[5.217707] (my_robot_interfaces) StdoutLine: {'line': b'[ 11%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/laser_scan__functions.c.o\x1b[0m\n'}
+[5.219348] (my_robot_interfaces) StdoutLine: {'line': b'[ 12%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/fruit_depth__functions.c.o\x1b[0m\n'}
+[5.223862] (my_robot_interfaces) StdoutLine: {'line': b'[ 14%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/joystick__functions.c.o\x1b[0m\n'}
+[5.315216] (-) TimerEvent: {}
+[5.349758] (my_robot_interfaces) StdoutLine: {'line': b'[ 15%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.c.o\x1b[0m\n'}
+[5.415338] (-) TimerEvent: {}
+[5.452842] (my_robot_interfaces) StdoutLine: {'line': b'[ 16%] \x1b[32m\x1b[1mLinking C shared library libmy_robot_interfaces__rosidl_generator_c.so\x1b[0m\n'}
+[5.511965] (my_robot_interfaces) StdoutLine: {'line': b'[ 16%] Built target my_robot_interfaces__rosidl_generator_c\n'}
+[5.515419] (-) TimerEvent: {}
+[5.531718] (my_robot_interfaces) StdoutLine: {'line': b'[ 18%] \x1b[34m\x1b[1mGenerating C type support for eProsima Fast-RTPS\x1b[0m\n'}
+[5.534152] (my_robot_interfaces) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C introspection for ROS interfaces\x1b[0m\n'}
+[5.534420] (my_robot_interfaces) StdoutLine: {'line': b'[ 21%] \x1b[34m\x1b[1mGenerating C type support dispatch for ROS interfaces\x1b[0m\n'}
+[5.615551] (-) TimerEvent: {}
+[5.716453] (-) TimerEvent: {}
+[5.816937] (-) TimerEvent: {}
+[5.917950] (-) TimerEvent: {}
+[6.018825] (-) TimerEvent: {}
+[6.119675] (-) TimerEvent: {}
+[6.220220] (-) TimerEvent: {}
+[6.241771] (my_robot_interfaces) StdoutLine: {'line': b'[ 22%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/my_robot_interfaces/msg/detail/lidar_scan__type_support.cpp.o\x1b[0m\n'}
+[6.287801] (my_robot_interfaces) StdoutLine: {'line': b'[ 23%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/my_robot_interfaces/msg/detail/laser_scan__type_support.cpp.o\x1b[0m\n'}
+[6.293457] (my_robot_interfaces) StdoutLine: {'line': b'[ 25%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/my_robot_interfaces/msg/detail/fruit_depth__type_support.cpp.o\x1b[0m\n'}
+[6.320340] (-) TimerEvent: {}
+[6.331601] (my_robot_interfaces) StdoutLine: {'line': b'[ 26%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/lidar_scan__type_support.cpp.o\x1b[0m\n'}
+[6.420465] (-) TimerEvent: {}
+[6.521216] (-) TimerEvent: {}
+[6.600760] (my_robot_interfaces) StdoutLine: {'line': b'[ 28%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp.o\x1b[0m\n'}
+[6.621347] (-) TimerEvent: {}
+[6.721821] (-) TimerEvent: {}
+[6.822306] (-) TimerEvent: {}
+[6.922806] (-) TimerEvent: {}
+[7.023290] (-) TimerEvent: {}
+[7.123770] (-) TimerEvent: {}
+[7.126445] (my_robot_interfaces) StdoutLine: {'line': b'[ 29%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/my_robot_interfaces/msg/lidar_scan__type_support.cpp.o\x1b[0m\n'}
+[7.210036] (my_robot_interfaces) StdoutLine: {'line': b'[ 30%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/my_robot_interfaces/msg/laser_scan__type_support.cpp.o\x1b[0m\n'}
+[7.223932] (-) TimerEvent: {}
+[7.311977] (my_robot_interfaces) StdoutLine: {'line': b'[ 32%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/laser_scan__type_support.cpp.o\x1b[0m\n'}
+[7.313048] (my_robot_interfaces) StdoutLine: {'line': b'[ 33%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/my_robot_interfaces/msg/fruit_depth__type_support.cpp.o\x1b[0m\n'}
+[7.324085] (-) TimerEvent: {}
+[7.393211] (my_robot_interfaces) StdoutLine: {'line': b'[ 35%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/my_robot_interfaces/msg/joystick__type_support.cpp.o\x1b[0m\n'}
+[7.393741] (my_robot_interfaces) StdoutLine: {'line': b'[ 36%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/my_robot_interfaces/msg/detail/joystick__type_support.cpp.o\x1b[0m\n'}
+[7.408091] (my_robot_interfaces) StdoutLine: {'line': b'[ 38%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/lidar_scan__type_support.c.o\x1b[0m\n'}
+[7.422570] (my_robot_interfaces) StdoutLine: {'line': b'[ 39%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/fruit_depth__type_support.cpp.o\x1b[0m\n'}
+[7.424180] (-) TimerEvent: {}
+[7.445123] (my_robot_interfaces) StdoutLine: {'line': b'[ 40%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/my_robot_interfaces/msg/detail/motor_command__type_support.cpp.o\x1b[0m\n'}
+[7.465303] (my_robot_interfaces) StdoutLine: {'line': b'[ 42%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/my_robot_interfaces/msg/detail/lidar_scan__type_support_c.cpp.o\x1b[0m\n'}
+[7.472784] (my_robot_interfaces) StdoutLine: {'line': b'[ 43%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/my_robot_interfaces/msg/motor_command__type_support.cpp.o\x1b[0m\n'}
+[7.505263] (my_robot_interfaces) StdoutLine: {'line': b'[ 45%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/laser_scan__type_support.c.o\x1b[0m\n'}
+[7.524349] (-) TimerEvent: {}
+[7.533723] (my_robot_interfaces) StdoutLine: {'line': b'[ 46%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/laser_scan__type_support.cpp.o\x1b[0m\n'}
+[7.545420] (my_robot_interfaces) StdoutLine: {'line': b'[ 47%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/my_robot_interfaces/msg/find_obstacle__type_support.cpp.o\x1b[0m\n'}
+[7.610697] (my_robot_interfaces) StdoutLine: {'line': b'[ 49%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/fruit_depth__type_support.c.o\x1b[0m\n'}
+[7.616835] (my_robot_interfaces) StdoutLine: {'line': b'[ 50%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_c.so\x1b[0m\n'}
+[7.624478] (-) TimerEvent: {}
+[7.705574] (my_robot_interfaces) StdoutLine: {'line': b'[ 52%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/joystick__type_support.c.o\x1b[0m\n'}
+[7.723257] (my_robot_interfaces) StdoutLine: {'line': b'[ 52%] Built target my_robot_interfaces__rosidl_typesupport_c\n'}
+[7.724589] (-) TimerEvent: {}
+[7.744024] (my_robot_interfaces) StdoutLine: {'line': b'[ 53%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/my_robot_interfaces/msg/detail/laser_scan__type_support_c.cpp.o\x1b[0m\n'}
+[7.824755] (-) TimerEvent: {}
+[7.843196] (my_robot_interfaces) StdoutLine: {'line': b'[ 54%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/motor_command__type_support.c.o\x1b[0m\n'}
+[7.924903] (-) TimerEvent: {}
+[7.926209] (my_robot_interfaces) StdoutLine: {'line': b'[ 56%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c.o\x1b[0m\n'}
+[8.000311] (my_robot_interfaces) StdoutLine: {'line': b'[ 57%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/my_robot_interfaces/msg/detail/fruit_depth__type_support_c.cpp.o\x1b[0m\n'}
+[8.004393] (my_robot_interfaces) StdoutLine: {'line': b'[ 59%] \x1b[32m\x1b[1mLinking C shared library libmy_robot_interfaces__rosidl_typesupport_introspection_c.so\x1b[0m\n'}
+[8.025052] (-) TimerEvent: {}
+[8.107178] (my_robot_interfaces) StdoutLine: {'line': b'[ 59%] Built target my_robot_interfaces__rosidl_typesupport_introspection_c\n'}
+[8.125211] (-) TimerEvent: {}
+[8.128950] (my_robot_interfaces) StdoutLine: {'line': b'[ 60%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/my_robot_interfaces/msg/detail/joystick__type_support_c.cpp.o\x1b[0m\n'}
+[8.133260] (my_robot_interfaces) StdoutLine: {'line': b'[ 61%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/joystick__type_support.cpp.o\x1b[0m\n'}
+[8.225371] (-) TimerEvent: {}
+[8.325902] (-) TimerEvent: {}
+[8.353572] (my_robot_interfaces) StdoutLine: {'line': b'[ 63%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/my_robot_interfaces/msg/detail/motor_command__type_support_c.cpp.o\x1b[0m\n'}
+[8.426231] (-) TimerEvent: {}
+[8.433687] (my_robot_interfaces) StdoutLine: {'line': b'[ 64%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/my_robot_interfaces/msg/detail/find_obstacle__type_support.cpp.o\x1b[0m\n'}
+[8.526382] (-) TimerEvent: {}
+[8.556630] (my_robot_interfaces) StdoutLine: {'line': b'[ 66%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/my_robot_interfaces/msg/detail/find_obstacle__type_support_c.cpp.o\x1b[0m\n'}
+[8.626534] (-) TimerEvent: {}
+[8.683259] (my_robot_interfaces) StdoutLine: {'line': b'[ 67%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/fruit_depth__type_support.cpp.o\x1b[0m\n'}
+[8.690346] (my_robot_interfaces) StdoutLine: {'line': b'[ 69%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/joystick__type_support.cpp.o\x1b[0m\n'}
+[8.726662] (-) TimerEvent: {}
+[8.827599] (-) TimerEvent: {}
+[8.876753] (my_robot_interfaces) StdoutLine: {'line': b'[ 70%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/motor_command__type_support.cpp.o\x1b[0m\n'}
+[8.898637] (my_robot_interfaces) StdoutLine: {'line': b'[ 71%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/motor_command__type_support.cpp.o\x1b[0m\n'}
+[8.927747] (-) TimerEvent: {}
+[9.028746] (-) TimerEvent: {}
+[9.043897] (my_robot_interfaces) StdoutLine: {'line': b'[ 73%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/find_obstacle__type_support.cpp.o\x1b[0m\n'}
+[9.128901] (-) TimerEvent: {}
+[9.229985] (-) TimerEvent: {}
+[9.272838] (my_robot_interfaces) StdoutLine: {'line': b'[ 74%] \x1b[32mBuilding CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/find_obstacle__type_support.cpp.o\x1b[0m\n'}
+[9.330129] (-) TimerEvent: {}
+[9.427442] (my_robot_interfaces) StdoutLine: {'line': b'[ 76%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_fastrtps_c.so\x1b[0m\n'}
+[9.430474] (-) TimerEvent: {}
+[9.460434] (my_robot_interfaces) StdoutLine: {'line': b'[ 77%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_introspection_cpp.so\x1b[0m\n'}
+[9.532947] (-) TimerEvent: {}
+[9.619612] (my_robot_interfaces) StdoutLine: {'line': b'[ 77%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[9.633154] (-) TimerEvent: {}
+[9.681059] (my_robot_interfaces) StdoutLine: {'line': b'[ 77%] Built target my_robot_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[9.733303] (-) TimerEvent: {}
+[9.833878] (-) TimerEvent: {}
+[9.934266] (-) TimerEvent: {}
+[9.957298] (my_robot_interfaces) StdoutLine: {'line': b'[ 78%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_cpp.so\x1b[0m\n'}
+[9.980436] (my_robot_interfaces) StdoutLine: {'line': b'[ 80%] \x1b[32m\x1b[1mLinking CXX shared library libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so\x1b[0m\n'}
+[10.025741] (my_robot_interfaces) StdoutLine: {'line': b'[ 80%] Built target my_robot_interfaces__rosidl_typesupport_cpp\n'}
+[10.034475] (-) TimerEvent: {}
+[10.114681] (my_robot_interfaces) StdoutLine: {'line': b'[ 80%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[10.134627] (-) TimerEvent: {}
+[10.146134] (my_robot_interfaces) StdoutLine: {'line': b'[ 80%] Built target my_robot_interfaces\n'}
+[10.180930] (my_robot_interfaces) StdoutLine: {'line': b'[ 81%] \x1b[34m\x1b[1mGenerating Python code for ROS interfaces\x1b[0m\n'}
+[10.234778] (-) TimerEvent: {}
+[10.335152] (-) TimerEvent: {}
+[10.435668] (-) TimerEvent: {}
+[10.536203] (-) TimerEvent: {}
+[10.636667] (-) TimerEvent: {}
+[10.737110] (-) TimerEvent: {}
+[10.837595] (-) TimerEvent: {}
+[10.938074] (-) TimerEvent: {}
+[11.038517] (-) TimerEvent: {}
+[11.138952] (-) TimerEvent: {}
+[11.239322] (-) TimerEvent: {}
+[11.339694] (-) TimerEvent: {}
+[11.440295] (-) TimerEvent: {}
+[11.540692] (-) TimerEvent: {}
+[11.641224] (-) TimerEvent: {}
+[11.741692] (-) TimerEvent: {}
+[11.842043] (-) TimerEvent: {}
+[11.942387] (-) TimerEvent: {}
+[12.042769] (-) TimerEvent: {}
+[12.065626] (my_robot_interfaces) StdoutLine: {'line': b'[ 81%] Built target my_robot_interfaces__py\n'}
+[12.100451] (my_robot_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_laser_scan_s.c.o\x1b[0m\n'}
+[12.100844] (my_robot_interfaces) StdoutLine: {'line': b'[ 84%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan_s.c.o\x1b[0m\n'}
+[12.104535] (my_robot_interfaces) StdoutLine: {'line': b'[ 85%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth_s.c.o\x1b[0m\n'}
+[12.105000] (my_robot_interfaces) StdoutLine: {'line': b'[ 87%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_joystick_s.c.o\x1b[0m\n'}
+[12.105996] (my_robot_interfaces) StdoutLine: {'line': b'[ 88%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_find_obstacle_s.c.o\x1b[0m\n'}
+[12.107235] (my_robot_interfaces) StdoutLine: {'line': b'[ 90%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_generator_py.dir/rosidl_generator_py/my_robot_interfaces/msg/_motor_command_s.c.o\x1b[0m\n'}
+[12.142908] (-) TimerEvent: {}
+[12.243842] (-) TimerEvent: {}
+[12.344296] (-) TimerEvent: {}
+[12.401743] (my_robot_interfaces) StdoutLine: {'line': b'[ 91%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/my_robot_interfaces/libmy_robot_interfaces__rosidl_generator_py.so\x1b[0m\n'}
+[12.444428] (-) TimerEvent: {}
+[12.479462] (my_robot_interfaces) StdoutLine: {'line': b'[ 91%] Built target my_robot_interfaces__rosidl_generator_py\n'}
+[12.535235] (my_robot_interfaces) StdoutLine: {'line': b'[ 92%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o\x1b[0m\n'}
+[12.535668] (my_robot_interfaces) StdoutLine: {'line': b'[ 94%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_c.c.o\x1b[0m\n'}
+[12.541128] (my_robot_interfaces) StdoutLine: {'line': b'[ 95%] \x1b[32mBuilding C object CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o\x1b[0m\n'}
+[12.544583] (-) TimerEvent: {}
+[12.645077] (-) TimerEvent: {}
+[12.730146] (my_robot_interfaces) StdoutLine: {'line': b'[ 97%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[12.731035] (my_robot_interfaces) StdoutLine: {'line': b'[ 98%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[12.731735] (my_robot_interfaces) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking C shared library rosidl_generator_py/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\x1b[0m\n'}
+[12.745180] (-) TimerEvent: {}
+[12.792958] (my_robot_interfaces) StdoutLine: {'line': b'[100%] Built target my_robot_interfaces__rosidl_typesupport_c__pyext\n'}
+[12.795859] (my_robot_interfaces) StdoutLine: {'line': b'[100%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[12.796216] (my_robot_interfaces) StdoutLine: {'line': b'[100%] Built target my_robot_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[12.813395] (my_robot_interfaces) CommandEnded: {'returncode': 0}
+[12.845313] (-) TimerEvent: {}
+[12.945720] (-) TimerEvent: {}
+[13.046113] (-) TimerEvent: {}
+[13.052237] (my_robot_interfaces) JobProgress: {'identifier': 'my_robot_interfaces', 'progress': 'install'}
+[13.067836] (my_robot_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/px/arduino_ws/build/my_robot_interfaces'], 'cwd': '/home/px/arduino_ws/build/my_robot_interfaces', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'px'), ('LC_TIME', 'id_ID.UTF-8'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/px/arduino_ws/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/px'), ('CHROME_DESKTOP', 'code-url-handler.desktop'), ('OLDPWD', '/home/px'), ('TERM_PROGRAM_VERSION', '1.87.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/usr/share/applications/code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('LC_MONETARY', 'id_ID.UTF-8'), ('VSCODE_GIT_ASKPASS_NODE', '/usr/share/code/code'), ('MANAGERPID', '1041'), ('SYSTEMD_EXEC_PID', '1417'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '21001'), ('PICO_TOOLCHAIN_PATH', '...'), ('IM_CONFIG_PHASE', '1'), ('COLCON_PREFIX_PATH', '/home/px/ydlidar_ros2_ws/install:/home/px/arduino_ws/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'px'), ('JOURNAL_STREAM', '8:35909'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'px'), ('TERM', 'xterm-256color'), ('GAZEBO_MODEL_PATH', ':/opt/ros/humble/share/turtlebot3_gazebo/models:/opt/ros/humble/share/turtlebot3_gazebo/models'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/Directory1:/home/px/.local/bin:/Directory1:/opt/ros/humble/bin:/home/px/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin'), ('SESSION_MANAGER', 'local/px-SYSTEM-PRODUCT-NAME:@/tmp/.ICE-unix/1389,unix/px-SYSTEM-PRODUCT-NAME:/tmp/.ICE-unix/1389'), ('INVOCATION_ID', '2f30889f28d64d809bd4c2657a3e6ea7'), ('XDG_MENU_PREFIX', 'gnome-'), ('LC_ADDRESS', 'id_ID.UTF-8'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('GDK_BACKEND', 'x11'), ('DISPLAY', ':0'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('LC_TELEPHONE', 'id_ID.UTF-8'), ('RMW_IMPLEMENTATION', 'rmw_cyclonedds_cpp'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/1000/vscode-git-30cd8ca728.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('ROS_DOMAIN_ID', '0'), ('AMENT_PREFIX_PATH', '/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/opt/ros/humble'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('LC_NAME', 'id_ID.UTF-8'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('LC_MEASUREMENT', 'id_ID.UTF-8'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('LC_IDENTIFICATION', 'id_ID.UTF-8'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/px/arduino_ws/build/my_robot_interfaces'), ('TURTLEBOT3_MODEL', 'waffle'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('PICO_SDK_PATH', '/home/px/micro_ros_ws/src/pico-sdk'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/px/arduino_ws/build/py_launch_example:/home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages:/home/px/arduino_ws/build/arduino_control:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('LC_NUMERIC', 'id_ID.UTF-8'), ('LC_PAPER', 'id_ID.UTF-8'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble')]), 'shell': False}
+[13.081659] (my_robot_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[13.082655] (my_robot_interfaces) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[13.083220] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/ament_index/resource_index/rosidl_interfaces/my_robot_interfaces\n'}
+[13.097945] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__functions.h\n'}
+[13.110816] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__struct.h\n'}
+[13.124290] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__type_support.h\n'}
+[13.136440] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__functions.h\n'}
+[13.146321] (-) TimerEvent: {}
+[13.148791] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__struct.h\n'}
+[13.164323] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__type_support.h\n'}
+[13.178787] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__functions.h\n'}
+[13.192808] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__struct.h\n'}
+[13.206341] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__type_support.h\n'}
+[13.220985] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__functions.h\n'}
+[13.235687] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__struct.h\n'}
+[13.246453] (-) TimerEvent: {}
+[13.248578] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__type_support.h\n'}
+[13.263414] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__functions.h\n'}
+[13.278403] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__struct.h\n'}
+[13.292974] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__type_support.h\n'}
+[13.306323] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__functions.h\n'}
+[13.320226] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__struct.h\n'}
+[13.333216] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__type_support.h\n'}
+[13.346002] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/find_obstacle.h\n'}
+[13.346550] (-) TimerEvent: {}
+[13.361366] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/fruit_depth.h\n'}
+[13.375393] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/joystick.h\n'}
+[13.389472] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/laser_scan.h\n'}
+[13.403256] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/lidar_scan.h\n'}
+[13.416925] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/motor_command.h\n'}
+[13.430516] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[13.445056] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.sh\n'}
+[13.446632] (-) TimerEvent: {}
+[13.459586] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.dsv\n'}
+[13.475736] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_fastrtps_c.h\n'}
+[13.489994] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__rosidl_typesupport_fastrtps_c.h\n'}
+[13.504093] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__rosidl_typesupport_fastrtps_c.h\n'}
+[13.517847] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__rosidl_typesupport_fastrtps_c.h\n'}
+[13.531543] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_fastrtps_c.h\n'}
+[13.544275] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_c.h\n'}
+[13.546730] (-) TimerEvent: {}
+[13.558414] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[13.573902] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__builder.hpp\n'}
+[13.588417] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__struct.hpp\n'}
+[13.602329] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__traits.hpp\n'}
+[13.615956] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__builder.hpp\n'}
+[13.628786] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__struct.hpp\n'}
+[13.641764] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__traits.hpp\n'}
+[13.646847] (-) TimerEvent: {}
+[13.654919] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__builder.hpp\n'}
+[13.669719] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__struct.hpp\n'}
+[13.684502] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__traits.hpp\n'}
+[13.698686] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__builder.hpp\n'}
+[13.712250] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__struct.hpp\n'}
+[13.725299] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__traits.hpp\n'}
+[13.738264] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__builder.hpp\n'}
+[13.747015] (-) TimerEvent: {}
+[13.750939] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__struct.hpp\n'}
+[13.766915] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__traits.hpp\n'}
+[13.782400] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__builder.hpp\n'}
+[13.795816] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__struct.hpp\n'}
+[13.808685] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__traits.hpp\n'}
+[13.821254] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/find_obstacle.hpp\n'}
+[13.834167] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/fruit_depth.hpp\n'}
+[13.846968] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/joystick.hpp\n'}
+[13.847189] (-) TimerEvent: {}
+[13.861609] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/laser_scan.hpp\n'}
+[13.874914] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/lidar_scan.hpp\n'}
+[13.888890] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/motor_command.hpp\n'}
+[13.903956] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[13.917462] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[13.930292] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[13.943668] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[13.947353] (-) TimerEvent: {}
+[13.963828] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[13.977270] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[13.991402] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[14.006901] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_introspection_c.h\n'}
+[14.021644] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__rosidl_typesupport_introspection_c.h\n'}
+[14.038583] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__rosidl_typesupport_introspection_c.h\n'}
+[14.047500] (-) TimerEvent: {}
+[14.053931] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__rosidl_typesupport_introspection_c.h\n'}
+[14.070172] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h\n'}
+[14.086039] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_c.h\n'}
+[14.101487] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[14.117724] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_introspection_cpp.hpp\n'}
+[14.131979] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__rosidl_typesupport_introspection_cpp.hpp\n'}
+[14.145743] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__rosidl_typesupport_introspection_cpp.hpp\n'}
+[14.147664] (-) TimerEvent: {}
+[14.159811] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__rosidl_typesupport_introspection_cpp.hpp\n'}
+[14.174999] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_cpp.hpp\n'}
+[14.190219] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_cpp.hpp\n'}
+[14.205242] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.sh\n'}
+[14.219790] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.dsv\n'}
+[14.234232] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/PKG-INFO\n'}
+[14.247245] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt\n'}
+[14.247790] (-) TimerEvent: {}
+[14.261559] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt\n'}
+[14.275494] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/top_level.txt\n'}
+[14.290628] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/__init__.py\n'}
+[14.305075] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[14.317979] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[14.330797] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[14.343965] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/libmy_robot_interfaces__rosidl_generator_py.so\n'}
+[14.347900] (-) TimerEvent: {}
+[14.357526] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/__init__.py\n'}
+[14.373649] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_find_obstacle.py\n'}
+[14.387805] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_find_obstacle_s.c\n'}
+[14.401386] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_fruit_depth.py\n'}
+[14.414506] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_fruit_depth_s.c\n'}
+[14.428014] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_joystick.py\n'}
+[14.440374] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_joystick_s.c\n'}
+[14.448016] (-) TimerEvent: {}
+[14.453361] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_laser_scan.py\n'}
+[14.468223] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_laser_scan_s.c\n'}
+[14.482457] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_lidar_scan.py\n'}
+[14.497185] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_lidar_scan_s.c\n'}
+[14.511005] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_motor_command.py\n'}
+[14.524680] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_motor_command_s.c\n'}
+[14.537324] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[14.548203] (-) TimerEvent: {}
+[14.550035] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[14.563553] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[14.577999] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so\n'}
+[14.578443] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so\n'}
+[14.579052] (my_robot_interfaces) StdoutLine: {'line': b'-- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so\n'}
+[14.579552] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/LidarScan.idl\n'}
+[14.594102] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/LaserScan.idl\n'}
+[14.607449] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/FruitDepth.idl\n'}
+[14.620805] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/Joystick.idl\n'}
+[14.634104] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorCommand.idl\n'}
+[14.646959] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/FindObstacle.idl\n'}
+[14.648295] (-) TimerEvent: {}
+[14.660977] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/LidarScan.msg\n'}
+[14.674466] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/LaserScan.msg\n'}
+[14.688139] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/FruitDepth.msg\n'}
+[14.701592] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/Joystick.msg\n'}
+[14.715062] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorCommand.msg\n'}
+[14.728164] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/FindObstacle.msg\n'}
+[14.741077] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/ament_index/resource_index/package_run_dependencies/my_robot_interfaces\n'}
+[14.748497] (-) TimerEvent: {}
+[14.754581] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/ament_index/resource_index/parent_prefix_path/my_robot_interfaces\n'}
+[14.768902] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.sh\n'}
+[14.784076] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.dsv\n'}
+[14.797596] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.sh\n'}
+[14.810664] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.dsv\n'}
+[14.824204] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.bash\n'}
+[14.837431] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.sh\n'}
+[14.848704] (-) TimerEvent: {}
+[14.849919] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.zsh\n'}
+[14.864006] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.dsv\n'}
+[14.878470] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.dsv\n'}
+[14.892908] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/ament_index/resource_index/packages/my_robot_interfaces\n'}
+[14.907332] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[14.921478] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[14.934672] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[14.947808] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[14.948796] (-) TimerEvent: {}
+[14.962414] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[14.976717] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[14.991874] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[15.005700] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig.cmake\n'}
+[15.019312] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig-version.cmake\n'}
+[15.032304] (my_robot_interfaces) StdoutLine: {'line': b'-- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.xml\n'}
+[15.044423] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_c.so\n'}
+[15.044888] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_c.so" to ""\n'}
+[15.045105] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[15.045322] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_c.so" to ""\n'}
+[15.045476] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[15.046026] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""\n'}
+[15.046168] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[15.046562] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_c.so" to ""\n'}
+[15.046725] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_c.so\n'}
+[15.047054] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_c.so" to ""\n'}
+[15.047194] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[15.047742] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_cpp.so" to ""\n'}
+[15.047882] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_cpp.so\n'}
+[15.048209] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_cpp.so" to ""\n'}
+[15.048888] (-) TimerEvent: {}
+[15.118286] (my_robot_interfaces) StdoutLine: {'line': b"Listing '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces'...\n"}
+[15.118526] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/__init__.py'...\n"}
+[15.118645] (my_robot_interfaces) StdoutLine: {'line': b"Listing '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg'...\n"}
+[15.118733] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/__init__.py'...\n"}
+[15.118817] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_find_obstacle.py'...\n"}
+[15.118899] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_fruit_depth.py'...\n"}
+[15.118983] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_joystick.py'...\n"}
+[15.119063] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_laser_scan.py'...\n"}
+[15.119144] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_lidar_scan.py'...\n"}
+[15.119224] (my_robot_interfaces) StdoutLine: {'line': b"Compiling '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_motor_command.py'...\n"}
+[15.124986] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_py.so\n'}
+[15.125494] (my_robot_interfaces) StdoutLine: {'line': b'-- Set runtime path of "/home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_py.so" to ""\n'}
+[15.125739] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport.cmake\n'}
+[15.125887] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[15.126027] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[15.126170] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[15.126267] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cppExport.cmake\n'}
+[15.126385] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[15.126507] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[15.126771] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[15.126947] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[15.127126] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[15.127276] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[15.127434] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[15.127576] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[15.127710] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[15.127832] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[15.127995] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport.cmake\n'}
+[15.128230] (my_robot_interfaces) StdoutLine: {'line': b'-- Installing: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[15.131047] (my_robot_interfaces) CommandEnded: {'returncode': 0}
+[15.149098] (-) TimerEvent: {}
+[15.249408] (-) TimerEvent: {}
+[15.349735] (-) TimerEvent: {}
+[15.396238] (my_robot_interfaces) JobEnded: {'identifier': 'my_robot_interfaces', 'rc': 0}
+[15.397068] (arduino_control) JobStarted: {'identifier': 'arduino_control'}
+[15.449950] (-) TimerEvent: {}
+[15.550392] (-) TimerEvent: {}
+[15.650793] (-) TimerEvent: {}
+[15.751207] (-) TimerEvent: {}
+[15.851578] (-) TimerEvent: {}
+[15.951955] (-) TimerEvent: {}
+[16.052395] (-) TimerEvent: {}
+[16.152896] (-) TimerEvent: {}
+[16.253331] (-) TimerEvent: {}
+[16.353742] (-) TimerEvent: {}
+[16.454173] (-) TimerEvent: {}
+[16.554621] (-) TimerEvent: {}
+[16.622247] (arduino_control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/px/arduino_ws/build/arduino_control/build', '--no-deps', 'symlink_data'], 'cwd': '/home/px/arduino_ws/build/arduino_control', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'px', 'LC_TIME': 'id_ID.UTF-8', 'XDG_SESSION_TYPE': 'x11', 'GIT_ASKPASS': '/usr/share/code/resources/app/extensions/git/dist/askpass.sh', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/px/arduino_ws/install/my_robot_interfaces/lib:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/px', 'CHROME_DESKTOP': 'code-url-handler.desktop', 'OLDPWD': '/home/px', 'TERM_PROGRAM_VERSION': '1.87.2', 'DESKTOP_SESSION': 'ubuntu', 'GIO_LAUNCHED_DESKTOP_FILE': '/usr/share/applications/code.desktop', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'VSCODE_GIT_ASKPASS_MAIN': '/usr/share/code/resources/app/extensions/git/dist/askpass-main.js', 'LC_MONETARY': 'id_ID.UTF-8', 'VSCODE_GIT_ASKPASS_NODE': '/usr/share/code/code', 'MANAGERPID': '1041', 'SYSTEMD_EXEC_PID': '1417', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '21001', 'PICO_TOOLCHAIN_PATH': '...', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/px/ydlidar_ros2_ws/install:/home/px/arduino_ws/install', 'ROS_DISTRO': 'humble', 'GTK_IM_MODULE': 'ibus', 'LOGNAME': 'px', 'JOURNAL_STREAM': '8:35909', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'px', 'TERM': 'xterm-256color', 'GAZEBO_MODEL_PATH': ':/opt/ros/humble/share/turtlebot3_gazebo/models:/opt/ros/humble/share/turtlebot3_gazebo/models', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/Directory1:/home/px/.local/bin:/Directory1:/opt/ros/humble/bin:/home/px/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/px-SYSTEM-PRODUCT-NAME:@/tmp/.ICE-unix/1389,unix/px-SYSTEM-PRODUCT-NAME:/tmp/.ICE-unix/1389', 'INVOCATION_ID': '2f30889f28d64d809bd4c2657a3e6ea7', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'id_ID.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'GDK_BACKEND': 'x11', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Unity', 'LC_TELEPHONE': 'id_ID.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1000/vscode-git-30cd8ca728.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver:/opt/ros/humble', 'ORIGINAL_XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'SHELL': '/bin/bash', 'LC_NAME': 'id_ID.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'id_ID.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'LC_IDENTIFICATION': 'id_ID.UTF-8', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/px/arduino_ws/build/arduino_control', 'TURTLEBOT3_MODEL': 'waffle', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'PICO_SDK_PATH': '/home/px/micro_ros_ws/src/pico-sdk', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:/home/px/arduino_ws/build/py_launch_example:/home/px/arduino_ws/install/py_launch_example/lib/python3.10/site-packages:/home/px/arduino_ws/build/arduino_control:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'id_ID.UTF-8', 'LC_PAPER': 'id_ID.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/home/px/arduino_ws/install/my_robot_interfaces:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver'}, 'shell': False}
+[16.654735] (-) TimerEvent: {}
+[16.755154] (-) TimerEvent: {}
+[16.855558] (-) TimerEvent: {}
+[16.955962] (-) TimerEvent: {}
+[17.056470] (-) TimerEvent: {}
+[17.156912] (-) TimerEvent: {}
+[17.192634] (arduino_control) StdoutLine: {'line': b'running develop\n'}
+[17.257029] (-) TimerEvent: {}
+[17.357475] (-) TimerEvent: {}
+[17.457923] (-) TimerEvent: {}
+[17.558322] (-) TimerEvent: {}
+[17.586912] (arduino_control) StdoutLine: {'line': b'running egg_info\n'}
+[17.587257] (arduino_control) StdoutLine: {'line': b'creating arduino_control.egg-info\n'}
+[17.587538] (arduino_control) StdoutLine: {'line': b'writing arduino_control.egg-info/PKG-INFO\n'}
+[17.587801] (arduino_control) StdoutLine: {'line': b'writing dependency_links to arduino_control.egg-info/dependency_links.txt\n'}
+[17.588035] (arduino_control) StdoutLine: {'line': b'writing entry points to arduino_control.egg-info/entry_points.txt\n'}
+[17.588345] (arduino_control) StdoutLine: {'line': b'writing requirements to arduino_control.egg-info/requires.txt\n'}
+[17.588550] (arduino_control) StdoutLine: {'line': b'writing top-level names to arduino_control.egg-info/top_level.txt\n'}
+[17.588935] (arduino_control) StdoutLine: {'line': b"writing manifest file 'arduino_control.egg-info/SOURCES.txt'\n"}
+[17.592556] (arduino_control) StdoutLine: {'line': b"reading manifest file 'arduino_control.egg-info/SOURCES.txt'\n"}
+[17.593779] (arduino_control) StdoutLine: {'line': b"writing manifest file 'arduino_control.egg-info/SOURCES.txt'\n"}
+[17.597431] (arduino_control) StdoutLine: {'line': b'running build_ext\n'}
+[17.597947] (arduino_control) StdoutLine: {'line': b'Creating /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino-control.egg-link (link to .)\n'}
+[17.599578] (arduino_control) StdoutLine: {'line': b'Installing autonomous_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control\n'}
+[17.599812] (arduino_control) StdoutLine: {'line': b'Installing find_obstacle script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control\n'}
+[17.599962] (arduino_control) StdoutLine: {'line': b'Installing joystick script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control\n'}
+[17.600110] (arduino_control) StdoutLine: {'line': b'Installing joystick_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control\n'}
+[17.600246] (arduino_control) StdoutLine: {'line': b'Installing lidar script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control\n'}
+[17.600394] (arduino_control) StdoutLine: {'line': b'Installing locomotion_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control\n'}
+[17.600550] (arduino_control) StdoutLine: {'line': b'Installing minimal_publisher script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control\n'}
+[17.600755] (arduino_control) StdoutLine: {'line': b'Installing obstacle_avoidance script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control\n'}
+[17.600979] (arduino_control) StdoutLine: {'line': b'Installing realsense script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control\n'}
+[17.601197] (arduino_control) StdoutLine: {'line': b'\n'}
+[17.601373] (arduino_control) StdoutLine: {'line': b'Installed /home/px/arduino_ws/build/arduino_control\n'}
+[17.601569] (arduino_control) StdoutLine: {'line': b'running symlink_data\n'}
+[17.601800] (arduino_control) StdoutLine: {'line': b'creating /home/px/arduino_ws/install/arduino_control/share/ament_index\n'}
+[17.601932] (arduino_control) StdoutLine: {'line': b'creating /home/px/arduino_ws/install/arduino_control/share/ament_index/resource_index\n'}
+[17.602039] (arduino_control) StdoutLine: {'line': b'creating /home/px/arduino_ws/install/arduino_control/share/ament_index/resource_index/packages\n'}
+[17.602164] (arduino_control) StdoutLine: {'line': b'symbolically linking /home/px/arduino_ws/build/arduino_control/resource/arduino_control -> /home/px/arduino_ws/install/arduino_control/share/ament_index/resource_index/packages\n'}
+[17.602337] (arduino_control) StdoutLine: {'line': b'symbolically linking /home/px/arduino_ws/build/arduino_control/package.xml -> /home/px/arduino_ws/install/arduino_control/share/arduino_control\n'}
+[17.602567] (arduino_control) StdoutLine: {'line': b'creating /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch\n'}
+[17.602687] (arduino_control) StdoutLine: {'line': b'symbolically linking /home/px/arduino_ws/build/arduino_control/launch/arduino_control_launch.py -> /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch\n'}
+[17.602789] (arduino_control) StdoutLine: {'line': b'symbolically linking /home/px/arduino_ws/build/arduino_control/launch/joystick_control_launch.py -> /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch\n'}
+[17.658517] (-) TimerEvent: {}
+[17.665510] (arduino_control) CommandEnded: {'returncode': 0}
+[17.681197] (arduino_control) JobEnded: {'identifier': 'arduino_control', 'rc': 0}
+[17.682580] (-) EventReactorShutdown: {}
