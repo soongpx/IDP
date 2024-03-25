@@ -2,6 +2,7 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import TimerAction
 
+
 def generate_launch_description():
     ld = LaunchDescription()
 
@@ -17,7 +18,7 @@ def generate_launch_description():
         executable='joystick',
         name='joystick'
     )
-    ld.add_action(node3) 
+    ld.add_action(node3)
 
     node2 = Node(
         package='arduino_control',
@@ -34,6 +35,7 @@ def generate_launch_description():
     ld.add_action(TimerAction(period=5.0, actions=[node4]))  # Add a 5-second delay before launching node4
 
     return ld
+
 
 if __name__ == "__main__":
     generate_launch_description()

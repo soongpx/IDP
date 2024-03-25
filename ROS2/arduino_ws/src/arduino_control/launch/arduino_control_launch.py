@@ -2,6 +2,7 @@ from launch import LaunchDescription
 from launch_ros.actions import Node
 from launch.actions import TimerAction
 
+
 def generate_launch_description():
     ld = LaunchDescription()
 
@@ -11,20 +12,20 @@ def generate_launch_description():
         name='lidar'
     )
     ld.add_action(node1)
-    
+
     node2 = Node(
         package='arduino_control',
         executable='joystick',
         name='joystick'
     )
-    ld.add_action(node2) 
+    ld.add_action(node2)
 
     node3 = Node(
         package='arduino_control',
         executable='find_obstacle',
         name='find_obstacle'
     )
-    ld.add_action(TimerAction(period=5.0, actions=[node3])) 
+    ld.add_action(TimerAction(period=5.0, actions=[node3]))
 
     node4 = Node(
         package='arduino_control',
@@ -41,6 +42,7 @@ def generate_launch_description():
     ld.add_action(TimerAction(period=7.0, actions=[node5]))  # Add a 5-second delay before launching node4
 
     return ld
+
 
 if __name__ == "__main__":
     generate_launch_description()

@@ -2,7 +2,7 @@ import rclpy
 from rclpy.node import Node
 from my_robot_interfaces.msg import LidarScan
 from my_robot_interfaces.msg import LaserScan
-import numpy as np
+
 
 class ObstacleAvoidanceNode(Node):
     def __init__(self):
@@ -12,11 +12,11 @@ class ObstacleAvoidanceNode(Node):
         self.timer = self.create_timer(timer_period, self.process_lidar_scan)
         self.detected = False
         self.subscription = self.create_subscription(LaserScan, 'laser_scan', self.connect_lidar, 10)
-        self.subscription 
+        self.subscription
         self.range = []
         self.angle = []
         self.sub = False
-        
+
     def connect_lidar(self, msg):
         self.range = msg.ranges
         self.angle = msg.angles
@@ -34,13 +34,13 @@ class ObstacleAvoidanceNode(Node):
                     self.detected = True
                     scan_msg.angle.append(a)
                     scan_msg.range.append(r)
-            if self.detected == True:
+            if self.detected:
                 scan_msg.detected = True
             else:
                 scan_msg.detected = False
                 scan_msg.angle = []
                 scan_msg.range = []
-                    
+
             self.publisher.publish(scan_msg)
             self.sub = False
         else:
@@ -52,13 +52,14 @@ class ObstacleAvoidanceNode(Node):
         self.laser.disconnecting()
         self.destroy_node()
         rclpy.shutdown()
-        
+
 
 def main(args=None):
     rclpy.init(args=args)
     lidar_controller_node = ObstacleAvoidanceNode()
     rclpy.spin(lidar_controller_node)
     lidar_controller_node.stop()
+
 
 if __name__ == "__main__":
     main()

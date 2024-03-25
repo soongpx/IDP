@@ -3,6 +3,7 @@ from rclpy.node import Node
 from my_robot_interfaces.msg import MotorCommand
 from std_msgs.msg import Int32
 
+
 class MinimalPublisher(Node):
     def __init__(self):
         super().__init__('minimal_publisher')

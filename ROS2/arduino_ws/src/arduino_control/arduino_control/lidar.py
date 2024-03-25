@@ -4,6 +4,7 @@ from rclpy.node import Node
 from my_robot_interfaces.msg import LaserScan
 import time
 
+
 class LidarControllerNode(Node):
     def __init__(self):
         super().__init__('lidar_node')
@@ -19,7 +20,7 @@ class LidarControllerNode(Node):
                 if self.laser is None:
                     self.laser = ydlidar.CYdLidar()
                     ydlidar.os_init()
-                
+
                 ports = ydlidar.lidarPortList()
 
                 if not ports:
@@ -27,7 +28,7 @@ class LidarControllerNode(Node):
                     time.sleep(1)  # Wait before retrying
                     continue
 
-                port = list(ports.values())[-1]  # Select the last available port
+                # port = list(ports.values())[-1]  # Select the last available port
                 port = '/dev/ttyUSB0'
                 self.get_logger().info("Using port: %s" % port)
 
@@ -51,7 +52,7 @@ class LidarControllerNode(Node):
                     self.get_logger().error("Failed to initialize the lidar.")
             except Exception as e:
                 self.get_logger().error("Error connecting lidar: %s" % str(e))
-            
+
             # Wait before retrying
             time.sleep(1)
             self.laser = None
@@ -67,8 +68,8 @@ class LidarControllerNode(Node):
             if self.laser.doProcessSimple(scan):
                 scan_msg.header.frame_id = "laser_frame"
                 scan_msg.header.stamp = self.get_clock().now().to_msg()
-                scan_msg.angle_min = -180.0/180 * self.pi
-                scan_msg.angle_max = 180.0/180 * self.pi
+                scan_msg.angle_min = -180.0 / 180 * self.pi
+                scan_msg.angle_max = 180.0 / 180 * self.pi
                 scan_msg.angle_increment = scan.config.angle_increment
                 scan_msg.time_increment = scan.config.time_increment
                 scan_msg.scan_time = scan.config.scan_time
@@ -76,12 +77,12 @@ class LidarControllerNode(Node):
                 scan_msg.range_max = 12.0
 
                 for point in scan.points:
-                    if point.range < scan_msg.range_min and point.range > scan_msg.range_max:
+                    if scan_msg.range_min > point.range > scan_msg.range_max:
                         point.range = 0
                     scan_msg.angles.append(point.angle)
                     scan_msg.ranges.append(point.range)
                     scan_msg.intensities.append(point.intensity)
-                    
+
                 # Publish the LaserScan message
                 self.publisher.publish(scan_msg)
             else:
@@ -99,14 +100,16 @@ class LidarControllerNode(Node):
     def mapping_angle_to_360(self, angle):
         return (angle + self.pi) * (180 / self.pi)
 
+
 def main(args=None):
     rclpy.init(args=args)
     lidar_controller_node = LidarControllerNode()
 
     if lidar_controller_node.connect_lidar():
         rclpy.spin(lidar_controller_node)
-    
+
     lidar_controller_node.stop()
+
 
 if __name__ == "__main__":
     main()

@@ -3,6 +3,7 @@ from rclpy.node import Node
 from my_robot_interfaces.msg import Joystick
 import pygame
 
+
 class NintendoSwitchControllerPublisher(Node):
     def __init__(self):
         super().__init__('joystick_node')
@@ -19,7 +20,7 @@ class NintendoSwitchControllerPublisher(Node):
         msg.axes = []
         msg.axes_name = []
         msg.button = []
-        
+
         if not self.done:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -70,7 +71,7 @@ class NintendoSwitchControllerPublisher(Node):
                             msg.button.append('Start')
                             self.joysticks[self.joystick_connected].rumble(0, 0.7, 500)
                         self.get_logger().info(msg.button[-1])
-                
+
                 hats = self.joysticks[self.joystick_connected].get_numhats()
                 for i in range(hats):
                     hat = self.joysticks[self.joystick_connected].get_hat(i)
@@ -92,7 +93,7 @@ class NintendoSwitchControllerPublisher(Node):
                     axis = self.joysticks[self.joystick_connected].get_axis(i)
                     axis = self.limit_axis(axis)
                     if abs(axis) > 0:
-                        msg.axes.append(axis)  
+                        msg.axes.append(axis)
                         if i == 0:
                             msg.axes_name.append('LX')
                         if i == 1:
@@ -105,13 +106,13 @@ class NintendoSwitchControllerPublisher(Node):
                         self.get_logger().info(msg.axes_name[-1])
 
             self.publisher_.publish(msg)
-    
+
     def limit_axis(self, axis):
         if abs(axis) < 0.05:
             return 0
         else:
             return axis
-        
+
     def __del__(self):
         self.done = True
         self.destroy_node()

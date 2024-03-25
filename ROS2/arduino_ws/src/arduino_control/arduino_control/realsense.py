@@ -1,9 +1,9 @@
 import pyrealsense2 as rs
 import numpy as np
-import cv2
 import rclpy
 from rclpy.node import Node
 from my_robot_interfaces.msg import FruitDepth
+
 
 class DepthPublisherNode(Node):
     def __init__(self):
@@ -27,7 +27,7 @@ class DepthPublisherNode(Node):
                 depth += depth_image[y, x]
                 num += 1
 
-        if num > num_coord*0.2 and num > 0:
+        if num > num_coord * 0.2 and num > 0:
             return depth / num
         else:
             return None
@@ -44,7 +44,7 @@ class DepthPublisherNode(Node):
         color_frame = frames.get_color_frame()
 
         depth_image = np.asanyarray(depth_frame.get_data())
-        color_image = np.asanyarray(color_frame.get_data()) # Add machine learning
+        color_image = np.asanyarray(color_frame.get_data())  # Add machine learning
 
         depth_value = self.get_area_depth(depth_image)
 
@@ -54,13 +54,12 @@ class DepthPublisherNode(Node):
             depth_msg.depth = depth_value
             self.get_logger().info(f"{depth_value} mm is detected")
             self.publisher.publish(depth_msg)
-        else: 
+        else:
             depth_msg = FruitDepth()
             depth_msg.detected = False
             depth_msg.depth = float(0)
             self.get_logger().warn("No frame is detected")
             self.publisher.publish(depth_msg)
-
 
         # depth_cm = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.5), cv2.COLORMAP_JET)
         # cv2.imshow('Color Image', color_image)
