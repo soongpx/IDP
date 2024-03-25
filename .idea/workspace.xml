@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2835285a-a570-4779-b269-2df4135385be" name="Changes" comment="">
+    <list default="true" id="2835285a-a570-4779-b269-2df4135385be" name="Changes" comment="Code Rearrange">
+      <change afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/my_robot_interfaces/msg/RealSense.msg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/arduino_led_node.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/arduino_led_node.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/autonomous_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/autonomous_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/joystick.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/joystick.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/joystick_control.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/joystick_control.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/lidar.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/lidar.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/obstacle_avoidance.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/obstacle_avoidance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/publisher.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/publisher.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/realsense.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/realsense.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/launch/arduino_control_launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/launch/arduino_control_launch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/launch/joystick_control_launch.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/launch/joystick_control_launch.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ML/detection/detected_frame.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ML/detection/detected_frame.jpg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +29,11 @@
     "last_opened_file_path": "C:/Users/ASUS/Documents/GitHub/GUI/REC_Medical_Bot_Robofun"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ASUS\Documents\GitHub\IDP\ROS2\arduino_ws\src\arduino_control\arduino_control" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -46,6 +43,14 @@
       <option name="presentableId" value="Default" />
       <updated>1710947491659</updated>
     </task>
+    <task id="LOCAL-00001" summary="Code Rearrange">
+      <created>1711345989879</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711345989879</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -58,5 +63,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Code Rearrange" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Rearrange" />
   </component>
 </project>
