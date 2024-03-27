@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from my_robot_interfaces.msg import FindObstacle, LaserScan, Joystick, MotorCommand
+from my_robot_interfaces.msg import FindObstacle, LaserScan, Joystick, MotorCommand, FruitDepth
 
 
 class AutonomousNode(Node):
@@ -8,24 +8,44 @@ class AutonomousNode(Node):
     def __init__(self):
 
         super().__init__('AutonomousNode')
-        self.lidar_subscription = self.create_subscription(FindObstacle, 'find_obstacle', self.find_obstacle, 10)
-        self.lidar_subscription
+        
+        # Declare subscription
+        self.obstacle_subscription = self.create_subscription(FindObstacle, 'find_obstacle', self.find_obstacle, 10)
+        self.obstacle_subscription
         self.lidar_subscription = self.create_subscription(LaserScan, 'laser_scan', self.laser_scan, 10)
         self.lidar_subscription
-        self.lidar_subscription = self.create_subscription(Joystick, 'joystick', self.joystick_control, 10)
-        self.lidar_subscription
+        self.joystick_subscription = self.create_subscription(Joystick, 'joystick', self.joystick_control, 10)
+        self.joystick_subscription
+        self.fruit_subscription = self.create_subscription(FruitDepth, 'fruit_depth',)
+        self.fruit_subscription
+        
+        # Declare publisher
         self.publisher_ = self.create_publisher(MotorCommand, 'motor_command', 10)
         self.timer = self.create_timer(0.01, self.timer_callback)
+        
+        # Variables for find_obstacle
         self.nearest_distance1 = 0
         self.nearest_angle1 = 0
         self.nearest_distance2 = 0
         self.nearest_angle2 = 0
         self.reach = False
+        
+        # Variables for lidar
         self.range = []
         self.angle = []
+        
+        # Variables for joystick
         self.buttons = []
         self.axes = []
         self.axes_name = []
+        
+        # Variables for fruit depth
+        self.fruit_detected = False
+        self.palm_oil_num = 0
+        self.pitch_direction = 0
+        self.yaw_direction = 0
+        
+        # Variables for motor command
         self.left_speed = 0
         self.right_speed = 0
         self.rotate_speed = 0
@@ -33,6 +53,8 @@ class AutonomousNode(Node):
         self.extend_speed = 0
         self.vibrate_speed = 0
         self.direction = 0
+        
+        # Variables for algorithm
         self.start = False
         self.state = "Reaching tree"
         self.state1 = "Rotate"
@@ -62,6 +84,12 @@ class AutonomousNode(Node):
         self.buttons = msg.button
         self.axes = msg.axes
         self.axes_name = msg.axes_name
+        
+    def detect_fruit(self, msg):
+        self.fruit_detected = msg.detected
+        self.palm_oil_num = msg.palm_oil_num
+        self.pitch_direction = msg.pitch_direction
+        self.yaw_direction = msg.yaw_direction
 
     def cap_255(self, speed):
         if speed > 255:
@@ -104,6 +132,7 @@ class AutonomousNode(Node):
                 self.rotate_until_left_90_degrees()
             elif self.state == "Speed Differential":
                 self.start_speed_differential()
+                self.find_fruit()
             elif self.state == "Next Obstacle":
                 self.timer_counter = 0
                 self.increase_left_speed = 0
@@ -219,6 +248,12 @@ class AutonomousNode(Node):
             self.timer_counter += 1
 
         self.get_logger().info("Starting speed differential and maintaining 50cm distance with obstacle")
+
+    def find_fruit(self):
+        if self.fruit_detected:
+            self.left_speed = 0
+            self.right_speed = 0
+
 
     def reach_next_obstacle(self):
         self.get_logger().info(str(self.nearest_angle2))

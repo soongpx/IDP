@@ -1,2 +1,4 @@
 bool detected
-float64 depth
+uint8 palm_oil_num
+int8 pitch_direction
+int8 yaw_direction 

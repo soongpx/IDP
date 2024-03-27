@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2835285a-a570-4779-b269-2df4135385be" name="Changes" comment="Code Rearrange">
-      <change afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/my_robot_interfaces/msg/RealSense.msg" afterDir="false" />
+    <list default="true" id="2835285a-a570-4779-b269-2df4135385be" name="Changes" comment="Update">
+      <change beforePath="$PROJECT_DIR$/.idea/IDP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IDP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ML/detection/detected_frame.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ML/detection/detected_frame.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/autonomous_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/autonomous_main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/realsense.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/realsense.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/my_robot_interfaces/msg/FruitDepth.msg" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/my_robot_interfaces/msg/FruitDepth.msg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,13 +25,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/ASUS/Documents/GitHub/GUI/REC_Medical_Bot_Robofun"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ASUS/Documents/GitHub/GUI/REC_Medical_Bot_Robofun&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ASUS\Documents\GitHub\IDP\ROS2\arduino_ws\src\arduino_control\arduino_control" />
@@ -50,7 +53,14 @@
       <option name="project" value="LOCAL" />
       <updated>1711345989879</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Update">
+      <created>1711361509797</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1711361509797</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -66,6 +76,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Code Rearrange" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Rearrange" />
+    <MESSAGE value="Update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
 </project>
