@@ -43,8 +43,8 @@ class FindObstacleNode(Node):
             if msg.nearest_distance1 < 40:
                 msg.reach = True
 
-            # self.get_logger().info(str(msg.nearest_distance1))
-            # self.get_logger().info(str(msg.nearest_angle1))
+            self.get_logger().info(str(msg.nearest_distance1))
+            self.get_logger().info(str(msg.nearest_angle1))
             self.publisher_.publish(msg)
             self.sub = False
         else:

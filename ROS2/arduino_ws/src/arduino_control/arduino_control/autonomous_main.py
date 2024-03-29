@@ -16,7 +16,7 @@ class AutonomousNode(Node):
         self.lidar_subscription
         self.joystick_subscription = self.create_subscription(Joystick, 'joystick', self.joystick_control, 10)
         self.joystick_subscription
-        self.fruit_subscription = self.create_subscription(FruitDepth, 'fruit_depth',)
+        self.fruit_subscription = self.create_subscription(FruitDepth, 'fruit_depth', self.detect_fruit, 10)
         self.fruit_subscription
         
         # Declare publisher
@@ -58,12 +58,17 @@ class AutonomousNode(Node):
         self.start = False
         self.state = "Reaching tree"
         self.state1 = "Rotate"
+        self.target_left_speed = 50
+        self.target_right_speed = 60
         self.stop_counter = 0
         self.forward_state = 0
         self.increase_left_speed = 0
         self.increase_right_speed = 0
         self.increase_counter = 0
         self.stop_counter1 = 0
+        self.stop_counter2 = 0
+        self.stop_counter3 = 0
+        self.stop_counter4 = 0
         self.timer_counter = 0
         self.forward_state1 = 0
         self.target_next_angle = 0
@@ -118,7 +123,6 @@ class AutonomousNode(Node):
         if self.start:
             self.direction = 0
             if self.state == "Reaching tree":
-                self.stop_counter1 = 0
                 if self.state1 == "Rotate":
                     self.rotate_to_face()
                 elif self.state1 == "Forward":
@@ -129,17 +133,21 @@ class AutonomousNode(Node):
                 self.increase_left_speed = 0
                 self.increase_right_speed = 0
                 self.stop_counter = 0
+                self.stop_counter3 = 0
                 self.rotate_until_left_90_degrees()
             elif self.state == "Speed Differential":
+                self.stop_counter1 = 0
                 self.start_speed_differential()
                 self.find_fruit()
             elif self.state == "Next Obstacle":
+                self.stop_counter2 = 0
                 self.timer_counter = 0
-                self.increase_left_speed = 0
-                self.increase_right_speed = 0
                 if self.state1 == "Rotate":
                     self.reach_next_obstacle()
+                    self.increase_left_speed = 0
+                    self.increase_right_speed = 0
                 elif self.state1 == "Forward":
+                    self.stop_counter3 = 0
                     self.move_forward_to_next()
 
             msg.left_speed = self.cap_255(self.left_speed)
@@ -167,24 +175,26 @@ class AutonomousNode(Node):
             else:
                 self.forward_state += 1
         elif 0.2 <= self.nearest_angle1 <= 3.142:
-            self.left_speed = 60
-            self.right_speed = 60
-            self.direction += 1
-        elif -3.142 <= self.nearest_angle1 <= -0.2:
-            self.left_speed = 60
-            self.right_speed = 60
+            self.left_speed = self.target_left_speed
+            self.right_speed = self.target_right_speed
             self.direction += 2
+        elif -3.142 <= self.nearest_angle1 <= -0.2:
+            self.left_speed = self.target_left_speed
+            self.right_speed = self.target_right_speed
+            self.direction += 1
+        
+        self.get_logger().info("Rotate")
 
     # Function to move forward until 50cm to obstacle
     def move_forward(self):
-        if self.stop_counter <= 15:
+        if self.stop_counter <= 30:
             self.left_speed = 0
             self.right_speed = 0
             self.stop_counter += 1
         else:
-            if self.nearest_distance1 > 0.4:
-                self.left_speed = 60
-                self.right_speed = 60
+            if self.nearest_distance1 > 0.65:
+                self.left_speed = self.target_left_speed
+                self.right_speed = self.target_right_speed
                 self.direction += 3
                 if self.nearest_angle1 > 0.2:
                     if self.increase_counter >= 50:
@@ -207,10 +217,11 @@ class AutonomousNode(Node):
                 self.state = "Rotate 90"
                 self.state1 = "Rotate"
 
+        self.get_logger().info("Forward")
+
     # Function to rotate until centre of obstacle is at left 90 degree
     def rotate_until_left_90_degrees(self):
-        # Implement rotation until the centre of the obstacle is at left 90 degrees
-        if self.stop_counter1 <= 15:
+        if self.stop_counter1 <= 30:
             self.left_speed = 0
             self.right_speed = 0
             self.stop_counter1 += 1
@@ -218,36 +229,47 @@ class AutonomousNode(Node):
             if -1.67 < self.nearest_angle1 < -1.47:
                 self.state = "Speed Differential"
             else:
-                self.left_speed = 60
-                self.right_speed = 60
+                self.left_speed = self.target_left_speed 
+                self.right_speed = self.target_right_speed 
                 self.direction += 2
-        self.get_logger().info("Rotating until centre of obstacle is at left 90 degrees")
+        self.get_logger().info("Rotate 90")
 
+
+    def cap100(self, speed):
+        if speed > 100:
+            return 100
+        else:
+            return speed
+        
     # Function to start speed differential and maintain 50cm distance with obstacle
     def start_speed_differential(self):
-        # Implement speed differential to maintain distance with the obstacle
-        if self.timer_counter >= 1000:
-            self.state = "Next Obstacle"
+        if self.stop_counter2 <= 30:
+            self.left_speed = 0
+            self.right_speed = 0
+            self.stop_counter2 += 1
         else:
-            self.left_speed = 60
-            self.right_speed = 60 + 1
-            self.direction += 3
-            if self.nearest_distance1 < 0.3:
-                if self.increase_counter >= 10:
-                    self.increase_counter = 0
-                    self.increase_right_speed -= 1
-                else:
-                    self.increase_counter += 1
-            elif self.nearest_distance1 > 0.5:
-                if self.increase_counter >= 10:
-                    self.increase_counter = 0
-                    self.increase_right_speed += 1
-                else:
-                    self.increase_counter += 1
-            self.right_speed += self.increase_right_speed
-            self.timer_counter += 1
+            if self.timer_counter >= 2000:
+                self.state = "Next Obstacle"
+            else:
+                self.left_speed = self.target_left_speed + 45
+                self.right_speed = self.target_right_speed - 25
+                self.direction += 3
+                if self.nearest_distance1 < 0.3:
+                    if self.increase_counter >= 1:
+                        self.increase_counter = 0
+                        self.increase_right_speed -= 1
+                    else:
+                        self.increase_counter += 1
+                elif self.nearest_distance1 > 0.7:
+                    if self.increase_counter >= 1:
+                        self.increase_counter = 0
+                        self.increase_right_speed += 1
+                    else:
+                        self.increase_counter += 1
+                self.left_speed = self.cap100(self.left_speed + self.increase_right_speed)
+                self.timer_counter += 1
 
-        self.get_logger().info("Starting speed differential and maintaining 50cm distance with obstacle")
+        self.get_logger().info("Speed differential")
 
     def find_fruit(self):
         if self.fruit_detected:
@@ -256,27 +278,31 @@ class AutonomousNode(Node):
 
 
     def reach_next_obstacle(self):
-        self.get_logger().info(str(self.nearest_angle2))
-        if -0.2 < self.nearest_angle2 < 0.2:
-            if self.forward_state1 >= 30:
-                self.state1 = "Forward"
-            else:
-                self.forward_state1 += 1
-        elif 0.2 <= self.nearest_angle2 <= 3.142:
-            self.left_speed = 60
-            self.right_speed = 60
-            self.direction += 1
-        elif -3.142 <= self.nearest_angle2 <= -0.2:
-            self.left_speed = 60
-            self.right_speed = 60
-            self.direction += 2
-        self.get_logger().info("Starting to go to next obstacle")
-
-    def move_forward_to_next(self):
-        if self.stop_counter <= 15:
+        if self.stop_counter3 <= 30:
             self.left_speed = 0
             self.right_speed = 0
-            self.stop_counter += 1
+            self.stop_counter3 += 1
+        else:
+            if -0.2 < self.nearest_angle2 < 0.2:
+                if self.forward_state1 >= 30:
+                    self.state1 = "Forward"
+                else:
+                    self.forward_state1 += 1
+            elif 0.2 <= self.nearest_angle2 <= 3.142:
+                self.left_speed = self.target_left_speed
+                self.right_speed = self.target_right_speed
+                self.direction += 1
+            elif -3.142 <= self.nearest_angle2 <= -0.2:
+                self.left_speed = self.target_left_speed
+                self.right_speed = self.target_right_speed
+                self.direction += 2
+        self.get_logger().info("Next obstacle")
+
+    def move_forward_to_next(self):
+        if self.stop_counter4 <= 15:
+            self.left_speed = 0
+            self.right_speed = 0
+            self.stop_counter4 += 1
         else:
             filtered_angle = []
             filtered_range = []
@@ -287,9 +313,9 @@ class AutonomousNode(Node):
 
             nearest_distance = min(filter(lambda x: x != 0, filtered_range))
             nearest_angle = filtered_angle[filtered_range.index(nearest_distance)]
-            if nearest_distance > 0.4:
-                self.left_speed = 60
-                self.right_speed = 60
+            if nearest_distance > 0.65:
+                self.left_speed = self.target_left_speed
+                self.right_speed = self.target_right_speed
                 self.direction += 3
                 if nearest_angle > 0.2:
                     if self.increase_counter >= 50:
@@ -311,6 +337,8 @@ class AutonomousNode(Node):
             else:
                 self.state = "Rotate 90"
                 self.state1 = "Rotate"
+
+        self.get_logger().info("Forward")
 
 
 def main(args=None):

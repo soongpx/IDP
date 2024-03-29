@@ -143,8 +143,8 @@ void ProcessTaskCode()
       extend_dir = 0;
       vibrate_dir = 0;
 
-      left_dir = (direction >> 0) & 1;
       right_dir = (direction >> 1) & 1;
+      left_dir = (direction >> 0) & 1;
       rotate_dir = (direction >> 2) & 1;
       tilt_dir = (direction >> 3) & 1;
       extend_dir = (direction >> 4) & 1;
@@ -154,7 +154,7 @@ void ProcessTaskCode()
 
       if (LeftSpeed < left_speed)
       {
-        if (left_counter == 50)
+        if (left_counter == 100)
         {
           LeftSpeed++;
         }
@@ -164,7 +164,7 @@ void ProcessTaskCode()
         }
       } else if (LeftSpeed > left_speed)
       {
-        if (left_counter == 50)
+        if (left_counter == 100)
         {
           LeftSpeed--;
         } else
@@ -179,7 +179,7 @@ void ProcessTaskCode()
 
       if (RightSpeed < right_speed)
       {
-        if (right_counter == 50)
+        if (right_counter == 100)
         {
           RightSpeed++;
         } else
@@ -188,7 +188,7 @@ void ProcessTaskCode()
         }
       } else if (RightSpeed > right_speed)
       {
-        if (right_counter == 50)
+        if (right_counter == 100)
         {
           RightSpeed--;
         } else
@@ -203,7 +203,7 @@ void ProcessTaskCode()
 
       if (VibrateSpeed < vibrate_speed)
       {
-        if (vibrate_counter == 50)
+        if (vibrate_counter == 100)
         {
           VibrateSpeed++;
           vibrate_counter = 0;
@@ -254,17 +254,17 @@ int cap200PWMValue(int pwm){
 void Loco(int PWM1, int PWM2, bool DIR1, bool DIR2)
 {
   if (DIR1 == 1){
-    digitalWrite(Left_Dir, HIGH);
+    digitalWrite(Left_Dir, LOW);
     digitalWrite(13, 1);
   } else {
-    digitalWrite(Left_Dir, LOW);
+    digitalWrite(Left_Dir, HIGH);
     digitalWrite(13, 0);
   }
 
   if (DIR2 == 1){
-    digitalWrite(Right_Dir, HIGH);
-  } else {
     digitalWrite(Right_Dir, LOW);
+  } else {
+    digitalWrite(Right_Dir, HIGH);
   }
   
 

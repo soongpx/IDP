@@ -7,8 +7,6 @@
 
 import builtins  # noqa: E402, I100
 
-import math  # noqa: E402, I100
-
 import rosidl_parser.definition  # noqa: E402, I100
 
 
@@ -58,17 +56,23 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
 
     __slots__ = [
         '_detected',
-        '_depth',
+        '_palm_oil_num',
+        '_pitch_direction',
+        '_yaw_direction',
     ]
 
     _fields_and_field_types = {
         'detected': 'boolean',
-        'depth': 'double',
+        'palm_oil_num': 'uint8',
+        'pitch_direction': 'int8',
+        'yaw_direction': 'int8',
     }
 
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
-        rosidl_parser.definition.BasicType('double'),  # noqa: E501
+        rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('int8'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -76,7 +80,9 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.detected = kwargs.get('detected', bool())
-        self.depth = kwargs.get('depth', float())
+        self.palm_oil_num = kwargs.get('palm_oil_num', int())
+        self.pitch_direction = kwargs.get('pitch_direction', int())
+        self.yaw_direction = kwargs.get('yaw_direction', int())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -109,7 +115,11 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
             return False
         if self.detected != other.detected:
             return False
-        if self.depth != other.depth:
+        if self.palm_oil_num != other.palm_oil_num:
+            return False
+        if self.pitch_direction != other.pitch_direction:
+            return False
+        if self.yaw_direction != other.yaw_direction:
             return False
         return True
 
@@ -132,16 +142,46 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
         self._detected = value
 
     @builtins.property
-    def depth(self):
-        """Message field 'depth'."""
-        return self._depth
+    def palm_oil_num(self):
+        """Message field 'palm_oil_num'."""
+        return self._palm_oil_num
 
-    @depth.setter
-    def depth(self, value):
+    @palm_oil_num.setter
+    def palm_oil_num(self, value):
         if __debug__:
             assert \
-                isinstance(value, float), \
-                "The 'depth' field must be of type 'float'"
-            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
-                "The 'depth' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
-        self._depth = value
+                isinstance(value, int), \
+                "The 'palm_oil_num' field must be of type 'int'"
+            assert value >= 0 and value < 256, \
+                "The 'palm_oil_num' field must be an unsigned integer in [0, 255]"
+        self._palm_oil_num = value
+
+    @builtins.property
+    def pitch_direction(self):
+        """Message field 'pitch_direction'."""
+        return self._pitch_direction
+
+    @pitch_direction.setter
+    def pitch_direction(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'pitch_direction' field must be of type 'int'"
+            assert value >= -128 and value < 128, \
+                "The 'pitch_direction' field must be an integer in [-128, 127]"
+        self._pitch_direction = value
+
+    @builtins.property
+    def yaw_direction(self):
+        """Message field 'yaw_direction'."""
+        return self._yaw_direction
+
+    @yaw_direction.setter
+    def yaw_direction(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, int), \
+                "The 'yaw_direction' field must be of type 'int'"
+            assert value >= -128 and value < 128, \
+                "The 'yaw_direction' field must be an integer in [-128, 127]"
+        self._yaw_direction = value

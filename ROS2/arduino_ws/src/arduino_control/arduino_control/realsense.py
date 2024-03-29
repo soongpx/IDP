@@ -18,7 +18,7 @@ class DepthPublisherNode(Node):
     def __init__(self):
         super().__init__('camera_depth_node')
         self.publisher = self.create_publisher(FruitDepth, 'fruit_depth', 10)
-        timer_period = 0.2  # seconds
+        timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.process_frames)
 
         # Variables for Camera frame
@@ -29,7 +29,7 @@ class DepthPublisherNode(Node):
         # Variables for Machine Learning
         self.crosshair_x_offset = 0.45
         self.crosshair_y_offset = 0.75
-        self.confidence = 0.75
+        self.confidence = 0.5
         self.color = (0, 255, 0)  # Green color in BGR
         self.FOV_V = 58  # RGB
         self.FOV_H = 87  # RGB
@@ -82,9 +82,9 @@ class DepthPublisherNode(Node):
         self.align = rs.align(self.align_to)
 
         # Machine Learning Model
-        model_path = r"C:\Users\ASUS\Documents\GitHub\IDP\ROS2\arduino_ws\src\arduino_control\arduino_control\best.pt"
+        model_path = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/7_jan_palm_oil.pt"
         self.model = YOLO(model_path)
-        self.DETECTED_FRAME_PATH = r"C:\Users\ASUS\Documents\GitHub\IDP\ML\detection\detected_frame.jpg"
+        self.DETECTED_FRAME_PATH = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg"
 
     def process_frames(self):
         self.frames = self.pipe.wait_for_frames()
@@ -100,6 +100,7 @@ class DepthPublisherNode(Node):
                 self.get_target_imu_data()  # self.target_pitch, self.target_yaw
                 self.target_yaw += self.yaw_angle
                 self.target_pitch += self.pitch_angle
+                self.first_detected = False
             elif self.pitch_direction == 0 and self.yaw_direction == 0:
                 self.detected_palm_oil = False
                 self.first_detected = True
@@ -107,18 +108,20 @@ class DepthPublisherNode(Node):
                 self.yaw_direction = 0
             else:
                 self.get_imu_data()
-                if (self.current_pitch - self.target_pitch) > 0.1:
-                    self.pitch_direction = 1
-                elif (self.current_pitch - self.target_pitch) < -0.1:
-                    self.pitch_direction = -1
-                else:
-                    self.pitch_direction = 0
-                if (self.current_yaw - self.target_yaw) > 0.1:
-                    self.yaw_direction = 1
-                elif (self.current_yaw - self.target_yaw) < -0.1:
-                    self.yaw_direction = -1
-                else:
-                    self.yaw_direction = 0
+            print((self.current_pitch - self.target_pitch))
+            print((self.current_yaw - self.target_yaw))
+            if (self.current_pitch - self.target_pitch) > 2:
+                self.pitch_direction = 1
+            elif (self.current_pitch - self.target_pitch) < -2:
+                self.pitch_direction = -1
+            else:
+                self.pitch_direction = 0
+            if (self.current_yaw - self.target_yaw) > 2:
+                self.yaw_direction = 1
+            elif (self.current_yaw - self.target_yaw) < -2:
+                self.yaw_direction = -1
+            else:
+                self.yaw_direction = 0
 
         # cv2.imshow('RGB Image', self.color_image)
         msg = FruitDepth()
@@ -126,6 +129,7 @@ class DepthPublisherNode(Node):
         msg.palm_oil_num = self.palm_oil_num
         msg.yaw_direction = self.yaw_direction
         msg.pitch_direction = self.pitch_direction
+        self.get_logger().info(f"{msg.detected}, {msg.palm_oil_num}, {msg.yaw_direction}, {msg.pitch_direction}")
         self.publisher.publish(msg)
         # depth_cm = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.5), cv2.COLORMAP_JET)
         # cv2.imshow('Color Image', color_image)
@@ -262,8 +266,8 @@ class DepthPublisherNode(Node):
                     self.yaw1 = self.beta * (self.yaw1 + gyro_data.z * self.dt) + (1 - self.beta) * yaw_acc
 
                     # Convert angles to degrees
-                    self.current_pitch = np.degrees(self.pitch)
-                    self.current_yaw = np.degrees(self.yaw)
+                    self.current_pitch = np.degrees(self.pitch1)
+                    self.current_yaw = np.degrees(self.yaw1)
                     #
                     # print("Pitch:", pitch_deg)
                     # print("Yaw:", yaw_deg)

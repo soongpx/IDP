@@ -26,9 +26,14 @@ class ObstacleAvoidanceNode(Node):
         scan_msg = LidarScan()
         if self.sub:
             self.detected = False
-            for r, a in zip(self.range, self.angle):
-                # self.get_logger().info("Angle: %f Distance: %f" % (point.angle, point.range))
-                if r < 0.3 and r != 0:
+            filtered_angles = []
+            filtered_distances = []
+            for angle, distance in zip(self.angle, self.range):
+                if -2.3 < angle < 2.3:
+                    filtered_angles.append(angle)
+                    filtered_distances.append(distance)  
+            for r, a in zip(filtered_distances, filtered_angles):
+                if r < 0.5 and r != 0:
                     self.get_logger().info("Angle: %f Distance: %f" % (a, r))
                     # self.get_logger().info("Danger at")  # You can add further actions based on this information
                     self.detected = True

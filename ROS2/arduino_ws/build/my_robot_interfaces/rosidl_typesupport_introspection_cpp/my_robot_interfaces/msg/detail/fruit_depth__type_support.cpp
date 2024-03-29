@@ -37,7 +37,7 @@ void FruitDepth_fini_function(void * message_memory)
   typed_message->~FruitDepth();
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember FruitDepth_message_member_array[2] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember FruitDepth_message_member_array[4] = {
   {
     "detected",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_BOOLEAN,  // type
@@ -56,14 +56,48 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FruitDepth_me
     nullptr  // resize(index) function pointer
   },
   {
-    "depth",  // name
-    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    "palm_oil_num",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
     0,  // upper bound of string
     nullptr,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(my_robot_interfaces::msg::FruitDepth, depth),  // bytes offset in struct
+    offsetof(my_robot_interfaces::msg::FruitDepth, palm_oil_num),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "pitch_direction",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT8,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(my_robot_interfaces::msg::FruitDepth, pitch_direction),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
+  },
+  {
+    "yaw_direction",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_INT8,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(my_robot_interfaces::msg::FruitDepth, yaw_direction),  // bytes offset in struct
     nullptr,  // default value
     nullptr,  // size() function pointer
     nullptr,  // get_const(index) function pointer
@@ -77,7 +111,7 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember FruitDepth_me
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers FruitDepth_message_members = {
   "my_robot_interfaces::msg",  // message namespace
   "FruitDepth",  // message name
-  2,  // number of fields
+  4,  // number of fields
   sizeof(my_robot_interfaces::msg::FruitDepth),
   FruitDepth_message_member_array,  // message members
   FruitDepth_init_function,  // function to initialize message memory (memory has to be allocated)

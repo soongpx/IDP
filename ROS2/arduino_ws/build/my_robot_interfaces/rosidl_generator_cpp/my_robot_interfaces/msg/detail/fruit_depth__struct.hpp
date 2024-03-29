@@ -39,7 +39,9 @@ struct FruitDepth_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->detected = false;
-      this->depth = 0.0;
+      this->palm_oil_num = 0;
+      this->pitch_direction = 0;
+      this->yaw_direction = 0;
     }
   }
 
@@ -50,7 +52,9 @@ struct FruitDepth_
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
       this->detected = false;
-      this->depth = 0.0;
+      this->palm_oil_num = 0;
+      this->pitch_direction = 0;
+      this->yaw_direction = 0;
     }
   }
 
@@ -58,9 +62,15 @@ struct FruitDepth_
   using _detected_type =
     bool;
   _detected_type detected;
-  using _depth_type =
-    double;
-  _depth_type depth;
+  using _palm_oil_num_type =
+    uint8_t;
+  _palm_oil_num_type palm_oil_num;
+  using _pitch_direction_type =
+    int8_t;
+  _pitch_direction_type pitch_direction;
+  using _yaw_direction_type =
+    int8_t;
+  _yaw_direction_type yaw_direction;
 
   // setters for named parameter idiom
   Type & set__detected(
@@ -69,10 +79,22 @@ struct FruitDepth_
     this->detected = _arg;
     return *this;
   }
-  Type & set__depth(
-    const double & _arg)
+  Type & set__palm_oil_num(
+    const uint8_t & _arg)
   {
-    this->depth = _arg;
+    this->palm_oil_num = _arg;
+    return *this;
+  }
+  Type & set__pitch_direction(
+    const int8_t & _arg)
+  {
+    this->pitch_direction = _arg;
+    return *this;
+  }
+  Type & set__yaw_direction(
+    const int8_t & _arg)
+  {
+    this->yaw_direction = _arg;
     return *this;
   }
 
@@ -121,7 +143,13 @@ struct FruitDepth_
     if (this->detected != other.detected) {
       return false;
     }
-    if (this->depth != other.depth) {
+    if (this->palm_oil_num != other.palm_oil_num) {
+      return false;
+    }
+    if (this->pitch_direction != other.pitch_direction) {
+      return false;
+    }
+    if (this->yaw_direction != other.yaw_direction) {
       return false;
     }
     return true;

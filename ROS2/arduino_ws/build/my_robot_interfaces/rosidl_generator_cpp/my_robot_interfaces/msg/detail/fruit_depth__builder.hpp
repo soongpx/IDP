@@ -21,16 +21,48 @@ namespace msg
 namespace builder
 {
 
-class Init_FruitDepth_depth
+class Init_FruitDepth_yaw_direction
 {
 public:
-  explicit Init_FruitDepth_depth(::my_robot_interfaces::msg::FruitDepth & msg)
+  explicit Init_FruitDepth_yaw_direction(::my_robot_interfaces::msg::FruitDepth & msg)
   : msg_(msg)
   {}
-  ::my_robot_interfaces::msg::FruitDepth depth(::my_robot_interfaces::msg::FruitDepth::_depth_type arg)
+  ::my_robot_interfaces::msg::FruitDepth yaw_direction(::my_robot_interfaces::msg::FruitDepth::_yaw_direction_type arg)
   {
-    msg_.depth = std::move(arg);
+    msg_.yaw_direction = std::move(arg);
     return std::move(msg_);
+  }
+
+private:
+  ::my_robot_interfaces::msg::FruitDepth msg_;
+};
+
+class Init_FruitDepth_pitch_direction
+{
+public:
+  explicit Init_FruitDepth_pitch_direction(::my_robot_interfaces::msg::FruitDepth & msg)
+  : msg_(msg)
+  {}
+  Init_FruitDepth_yaw_direction pitch_direction(::my_robot_interfaces::msg::FruitDepth::_pitch_direction_type arg)
+  {
+    msg_.pitch_direction = std::move(arg);
+    return Init_FruitDepth_yaw_direction(msg_);
+  }
+
+private:
+  ::my_robot_interfaces::msg::FruitDepth msg_;
+};
+
+class Init_FruitDepth_palm_oil_num
+{
+public:
+  explicit Init_FruitDepth_palm_oil_num(::my_robot_interfaces::msg::FruitDepth & msg)
+  : msg_(msg)
+  {}
+  Init_FruitDepth_pitch_direction palm_oil_num(::my_robot_interfaces::msg::FruitDepth::_palm_oil_num_type arg)
+  {
+    msg_.palm_oil_num = std::move(arg);
+    return Init_FruitDepth_pitch_direction(msg_);
   }
 
 private:
@@ -43,10 +75,10 @@ public:
   Init_FruitDepth_detected()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  Init_FruitDepth_depth detected(::my_robot_interfaces::msg::FruitDepth::_detected_type arg)
+  Init_FruitDepth_palm_oil_num detected(::my_robot_interfaces::msg::FruitDepth::_detected_type arg)
   {
     msg_.detected = std::move(arg);
-    return Init_FruitDepth_depth(msg_);
+    return Init_FruitDepth_palm_oil_num(msg_);
   }
 
 private:

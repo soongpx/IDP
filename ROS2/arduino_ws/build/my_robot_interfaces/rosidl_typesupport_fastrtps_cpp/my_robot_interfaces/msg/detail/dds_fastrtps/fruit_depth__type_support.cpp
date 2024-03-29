@@ -34,8 +34,12 @@ cdr_serialize(
 {
   // Member: detected
   cdr << (ros_message.detected ? true : false);
-  // Member: depth
-  cdr << ros_message.depth;
+  // Member: palm_oil_num
+  cdr << ros_message.palm_oil_num;
+  // Member: pitch_direction
+  cdr << ros_message.pitch_direction;
+  // Member: yaw_direction
+  cdr << ros_message.yaw_direction;
   return true;
 }
 
@@ -52,8 +56,14 @@ cdr_deserialize(
     ros_message.detected = tmp ? true : false;
   }
 
-  // Member: depth
-  cdr >> ros_message.depth;
+  // Member: palm_oil_num
+  cdr >> ros_message.palm_oil_num;
+
+  // Member: pitch_direction
+  cdr >> ros_message.pitch_direction;
+
+  // Member: yaw_direction
+  cdr >> ros_message.yaw_direction;
 
   return true;
 }
@@ -77,9 +87,21 @@ get_serialized_size(
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
-  // Member: depth
+  // Member: palm_oil_num
   {
-    size_t item_size = sizeof(ros_message.depth);
+    size_t item_size = sizeof(ros_message.palm_oil_num);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: pitch_direction
+  {
+    size_t item_size = sizeof(ros_message.pitch_direction);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: yaw_direction
+  {
+    size_t item_size = sizeof(ros_message.yaw_direction);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -115,13 +137,28 @@ max_serialized_size_FruitDepth(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
-  // Member: depth
+  // Member: palm_oil_num
   {
     size_t array_size = 1;
 
-    last_member_size = array_size * sizeof(uint64_t);
-    current_alignment += array_size * sizeof(uint64_t) +
-      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: pitch_direction
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: yaw_direction
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint8_t);
+    current_alignment += array_size * sizeof(uint8_t);
   }
 
   size_t ret_val = current_alignment - initial_alignment;
@@ -132,7 +169,7 @@ max_serialized_size_FruitDepth(
     using DataType = my_robot_interfaces::msg::FruitDepth;
     is_plain =
       (
-      offsetof(DataType, depth) +
+      offsetof(DataType, yaw_direction) +
       last_member_size
       ) == ret_val;
   }

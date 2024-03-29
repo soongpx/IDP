@@ -59,13 +59,31 @@ bool my_robot_interfaces__msg__fruit_depth__convert_from_py(PyObject * _pymsg, v
     ros_message->detected = (Py_True == field);
     Py_DECREF(field);
   }
-  {  // depth
-    PyObject * field = PyObject_GetAttrString(_pymsg, "depth");
+  {  // palm_oil_num
+    PyObject * field = PyObject_GetAttrString(_pymsg, "palm_oil_num");
     if (!field) {
       return false;
     }
-    assert(PyFloat_Check(field));
-    ros_message->depth = PyFloat_AS_DOUBLE(field);
+    assert(PyLong_Check(field));
+    ros_message->palm_oil_num = (uint8_t)PyLong_AsUnsignedLong(field);
+    Py_DECREF(field);
+  }
+  {  // pitch_direction
+    PyObject * field = PyObject_GetAttrString(_pymsg, "pitch_direction");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->pitch_direction = (int8_t)PyLong_AsLong(field);
+    Py_DECREF(field);
+  }
+  {  // yaw_direction
+    PyObject * field = PyObject_GetAttrString(_pymsg, "yaw_direction");
+    if (!field) {
+      return false;
+    }
+    assert(PyLong_Check(field));
+    ros_message->yaw_direction = (int8_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
 
@@ -101,11 +119,33 @@ PyObject * my_robot_interfaces__msg__fruit_depth__convert_to_py(void * raw_ros_m
       }
     }
   }
-  {  // depth
+  {  // palm_oil_num
     PyObject * field = NULL;
-    field = PyFloat_FromDouble(ros_message->depth);
+    field = PyLong_FromUnsignedLong(ros_message->palm_oil_num);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "depth", field);
+      int rc = PyObject_SetAttrString(_pymessage, "palm_oil_num", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // pitch_direction
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->pitch_direction);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "pitch_direction", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // yaw_direction
+    PyObject * field = NULL;
+    field = PyLong_FromLong(ros_message->yaw_direction);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "yaw_direction", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

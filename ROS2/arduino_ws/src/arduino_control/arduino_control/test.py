@@ -13,7 +13,7 @@ class Points:
 
 crosshair_x_offset = 0.45
 crosshair_y_offset = 0.75
-confidence = 0.35
+confidence = 0.5
 color = (0, 255, 0)  # Green color in BGR
 FOV_V = 58  # RGB
 FOV_H = 87  # RGB
@@ -202,6 +202,7 @@ try:
             while True:
                 frames = pipeline.wait_for_frames()
                 current_pitch, current_yaw = getIMUdata(frames)
+                print("Pitch")
                 print(current_pitch - target_pitch)
                 print(current_yaw - target_yaw)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
