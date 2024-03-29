@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2835285a-a570-4779-b269-2df4135385be" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/.idea/IDP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/IDP.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/autonomous_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/autonomous_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/realsense.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/realsense.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/my_robot_interfaces/msg/FruitDepth.msg" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/my_robot_interfaces/msg/FruitDepth.msg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/ROS2/arduino_ws/src/arduino_control/arduino_control/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
