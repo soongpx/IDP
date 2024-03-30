@@ -73,6 +73,7 @@ CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/
 CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/MotorCommand.msg
 CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/FindObstacle.msg
 CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/RealSense.msg
+CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/Imu.msg
 CMakeFiles/my_robot_interfaces: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 CMakeFiles/my_robot_interfaces: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 CMakeFiles/my_robot_interfaces: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl

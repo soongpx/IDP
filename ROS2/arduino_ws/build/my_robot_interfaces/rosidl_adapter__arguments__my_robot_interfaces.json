@@ -7,6 +7,7 @@
     "/home/px/arduino_ws/src/my_robot_interfaces:msg/Joystick.msg",
     "/home/px/arduino_ws/src/my_robot_interfaces:msg/MotorCommand.msg",
     "/home/px/arduino_ws/src/my_robot_interfaces:msg/FindObstacle.msg",
-    "/home/px/arduino_ws/src/my_robot_interfaces:msg/RealSense.msg"
+    "/home/px/arduino_ws/src/my_robot_interfaces:msg/RealSense.msg",
+    "/home/px/arduino_ws/src/my_robot_interfaces:msg/Imu.msg"
   ]
 }

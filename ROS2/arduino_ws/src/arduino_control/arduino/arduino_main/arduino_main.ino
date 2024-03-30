@@ -203,7 +203,7 @@ void ProcessTaskCode()
 
       if (VibrateSpeed < vibrate_speed)
       {
-        if (vibrate_counter == 100)
+        if (vibrate_counter == 50)
         {
           VibrateSpeed++;
           vibrate_counter = 0;
@@ -216,6 +216,10 @@ void ProcessTaskCode()
       {
         VibrateSpeed = 0;
       }
+
+      RotateSpeed = rotate_speed;
+      TiltSpeed = tilt_speed;
+      ExtendSpeed = extend_speed;
 
       OperatingState = CheckActionToDo;
       break;
@@ -319,10 +323,17 @@ void Retract(){
 }
 
 void Stop_Extend(){
+  digitalWrite(13, 0);
   analogWrite(Extend_Pwm, 0);
 }
 
 void Vibrate(int PWM){
+  if (PWM == 255){
+  digitalWrite(13, 1);
+  } else{
+
+  digitalWrite(13, 0);
+  }
   digitalWrite(Vibrate_Dir, HIGH);
   analogWrite(Vibrate_Pwm, PWM);
 }

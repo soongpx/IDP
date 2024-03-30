@@ -226,4 +226,7 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c__pyext.dir/ro
  /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h \
  /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__type_support.h \
  /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__struct.h \
- /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.h
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.h \
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/imu__type_support.h \
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/imu__struct.h \
+ /home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_c/my_robot_interfaces/msg/detail/imu__functions.h

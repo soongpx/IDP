@@ -1,0 +1,12 @@
+[1.233s] Invoking command in '/home/px/arduino_ws/build/arduino_control': PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps symlink_data
+[1.783s] running develop
+[2.156s] running egg_info
+[2.156s] creating src/arduino_control.egg-info
+[2.156s] writing src/arduino_control.egg-info/PKG-INFO
+[2.156s] writing dependency_links to src/arduino_control.egg-info/dependency_links.txt
+[2.157s] writing entry points to src/arduino_control.egg-info/entry_points.txt
+[2.157s] writing requirements to src/arduino_control.egg-info/requires.txt
+[2.157s] writing top-level names to src/arduino_control.egg-info/top_level.txt
+[2.157s] writing manifest file 'src/arduino_control.egg-info/SOURCES.txt'
+[2.159s] error: package directory 'src/arduino_control' does not exist
+[2.213s] Invoked command in '/home/px/arduino_ws/build/arduino_control' returned '1': PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps symlink_data

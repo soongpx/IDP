@@ -21,6 +21,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/MotorCommand.msg"
   "msg/FindObstacle.msg"
   "msg/RealSense.msg"
+  "msg/Imu.msg"
   DEPENDENCIES geometry_msgs
   DEPENDENCIES std_msgs
  )

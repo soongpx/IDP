@@ -1,13 +1,13 @@
-import os
+from setuptools import setup, find_packages
 from glob import glob
-from setuptools import find_packages, setup
+import os
 
 package_name = 'arduino_control'
 
 setup(
     name=package_name,
     version='0.0.0',
-    packages=find_packages(exclude=['test']),
+    packages=find_packages(exclude=['test']), 
     data_files=[
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
@@ -27,6 +27,7 @@ setup(
         	'minimal_publisher = arduino_control.publisher:main',
             'realsense = arduino_control.realsense:main',
             'lidar = arduino_control.lidar:main',
+            'imu = arduino_control.imu:main',
             'joystick = arduino_control.joystick:main',
             'obstacle_avoidance = arduino_control.obstacle_avoidance:main',
             'joystick_control = arduino_control.joystick_control:main',

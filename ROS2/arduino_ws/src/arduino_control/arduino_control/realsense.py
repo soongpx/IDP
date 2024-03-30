@@ -5,7 +5,7 @@ import math
 from ultralytics import YOLO
 import rclpy
 from rclpy.node import Node
-from my_robot_interfaces.msg import FruitDepth
+from my_robot_interfaces.msg import FruitDepth, Imu
 
 
 class Points:
@@ -17,6 +17,8 @@ class Points:
 class DepthPublisherNode(Node):
     def __init__(self):
         super().__init__('camera_depth_node')
+        self.imu_subscriber = self.create_publisher(Imu, 'imu_data', 10)
+        self.imu_subscriber
         self.publisher = self.create_publisher(FruitDepth, 'fruit_depth', 10)
         timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.process_frames)
@@ -123,7 +125,6 @@ class DepthPublisherNode(Node):
             else:
                 self.yaw_direction = 0
 
-        # cv2.imshow('RGB Image', self.color_image)
         msg = FruitDepth()
         msg.detected = self.detected_palm_oil
         msg.palm_oil_num = self.palm_oil_num
@@ -131,18 +132,12 @@ class DepthPublisherNode(Node):
         msg.pitch_direction = self.pitch_direction
         self.get_logger().info(f"{msg.detected}, {msg.palm_oil_num}, {msg.yaw_direction}, {msg.pitch_direction}")
         self.publisher.publish(msg)
-        # depth_cm = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.5), cv2.COLORMAP_JET)
-        # cv2.imshow('Color Image', color_image)
-        # cv2.imshow('Depth Image', depth_cm)
 
-    def calc_yaw_angle(self, pt1_x, pt1_y, center_x, center_y):
+    def calc_pitch_angle(self, pt1_x, pt1_y, center_x, center_y):
         vertical = (center_y - pt1_y)
-        horizontal = (pt1_x - center_x)
 
         self.pitch_angle = (self.FOV_V / self.RES_V) * vertical
-        self.yaw_angle = (self.FOV_H / self.RES_H) * horizontal
         print(self.pitch_angle)
-        print(self.yaw_angle)
 
     def process_frame(self):
         self.detected_palm_oil = False
@@ -150,17 +145,6 @@ class DepthPublisherNode(Node):
         depth_arr = []
         coordinates = predictions[0].boxes.xywh.tolist()
         height, width, _ = self.color_image.shape
-
-        # draw crosshair
-        # crosshair_center = (int(width * self.crosshair_x_offset), int(height * self.crosshair_y_offset))
-        # Draw horizontal line (crosshair)
-        # cv2.line(self.color_image, (0, int(height * self.crosshair_y_offset)),
-        #          (width, int(height * self.crosshair_y_offset)), self.color,
-        #          self.thickness)
-        # # Draw vertical line (crosshair)
-        # cv2.line(self.color_image, (int(width * self.crosshair_x_offset), 0),
-        #          (int(width * self.crosshair_x_offset), height), self.color,
-        #          self.thickness)
 
         for pts in coordinates:
             # Extract x, y, width, and height
@@ -170,23 +154,12 @@ class DepthPublisherNode(Node):
             center_x = x + width // 2
             center_y = y + height // 2
 
-            # # Draw center point
-            # cv2.circle(self.color_image, (center_x, center_y), 5, (0, 0, 255), -1)
-
             # Get depth value at the center point
             depth_value = self.depth_frame.get_distance(center_x, center_y)
 
-            # # Convert depth value to meaningful units (e.g., meters) using depth scale
-            # depth_meters = depth_value
-            # depth_text = "{:.2f}m".format(depth_meters)
             Points.x = center_x
             Points.y = center_y
             Points.z = depth_value
-            # cv2.putText(self.color_image, depth_text, (center_x, center_y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 1,
-            #             cv2.LINE_AA)
-            # cv2.circle(self.color_image, (center_x, center_y), 5, (0, 0, 255), -1)
-            # cv2.rectangle(self.color_image, (x, y), (x + width, y + height), (0, 255, 0), 2)
-            # cv2.putText(self.color_image, 'palm oil', (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3, cv2.LINE_AA)
             print("Depth at center point:", depth_value, "meters")
             depth_arr.append(Points)
 
@@ -199,18 +172,16 @@ class DepthPublisherNode(Node):
                 closest_pt.x = pts.x
                 closest_pt.y = pts.y
                 closest_pt.z = pts.z
-        # cv2.circle(self.color_image, (closest_pt.x, closest_pt.y), 5, (0, 0, 255), -1)
         if closest_depth < 100:
             height, width, _ = self.color_image.shape
             # Draw rectangle and text on the self.color_image
             print(f"x: {closest_pt.x}, y: {closest_pt.y}, z:{closest_pt.z}")
-            self.calc_yaw_angle(closest_pt.x, closest_pt.y, int(width * 0.47), int(height * 0.7))
-            # cv2.line(self.color_image, crosshair_center, (closest_pt.x, closest_pt.y), (0, 0, 255), 5)
+            self.calc_pitch_angle(closest_pt.x, closest_pt.y, int(width * 0.47), int(height * 0.7))
             self.detected_palm_oil = True
             print(f"Closest Depth: {closest_depth}")
 
         # Save the frame with detections
-        cv2.imwrite(self.DETECTED_FRAME_PATH, self.color_image)
+        # cv2.imwrite(self.DETECTED_FRAME_PATH, self.color_image)
 
     def get_target_imu_data(self):
         accel_data = None

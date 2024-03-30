@@ -3,6 +3,7 @@ import rclpy
 from rclpy.node import Node
 from my_robot_interfaces.msg import LaserScan
 import time
+import serial.tools.list_ports
 
 
 class LidarControllerNode(Node):
@@ -21,16 +22,20 @@ class LidarControllerNode(Node):
                     self.laser = ydlidar.CYdLidar()
                     ydlidar.os_init()
 
-                ports = ydlidar.lidarPortList()
+                lidar_ports = []
+                ports = serial.tools.list_ports.comports()
+                for port in ports:
+                    print(port.description)
+                    if 'CP2102' in port.description:
+                        lidar_ports.append(port.device)
 
                 if not ports:
                     self.get_logger().error("No lidar ports found. Retrying...")
                     time.sleep(1)  # Wait before retrying
                     continue
 
-                # port = list(ports.values())[-1]  # Select the last available port
-                port = '/dev/ttyUSB0'
-                self.get_logger().info("Using port: %s" % port)
+                port = list(lidar_ports)[-1]  # Select the last available port
+                self.get_logger().info("LIDAR port: %s" % port)
 
                 self.laser.setlidaropt(ydlidar.LidarPropSerialPort, port)
                 self.laser.setlidaropt(ydlidar.LidarPropSerialBaudrate, 115200)

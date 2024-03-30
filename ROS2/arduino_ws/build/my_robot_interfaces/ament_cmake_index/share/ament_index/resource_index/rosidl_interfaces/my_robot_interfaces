@@ -2,6 +2,8 @@ msg/FindObstacle.idl
 msg/FindObstacle.msg
 msg/FruitDepth.idl
 msg/FruitDepth.msg
+msg/Imu.idl
+msg/Imu.msg
 msg/Joystick.idl
 msg/Joystick.msg
 msg/LaserScan.idl

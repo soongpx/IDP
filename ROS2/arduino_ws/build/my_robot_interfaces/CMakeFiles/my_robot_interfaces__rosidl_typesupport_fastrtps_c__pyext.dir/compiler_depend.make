@@ -267,8 +267,17 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_
   rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h \
   rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__type_support.h \
   rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__struct.h \
-  rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.h
+  rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.h \
+  rosidl_generator_c/my_robot_interfaces/msg/detail/imu__type_support.h \
+  rosidl_generator_c/my_robot_interfaces/msg/detail/imu__struct.h \
+  rosidl_generator_c/my_robot_interfaces/msg/detail/imu__functions.h
 
+
+rosidl_generator_c/my_robot_interfaces/msg/detail/imu__functions.h:
+
+rosidl_generator_c/my_robot_interfaces/msg/detail/imu__struct.h:
+
+rosidl_generator_c/my_robot_interfaces/msg/detail/imu__type_support.h:
 
 rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.h:
 

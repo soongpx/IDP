@@ -7,6 +7,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/my_robot_interfaces/msg/_find_obstacle_s.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_fruit_depth_s.c"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_imu.py"
+  "../rosidl_generator_py/my_robot_interfaces/msg/_imu_s.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/_joystick.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_joystick_s.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/_laser_scan.py"
