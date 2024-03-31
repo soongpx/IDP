@@ -13,7 +13,7 @@ class ImuNode(Node):
     def __init__(self):
         super().__init__('imu_node')
         self.publisher = self.create_publisher(Imu, 'imu_data', 10)
-        timer_period = 0.01 
+        timer_period = 0.005 
         self.timer = self.create_timer(timer_period, self.onUpdate)
         self.device = None
 

@@ -22,6 +22,7 @@ typedef struct my_robot_interfaces__msg__FruitDepth
 {
   bool detected;
   uint8_t palm_oil_num;
+  float fruit_depth;
   int8_t pitch_direction;
   int8_t yaw_direction;
 } my_robot_interfaces__msg__FruitDepth;

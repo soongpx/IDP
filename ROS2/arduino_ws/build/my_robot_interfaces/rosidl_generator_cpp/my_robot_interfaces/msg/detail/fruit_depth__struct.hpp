@@ -40,6 +40,7 @@ struct FruitDepth_
     {
       this->detected = false;
       this->palm_oil_num = 0;
+      this->fruit_depth = 0.0f;
       this->pitch_direction = 0;
       this->yaw_direction = 0;
     }
@@ -53,6 +54,7 @@ struct FruitDepth_
     {
       this->detected = false;
       this->palm_oil_num = 0;
+      this->fruit_depth = 0.0f;
       this->pitch_direction = 0;
       this->yaw_direction = 0;
     }
@@ -65,6 +67,9 @@ struct FruitDepth_
   using _palm_oil_num_type =
     uint8_t;
   _palm_oil_num_type palm_oil_num;
+  using _fruit_depth_type =
+    float;
+  _fruit_depth_type fruit_depth;
   using _pitch_direction_type =
     int8_t;
   _pitch_direction_type pitch_direction;
@@ -83,6 +88,12 @@ struct FruitDepth_
     const uint8_t & _arg)
   {
     this->palm_oil_num = _arg;
+    return *this;
+  }
+  Type & set__fruit_depth(
+    const float & _arg)
+  {
+    this->fruit_depth = _arg;
     return *this;
   }
   Type & set__pitch_direction(
@@ -144,6 +155,9 @@ struct FruitDepth_
       return false;
     }
     if (this->palm_oil_num != other.palm_oil_num) {
+      return false;
+    }
+    if (this->fruit_depth != other.fruit_depth) {
       return false;
     }
     if (this->pitch_direction != other.pitch_direction) {

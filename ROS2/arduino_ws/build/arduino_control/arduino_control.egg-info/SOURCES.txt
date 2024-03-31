@@ -5,6 +5,7 @@ arduino_control/__init__.py
 arduino_control/arduino_led_node.py
 arduino_control/autonomous_main.py
 arduino_control/find_obstacle.py
+arduino_control/fruit_harvest.py
 arduino_control/imu.py
 arduino_control/joystick.py
 arduino_control/joystick_control.py

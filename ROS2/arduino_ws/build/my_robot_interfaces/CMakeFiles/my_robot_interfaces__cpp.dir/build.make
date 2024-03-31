@@ -98,6 +98,10 @@ CMakeFiles/my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/ms
 CMakeFiles/my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/imu__builder.hpp
 CMakeFiles/my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/imu__struct.hpp
 CMakeFiles/my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/imu__traits.hpp
+CMakeFiles/my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/harvest.hpp
+CMakeFiles/my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__builder.hpp
+CMakeFiles/my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__struct.hpp
+CMakeFiles/my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__traits.hpp
 
 rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: /opt/ros/humble/lib/rosidl_generator_cpp/rosidl_generator_cpp
 rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_cpp/__init__.py
@@ -122,6 +126,7 @@ rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: rosidl_adapter/my_r
 rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: rosidl_adapter/my_robot_interfaces/msg/FindObstacle.idl
 rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: rosidl_adapter/my_robot_interfaces/msg/RealSense.idl
 rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: rosidl_adapter/my_robot_interfaces/msg/Imu.idl
+rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: rosidl_adapter/my_robot_interfaces/msg/Harvest.idl
 rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl
@@ -279,6 +284,18 @@ rosidl_generator_cpp/my_robot_interfaces/msg/detail/imu__struct.hpp: rosidl_gene
 rosidl_generator_cpp/my_robot_interfaces/msg/detail/imu__traits.hpp: rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/my_robot_interfaces/msg/detail/imu__traits.hpp
 
+rosidl_generator_cpp/my_robot_interfaces/msg/harvest.hpp: rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/my_robot_interfaces/msg/harvest.hpp
+
+rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__builder.hpp: rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__builder.hpp
+
+rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__struct.hpp: rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__struct.hpp
+
+rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__traits.hpp: rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__traits.hpp
+
 my_robot_interfaces__cpp: CMakeFiles/my_robot_interfaces__cpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/find_obstacle__builder.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/find_obstacle__struct.hpp
@@ -286,6 +303,9 @@ my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/fi
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/fruit_depth__builder.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/fruit_depth__struct.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/fruit_depth__traits.hpp
+my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__builder.hpp
+my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__struct.hpp
+my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/harvest__traits.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/imu__builder.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/imu__struct.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/imu__traits.hpp
@@ -306,6 +326,7 @@ my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/re
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/detail/real_sense__traits.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/find_obstacle.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/fruit_depth.hpp
+my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/harvest.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/imu.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/joystick.hpp
 my_robot_interfaces__cpp: rosidl_generator_cpp/my_robot_interfaces/msg/laser_scan.hpp

@@ -68,6 +68,15 @@ bool my_robot_interfaces__msg__fruit_depth__convert_from_py(PyObject * _pymsg, v
     ros_message->palm_oil_num = (uint8_t)PyLong_AsUnsignedLong(field);
     Py_DECREF(field);
   }
+  {  // fruit_depth
+    PyObject * field = PyObject_GetAttrString(_pymsg, "fruit_depth");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->fruit_depth = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
   {  // pitch_direction
     PyObject * field = PyObject_GetAttrString(_pymsg, "pitch_direction");
     if (!field) {
@@ -124,6 +133,17 @@ PyObject * my_robot_interfaces__msg__fruit_depth__convert_to_py(void * raw_ros_m
     field = PyLong_FromUnsignedLong(ros_message->palm_oil_num);
     {
       int rc = PyObject_SetAttrString(_pymessage, "palm_oil_num", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // fruit_depth
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->fruit_depth);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "fruit_depth", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

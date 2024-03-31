@@ -7,6 +7,8 @@
 
 import builtins  # noqa: E402, I100
 
+import math  # noqa: E402, I100
+
 import rosidl_parser.definition  # noqa: E402, I100
 
 
@@ -57,6 +59,7 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
     __slots__ = [
         '_detected',
         '_palm_oil_num',
+        '_fruit_depth',
         '_pitch_direction',
         '_yaw_direction',
     ]
@@ -64,6 +67,7 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
     _fields_and_field_types = {
         'detected': 'boolean',
         'palm_oil_num': 'uint8',
+        'fruit_depth': 'float',
         'pitch_direction': 'int8',
         'yaw_direction': 'int8',
     }
@@ -71,6 +75,7 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
     SLOT_TYPES = (
         rosidl_parser.definition.BasicType('boolean'),  # noqa: E501
         rosidl_parser.definition.BasicType('uint8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('int8'),  # noqa: E501
         rosidl_parser.definition.BasicType('int8'),  # noqa: E501
     )
@@ -81,6 +86,7 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
         self.detected = kwargs.get('detected', bool())
         self.palm_oil_num = kwargs.get('palm_oil_num', int())
+        self.fruit_depth = kwargs.get('fruit_depth', float())
         self.pitch_direction = kwargs.get('pitch_direction', int())
         self.yaw_direction = kwargs.get('yaw_direction', int())
 
@@ -116,6 +122,8 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
         if self.detected != other.detected:
             return False
         if self.palm_oil_num != other.palm_oil_num:
+            return False
+        if self.fruit_depth != other.fruit_depth:
             return False
         if self.pitch_direction != other.pitch_direction:
             return False
@@ -155,6 +163,21 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
             assert value >= 0 and value < 256, \
                 "The 'palm_oil_num' field must be an unsigned integer in [0, 255]"
         self._palm_oil_num = value
+
+    @builtins.property
+    def fruit_depth(self):
+        """Message field 'fruit_depth'."""
+        return self._fruit_depth
+
+    @fruit_depth.setter
+    def fruit_depth(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'fruit_depth' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'fruit_depth' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._fruit_depth = value
 
     @builtins.property
     def pitch_direction(self):

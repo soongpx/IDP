@@ -323,7 +323,6 @@ void Retract(){
 }
 
 void Stop_Extend(){
-  digitalWrite(13, 0);
   analogWrite(Extend_Pwm, 0);
 }
 

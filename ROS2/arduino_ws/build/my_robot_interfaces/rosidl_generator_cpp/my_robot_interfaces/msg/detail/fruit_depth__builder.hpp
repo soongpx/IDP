@@ -53,16 +53,32 @@ private:
   ::my_robot_interfaces::msg::FruitDepth msg_;
 };
 
+class Init_FruitDepth_fruit_depth
+{
+public:
+  explicit Init_FruitDepth_fruit_depth(::my_robot_interfaces::msg::FruitDepth & msg)
+  : msg_(msg)
+  {}
+  Init_FruitDepth_pitch_direction fruit_depth(::my_robot_interfaces::msg::FruitDepth::_fruit_depth_type arg)
+  {
+    msg_.fruit_depth = std::move(arg);
+    return Init_FruitDepth_pitch_direction(msg_);
+  }
+
+private:
+  ::my_robot_interfaces::msg::FruitDepth msg_;
+};
+
 class Init_FruitDepth_palm_oil_num
 {
 public:
   explicit Init_FruitDepth_palm_oil_num(::my_robot_interfaces::msg::FruitDepth & msg)
   : msg_(msg)
   {}
-  Init_FruitDepth_pitch_direction palm_oil_num(::my_robot_interfaces::msg::FruitDepth::_palm_oil_num_type arg)
+  Init_FruitDepth_fruit_depth palm_oil_num(::my_robot_interfaces::msg::FruitDepth::_palm_oil_num_type arg)
   {
     msg_.palm_oil_num = std::move(arg);
-    return Init_FruitDepth_pitch_direction(msg_);
+    return Init_FruitDepth_fruit_depth(msg_);
   }
 
 private:

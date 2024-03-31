@@ -39,6 +39,13 @@ inline void to_flow_style_yaml(
     out << ", ";
   }
 
+  // member: fruit_depth
+  {
+    out << "fruit_depth: ";
+    rosidl_generator_traits::value_to_yaml(msg.fruit_depth, out);
+    out << ", ";
+  }
+
   // member: pitch_direction
   {
     out << "pitch_direction: ";
@@ -75,6 +82,16 @@ inline void to_block_style_yaml(
     }
     out << "palm_oil_num: ";
     rosidl_generator_traits::value_to_yaml(msg.palm_oil_num, out);
+    out << "\n";
+  }
+
+  // member: fruit_depth
+  {
+    if (indentation > 0) {
+      out << std::string(indentation, ' ');
+    }
+    out << "fruit_depth: ";
+    rosidl_generator_traits::value_to_yaml(msg.fruit_depth, out);
     out << "\n";
   }
 

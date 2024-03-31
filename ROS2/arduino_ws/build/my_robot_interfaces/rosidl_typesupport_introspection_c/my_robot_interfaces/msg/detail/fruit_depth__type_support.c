@@ -31,7 +31,7 @@ void my_robot_interfaces__msg__FruitDepth__rosidl_typesupport_introspection_c__F
   my_robot_interfaces__msg__FruitDepth__fini(message_memory);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__msg__FruitDepth__rosidl_typesupport_introspection_c__FruitDepth_message_member_array[4] = {
+static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__msg__FruitDepth__rosidl_typesupport_introspection_c__FruitDepth_message_member_array[5] = {
   {
     "detected",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
@@ -58,6 +58,23 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__ms
     0,  // array size
     false,  // is upper bound
     offsetof(my_robot_interfaces__msg__FruitDepth, palm_oil_num),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
+  },
+  {
+    "fruit_depth",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_FLOAT,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(my_robot_interfaces__msg__FruitDepth, fruit_depth),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer
@@ -105,7 +122,7 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__ms
 static const rosidl_typesupport_introspection_c__MessageMembers my_robot_interfaces__msg__FruitDepth__rosidl_typesupport_introspection_c__FruitDepth_message_members = {
   "my_robot_interfaces__msg",  // message namespace
   "FruitDepth",  // message name
-  4,  // number of fields
+  5,  // number of fields
   sizeof(my_robot_interfaces__msg__FruitDepth),
   my_robot_interfaces__msg__FruitDepth__rosidl_typesupport_introspection_c__FruitDepth_message_member_array,  // message members
   my_robot_interfaces__msg__FruitDepth__rosidl_typesupport_introspection_c__FruitDepth_init_function,  // function to initialize message memory (memory has to be allocated)

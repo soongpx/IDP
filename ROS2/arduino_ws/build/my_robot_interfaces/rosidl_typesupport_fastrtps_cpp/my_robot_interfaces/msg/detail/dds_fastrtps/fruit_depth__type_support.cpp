@@ -36,6 +36,8 @@ cdr_serialize(
   cdr << (ros_message.detected ? true : false);
   // Member: palm_oil_num
   cdr << ros_message.palm_oil_num;
+  // Member: fruit_depth
+  cdr << ros_message.fruit_depth;
   // Member: pitch_direction
   cdr << ros_message.pitch_direction;
   // Member: yaw_direction
@@ -58,6 +60,9 @@ cdr_deserialize(
 
   // Member: palm_oil_num
   cdr >> ros_message.palm_oil_num;
+
+  // Member: fruit_depth
+  cdr >> ros_message.fruit_depth;
 
   // Member: pitch_direction
   cdr >> ros_message.pitch_direction;
@@ -90,6 +95,12 @@ get_serialized_size(
   // Member: palm_oil_num
   {
     size_t item_size = sizeof(ros_message.palm_oil_num);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: fruit_depth
+  {
+    size_t item_size = sizeof(ros_message.fruit_depth);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -143,6 +154,15 @@ max_serialized_size_FruitDepth(
 
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
+  }
+
+  // Member: fruit_depth
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
   // Member: pitch_direction

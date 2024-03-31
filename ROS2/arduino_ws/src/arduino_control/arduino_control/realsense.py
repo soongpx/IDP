@@ -5,7 +5,7 @@ import math
 from ultralytics import YOLO
 import rclpy
 from rclpy.node import Node
-from my_robot_interfaces.msg import FruitDepth, Imu
+from my_robot_interfaces.msg import FruitDepth, Imu, Harvest
 
 
 class Points:
@@ -17,8 +17,10 @@ class Points:
 class DepthPublisherNode(Node):
     def __init__(self):
         super().__init__('camera_depth_node')
-        self.imu_subscriber = self.create_publisher(Imu, 'imu_data', 10)
+        self.imu_subscriber = self.create_subscription(Imu, 'imu_data', self.imu_data, 10)
         self.imu_subscriber
+        self.harvest_subscriber = self.create_subscription(Harvest, 'harvest', self.harvest, 10)
+        self.harvest_subscriber
         self.publisher = self.create_publisher(FruitDepth, 'fruit_depth', 10)
         timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.process_frames)
@@ -31,7 +33,7 @@ class DepthPublisherNode(Node):
         # Variables for Machine Learning
         self.crosshair_x_offset = 0.45
         self.crosshair_y_offset = 0.75
-        self.confidence = 0.5
+        self.confidence = 0.7
         self.color = (0, 255, 0)  # Green color in BGR
         self.FOV_V = 58  # RGB
         self.FOV_H = 87  # RGB
@@ -39,6 +41,7 @@ class DepthPublisherNode(Node):
         self.RES_H = 480
         self.thickness = 1
         self.detected_palm_oil = False
+        self.fruit_depth = 0.0
         self.palm_oil_num = 0
 
         # Variables for frame processing
@@ -47,6 +50,13 @@ class DepthPublisherNode(Node):
         self.color_image = None
         self.color_intrinsic = None
 
+        # Variables for IMU
+        self.yaw_angle = 0
+
+        # Variables for harvest status
+        self.harvest_end_counter = 0
+        self.harvest_end = True
+
         # Variables for orientation
         self.pitch_angle = 0
         self.yaw_angle = 0
@@ -54,10 +64,9 @@ class DepthPublisherNode(Node):
         self.yaw = 0
         self.target_pitch = 0
         self.target_yaw = 0
-        self.pitch1 = 0
-        self.yaw1 = 0
-        self.current_pitch = 0
-        self.current_yaw = 0
+        self.previous_pitch = 100
+        self.previous_yaw = 100
+        self.angle_counter = 0
         self.first_detected = True
         self.yaw_direction = 0
         self.pitch_direction = 0
@@ -88,56 +97,83 @@ class DepthPublisherNode(Node):
         self.model = YOLO(model_path)
         self.DETECTED_FRAME_PATH = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg"
 
+    def imu_data(self, msg):
+        self.yaw_angle = msg.yaw
+
+    def harvest(self, msg):
+        if msg.harvest_end:
+            self.harvest_end_counter += 1
+            if self.harvest_end_counter >= 10:
+                self.harvest_end = True
+                self.harvest_end_counter = 0
+
     def process_frames(self):
         self.frames = self.pipe.wait_for_frames()
-        if not self.detected_palm_oil:
+        if not self.detected_palm_oil and self.harvest_end:
             self.depth_frame = self.frames.get_depth_frame()
             self.color_frame = self.frames.get_color_frame()
             self.color_intrinsic = self.color_frame.profile.as_video_stream_profile().intrinsics
-            # depth_image = np.asanyarray(self.depth_frame.get_data())
-            self.color_image = np.asanyarray(self.color_frame.get_data())  # Add machine learning
-            self.process_frame()  # self.palm_oil_num, self.detected_palm_oil
+            self.color_image = np.asanyarray(self.color_frame.get_data())
+            self.process_frame()  # self.palm_oil_num, self.detected_palm_oil, self.pitch_angle, self.yaw_angle
         else:
+            self.get_imu_data()  # self.yaw_angle, self.pitch_angle
             if self.first_detected:
-                self.get_target_imu_data()  # self.target_pitch, self.target_yaw
-                self.target_yaw += self.yaw_angle
-                self.target_pitch += self.pitch_angle
-                self.first_detected = False
-            elif self.pitch_direction == 0 and self.yaw_direction == 0:
-                self.detected_palm_oil = False
-                self.first_detected = True
-                self.pitch_direction = 0
-                self.yaw_direction = 0
+                print(self.pitch_angle)
+                print(self.angle_counter)
+                if abs(self.pitch_angle - self.previous_pitch) < 0.03 and abs(self.yaw_angle - self.previous_yaw) < 0.03:
+                    self.angle_counter += 1
+                    self.pitch_direction = 2
+                    self.yaw_direction = 2
+                    if self.angle_counter == 20:
+                        self.target_yaw += self.yaw_angle
+                        self.target_pitch += self.pitch_angle
+                        self.first_detected = False
+                        self.angle_counter = 0
+                else:
+                    self.previous_pitch = self.pitch_angle
+                    self.previous_yaw = self.yaw_angle
+                    self.first_detected = True
+                    self.pitch_direction = 2
+                    self.yaw_direction = 2
+                    self.angle_counter = 0
             else:
-                self.get_imu_data()
-            print((self.current_pitch - self.target_pitch))
-            print((self.current_yaw - self.target_yaw))
-            if (self.current_pitch - self.target_pitch) > 2:
-                self.pitch_direction = 1
-            elif (self.current_pitch - self.target_pitch) < -2:
-                self.pitch_direction = -1
-            else:
-                self.pitch_direction = 0
-            if (self.current_yaw - self.target_yaw) > 2:
-                self.yaw_direction = 1
-            elif (self.current_yaw - self.target_yaw) < -2:
-                self.yaw_direction = -1
-            else:
-                self.yaw_direction = 0
+                if (self.pitch_angle - self.target_pitch) > 2:
+                    self.pitch_direction = 1
+                elif (self.pitch_angle - self.target_pitch) < -2:
+                    self.pitch_direction = -1
+                else:
+                    self.pitch_direction = 0
+
+                if (self.yaw_angle - self.target_yaw) > 2:
+                    self.yaw_direction = 1
+                elif (self.yaw_angle - self.target_yaw) < -2:
+                    self.yaw_direction = -1
+                else:
+                    self.yaw_direction = 0
+
+                if self.pitch_direction == 0 and self.yaw_direction == 0:
+                    self.detected_palm_oil = False
+                    self.first_detected = True
+
+                print(str(self.target_yaw) + " , " + str(self.target_pitch))
+                print(str(self.yaw_angle) + " , " + str(self.pitch_angle))
 
         msg = FruitDepth()
         msg.detected = self.detected_palm_oil
         msg.palm_oil_num = self.palm_oil_num
+        msg.fruit_depth = self.fruit_depth
         msg.yaw_direction = self.yaw_direction
         msg.pitch_direction = self.pitch_direction
-        self.get_logger().info(f"{msg.detected}, {msg.palm_oil_num}, {msg.yaw_direction}, {msg.pitch_direction}")
+        self.get_logger().info(f"{msg.detected}, {msg.palm_oil_num}, {msg.fruit_depth}, {msg.yaw_direction}, {msg.pitch_direction}")
         self.publisher.publish(msg)
 
     def calc_pitch_angle(self, pt1_x, pt1_y, center_x, center_y):
         vertical = (center_y - pt1_y)
+        horizontal = (pt1_x - center_x)
 
-        self.pitch_angle = (self.FOV_V / self.RES_V) * vertical
-        print(self.pitch_angle)
+        self.target_pitch = (self.FOV_V / self.RES_V) * vertical
+        print(self.target_pitch)
+        self.target_yaw = (self.FOV_H / self.RES_H) * horizontal
 
     def process_frame(self):
         self.detected_palm_oil = False
@@ -174,44 +210,14 @@ class DepthPublisherNode(Node):
                 closest_pt.z = pts.z
         if closest_depth < 100:
             height, width, _ = self.color_image.shape
-            # Draw rectangle and text on the self.color_image
             print(f"x: {closest_pt.x}, y: {closest_pt.y}, z:{closest_pt.z}")
             self.calc_pitch_angle(closest_pt.x, closest_pt.y, int(width * 0.47), int(height * 0.7))
             self.detected_palm_oil = True
+            self.fruit_depth = closest_depth
             print(f"Closest Depth: {closest_depth}")
 
         # Save the frame with detections
         # cv2.imwrite(self.DETECTED_FRAME_PATH, self.color_image)
-
-    def get_target_imu_data(self):
-        accel_data = None
-        for frame in self.frames:
-            if frame.is_motion_frame():
-                if frame.get_profile().stream_type() == rs.stream.accel:
-                    # Extract accelerometer data
-                    accel_data = frame.as_motion_frame().get_motion_data()
-
-                elif frame.get_profile().stream_type() == rs.stream.gyro:
-                    # Extract gyroscope data
-                    gyro_data = frame.as_motion_frame().get_motion_data()
-
-                    # Perform sensor fusion (complementary filter)
-                    self.pitch += gyro_data.x * self.dt
-                    self.yaw += gyro_data.z * self.dt
-
-                    # Compensate for drift using accelerometer data
-                    pitch_acc = np.arctan2(accel_data.y, np.sqrt(accel_data.x ** 2 + accel_data.z ** 2))
-                    yaw_acc = np.arctan2(accel_data.x, np.sqrt(accel_data.y ** 2 + accel_data.z ** 2))
-
-                    self.pitch = self.beta * (self.pitch + gyro_data.x * self.dt) + (1 - self.beta) * pitch_acc
-                    self.yaw = self.beta * (self.yaw + gyro_data.z * self.dt) + (1 - self.beta) * yaw_acc
-
-                    # Convert angles to degrees
-                    self.target_pitch = np.degrees(self.pitch)
-                    self.target_yaw = np.degrees(self.yaw)
-                    #
-                    # print("Pitch:", pitch_deg)
-                    # print("Yaw:", yaw_deg)
 
     def get_imu_data(self):
         accel_data = None
@@ -226,25 +232,54 @@ class DepthPublisherNode(Node):
                     gyro_data = frame.as_motion_frame().get_motion_data()
 
                     # Perform sensor fusion (complementary filter)
-                    self.pitch1 += gyro_data.x * self.dt
-                    self.yaw1 += gyro_data.z * self.dt
+                    self.pitch += gyro_data.x * self.dt
 
                     # Compensate for drift using accelerometer data
                     pitch_acc = np.arctan2(accel_data.y, np.sqrt(accel_data.x ** 2 + accel_data.z ** 2))
-                    yaw_acc = np.arctan2(accel_data.x, np.sqrt(accel_data.y ** 2 + accel_data.z ** 2))
 
-                    self.pitch1 = self.beta * (self.pitch1 + gyro_data.x * self.dt) + (1 - self.beta) * pitch_acc
-                    self.yaw1 = self.beta * (self.yaw1 + gyro_data.z * self.dt) + (1 - self.beta) * yaw_acc
+                    self.pitch = self.beta * (self.pitch + gyro_data.x * self.dt) + (1 - self.beta) * pitch_acc
 
                     # Convert angles to degrees
-                    self.current_pitch = np.degrees(self.pitch1)
-                    self.current_yaw = np.degrees(self.yaw1)
+                    # self.target_pitch = np.degrees(self.pitch)
+                    # self.target_yaw = np.degrees(self.yaw)
+                    self.pitch_angle = np.degrees(self.pitch)
                     #
                     # print("Pitch:", pitch_deg)
                     # print("Yaw:", yaw_deg)
 
+    # def get_imu_data(self):
+    #     accel_data = None
+    #     for frame in self.frames:
+    #         if frame.is_motion_frame():
+    #             if frame.get_profile().stream_type() == rs.stream.accel:
+    #                 # Extract accelerometer data
+    #                 accel_data = frame.as_motion_frame().get_motion_data()
+    #
+    #             elif frame.get_profile().stream_type() == rs.stream.gyro:
+    #                 # Extract gyroscope data
+    #                 gyro_data = frame.as_motion_frame().get_motion_data()
+    #
+    #                 # Perform sensor fusion (complementary filter)
+    #                 self.pitch1 += gyro_data.x * self.dt
+    #                 self.yaw1 += gyro_data.z * self.dt
+    #
+    #                 # Compensate for drift using accelerometer data
+    #                 pitch_acc = np.arctan2(accel_data.y, np.sqrt(accel_data.x ** 2 + accel_data.z ** 2))
+    #                 yaw_acc = np.arctan2(accel_data.x, np.sqrt(accel_data.y ** 2 + accel_data.z ** 2))
+    #
+    #                 self.pitch1 = self.beta * (self.pitch1 + gyro_data.x * self.dt) + (1 - self.beta) * pitch_acc
+    #                 self.yaw1 = self.beta * (self.yaw1 + gyro_data.z * self.dt) + (1 - self.beta) * yaw_acc
+    #
+    #                 # Convert angles to degrees
+    #                 self.current_pitch = np.degrees(self.pitch1)
+    #                 self.current_yaw = np.degrees(self.yaw1)
+    #                 #
+    #                 # print("Pitch:", pitch_deg)
+    #                 # print("Yaw:", yaw_deg)
+
     def __del__(self):
-        self.pipe.stop()
+        if self.pipe is not None:
+            self.pipe.stop()
         self.destroy_node()
         cv2.destroyAllWindows()
 

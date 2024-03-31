@@ -10,6 +10,8 @@ module my_robot_interfaces {
 
       uint8 palm_oil_num;
 
+      float fruit_depth;
+
       int8 pitch_direction;
 
       int8 yaw_direction;

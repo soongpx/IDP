@@ -19,6 +19,7 @@ my_robot_interfaces__msg__FruitDepth__init(my_robot_interfaces__msg__FruitDepth 
   }
   // detected
   // palm_oil_num
+  // fruit_depth
   // pitch_direction
   // yaw_direction
   return true;
@@ -32,6 +33,7 @@ my_robot_interfaces__msg__FruitDepth__fini(my_robot_interfaces__msg__FruitDepth 
   }
   // detected
   // palm_oil_num
+  // fruit_depth
   // pitch_direction
   // yaw_direction
 }
@@ -48,6 +50,10 @@ my_robot_interfaces__msg__FruitDepth__are_equal(const my_robot_interfaces__msg__
   }
   // palm_oil_num
   if (lhs->palm_oil_num != rhs->palm_oil_num) {
+    return false;
+  }
+  // fruit_depth
+  if (lhs->fruit_depth != rhs->fruit_depth) {
     return false;
   }
   // pitch_direction
@@ -73,6 +79,8 @@ my_robot_interfaces__msg__FruitDepth__copy(
   output->detected = input->detected;
   // palm_oil_num
   output->palm_oil_num = input->palm_oil_num;
+  // fruit_depth
+  output->fruit_depth = input->fruit_depth;
   // pitch_direction
   output->pitch_direction = input->pitch_direction;
   // yaw_direction

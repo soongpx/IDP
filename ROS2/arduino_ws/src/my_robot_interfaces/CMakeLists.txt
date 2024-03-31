@@ -22,6 +22,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/FindObstacle.msg"
   "msg/RealSense.msg"
   "msg/Imu.msg"
+  "msg/Harvest.msg"
   DEPENDENCIES geometry_msgs
   DEPENDENCIES std_msgs
  )

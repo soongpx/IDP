@@ -10,7 +10,8 @@
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/MotorCommand.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/FindObstacle.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/RealSense.idl",
-    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/Imu.idl"
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/Imu.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/Harvest.idl"
   ],
   "ros_interface_dependencies": [
     "geometry_msgs:/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
@@ -99,6 +100,7 @@
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/FindObstacle.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/RealSense.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Imu.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Harvest.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl",
