@@ -15,6 +15,10 @@ module my_robot_interfaces {
       int8 pitch_direction;
 
       int8 yaw_direction;
+
+      float pitch;
+
+      float yaw;
     };
   };
 };

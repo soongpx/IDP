@@ -22,6 +22,8 @@ my_robot_interfaces__msg__FruitDepth__init(my_robot_interfaces__msg__FruitDepth 
   // fruit_depth
   // pitch_direction
   // yaw_direction
+  // pitch
+  // yaw
   return true;
 }
 
@@ -36,6 +38,8 @@ my_robot_interfaces__msg__FruitDepth__fini(my_robot_interfaces__msg__FruitDepth 
   // fruit_depth
   // pitch_direction
   // yaw_direction
+  // pitch
+  // yaw
 }
 
 bool
@@ -64,6 +68,14 @@ my_robot_interfaces__msg__FruitDepth__are_equal(const my_robot_interfaces__msg__
   if (lhs->yaw_direction != rhs->yaw_direction) {
     return false;
   }
+  // pitch
+  if (lhs->pitch != rhs->pitch) {
+    return false;
+  }
+  // yaw
+  if (lhs->yaw != rhs->yaw) {
+    return false;
+  }
   return true;
 }
 
@@ -85,6 +97,10 @@ my_robot_interfaces__msg__FruitDepth__copy(
   output->pitch_direction = input->pitch_direction;
   // yaw_direction
   output->yaw_direction = input->yaw_direction;
+  // pitch
+  output->pitch = input->pitch;
+  // yaw
+  output->yaw = input->yaw;
   return true;
 }
 

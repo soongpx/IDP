@@ -95,6 +95,24 @@ bool my_robot_interfaces__msg__fruit_depth__convert_from_py(PyObject * _pymsg, v
     ros_message->yaw_direction = (int8_t)PyLong_AsLong(field);
     Py_DECREF(field);
   }
+  {  // pitch
+    PyObject * field = PyObject_GetAttrString(_pymsg, "pitch");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->pitch = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
+  {  // yaw
+    PyObject * field = PyObject_GetAttrString(_pymsg, "yaw");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->yaw = (float)PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -166,6 +184,28 @@ PyObject * my_robot_interfaces__msg__fruit_depth__convert_to_py(void * raw_ros_m
     field = PyLong_FromLong(ros_message->yaw_direction);
     {
       int rc = PyObject_SetAttrString(_pymessage, "yaw_direction", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // pitch
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->pitch);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "pitch", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
+  }
+  {  // yaw
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->yaw);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "yaw", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

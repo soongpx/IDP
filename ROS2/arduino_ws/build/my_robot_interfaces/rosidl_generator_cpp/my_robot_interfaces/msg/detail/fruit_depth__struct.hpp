@@ -43,6 +43,8 @@ struct FruitDepth_
       this->fruit_depth = 0.0f;
       this->pitch_direction = 0;
       this->yaw_direction = 0;
+      this->pitch = 0.0f;
+      this->yaw = 0.0f;
     }
   }
 
@@ -57,6 +59,8 @@ struct FruitDepth_
       this->fruit_depth = 0.0f;
       this->pitch_direction = 0;
       this->yaw_direction = 0;
+      this->pitch = 0.0f;
+      this->yaw = 0.0f;
     }
   }
 
@@ -76,6 +80,12 @@ struct FruitDepth_
   using _yaw_direction_type =
     int8_t;
   _yaw_direction_type yaw_direction;
+  using _pitch_type =
+    float;
+  _pitch_type pitch;
+  using _yaw_type =
+    float;
+  _yaw_type yaw;
 
   // setters for named parameter idiom
   Type & set__detected(
@@ -106,6 +116,18 @@ struct FruitDepth_
     const int8_t & _arg)
   {
     this->yaw_direction = _arg;
+    return *this;
+  }
+  Type & set__pitch(
+    const float & _arg)
+  {
+    this->pitch = _arg;
+    return *this;
+  }
+  Type & set__yaw(
+    const float & _arg)
+  {
+    this->yaw = _arg;
     return *this;
   }
 
@@ -164,6 +186,12 @@ struct FruitDepth_
       return false;
     }
     if (this->yaw_direction != other.yaw_direction) {
+      return false;
+    }
+    if (this->pitch != other.pitch) {
+      return false;
+    }
+    if (this->yaw != other.yaw) {
       return false;
     }
     return true;

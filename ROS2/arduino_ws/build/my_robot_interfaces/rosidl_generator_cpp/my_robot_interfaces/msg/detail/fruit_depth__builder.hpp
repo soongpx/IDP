@@ -21,16 +21,48 @@ namespace msg
 namespace builder
 {
 
+class Init_FruitDepth_yaw
+{
+public:
+  explicit Init_FruitDepth_yaw(::my_robot_interfaces::msg::FruitDepth & msg)
+  : msg_(msg)
+  {}
+  ::my_robot_interfaces::msg::FruitDepth yaw(::my_robot_interfaces::msg::FruitDepth::_yaw_type arg)
+  {
+    msg_.yaw = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::my_robot_interfaces::msg::FruitDepth msg_;
+};
+
+class Init_FruitDepth_pitch
+{
+public:
+  explicit Init_FruitDepth_pitch(::my_robot_interfaces::msg::FruitDepth & msg)
+  : msg_(msg)
+  {}
+  Init_FruitDepth_yaw pitch(::my_robot_interfaces::msg::FruitDepth::_pitch_type arg)
+  {
+    msg_.pitch = std::move(arg);
+    return Init_FruitDepth_yaw(msg_);
+  }
+
+private:
+  ::my_robot_interfaces::msg::FruitDepth msg_;
+};
+
 class Init_FruitDepth_yaw_direction
 {
 public:
   explicit Init_FruitDepth_yaw_direction(::my_robot_interfaces::msg::FruitDepth & msg)
   : msg_(msg)
   {}
-  ::my_robot_interfaces::msg::FruitDepth yaw_direction(::my_robot_interfaces::msg::FruitDepth::_yaw_direction_type arg)
+  Init_FruitDepth_pitch yaw_direction(::my_robot_interfaces::msg::FruitDepth::_yaw_direction_type arg)
   {
     msg_.yaw_direction = std::move(arg);
-    return std::move(msg_);
+    return Init_FruitDepth_pitch(msg_);
   }
 
 private:

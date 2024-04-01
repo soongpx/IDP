@@ -1,0 +1,1 @@
+/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/srv/__init__.py

@@ -42,6 +42,10 @@ cdr_serialize(
   cdr << ros_message.pitch_direction;
   // Member: yaw_direction
   cdr << ros_message.yaw_direction;
+  // Member: pitch
+  cdr << ros_message.pitch;
+  // Member: yaw
+  cdr << ros_message.yaw;
   return true;
 }
 
@@ -69,6 +73,12 @@ cdr_deserialize(
 
   // Member: yaw_direction
   cdr >> ros_message.yaw_direction;
+
+  // Member: pitch
+  cdr >> ros_message.pitch;
+
+  // Member: yaw
+  cdr >> ros_message.yaw;
 
   return true;
 }
@@ -113,6 +123,18 @@ get_serialized_size(
   // Member: yaw_direction
   {
     size_t item_size = sizeof(ros_message.yaw_direction);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: pitch
+  {
+    size_t item_size = sizeof(ros_message.pitch);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: yaw
+  {
+    size_t item_size = sizeof(ros_message.yaw);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -181,6 +203,24 @@ max_serialized_size_FruitDepth(
     current_alignment += array_size * sizeof(uint8_t);
   }
 
+  // Member: pitch
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
+  // Member: yaw
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -189,7 +229,7 @@ max_serialized_size_FruitDepth(
     using DataType = my_robot_interfaces::msg::FruitDepth;
     is_plain =
       (
-      offsetof(DataType, yaw_direction) +
+      offsetof(DataType, yaw) +
       last_member_size
       ) == ret_val;
   }

@@ -17,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/motor_command__functions.c.o.d"
   "CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.c.o"
   "CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/msg/detail/real_sense__functions.c.o.d"
+  "CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/srv/detail/harvest_confirmation__functions.c.o"
+  "CMakeFiles/my_robot_interfaces__rosidl_generator_c.dir/rosidl_generator_c/my_robot_interfaces/srv/detail/harvest_confirmation__functions.c.o.d"
   "libmy_robot_interfaces__rosidl_generator_c.pdb"
   "libmy_robot_interfaces__rosidl_generator_c.so"
   "rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.c"
@@ -64,6 +66,11 @@ file(REMOVE_RECURSE
   "rosidl_generator_c/my_robot_interfaces/msg/lidar_scan.h"
   "rosidl_generator_c/my_robot_interfaces/msg/motor_command.h"
   "rosidl_generator_c/my_robot_interfaces/msg/real_sense.h"
+  "rosidl_generator_c/my_robot_interfaces/srv/detail/harvest_confirmation__functions.c"
+  "rosidl_generator_c/my_robot_interfaces/srv/detail/harvest_confirmation__functions.h"
+  "rosidl_generator_c/my_robot_interfaces/srv/detail/harvest_confirmation__struct.h"
+  "rosidl_generator_c/my_robot_interfaces/srv/detail/harvest_confirmation__type_support.h"
+  "rosidl_generator_c/my_robot_interfaces/srv/harvest_confirmation.h"
 )
 
 # Per-language clean rules from dependency scanning.

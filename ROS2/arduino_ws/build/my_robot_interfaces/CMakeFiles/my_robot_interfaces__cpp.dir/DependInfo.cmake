@@ -47,6 +47,10 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/laser_scan.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/motor_command.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/real_sense.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/srv/detail/harvest_confirmation__builder.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/srv/detail/harvest_confirmation__struct.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/srv/detail/harvest_confirmation__traits.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/srv/harvest_confirmation.hpp" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   )
 
 

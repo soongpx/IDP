@@ -62,6 +62,8 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
         '_fruit_depth',
         '_pitch_direction',
         '_yaw_direction',
+        '_pitch',
+        '_yaw',
     ]
 
     _fields_and_field_types = {
@@ -70,6 +72,8 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
         'fruit_depth': 'float',
         'pitch_direction': 'int8',
         'yaw_direction': 'int8',
+        'pitch': 'float',
+        'yaw': 'float',
     }
 
     SLOT_TYPES = (
@@ -78,6 +82,8 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
         rosidl_parser.definition.BasicType('float'),  # noqa: E501
         rosidl_parser.definition.BasicType('int8'),  # noqa: E501
         rosidl_parser.definition.BasicType('int8'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
+        rosidl_parser.definition.BasicType('float'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -89,6 +95,8 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
         self.fruit_depth = kwargs.get('fruit_depth', float())
         self.pitch_direction = kwargs.get('pitch_direction', int())
         self.yaw_direction = kwargs.get('yaw_direction', int())
+        self.pitch = kwargs.get('pitch', float())
+        self.yaw = kwargs.get('yaw', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -128,6 +136,10 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
         if self.pitch_direction != other.pitch_direction:
             return False
         if self.yaw_direction != other.yaw_direction:
+            return False
+        if self.pitch != other.pitch:
+            return False
+        if self.yaw != other.yaw:
             return False
         return True
 
@@ -208,3 +220,33 @@ class FruitDepth(metaclass=Metaclass_FruitDepth):
             assert value >= -128 and value < 128, \
                 "The 'yaw_direction' field must be an integer in [-128, 127]"
         self._yaw_direction = value
+
+    @builtins.property
+    def pitch(self):
+        """Message field 'pitch'."""
+        return self._pitch
+
+    @pitch.setter
+    def pitch(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'pitch' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'pitch' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._pitch = value
+
+    @builtins.property
+    def yaw(self):
+        """Message field 'yaw'."""
+        return self._yaw
+
+    @yaw.setter
+    def yaw(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'yaw' field must be of type 'float'"
+            assert not (value < -3.402823466e+38 or value > 3.402823466e+38) or math.isinf(value), \
+                "The 'yaw' field must be a float in [-3.402823466e+38, 3.402823466e+38]"
+        self._yaw = value

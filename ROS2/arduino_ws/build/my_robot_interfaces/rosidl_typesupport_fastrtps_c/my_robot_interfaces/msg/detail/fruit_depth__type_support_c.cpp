@@ -74,6 +74,16 @@ static bool _FruitDepth__cdr_serialize(
     cdr << ros_message->yaw_direction;
   }
 
+  // Field name: pitch
+  {
+    cdr << ros_message->pitch;
+  }
+
+  // Field name: yaw
+  {
+    cdr << ros_message->yaw;
+  }
+
   return true;
 }
 
@@ -111,6 +121,16 @@ static bool _FruitDepth__cdr_deserialize(
   // Field name: yaw_direction
   {
     cdr >> ros_message->yaw_direction;
+  }
+
+  // Field name: pitch
+  {
+    cdr >> ros_message->pitch;
+  }
+
+  // Field name: yaw
+  {
+    cdr >> ros_message->yaw;
   }
 
   return true;
@@ -157,6 +177,18 @@ size_t get_serialized_size_my_robot_interfaces__msg__FruitDepth(
   // field.name yaw_direction
   {
     size_t item_size = sizeof(ros_message->yaw_direction);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name pitch
+  {
+    size_t item_size = sizeof(ros_message->pitch);
+    current_alignment += item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name yaw
+  {
+    size_t item_size = sizeof(ros_message->yaw);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -225,6 +257,22 @@ size_t max_serialized_size_my_robot_interfaces__msg__FruitDepth(
     last_member_size = array_size * sizeof(uint8_t);
     current_alignment += array_size * sizeof(uint8_t);
   }
+  // member: pitch
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
+  // member: yaw
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint32_t);
+    current_alignment += array_size * sizeof(uint32_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -234,7 +282,7 @@ size_t max_serialized_size_my_robot_interfaces__msg__FruitDepth(
     using DataType = my_robot_interfaces__msg__FruitDepth;
     is_plain =
       (
-      offsetof(DataType, yaw_direction) +
+      offsetof(DataType, yaw) +
       last_member_size
       ) == ret_val;
   }

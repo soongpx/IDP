@@ -33,6 +33,7 @@ setup(
             'joystick_control = arduino_control.joystick_control:main',
             'autonomous_control = arduino_control.autonomous_main:main',
             'find_obstacle = arduino_control.find_obstacle:main',
+            'fruit_harvest = arduino_control.fruit_harvest:main',
         ],
     },
 )

@@ -7,3 +7,4 @@
 /home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/RealSense.idl
 /home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/Imu.idl
 /home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/Harvest.idl
+/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:srv/HarvestConfirmation.idl

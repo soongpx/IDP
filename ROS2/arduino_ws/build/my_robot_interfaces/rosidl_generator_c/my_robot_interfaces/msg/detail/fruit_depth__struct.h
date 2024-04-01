@@ -25,6 +25,8 @@ typedef struct my_robot_interfaces__msg__FruitDepth
   float fruit_depth;
   int8_t pitch_direction;
   int8_t yaw_direction;
+  float pitch;
+  float yaw;
 } my_robot_interfaces__msg__FruitDepth;
 
 // Struct for a sequence of my_robot_interfaces__msg__FruitDepth.

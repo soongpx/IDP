@@ -36,6 +36,10 @@ file(REMOVE_RECURSE
   "rosidl_generator_cpp/my_robot_interfaces/msg/lidar_scan.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/motor_command.hpp"
   "rosidl_generator_cpp/my_robot_interfaces/msg/real_sense.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/srv/detail/harvest_confirmation__builder.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/srv/detail/harvest_confirmation__struct.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/srv/detail/harvest_confirmation__traits.hpp"
+  "rosidl_generator_cpp/my_robot_interfaces/srv/harvest_confirmation.hpp"
 )
 
 # Per-language clean rules from dependency scanning.

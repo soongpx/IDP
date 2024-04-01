@@ -21,6 +21,9 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/my_robot_interfaces/msg/_motor_command_s.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/_real_sense.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_real_sense_s.c"
+  "../rosidl_generator_py/my_robot_interfaces/srv/__init__.py"
+  "../rosidl_generator_py/my_robot_interfaces/srv/_harvest_confirmation.py"
+  "../rosidl_generator_py/my_robot_interfaces/srv/_harvest_confirmation_s.c"
   "CMakeFiles/my_robot_interfaces__py"
 )
 

@@ -75,6 +75,9 @@ CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/
 CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/RealSense.msg
 CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/Imu.msg
 CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/msg/Harvest.msg
+CMakeFiles/my_robot_interfaces: /home/px/arduino_ws/src/my_robot_interfaces/srv/HarvestConfirmation.srv
+CMakeFiles/my_robot_interfaces: rosidl_cmake/srv/HarvestConfirmation_Request.msg
+CMakeFiles/my_robot_interfaces: rosidl_cmake/srv/HarvestConfirmation_Response.msg
 CMakeFiles/my_robot_interfaces: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 CMakeFiles/my_robot_interfaces: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 CMakeFiles/my_robot_interfaces: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl

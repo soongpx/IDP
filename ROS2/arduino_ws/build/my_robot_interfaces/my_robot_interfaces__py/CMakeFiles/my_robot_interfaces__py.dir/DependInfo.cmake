@@ -33,6 +33,9 @@ set(CMAKE_MULTIPLE_OUTPUT_PAIRS
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_motor_command_s.c" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_real_sense.py" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/msg/_real_sense_s.c" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/srv/__init__.py" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/srv/_harvest_confirmation.py" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
+  "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/srv/_harvest_confirmation_s.c" "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c"
   )
 
 

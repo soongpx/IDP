@@ -23,6 +23,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/RealSense.msg"
   "msg/Imu.msg"
   "msg/Harvest.msg"
+  "srv/HarvestConfirmation.srv"
   DEPENDENCIES geometry_msgs
   DEPENDENCIES std_msgs
  )
