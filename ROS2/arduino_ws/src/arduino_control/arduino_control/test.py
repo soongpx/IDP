@@ -1,200 +1,211 @@
 import pyrealsense2 as rs
 import numpy as np
 import cv2
+import math
 from ultralytics import YOLO
-import rclpy
-from rclpy.node import Node
-from my_robot_interfaces.msg import FruitDepth
 
 
-class Point:
-    def __init__(self, x=0, y=0, z=0):
-        self.x = x
-        self.y = y
-        self.z = z
+class Points:
+    x = 0
+    y = 0
+    z = 0
 
 
-class DepthPublisherNode(Node):
-    def __init__(self):
-        super().__init__('camera_depth_node')
-        self.publisher = self.create_publisher(FruitDepth, 'fruit_depth', 10)
-        timer_period = 0.01  # seconds
-        self.timer = self.create_timer(timer_period, self.process_frames)
+crosshair_x_offset = 0.45
+crosshair_y_offset = 0.75
+confidence = 0.5
+color = (0, 255, 0)  # Green color in BGR
+FOV_V = 58  # RGB
+FOV_H = 87  # RGB
+RES_V = 640
+RES_H = 480
+thickness = 1
+detected_palm_oil = False
+# Variables for orientation
+pitch = 0
+yaw = 0
+# Variables for sensor fusion
+dt = 1 / 200  # Time interval (assuming gyro runs at 200 Hz)
+beta = 0.98  # Complementary filter coefficient
 
-        # Camera frame variables
-        self.frame_height = 480
-        self.frame_width = 640
+# Initialize the RealSense pipeline
+pipeline = rs.pipeline()
+config = rs.config()
+config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
+config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
+config.enable_stream(rs.stream.accel, rs.format.motion_xyz32f, 100)  # Accelerometer data
+config.enable_stream(rs.stream.gyro, rs.format.motion_xyz32f, 200)  # Gyroscope data
 
-        # Machine Learning variables
-        self.crosshair_x_offset = 0.45
-        self.crosshair_y_offset = 0.75
-        self.confidence = 0.5
-        self.color = (0, 255, 0)
-        self.FOV_V = 58
-        self.FOV_H = 87
-        self.RES_V = 640
-        self.RES_H = 480
-        self.thickness = 1
-        self.detected_palm_oil = False
-        self.palm_oil_num = 0
+# Start streaming
+profile = pipeline.start(config)
 
-        # Orientation variables
-        self.pitch_angle = 0
-        self.yaw_angle = 0
-        self.pitch = 0
-        self.yaw = 0
-        self.target_pitch = 0
-        self.target_yaw = 0
-        self.pitch1 = 0
-        self.yaw1 = 0
-        self.current_pitch = 0
-        self.current_yaw = 0
-        self.first_detected = True
-        self.yaw_direction = 0
-        self.pitch_direction = 0
+# align the depth with the rgb image
+# Getting the depth sensor's depth scale
+depth_sensor = profile.get_device().first_depth_sensor()
+depth_scale = depth_sensor.get_depth_scale()
+print("Depth Scale is: ", depth_scale)
 
-        # Sensor fusion variables
-        self.dt = 1 / 200
-        self.beta = 0.98
+clipping_distance_in_meters = 4  # 1 meter
+clipping_distance = clipping_distance_in_meters / depth_scale
+align_to = rs.stream.color
+align = rs.align(align_to)
+# model_path = r"C:\Users\ASUS\Documents\GitHub\IDP\ML\model\7_jan_palm_oil.pt"
+model_path = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/best.pt"
 
-        # Camera setup
-        self.pipe = rs.pipeline()
-        self.cfg = rs.config()
-        self.cfg.enable_stream(rs.stream.color, self.frame_width, self.frame_height, rs.format.bgr8, 30)
-        self.cfg.enable_stream(rs.stream.depth, self.frame_width, self.frame_height, rs.format.z16, 30)
-        self.cfg.enable_stream(rs.stream.accel, rs.format.motion_xyz32f, 100)
-        self.cfg.enable_stream(rs.stream.gyro, rs.format.motion_xyz32f, 200)
-        self.profile = self.pipe.start(self.cfg)
-        self.depth_sensor = self.profile.get_device().first_depth_sensor()
-        self.depth_scale = self.depth_sensor.get_depth_scale()
-        if self.depth_scale > 0:
-            self.get_logger().info("Camera opened successfully!")
-        self.clipping_distance_in_meters = 4
-        self.clipping_distance = self.clipping_distance_in_meters / self.depth_scale
-        self.align_to = rs.stream.color
-        self.align = rs.align(self.align_to)
+model = YOLO(model_path)
+DETECTED_FRAME_PATH = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg"
+CLOSEST_FRAME_PATH = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg"
 
-        # Machine Learning Model
-        model_path = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/7_jan_palm_oil.pt"
-        self.model = YOLO(model_path)
-        self.DETECTED_FRAME_PATH = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg"
+def calc_yaw_angle(pt1_x, pt1_y, center_x, center_y):
+    vertical = (center_y - pt1_y)
+    horizontal = (pt1_x - center_x)
 
-    def process_frames(self):
-        frames = self.pipe.wait_for_frames()
-        if not self.detected_palm_oil:
-            self.process_frame(frames)
-        else:
-            if self.first_detected:
-                self.get_target_imu_data(frames)
-                self.target_yaw += self.yaw_angle
-                self.target_pitch += self.pitch_angle
-                self.first_detected = False
-            elif self.pitch_direction == 0 and self.yaw_direction == 0:
-                self.detected_palm_oil = False
-                self.first_detected = True
-                self.pitch_direction = 0
-                self.yaw_direction = 0
-            else:
-                self.get_imu_data(frames)
-            self.update_direction()
+    pitch_angle = (FOV_V / RES_V) * vertical
+    yaw_angle = (FOV_H / RES_H) * horizontal
+    return yaw_angle, pitch_angle
 
-        msg = FruitDepth()
-        msg.detected = self.detected_palm_oil
-        msg.palm_oil_num = self.palm_oil_num
-        msg.yaw_direction = self.yaw_direction
-        msg.pitch_direction = self.pitch_direction
-        self.get_logger().info(f"{msg.detected}, {msg.palm_oil_num}, {msg.yaw_direction}, {msg.pitch_direction}")
-        self.publisher.publish(msg)
 
-    def calc_yaw_angle(self, pt1_x, pt1_y, center_x, center_y):
-        vertical = (center_y - pt1_y)
-        horizontal = (pt1_x - center_x)
+def process_frame(frame, conf_val):
+    global color, thickness
+    detected = False
+    predictions = model.predict(frame, conf=conf_val)
+    aligned_frames = align.process(frames)
+    depth_frame = aligned_frames.get_depth_frame()  # aligned_depth_frame is a 640x480 depth image
+    depth_arr = []
+    coordinates = predictions[0].boxes.xywh.tolist()
+    height, width, _ = frame.shape
+    angles = (0,0)
 
-        self.pitch_angle = (self.FOV_V / self.RES_V) * vertical
-        self.yaw_angle = (self.FOV_H / self.RES_H) * horizontal
+    # draw crosshair
+    crosshair_center = (int(width * crosshair_x_offset), int(height * crosshair_y_offset))
+    # Draw horizontal line (crosshair)
+    cv2.line(frame, (0, int(height * crosshair_y_offset)), (width, int(height * crosshair_y_offset)), color, thickness)
+    # Draw vertical line (crosshair)
+    cv2.line(frame, (int(width * crosshair_x_offset), 0), (int(width * crosshair_x_offset), height), color, thickness)
 
-    def process_frame(self, frames):
-        aligned_frames = self.align.process(frames)
-        depth_frame = aligned_frames.get_depth_frame()
-        color_frame = aligned_frames.get_color_frame()
+    for pts in coordinates:
+        # Extract x, y, width, and height
+        x, y, width, height = int(pts[0]), int(pts[1]), int(pts[2]), int(pts[3])
+
+        # Calculate center
+        center_x = x + width // 2
+        center_y = y + height // 2
+
+        # Draw center point
+        cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)
+
+        # Get depth value at the center point
+        depth_value = depth_frame.get_distance(center_x, center_y)
+
+        # Convert depth value to meaningful units (e.g., meters) using depth scale
+        depth_meters = depth_value
+        depth_text = "{:.2f}m".format(depth_meters)
+        Points.x = center_x
+        Points.y = center_y
+        Points.z = depth_meters
+        cv2.putText(frame, depth_text, (center_x, center_y), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 1, cv2.LINE_AA)
+        cv2.circle(frame, (center_x, center_y), 5, (0, 0, 255), -1)
+        cv2.rectangle(frame, (x, y), (x + width, y + height), (0, 255, 0), 2)
+        cv2.putText(frame, 'palm oil', (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3, cv2.LINE_AA)
+        print("Depth at center point:", depth_meters, "meters")
+        depth_arr.append(Points)
+
+    palm_oil_num = len(depth_arr)
+    closest_pt = Points()
+    closest_depth = 100
+    for pts in depth_arr:
+        if pts.z < closest_depth and pts.z != 0:
+            closest_depth = pts.z
+            closest_pt.x = pts.x
+            closest_pt.y = pts.y
+            closest_pt.z = pts.z
+    cv2.circle(frame, (closest_pt.x, closest_pt.y), 5, (0, 0, 255), -1)
+    if closest_depth < 100:
+        height, width, _ = frame.shape
+        # Draw rectangle and text on the frame
+        print(f"x: {closest_pt.x}, y: {closest_pt.y}, z:{closest_pt.z}")
+        angles = (calc_yaw_angle(closest_pt.x, closest_pt.y, int(width * 0.47), int(height * 0.7)))
+        cv2.line(frame, crosshair_center, (closest_pt.x, closest_pt.y), (0, 0, 255), 5)
+        print(angles)
+        detected = True
+        print(f"Closest Depth: {closest_depth}")
+
+    # Save the frame with detections
+    cv2.imwrite(DETECTED_FRAME_PATH, frame)
+
+    return frame, detected, angles, palm_oil_num
+
+
+def getIMUdata(frames):
+    global pitch, yaw, beta, dt
+    pitch_deg = 0
+    yaw_deg = 0
+    for frame in frames:
+        if frame.is_motion_frame():
+            if frame.get_profile().stream_type() == rs.stream.accel:
+                # Extract accelerometer data
+                accel_data = frame.as_motion_frame().get_motion_data()
+
+            elif frame.get_profile().stream_type() == rs.stream.gyro:
+                # Extract gyroscope data
+                gyro_data = frame.as_motion_frame().get_motion_data()
+
+                # Perform sensor fusion (complementary filter)
+                pitch += gyro_data.x * dt
+                yaw += gyro_data.z * dt
+
+                # Compensate for drift using accelerometer data
+                pitch_acc = np.arctan2(accel_data.y, np.sqrt(accel_data.x ** 2 + accel_data.z ** 2))
+                yaw_acc = np.arctan2(accel_data.x, np.sqrt(accel_data.y ** 2 + accel_data.z ** 2))
+
+                pitch = beta * (pitch + gyro_data.x * dt) + (1 - beta) * pitch_acc
+                yaw = beta * (yaw + gyro_data.z * dt) + (1 - beta) * yaw_acc
+
+                # Convert angles to degrees
+                pitch_deg = np.degrees(pitch)
+                yaw_deg = np.degrees(yaw)
+                #
+                # print("Pitch:", pitch_deg)
+                # print("Yaw:", yaw_deg)
+
+    return pitch_deg, yaw_deg
+
+
+try:
+    while True:
+        # Wait for the next set of frames
+        frames = pipeline.wait_for_frames()
+        color_frame = frames.get_color_frame()
+
+        color_intrinsic = color_frame.profile.as_video_stream_profile().intrinsics
+        # Convert frames to numpy arrays
         color_image = np.asanyarray(color_frame.get_data())
 
-        self.detected_palm_oil = False
-        predictions = self.model.predict(color_image, conf=self.confidence)
-        depth_arr = []
-        coordinates = predictions[0].boxes.xywh.tolist()
-        height, width, _ = color_image.shape
+        color_image, detected_palm_oil, angles1, palm_oil_num = process_frame(color_image, confidence)
+        target_pitch, target_yaw = getIMUdata(frames)
+        target_pitch += angles1[1]
+        target_yaw += angles1[0]
 
-        for pts in coordinates:
-            x, y, width, height = int(pts[0]), int(pts[1]), int(pts[2]), int(pts[3])
-            center_x = x + width // 2
-            center_y = y + height // 2
-            depth_value = depth_frame.get_distance(center_x, center_y)
-            depth_arr.append(Point(center_x, center_y, depth_value))
+        print(palm_oil_num)
+        # Show RGB image
 
-        self.palm_oil_num = len(depth_arr)
-        closest_pt = min(depth_arr, key=lambda p: p.z if p.z != 0 else float('inf'))
-        if closest_pt.z < 100:
-            self.calc_yaw_angle(closest_pt.x, closest_pt.y, int(width * 0.47), int(height * 0.7))
-            self.detected_palm_oil = True
-            print(f"Closest Depth: {closest_pt.z}")
+        cv2.imshow('RGB Image', color_image)
 
-        cv2.imwrite(self.DETECTED_FRAME_PATH, color_image)
+        # Exit when 'q' is pressed
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
 
-    def get_target_imu_data(self, frames):
-        accel_data = None
-        for frame in frames:
-            if frame.is_motion_frame():
-                if frame.get_profile().stream_type() == rs.stream.accel:
-                    accel_data = frame.as_motion_frame().get_motion_data()
-                elif frame.get_profile().stream_type() == rs.stream.gyro:
-                    gyro_data = frame.as_motion_frame().get_motion_data()
-                    self.pitch += gyro_data.x * self.dt
-                    self.yaw += gyro_data.z * self.dt
-                    if accel_data is not None:
-                        pitch_acc = np.arctan2(accel_data.y, np.sqrt(accel_data.x ** 2 + accel_data.z ** 2))
-                        yaw_acc = np.arctan2(accel_data.x, np.sqrt(accel_data.y ** 2 + accel_data.z ** 2))
-                        self.pitch = self.beta * (self.pitch + gyro_data.x * self.dt) + (1 - self.beta) * pitch_acc
-                        self.yaw = self.beta * (self.yaw + gyro_data.z * self.dt) + (1 - self.beta) * yaw_acc
-                        self.target_pitch = np.degrees(self.pitch)
-                        self.target_yaw = np.degrees(self.yaw)
-
-    def get_imu_data(self, frames):
-        accel_data = None
-        for frame in frames:
-            if frame.is_motion_frame():
-                if frame.get_profile().stream_type() == rs.stream.accel:
-                    accel_data = frame.as_motion_frame().get_motion_data()
-                elif frame.get_profile().stream_type() == rs.stream.gyro:
-                    gyro_data = frame.as_motion_frame().get_motion_data()
-                    self.pitch1 += gyro_data.x * self.dt
-                    self.yaw1 += gyro_data.z * self.dt
-                    if accel_data is not None:
-                        pitch_acc = np.arctan2(accel_data.y, np.sqrt(accel_data.x ** 2 + accel_data.z ** 2))
-                        yaw_acc = np.arctan2(accel_data.x, np.sqrt(accel_data.y ** 2 + accel_data.z ** 2))
-                        self.pitch1 = self.beta * (self.pitch1 + gyro_data.x * self.dt) + (1 - self.beta) * pitch_acc
-                        self.yaw1 = self.beta * (self.yaw1 + gyro_data.z * self.dt) + (1 - self.beta) * yaw_acc
-                        self.current_pitch = np.degrees(self.pitch1)
-                        self.current_yaw = np.degrees(self.yaw1)
-
-    def update_direction(self):
-        pitch_diff = self.current_pitch - self.target_pitch
-        yaw_diff = self.current_yaw - self.target_yaw
-        self.pitch_direction = int(np.sign(pitch_diff)) if abs(pitch_diff) > 2 else 0
-        self.yaw_direction = int(np.sign(yaw_diff)) if abs(yaw_diff) > 2 else 0
-
-    def __del__(self):
-        self.pipe.stop()
-        self.destroy_node()
-        cv2.destroyAllWindows()
-
-
-def main(args=None):
-    rclpy.init(args=args)
-    depth_publisher = DepthPublisherNode()
-    rclpy.spin(depth_publisher)
-    rclpy.shutdown()
-
-
-if __name__ == '__main__':
-    main()
+        if detected_palm_oil:
+            cv2.imshow('RGB Image', cv2.imread(DETECTED_FRAME_PATH))
+            cv2.waitKey(0)
+            while True:
+                frames = pipeline.wait_for_frames()
+                current_pitch, current_yaw = getIMUdata(frames)
+                print(current_pitch - target_pitch)
+                print(current_yaw - target_yaw)
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                    break
+finally:
+    # Stop streaming
+    pipeline.stop()
+    cv2.destroyAllWindows()

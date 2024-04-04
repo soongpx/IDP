@@ -1,7 +1,6 @@
 import pyrealsense2 as rs
 import numpy as np
 import cv2
-import math
 from ultralytics import YOLO
 import rclpy
 from rclpy.node import Node
@@ -34,12 +33,8 @@ class DepthPublisherNode(Node):
         self.crosshair_x_offset = 0.45
         self.crosshair_y_offset = 0.75
         self.confidence = 0.7
-        self.color = (0, 255, 0)  # Green color in BGR
         self.FOV_V = 58  # RGB
         self.FOV_H = 87  # RGB
-        self.RES_V = 640
-        self.RES_H = 480
-        self.thickness = 1
         self.detected_palm_oil = False
         self.fruit_depth = 0.0
         self.palm_oil_num = 0
@@ -169,9 +164,9 @@ class DepthPublisherNode(Node):
         vertical = (center_y - pt1_y)
         horizontal = (pt1_x - center_x)
 
-        self.target_pitch = (self.FOV_V / self.RES_V) * vertical
+        self.target_pitch = (self.FOV_V / self.frame_height) * vertical
         print(self.target_pitch)
-        self.target_yaw = (self.FOV_H / self.RES_H) * horizontal
+        self.target_yaw = (self.FOV_H / self.frame_width) * horizontal
 
     def process_frame(self):
         self.detected_palm_oil = False
@@ -183,10 +178,9 @@ class DepthPublisherNode(Node):
         for pts in coordinates:
             # Extract x, y, width, and height
             x, y, width, height = int(pts[0]), int(pts[1]), int(pts[2]), int(pts[3])
-
-            # Calculate center
-            center_x = x + width // 2
-            center_y = y + height // 2
+            
+            center_x = x
+            center_y = y
 
             # Get depth value at the center point
             depth_value = self.depth_frame.get_distance(center_x, center_y)
@@ -209,11 +203,14 @@ class DepthPublisherNode(Node):
         if closest_depth < 100:
             height, width, _ = self.color_image.shape
             print(f"x: {closest_pt.x}, y: {closest_pt.y}, z:{closest_pt.z}")
-            self.calc_pitch_angle(closest_pt.x, closest_pt.y, int(width * 0.47), int(height * 0.7))
+            self.calc_pitch_angle(closest_pt.x, closest_pt.y, int(width * self.crosshair_x_offset), int(height * self.crosshair_y_offset))
             self.detected_palm_oil = True
             self.fruit_depth = closest_depth
             print(f"Closest Depth: {closest_depth}")
 
+        # Display color frame with bounding boxes around detected objects
+        cv2.imshow('Detection', self.color_image)
+        cv2.waitKey(1)  # Wait indefinitely until a key is pressed
         # Save the frame with detections
         # cv2.imwrite(self.DETECTED_FRAME_PATH, self.color_image)
 
@@ -238,42 +235,7 @@ class DepthPublisherNode(Node):
                     self.pitch = self.beta * (self.pitch + gyro_data.x * self.dt) + (1 - self.beta) * pitch_acc
 
                     # Convert angles to degrees
-                    # self.target_pitch = np.degrees(self.pitch)
-                    # self.target_yaw = np.degrees(self.yaw)
                     self.pitch_angle = np.degrees(self.pitch)
-                    #
-                    # print("Pitch:", pitch_deg)
-                    # print("Yaw:", yaw_deg)
-
-    # def get_imu_data(self):
-    #     accel_data = None
-    #     for frame in self.frames:
-    #         if frame.is_motion_frame():
-    #             if frame.get_profile().stream_type() == rs.stream.accel:
-    #                 # Extract accelerometer data
-    #                 accel_data = frame.as_motion_frame().get_motion_data()
-    #
-    #             elif frame.get_profile().stream_type() == rs.stream.gyro:
-    #                 # Extract gyroscope data
-    #                 gyro_data = frame.as_motion_frame().get_motion_data()
-    #
-    #                 # Perform sensor fusion (complementary filter)
-    #                 self.pitch1 += gyro_data.x * self.dt
-    #                 self.yaw1 += gyro_data.z * self.dt
-    #
-    #                 # Compensate for drift using accelerometer data
-    #                 pitch_acc = np.arctan2(accel_data.y, np.sqrt(accel_data.x ** 2 + accel_data.z ** 2))
-    #                 yaw_acc = np.arctan2(accel_data.x, np.sqrt(accel_data.y ** 2 + accel_data.z ** 2))
-    #
-    #                 self.pitch1 = self.beta * (self.pitch1 + gyro_data.x * self.dt) + (1 - self.beta) * pitch_acc
-    #                 self.yaw1 = self.beta * (self.yaw1 + gyro_data.z * self.dt) + (1 - self.beta) * yaw_acc
-    #
-    #                 # Convert angles to degrees
-    #                 self.current_pitch = np.degrees(self.pitch1)
-    #                 self.current_yaw = np.degrees(self.yaw1)
-    #                 #
-    #                 # print("Pitch:", pitch_deg)
-    #                 # print("Yaw:", yaw_deg)
 
     def __del__(self):
         if self.pipe is not None:

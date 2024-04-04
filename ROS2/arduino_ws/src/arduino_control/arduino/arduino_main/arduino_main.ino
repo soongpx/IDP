@@ -157,6 +157,7 @@ void ProcessTaskCode()
         if (left_counter == 100)
         {
           LeftSpeed++;
+          left_counter = 0;
         }
         else
         {
@@ -167,6 +168,7 @@ void ProcessTaskCode()
         if (left_counter == 100)
         {
           LeftSpeed--;
+          left_counter = 0;
         } else
         {
           left_counter++;
@@ -182,6 +184,7 @@ void ProcessTaskCode()
         if (right_counter == 100)
         {
           RightSpeed++;
+          right_counter = 0;
         } else
         {
           right_counter++;
@@ -191,6 +194,7 @@ void ProcessTaskCode()
         if (right_counter == 100)
         {
           RightSpeed--;
+          right_counter = 0;
         } else
         {
           right_counter++;
@@ -298,6 +302,7 @@ void Stop_Rotate(){
 }
 
 void Tilt_Up(){
+  digitalWrite(13, 1);
   digitalWrite(Tilt_Dir, HIGH);
   analogWrite(Tilt_Pwm, 255);
 }
@@ -309,6 +314,7 @@ void Tilt_Down(){
 
 void Stop_Tilting()
 {
+  digitalWrite(13, 0);
   analogWrite(Tilt_Pwm, 0);
 }
 
@@ -327,12 +333,6 @@ void Stop_Extend(){
 }
 
 void Vibrate(int PWM){
-  if (PWM == 255){
-  digitalWrite(13, 1);
-  } else{
-
-  digitalWrite(13, 0);
-  }
   digitalWrite(Vibrate_Dir, HIGH);
   analogWrite(Vibrate_Pwm, PWM);
 }

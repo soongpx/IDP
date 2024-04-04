@@ -12,8 +12,8 @@ class FruitHarvestNode(Node):
         self.motor_publisher = self.create_publisher(MotorCommand, 'motor_command', 10)
         self.timer_period = 0.01  # seconds
         self.timer = self.create_timer(self.timer_period, self.timer_callback)
-        confirm_action_service = self.create_service(HarvestConfirmation, 'confirm_action',
-                                                     self.confirm_action_callback)  # Create a service server
+        self.confirm_action_service = self.create_service(HarvestConfirmation, 'confirm_action',
+                                                          self.confirm_action_callback)  # Create a service server
 
         # Camera Variables
         self.detected = False
@@ -31,10 +31,8 @@ class FruitHarvestNode(Node):
         self.target_harvest_time = 0
         self.actuator_speed = 0.03  # m/s
         self.harvest_offset = 0.1  # m
-        self.ready_to_cut = False
         self.timer_counter = 0
         self.harvest_end = False
-        self.cut_finish = False
 
         self.set_tilt_speed = 0
         self.set_extend_speed = 0
@@ -52,7 +50,8 @@ class FruitHarvestNode(Node):
     def get_fruit_depth(self, msg):
         self.detected = msg.detected
         self.fruit_depth = msg.fruit_depth
-        self.target_harvest_time = (self.fruit_depth - self.harvest_offset) / self.actuator_speed - self.current_harvest_time
+        self.target_harvest_time = (
+                                               self.fruit_depth - self.harvest_offset) / self.actuator_speed - self.current_harvest_time
         self.palm_oil_num = msg.palm_oil_num
         self.pitch_direction = msg.pitch_direction
         self.yaw_direction = msg.yaw_direction
@@ -64,8 +63,6 @@ class FruitHarvestNode(Node):
 
     def timer_callback(self):
         msg = MotorCommand()
-        msg.left_speed = 0
-        msg.right_speed = 0
         self.set_tilt_speed = 0
         self.set_extend_speed = 0
         self.set_rotate_speed = 0
@@ -160,6 +157,8 @@ class FruitHarvestNode(Node):
             self.first_detect = True
             self.harvest_end = True
 
+        msg.left_speed = 0
+        msg.right_speed = 0
         msg.rotate_speed = self.set_rotate_speed
         msg.tilt_speed = self.set_tilt_speed
         msg.extend_speed = self.set_extend_speed
@@ -179,3 +178,4 @@ def main(args=None):
 
     fruit_harvest_node.destroy_node()
     rclpy.shutdown()
+    

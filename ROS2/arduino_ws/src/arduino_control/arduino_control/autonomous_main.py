@@ -59,7 +59,7 @@ class AutonomousNode(Node):
         self.state = "Reaching tree"
         self.state1 = "Rotate"
         self.target_left_speed = 50
-        self.target_right_speed = 60
+        self.target_right_speed = 50
         self.stop_counter = 0
         self.forward_state = 0
         self.increase_left_speed = 0
@@ -177,11 +177,11 @@ class AutonomousNode(Node):
         elif 0.2 <= self.nearest_angle1 <= 3.142:
             self.left_speed = self.target_left_speed
             self.right_speed = self.target_right_speed
-            self.direction += 2
+            self.direction += 1
         elif -3.142 <= self.nearest_angle1 <= -0.2:
             self.left_speed = self.target_left_speed
             self.right_speed = self.target_right_speed
-            self.direction += 1
+            self.direction += 2
         
         self.get_logger().info("Rotate")
 
@@ -199,13 +199,13 @@ class AutonomousNode(Node):
                 if self.nearest_angle1 > 0.2:
                     if self.increase_counter >= 50:
                         self.increase_counter = 0
-                        self.increase_right_speed += 1
+                        self.increase_left_speed += 1
                     else:
                         self.increase_counter += 1
                 elif self.nearest_angle1 < -0.2:
                     if self.increase_counter >= 50:
                         self.increase_counter = 0
-                        self.increase_left_speed += 1
+                        self.increase_right_speed += 1
                     else:
                         self.increase_counter += 1
                 else:
@@ -231,7 +231,7 @@ class AutonomousNode(Node):
             else:
                 self.left_speed = self.target_left_speed 
                 self.right_speed = self.target_right_speed 
-                self.direction += 2
+                self.direction += 1
         self.get_logger().info("Rotate 90")
 
 
@@ -251,8 +251,8 @@ class AutonomousNode(Node):
             if self.timer_counter >= 2000:
                 self.state = "Next Obstacle"
             else:
-                self.left_speed = self.target_left_speed + 45
-                self.right_speed = self.target_right_speed - 25
+                self.left_speed = self.target_left_speed - 25
+                self.right_speed = self.target_right_speed + 45
                 self.direction += 3
                 if self.nearest_distance1 < 0.3:
                     if self.increase_counter >= 1:
@@ -320,13 +320,13 @@ class AutonomousNode(Node):
                 if nearest_angle > 0.2:
                     if self.increase_counter >= 50:
                         self.increase_counter = 0
-                        self.increase_right_speed += 1
+                        self.increase_left_speed += 1
                     else:
                         self.increase_counter += 1
                 elif nearest_angle < -0.2:
                     if self.increase_counter >= 50:
                         self.increase_counter = 0
-                        self.increase_left_speed += 1
+                        self.increase_right_speed += 1
                     else:
                         self.increase_counter += 1
                 else:

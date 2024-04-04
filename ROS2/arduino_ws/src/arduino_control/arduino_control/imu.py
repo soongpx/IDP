@@ -48,6 +48,12 @@ class ImuNode(Node):
                 self.device.serialConfig.portName = port  
                 self.device.serialConfig.baud = 9600            
                 self.device.openDevice() 
+                if self.device.getDeviceData("temperature"):
+                    self.temperature = self.device.getDeviceData("temperature")
+                else:
+                    self.temperature = 30.0
+                self.get_logger().info(f"Temperature: {self.temperature}")
+
                 return True
 
         return False
