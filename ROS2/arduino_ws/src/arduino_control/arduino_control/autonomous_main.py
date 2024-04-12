@@ -109,7 +109,7 @@ class AutonomousNode(Node):
         for button in self.buttons:
             if button == "Start":
                 self.start = True
-            elif button == "A":
+            elif button == "Back":
                 self.start = False
                 self.state = "Reaching tree"
                 self.state1 = "Rotate"

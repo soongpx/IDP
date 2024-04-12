@@ -1,11 +1,15 @@
+action/Detection.action
+action/Detection.idl
 msg/FindObstacle.idl
 msg/FindObstacle.msg
 msg/FruitDepth.idl
 msg/FruitDepth.msg
 msg/Harvest.idl
 msg/Harvest.msg
-msg/Imu.idl
-msg/Imu.msg
+msg/HarvestConfirmation.idl
+msg/HarvestConfirmation.msg
+msg/ImuData.idl
+msg/ImuData.msg
 msg/Joystick.idl
 msg/Joystick.msg
 msg/LaserScan.idl
@@ -16,7 +20,5 @@ msg/MotorCommand.idl
 msg/MotorCommand.msg
 msg/RealSense.idl
 msg/RealSense.msg
-srv/HarvestConfirmation.idl
-srv/HarvestConfirmation.srv
-srv/HarvestConfirmation_Request.msg
-srv/HarvestConfirmation_Response.msg
+msg/RealsenseImu.idl
+msg/RealsenseImu.msg

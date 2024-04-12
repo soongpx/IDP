@@ -217,7 +217,7 @@ void resize_function__RealSense__depth(void * untyped_member, size_t size)
   member->resize(size);
 }
 
-static const ::rosidl_typesupport_introspection_cpp::MessageMember RealSense_message_member_array[4] = {
+static const ::rosidl_typesupport_introspection_cpp::MessageMember RealSense_message_member_array[5] = {
   {
     "red",  // name
     ::rosidl_typesupport_introspection_cpp::ROS_TYPE_UINT8,  // type
@@ -285,13 +285,30 @@ static const ::rosidl_typesupport_introspection_cpp::MessageMember RealSense_mes
     fetch_function__RealSense__depth,  // fetch(index, &value) function pointer
     assign_function__RealSense__depth,  // assign(index, value) function pointer
     resize_function__RealSense__depth  // resize(index) function pointer
+  },
+  {
+    "pitch",  // name
+    ::rosidl_typesupport_introspection_cpp::ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    nullptr,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(my_robot_interfaces::msg::RealSense, pitch),  // bytes offset in struct
+    nullptr,  // default value
+    nullptr,  // size() function pointer
+    nullptr,  // get_const(index) function pointer
+    nullptr,  // get(index) function pointer
+    nullptr,  // fetch(index, &value) function pointer
+    nullptr,  // assign(index, value) function pointer
+    nullptr  // resize(index) function pointer
   }
 };
 
 static const ::rosidl_typesupport_introspection_cpp::MessageMembers RealSense_message_members = {
   "my_robot_interfaces::msg",  // message namespace
   "RealSense",  // message name
-  4,  // number of fields
+  5,  // number of fields
   sizeof(my_robot_interfaces::msg::RealSense),
   RealSense_message_member_array,  // message members
   RealSense_init_function,  // function to initialize message memory (memory has to be allocated)

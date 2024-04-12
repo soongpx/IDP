@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from my_robot_interfaces.msg import Imu
+from my_robot_interfaces.msg import ImuData, Joystick
 import time
 import serial.tools.list_ports
 import lib.device_model as deviceModel
@@ -12,16 +12,29 @@ from lib.protocol_resolver.roles.wit_protocol_resolver import WitProtocolResolve
 class ImuNode(Node):
     def __init__(self):
         super().__init__('imu_node')
-        self.publisher = self.create_publisher(Imu, 'imu_data', 10)
+        self.joystick_subscription = self.create_subscription(Joystick, 'joystick', self.joystick_callback, 10)
+        self.joystick_subscription
+        self.publisher = self.create_publisher(ImuData, 'imu_data', 10)
         timer_period = 0.005 
         self.timer = self.create_timer(timer_period, self.onUpdate)
         self.device = None
+
+        # Variables for joystick
+        self.buttons = []
+        self.axes = []
+        self.axes_name = []
 
         # Message Variable
         self.temperature = 0.0
         self.pitch = 0.0
         self.roll = 0.0
         self.yaw = 0.0
+        self.yaw_offset = 0.0
+
+    def joystick_callback(self, msg):
+        self.buttons = msg.button
+        self.axes = msg.axes
+        self.axes_name = msg.axes_name
 
     def connect_imu(self):
         while rclpy.ok():
@@ -60,7 +73,11 @@ class ImuNode(Node):
 
     
     def onUpdate(self):
-        msg = Imu()
+        for button in self.buttons:
+            if button == "Z":
+                self.yaw_offset = self.yaw
+
+        msg = ImuData()
         # print("Temperature:" + str(self.device.getDeviceData("temperature")))
         # print("Pitch:" + str(self.device.getDeviceData("angleX")))
         # print("Roll:" + str(self.device.getDeviceData("angleY"))) 
@@ -75,7 +92,8 @@ class ImuNode(Node):
         msg.temperature = self.temperature
         msg.pitch = self.pitch
         msg.roll = self.roll
-        msg.yaw = self.yaw
+        msg.yaw = self.yaw - self.yaw_offset
+        print(msg.yaw)
         self.publisher.publish(msg)
 
     def stop(self):

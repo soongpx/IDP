@@ -13,6 +13,8 @@ import array  # noqa: E402, I100
 
 import builtins  # noqa: E402, I100
 
+import math  # noqa: E402, I100
+
 import rosidl_parser.definition  # noqa: E402, I100
 
 
@@ -65,6 +67,7 @@ class RealSense(metaclass=Metaclass_RealSense):
         '_green',
         '_blue',
         '_depth',
+        '_pitch',
     ]
 
     _fields_and_field_types = {
@@ -72,6 +75,7 @@ class RealSense(metaclass=Metaclass_RealSense):
         'green': 'sequence<uint8>',
         'blue': 'sequence<uint8>',
         'depth': 'sequence<uint32>',
+        'pitch': 'double',
     }
 
     SLOT_TYPES = (
@@ -79,6 +83,7 @@ class RealSense(metaclass=Metaclass_RealSense):
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('uint8')),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('uint8')),  # noqa: E501
         rosidl_parser.definition.UnboundedSequence(rosidl_parser.definition.BasicType('uint32')),  # noqa: E501
+        rosidl_parser.definition.BasicType('double'),  # noqa: E501
     )
 
     def __init__(self, **kwargs):
@@ -89,6 +94,7 @@ class RealSense(metaclass=Metaclass_RealSense):
         self.green = array.array('B', kwargs.get('green', []))
         self.blue = array.array('B', kwargs.get('blue', []))
         self.depth = array.array('I', kwargs.get('depth', []))
+        self.pitch = kwargs.get('pitch', float())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -126,6 +132,8 @@ class RealSense(metaclass=Metaclass_RealSense):
         if self.blue != other.blue:
             return False
         if self.depth != other.depth:
+            return False
+        if self.pitch != other.pitch:
             return False
         return True
 
@@ -245,3 +253,18 @@ class RealSense(metaclass=Metaclass_RealSense):
                  all(val >= 0 and val < 4294967296 for val in value)), \
                 "The 'depth' field must be a set or sequence and each value of type 'int' and each unsigned integer in [0, 4294967295]"
         self._depth = array.array('I', value)
+
+    @builtins.property
+    def pitch(self):
+        """Message field 'pitch'."""
+        return self._pitch
+
+    @pitch.setter
+    def pitch(self, value):
+        if __debug__:
+            assert \
+                isinstance(value, float), \
+                "The 'pitch' field must be of type 'float'"
+            assert not (value < -1.7976931348623157e+308 or value > 1.7976931348623157e+308) or math.isinf(value), \
+                "The 'pitch' field must be a double in [-1.7976931348623157e+308, 1.7976931348623157e+308]"
+        self._pitch = value

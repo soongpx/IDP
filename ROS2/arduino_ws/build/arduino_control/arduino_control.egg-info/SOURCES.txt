@@ -4,6 +4,9 @@ setup.py
 arduino_control/__init__.py
 arduino_control/arduino_led_node.py
 arduino_control/autonomous_main.py
+arduino_control/detection.py
+arduino_control/fibonacci_action_server.py
+arduino_control/fibonacci_client.py
 arduino_control/find_obstacle.py
 arduino_control/fruit_harvest.py
 arduino_control/imu.py
@@ -13,6 +16,7 @@ arduino_control/lidar.py
 arduino_control/obstacle_avoidance.py
 arduino_control/publisher.py
 arduino_control/realsense.py
+arduino_control/realsense_imu.py
 arduino_control/serial_test.py
 arduino_control/test.py
 arduino_control/test2.py
@@ -25,5 +29,7 @@ arduino_control.egg-info/requires.txt
 arduino_control.egg-info/top_level.txt
 arduino_control.egg-info/zip-safe
 launch/arduino_control_launch.py
+launch/fruit_harvest_launch.py
 launch/joystick_control_launch.py
+launch/test_launch.py
 resource/arduino_control

@@ -31,6 +31,7 @@ typedef struct my_robot_interfaces__msg__RealSense
   rosidl_runtime_c__uint8__Sequence green;
   rosidl_runtime_c__uint8__Sequence blue;
   rosidl_runtime_c__uint32__Sequence depth;
+  double pitch;
 } my_robot_interfaces__msg__RealSense;
 
 // Struct for a sequence of my_robot_interfaces__msg__RealSense.

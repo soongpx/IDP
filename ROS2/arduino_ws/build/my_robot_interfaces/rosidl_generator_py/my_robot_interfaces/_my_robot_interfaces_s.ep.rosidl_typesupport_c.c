@@ -997,39 +997,39 @@ _register_msg_type__msg__real_sense(PyObject * pymodule)
 // #include "rosidl_runtime_c/service_type_support_struct.h"
 // already included above
 // #include "rosidl_runtime_c/action_type_support_struct.h"
-#include "my_robot_interfaces/msg/detail/imu__type_support.h"
-#include "my_robot_interfaces/msg/detail/imu__struct.h"
-#include "my_robot_interfaces/msg/detail/imu__functions.h"
+#include "my_robot_interfaces/msg/detail/imu_data__type_support.h"
+#include "my_robot_interfaces/msg/detail/imu_data__struct.h"
+#include "my_robot_interfaces/msg/detail/imu_data__functions.h"
 
-static void * my_robot_interfaces__msg__imu__create_ros_message(void)
+static void * my_robot_interfaces__msg__imu_data__create_ros_message(void)
 {
-  return my_robot_interfaces__msg__Imu__create();
+  return my_robot_interfaces__msg__ImuData__create();
 }
 
-static void my_robot_interfaces__msg__imu__destroy_ros_message(void * raw_ros_message)
+static void my_robot_interfaces__msg__imu_data__destroy_ros_message(void * raw_ros_message)
 {
-  my_robot_interfaces__msg__Imu * ros_message = (my_robot_interfaces__msg__Imu *)raw_ros_message;
-  my_robot_interfaces__msg__Imu__destroy(ros_message);
+  my_robot_interfaces__msg__ImuData * ros_message = (my_robot_interfaces__msg__ImuData *)raw_ros_message;
+  my_robot_interfaces__msg__ImuData__destroy(ros_message);
 }
 
 ROSIDL_GENERATOR_C_IMPORT
-bool my_robot_interfaces__msg__imu__convert_from_py(PyObject * _pymsg, void * ros_message);
+bool my_robot_interfaces__msg__imu_data__convert_from_py(PyObject * _pymsg, void * ros_message);
 ROSIDL_GENERATOR_C_IMPORT
-PyObject * my_robot_interfaces__msg__imu__convert_to_py(void * raw_ros_message);
+PyObject * my_robot_interfaces__msg__imu_data__convert_to_py(void * raw_ros_message);
 
 
 ROSIDL_GENERATOR_C_IMPORT
 const rosidl_message_type_support_t *
-ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, msg, Imu);
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, msg, ImuData);
 
 int8_t
-_register_msg_type__msg__imu(PyObject * pymodule)
+_register_msg_type__msg__imu_data(PyObject * pymodule)
 {
   int8_t err;
 
   PyObject * pyobject_create_ros_message = NULL;
   pyobject_create_ros_message = PyCapsule_New(
-    (void *)&my_robot_interfaces__msg__imu__create_ros_message,
+    (void *)&my_robot_interfaces__msg__imu_data__create_ros_message,
     NULL, NULL);
   if (!pyobject_create_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -1037,7 +1037,7 @@ _register_msg_type__msg__imu(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "create_ros_message_msg__msg__imu",
+    "create_ros_message_msg__msg__imu_data",
     pyobject_create_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -1048,7 +1048,7 @@ _register_msg_type__msg__imu(PyObject * pymodule)
 
   PyObject * pyobject_destroy_ros_message = NULL;
   pyobject_destroy_ros_message = PyCapsule_New(
-    (void *)&my_robot_interfaces__msg__imu__destroy_ros_message,
+    (void *)&my_robot_interfaces__msg__imu_data__destroy_ros_message,
     NULL, NULL);
   if (!pyobject_destroy_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -1056,7 +1056,7 @@ _register_msg_type__msg__imu(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "destroy_ros_message_msg__msg__imu",
+    "destroy_ros_message_msg__msg__imu_data",
     pyobject_destroy_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -1067,7 +1067,7 @@ _register_msg_type__msg__imu(PyObject * pymodule)
 
   PyObject * pyobject_convert_from_py = NULL;
   pyobject_convert_from_py = PyCapsule_New(
-    (void *)&my_robot_interfaces__msg__imu__convert_from_py,
+    (void *)&my_robot_interfaces__msg__imu_data__convert_from_py,
     NULL, NULL);
   if (!pyobject_convert_from_py) {
     // previously added objects will be removed when the module is destroyed
@@ -1075,7 +1075,7 @@ _register_msg_type__msg__imu(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_from_py_msg__msg__imu",
+    "convert_from_py_msg__msg__imu_data",
     pyobject_convert_from_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -1086,7 +1086,7 @@ _register_msg_type__msg__imu(PyObject * pymodule)
 
   PyObject * pyobject_convert_to_py = NULL;
   pyobject_convert_to_py = PyCapsule_New(
-    (void *)&my_robot_interfaces__msg__imu__convert_to_py,
+    (void *)&my_robot_interfaces__msg__imu_data__convert_to_py,
     NULL, NULL);
   if (!pyobject_convert_to_py) {
     // previously added objects will be removed when the module is destroyed
@@ -1094,7 +1094,7 @@ _register_msg_type__msg__imu(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_to_py_msg__msg__imu",
+    "convert_to_py_msg__msg__imu_data",
     pyobject_convert_to_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -1105,7 +1105,7 @@ _register_msg_type__msg__imu(PyObject * pymodule)
 
   PyObject * pyobject_type_support = NULL;
   pyobject_type_support = PyCapsule_New(
-    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, msg, Imu),
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, msg, ImuData),
     NULL, NULL);
   if (!pyobject_type_support) {
     // previously added objects will be removed when the module is destroyed
@@ -1113,7 +1113,7 @@ _register_msg_type__msg__imu(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "type_support_msg__msg__imu",
+    "type_support_msg__msg__imu_data",
     pyobject_type_support);
   if (err) {
     // the created capsule needs to be decremented
@@ -1275,39 +1275,39 @@ _register_msg_type__msg__harvest(PyObject * pymodule)
 // #include "rosidl_runtime_c/service_type_support_struct.h"
 // already included above
 // #include "rosidl_runtime_c/action_type_support_struct.h"
-#include "my_robot_interfaces/srv/detail/harvest_confirmation__type_support.h"
-#include "my_robot_interfaces/srv/detail/harvest_confirmation__struct.h"
-#include "my_robot_interfaces/srv/detail/harvest_confirmation__functions.h"
+#include "my_robot_interfaces/msg/detail/harvest_confirmation__type_support.h"
+#include "my_robot_interfaces/msg/detail/harvest_confirmation__struct.h"
+#include "my_robot_interfaces/msg/detail/harvest_confirmation__functions.h"
 
-static void * my_robot_interfaces__srv__harvest_confirmation__request__create_ros_message(void)
+static void * my_robot_interfaces__msg__harvest_confirmation__create_ros_message(void)
 {
-  return my_robot_interfaces__srv__HarvestConfirmation_Request__create();
+  return my_robot_interfaces__msg__HarvestConfirmation__create();
 }
 
-static void my_robot_interfaces__srv__harvest_confirmation__request__destroy_ros_message(void * raw_ros_message)
+static void my_robot_interfaces__msg__harvest_confirmation__destroy_ros_message(void * raw_ros_message)
 {
-  my_robot_interfaces__srv__HarvestConfirmation_Request * ros_message = (my_robot_interfaces__srv__HarvestConfirmation_Request *)raw_ros_message;
-  my_robot_interfaces__srv__HarvestConfirmation_Request__destroy(ros_message);
+  my_robot_interfaces__msg__HarvestConfirmation * ros_message = (my_robot_interfaces__msg__HarvestConfirmation *)raw_ros_message;
+  my_robot_interfaces__msg__HarvestConfirmation__destroy(ros_message);
 }
 
 ROSIDL_GENERATOR_C_IMPORT
-bool my_robot_interfaces__srv__harvest_confirmation__request__convert_from_py(PyObject * _pymsg, void * ros_message);
+bool my_robot_interfaces__msg__harvest_confirmation__convert_from_py(PyObject * _pymsg, void * ros_message);
 ROSIDL_GENERATOR_C_IMPORT
-PyObject * my_robot_interfaces__srv__harvest_confirmation__request__convert_to_py(void * raw_ros_message);
+PyObject * my_robot_interfaces__msg__harvest_confirmation__convert_to_py(void * raw_ros_message);
 
 
 ROSIDL_GENERATOR_C_IMPORT
 const rosidl_message_type_support_t *
-ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, srv, HarvestConfirmation_Request);
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, msg, HarvestConfirmation);
 
 int8_t
-_register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
+_register_msg_type__msg__harvest_confirmation(PyObject * pymodule)
 {
   int8_t err;
 
   PyObject * pyobject_create_ros_message = NULL;
   pyobject_create_ros_message = PyCapsule_New(
-    (void *)&my_robot_interfaces__srv__harvest_confirmation__request__create_ros_message,
+    (void *)&my_robot_interfaces__msg__harvest_confirmation__create_ros_message,
     NULL, NULL);
   if (!pyobject_create_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -1315,7 +1315,7 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "create_ros_message_msg__srv__harvest_confirmation__request",
+    "create_ros_message_msg__msg__harvest_confirmation",
     pyobject_create_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -1326,7 +1326,7 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
 
   PyObject * pyobject_destroy_ros_message = NULL;
   pyobject_destroy_ros_message = PyCapsule_New(
-    (void *)&my_robot_interfaces__srv__harvest_confirmation__request__destroy_ros_message,
+    (void *)&my_robot_interfaces__msg__harvest_confirmation__destroy_ros_message,
     NULL, NULL);
   if (!pyobject_destroy_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -1334,7 +1334,7 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "destroy_ros_message_msg__srv__harvest_confirmation__request",
+    "destroy_ros_message_msg__msg__harvest_confirmation",
     pyobject_destroy_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -1345,7 +1345,7 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
 
   PyObject * pyobject_convert_from_py = NULL;
   pyobject_convert_from_py = PyCapsule_New(
-    (void *)&my_robot_interfaces__srv__harvest_confirmation__request__convert_from_py,
+    (void *)&my_robot_interfaces__msg__harvest_confirmation__convert_from_py,
     NULL, NULL);
   if (!pyobject_convert_from_py) {
     // previously added objects will be removed when the module is destroyed
@@ -1353,7 +1353,7 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_from_py_msg__srv__harvest_confirmation__request",
+    "convert_from_py_msg__msg__harvest_confirmation",
     pyobject_convert_from_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -1364,7 +1364,7 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
 
   PyObject * pyobject_convert_to_py = NULL;
   pyobject_convert_to_py = PyCapsule_New(
-    (void *)&my_robot_interfaces__srv__harvest_confirmation__request__convert_to_py,
+    (void *)&my_robot_interfaces__msg__harvest_confirmation__convert_to_py,
     NULL, NULL);
   if (!pyobject_convert_to_py) {
     // previously added objects will be removed when the module is destroyed
@@ -1372,7 +1372,7 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_to_py_msg__srv__harvest_confirmation__request",
+    "convert_to_py_msg__msg__harvest_confirmation",
     pyobject_convert_to_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -1383,7 +1383,7 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
 
   PyObject * pyobject_type_support = NULL;
   pyobject_type_support = PyCapsule_New(
-    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, srv, HarvestConfirmation_Request),
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, msg, HarvestConfirmation),
     NULL, NULL);
   if (!pyobject_type_support) {
     // previously added objects will be removed when the module is destroyed
@@ -1391,7 +1391,285 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "type_support_msg__srv__harvest_confirmation__request",
+    "type_support_msg__msg__harvest_confirmation",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+#include "my_robot_interfaces/msg/detail/realsense_imu__type_support.h"
+#include "my_robot_interfaces/msg/detail/realsense_imu__struct.h"
+#include "my_robot_interfaces/msg/detail/realsense_imu__functions.h"
+
+static void * my_robot_interfaces__msg__realsense_imu__create_ros_message(void)
+{
+  return my_robot_interfaces__msg__RealsenseImu__create();
+}
+
+static void my_robot_interfaces__msg__realsense_imu__destroy_ros_message(void * raw_ros_message)
+{
+  my_robot_interfaces__msg__RealsenseImu * ros_message = (my_robot_interfaces__msg__RealsenseImu *)raw_ros_message;
+  my_robot_interfaces__msg__RealsenseImu__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool my_robot_interfaces__msg__realsense_imu__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * my_robot_interfaces__msg__realsense_imu__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, msg, RealsenseImu);
+
+int8_t
+_register_msg_type__msg__realsense_imu(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__msg__realsense_imu__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__msg__realsense_imu",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__msg__realsense_imu__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__msg__realsense_imu",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__msg__realsense_imu__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__msg__realsense_imu",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__msg__realsense_imu__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__msg__realsense_imu",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, msg, RealsenseImu),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__msg__realsense_imu",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+#include "my_robot_interfaces/action/detail/detection__type_support.h"
+#include "my_robot_interfaces/action/detail/detection__struct.h"
+#include "my_robot_interfaces/action/detail/detection__functions.h"
+
+static void * my_robot_interfaces__action__detection__goal__create_ros_message(void)
+{
+  return my_robot_interfaces__action__Detection_Goal__create();
+}
+
+static void my_robot_interfaces__action__detection__goal__destroy_ros_message(void * raw_ros_message)
+{
+  my_robot_interfaces__action__Detection_Goal * ros_message = (my_robot_interfaces__action__Detection_Goal *)raw_ros_message;
+  my_robot_interfaces__action__Detection_Goal__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool my_robot_interfaces__action__detection__goal__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * my_robot_interfaces__action__detection__goal__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_Goal);
+
+int8_t
+_register_msg_type__action__detection__goal(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__goal__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__action__detection__goal",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__goal__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__action__detection__goal",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__goal__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__action__detection__goal",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__goal__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__action__detection__goal",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_Goal),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__action__detection__goal",
     pyobject_type_support);
   if (err) {
     // the created capsule needs to be decremented
@@ -1415,41 +1693,41 @@ _register_msg_type__srv__harvest_confirmation__request(PyObject * pymodule)
 // already included above
 // #include "rosidl_runtime_c/action_type_support_struct.h"
 // already included above
-// #include "my_robot_interfaces/srv/detail/harvest_confirmation__type_support.h"
+// #include "my_robot_interfaces/action/detail/detection__type_support.h"
 // already included above
-// #include "my_robot_interfaces/srv/detail/harvest_confirmation__struct.h"
+// #include "my_robot_interfaces/action/detail/detection__struct.h"
 // already included above
-// #include "my_robot_interfaces/srv/detail/harvest_confirmation__functions.h"
+// #include "my_robot_interfaces/action/detail/detection__functions.h"
 
-static void * my_robot_interfaces__srv__harvest_confirmation__response__create_ros_message(void)
+static void * my_robot_interfaces__action__detection__result__create_ros_message(void)
 {
-  return my_robot_interfaces__srv__HarvestConfirmation_Response__create();
+  return my_robot_interfaces__action__Detection_Result__create();
 }
 
-static void my_robot_interfaces__srv__harvest_confirmation__response__destroy_ros_message(void * raw_ros_message)
+static void my_robot_interfaces__action__detection__result__destroy_ros_message(void * raw_ros_message)
 {
-  my_robot_interfaces__srv__HarvestConfirmation_Response * ros_message = (my_robot_interfaces__srv__HarvestConfirmation_Response *)raw_ros_message;
-  my_robot_interfaces__srv__HarvestConfirmation_Response__destroy(ros_message);
+  my_robot_interfaces__action__Detection_Result * ros_message = (my_robot_interfaces__action__Detection_Result *)raw_ros_message;
+  my_robot_interfaces__action__Detection_Result__destroy(ros_message);
 }
 
 ROSIDL_GENERATOR_C_IMPORT
-bool my_robot_interfaces__srv__harvest_confirmation__response__convert_from_py(PyObject * _pymsg, void * ros_message);
+bool my_robot_interfaces__action__detection__result__convert_from_py(PyObject * _pymsg, void * ros_message);
 ROSIDL_GENERATOR_C_IMPORT
-PyObject * my_robot_interfaces__srv__harvest_confirmation__response__convert_to_py(void * raw_ros_message);
+PyObject * my_robot_interfaces__action__detection__result__convert_to_py(void * raw_ros_message);
 
 
 ROSIDL_GENERATOR_C_IMPORT
 const rosidl_message_type_support_t *
-ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, srv, HarvestConfirmation_Response);
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_Result);
 
 int8_t
-_register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
+_register_msg_type__action__detection__result(PyObject * pymodule)
 {
   int8_t err;
 
   PyObject * pyobject_create_ros_message = NULL;
   pyobject_create_ros_message = PyCapsule_New(
-    (void *)&my_robot_interfaces__srv__harvest_confirmation__response__create_ros_message,
+    (void *)&my_robot_interfaces__action__detection__result__create_ros_message,
     NULL, NULL);
   if (!pyobject_create_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -1457,7 +1735,7 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "create_ros_message_msg__srv__harvest_confirmation__response",
+    "create_ros_message_msg__action__detection__result",
     pyobject_create_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -1468,7 +1746,7 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
 
   PyObject * pyobject_destroy_ros_message = NULL;
   pyobject_destroy_ros_message = PyCapsule_New(
-    (void *)&my_robot_interfaces__srv__harvest_confirmation__response__destroy_ros_message,
+    (void *)&my_robot_interfaces__action__detection__result__destroy_ros_message,
     NULL, NULL);
   if (!pyobject_destroy_ros_message) {
     // previously added objects will be removed when the module is destroyed
@@ -1476,7 +1754,7 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "destroy_ros_message_msg__srv__harvest_confirmation__response",
+    "destroy_ros_message_msg__action__detection__result",
     pyobject_destroy_ros_message);
   if (err) {
     // the created capsule needs to be decremented
@@ -1487,7 +1765,7 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
 
   PyObject * pyobject_convert_from_py = NULL;
   pyobject_convert_from_py = PyCapsule_New(
-    (void *)&my_robot_interfaces__srv__harvest_confirmation__response__convert_from_py,
+    (void *)&my_robot_interfaces__action__detection__result__convert_from_py,
     NULL, NULL);
   if (!pyobject_convert_from_py) {
     // previously added objects will be removed when the module is destroyed
@@ -1495,7 +1773,7 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_from_py_msg__srv__harvest_confirmation__response",
+    "convert_from_py_msg__action__detection__result",
     pyobject_convert_from_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -1506,7 +1784,7 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
 
   PyObject * pyobject_convert_to_py = NULL;
   pyobject_convert_to_py = PyCapsule_New(
-    (void *)&my_robot_interfaces__srv__harvest_confirmation__response__convert_to_py,
+    (void *)&my_robot_interfaces__action__detection__result__convert_to_py,
     NULL, NULL);
   if (!pyobject_convert_to_py) {
     // previously added objects will be removed when the module is destroyed
@@ -1514,7 +1792,7 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "convert_to_py_msg__srv__harvest_confirmation__response",
+    "convert_to_py_msg__action__detection__result",
     pyobject_convert_to_py);
   if (err) {
     // the created capsule needs to be decremented
@@ -1525,7 +1803,7 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
 
   PyObject * pyobject_type_support = NULL;
   pyobject_type_support = PyCapsule_New(
-    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, srv, HarvestConfirmation_Response),
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_Result),
     NULL, NULL);
   if (!pyobject_type_support) {
     // previously added objects will be removed when the module is destroyed
@@ -1533,7 +1811,433 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "type_support_msg__srv__harvest_confirmation__response",
+    "type_support_msg__action__detection__result",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__type_support.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__functions.h"
+
+static void * my_robot_interfaces__action__detection__feedback__create_ros_message(void)
+{
+  return my_robot_interfaces__action__Detection_Feedback__create();
+}
+
+static void my_robot_interfaces__action__detection__feedback__destroy_ros_message(void * raw_ros_message)
+{
+  my_robot_interfaces__action__Detection_Feedback * ros_message = (my_robot_interfaces__action__Detection_Feedback *)raw_ros_message;
+  my_robot_interfaces__action__Detection_Feedback__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool my_robot_interfaces__action__detection__feedback__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * my_robot_interfaces__action__detection__feedback__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_Feedback);
+
+int8_t
+_register_msg_type__action__detection__feedback(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__feedback__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__action__detection__feedback",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__feedback__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__action__detection__feedback",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__feedback__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__action__detection__feedback",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__feedback__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__action__detection__feedback",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_Feedback),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__action__detection__feedback",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__type_support.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__functions.h"
+
+static void * my_robot_interfaces__action__detection__send_goal__request__create_ros_message(void)
+{
+  return my_robot_interfaces__action__Detection_SendGoal_Request__create();
+}
+
+static void my_robot_interfaces__action__detection__send_goal__request__destroy_ros_message(void * raw_ros_message)
+{
+  my_robot_interfaces__action__Detection_SendGoal_Request * ros_message = (my_robot_interfaces__action__Detection_SendGoal_Request *)raw_ros_message;
+  my_robot_interfaces__action__Detection_SendGoal_Request__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool my_robot_interfaces__action__detection__send_goal__request__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * my_robot_interfaces__action__detection__send_goal__request__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_SendGoal_Request);
+
+int8_t
+_register_msg_type__action__detection__send_goal__request(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__send_goal__request__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__action__detection__send_goal__request",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__send_goal__request__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__action__detection__send_goal__request",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__send_goal__request__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__action__detection__send_goal__request",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__send_goal__request__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__action__detection__send_goal__request",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_SendGoal_Request),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__action__detection__send_goal__request",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__type_support.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__functions.h"
+
+static void * my_robot_interfaces__action__detection__send_goal__response__create_ros_message(void)
+{
+  return my_robot_interfaces__action__Detection_SendGoal_Response__create();
+}
+
+static void my_robot_interfaces__action__detection__send_goal__response__destroy_ros_message(void * raw_ros_message)
+{
+  my_robot_interfaces__action__Detection_SendGoal_Response * ros_message = (my_robot_interfaces__action__Detection_SendGoal_Response *)raw_ros_message;
+  my_robot_interfaces__action__Detection_SendGoal_Response__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool my_robot_interfaces__action__detection__send_goal__response__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * my_robot_interfaces__action__detection__send_goal__response__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_SendGoal_Response);
+
+int8_t
+_register_msg_type__action__detection__send_goal__response(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__send_goal__response__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__action__detection__send_goal__response",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__send_goal__response__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__action__detection__send_goal__response",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__send_goal__response__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__action__detection__send_goal__response",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__send_goal__response__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__action__detection__send_goal__response",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_SendGoal_Response),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__action__detection__send_goal__response",
     pyobject_type_support);
   if (err) {
     // the created capsule needs to be decremented
@@ -1546,15 +2250,15 @@ _register_msg_type__srv__harvest_confirmation__response(PyObject * pymodule)
 
 ROSIDL_GENERATOR_C_IMPORT
 const rosidl_service_type_support_t *
-ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, my_robot_interfaces, srv, HarvestConfirmation)();
+ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, my_robot_interfaces, action, Detection_SendGoal)();
 
 int8_t
-_register_srv_type__srv__harvest_confirmation(PyObject * pymodule)
+_register_srv_type__action__detection__send_goal(PyObject * pymodule)
 {
   int8_t err;
   PyObject * pyobject_type_support = NULL;
   pyobject_type_support = PyCapsule_New(
-    (void *)ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, my_robot_interfaces, srv, HarvestConfirmation)(),
+    (void *)ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, my_robot_interfaces, action, Detection_SendGoal)(),
     NULL, NULL);
   if (!pyobject_type_support) {
     // previously added objects will be removed when the module is destroyed
@@ -1562,7 +2266,488 @@ _register_srv_type__srv__harvest_confirmation(PyObject * pymodule)
   }
   err = PyModule_AddObject(
     pymodule,
-    "type_support_srv__srv__harvest_confirmation",
+    "type_support_srv__action__detection__send_goal",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__type_support.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__functions.h"
+
+static void * my_robot_interfaces__action__detection__get_result__request__create_ros_message(void)
+{
+  return my_robot_interfaces__action__Detection_GetResult_Request__create();
+}
+
+static void my_robot_interfaces__action__detection__get_result__request__destroy_ros_message(void * raw_ros_message)
+{
+  my_robot_interfaces__action__Detection_GetResult_Request * ros_message = (my_robot_interfaces__action__Detection_GetResult_Request *)raw_ros_message;
+  my_robot_interfaces__action__Detection_GetResult_Request__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool my_robot_interfaces__action__detection__get_result__request__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * my_robot_interfaces__action__detection__get_result__request__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_GetResult_Request);
+
+int8_t
+_register_msg_type__action__detection__get_result__request(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__get_result__request__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__action__detection__get_result__request",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__get_result__request__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__action__detection__get_result__request",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__get_result__request__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__action__detection__get_result__request",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__get_result__request__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__action__detection__get_result__request",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_GetResult_Request),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__action__detection__get_result__request",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__type_support.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__functions.h"
+
+static void * my_robot_interfaces__action__detection__get_result__response__create_ros_message(void)
+{
+  return my_robot_interfaces__action__Detection_GetResult_Response__create();
+}
+
+static void my_robot_interfaces__action__detection__get_result__response__destroy_ros_message(void * raw_ros_message)
+{
+  my_robot_interfaces__action__Detection_GetResult_Response * ros_message = (my_robot_interfaces__action__Detection_GetResult_Response *)raw_ros_message;
+  my_robot_interfaces__action__Detection_GetResult_Response__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool my_robot_interfaces__action__detection__get_result__response__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * my_robot_interfaces__action__detection__get_result__response__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_GetResult_Response);
+
+int8_t
+_register_msg_type__action__detection__get_result__response(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__get_result__response__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__action__detection__get_result__response",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__get_result__response__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__action__detection__get_result__response",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__get_result__response__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__action__detection__get_result__response",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__get_result__response__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__action__detection__get_result__response",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_GetResult_Response),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__action__detection__get_result__response",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_service_type_support_t *
+ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, my_robot_interfaces, action, Detection_GetResult)();
+
+int8_t
+_register_srv_type__action__detection__get_result(PyObject * pymodule)
+{
+  int8_t err;
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_TYPESUPPORT_INTERFACE__SERVICE_SYMBOL_NAME(rosidl_typesupport_c, my_robot_interfaces, action, Detection_GetResult)(),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_srv__action__detection__get_result",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+// already included above
+// #include <stdbool.h>
+// already included above
+// #include <stdint.h>
+// already included above
+// #include "rosidl_runtime_c/visibility_control.h"
+// already included above
+// #include "rosidl_runtime_c/message_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/service_type_support_struct.h"
+// already included above
+// #include "rosidl_runtime_c/action_type_support_struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__type_support.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__struct.h"
+// already included above
+// #include "my_robot_interfaces/action/detail/detection__functions.h"
+
+static void * my_robot_interfaces__action__detection__feedback_message__create_ros_message(void)
+{
+  return my_robot_interfaces__action__Detection_FeedbackMessage__create();
+}
+
+static void my_robot_interfaces__action__detection__feedback_message__destroy_ros_message(void * raw_ros_message)
+{
+  my_robot_interfaces__action__Detection_FeedbackMessage * ros_message = (my_robot_interfaces__action__Detection_FeedbackMessage *)raw_ros_message;
+  my_robot_interfaces__action__Detection_FeedbackMessage__destroy(ros_message);
+}
+
+ROSIDL_GENERATOR_C_IMPORT
+bool my_robot_interfaces__action__detection__feedback_message__convert_from_py(PyObject * _pymsg, void * ros_message);
+ROSIDL_GENERATOR_C_IMPORT
+PyObject * my_robot_interfaces__action__detection__feedback_message__convert_to_py(void * raw_ros_message);
+
+
+ROSIDL_GENERATOR_C_IMPORT
+const rosidl_message_type_support_t *
+ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_FeedbackMessage);
+
+int8_t
+_register_msg_type__action__detection__feedback_message(PyObject * pymodule)
+{
+  int8_t err;
+
+  PyObject * pyobject_create_ros_message = NULL;
+  pyobject_create_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__feedback_message__create_ros_message,
+    NULL, NULL);
+  if (!pyobject_create_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "create_ros_message_msg__action__detection__feedback_message",
+    pyobject_create_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_create_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_destroy_ros_message = NULL;
+  pyobject_destroy_ros_message = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__feedback_message__destroy_ros_message,
+    NULL, NULL);
+  if (!pyobject_destroy_ros_message) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "destroy_ros_message_msg__action__detection__feedback_message",
+    pyobject_destroy_ros_message);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_destroy_ros_message);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_from_py = NULL;
+  pyobject_convert_from_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__feedback_message__convert_from_py,
+    NULL, NULL);
+  if (!pyobject_convert_from_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_from_py_msg__action__detection__feedback_message",
+    pyobject_convert_from_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_from_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_convert_to_py = NULL;
+  pyobject_convert_to_py = PyCapsule_New(
+    (void *)&my_robot_interfaces__action__detection__feedback_message__convert_to_py,
+    NULL, NULL);
+  if (!pyobject_convert_to_py) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "convert_to_py_msg__action__detection__feedback_message",
+    pyobject_convert_to_py);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_convert_to_py);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_GET_MSG_TYPE_SUPPORT(my_robot_interfaces, action, Detection_FeedbackMessage),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_msg__action__detection__feedback_message",
+    pyobject_type_support);
+  if (err) {
+    // the created capsule needs to be decremented
+    Py_XDECREF(pyobject_type_support);
+    // previously added objects will be removed when the module is destroyed
+    return err;
+  }
+  return 0;
+}
+
+
+int8_t
+_register_action_type__action__detection(PyObject * pymodule)
+{
+  int8_t err;
+  PyObject * pyobject_type_support = NULL;
+  pyobject_type_support = PyCapsule_New(
+    (void *)ROSIDL_TYPESUPPORT_INTERFACE__ACTION_SYMBOL_NAME(rosidl_typesupport_c, my_robot_interfaces, action, Detection)(),
+    NULL, NULL);
+  if (!pyobject_type_support) {
+    // previously added objects will be removed when the module is destroyed
+    return -1;
+  }
+  err = PyModule_AddObject(
+    pymodule,
+    "type_support_action__action__detection",
     pyobject_type_support);
   if (err) {
     // the created capsule needs to be decremented
@@ -1625,7 +2810,7 @@ PyInit_my_robot_interfaces_s__rosidl_typesupport_c(void)
     return NULL;
   }
 
-  err = _register_msg_type__msg__imu(pymodule);
+  err = _register_msg_type__msg__imu_data(pymodule);
   if (err) {
     Py_XDECREF(pymodule);
     return NULL;
@@ -1637,19 +2822,79 @@ PyInit_my_robot_interfaces_s__rosidl_typesupport_c(void)
     return NULL;
   }
 
-  err = _register_msg_type__srv__harvest_confirmation__request(pymodule);
+  err = _register_msg_type__msg__harvest_confirmation(pymodule);
   if (err) {
     Py_XDECREF(pymodule);
     return NULL;
   }
 
-  err = _register_msg_type__srv__harvest_confirmation__response(pymodule);
+  err = _register_msg_type__msg__realsense_imu(pymodule);
   if (err) {
     Py_XDECREF(pymodule);
     return NULL;
   }
 
-  err = _register_srv_type__srv__harvest_confirmation(pymodule);
+  err = _register_msg_type__action__detection__goal(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__action__detection__result(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__action__detection__feedback(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__action__detection__send_goal__request(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__action__detection__send_goal__response(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_srv_type__action__detection__send_goal(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__action__detection__get_result__request(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__action__detection__get_result__response(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_srv_type__action__detection__get_result(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_msg_type__action__detection__feedback_message(pymodule);
+  if (err) {
+    Py_XDECREF(pymodule);
+    return NULL;
+  }
+
+  err = _register_action_type__action__detection(pymodule);
   if (err) {
     Py_XDECREF(pymodule);
     return NULL;

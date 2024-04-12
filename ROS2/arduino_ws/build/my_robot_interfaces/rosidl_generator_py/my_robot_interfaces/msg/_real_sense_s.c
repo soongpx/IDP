@@ -305,6 +305,15 @@ bool my_robot_interfaces__msg__real_sense__convert_from_py(PyObject * _pymsg, vo
     }
     Py_DECREF(field);
   }
+  {  // pitch
+    PyObject * field = PyObject_GetAttrString(_pymsg, "pitch");
+    if (!field) {
+      return false;
+    }
+    assert(PyFloat_Check(field));
+    ros_message->pitch = PyFloat_AS_DOUBLE(field);
+    Py_DECREF(field);
+  }
 
   return true;
 }
@@ -554,6 +563,17 @@ PyObject * my_robot_interfaces__msg__real_sense__convert_to_py(void * raw_ros_me
       Py_DECREF(ret);
     }
     Py_DECREF(field);
+  }
+  {  // pitch
+    PyObject * field = NULL;
+    field = PyFloat_FromDouble(ros_message->pitch);
+    {
+      int rc = PyObject_SetAttrString(_pymessage, "pitch", field);
+      Py_DECREF(field);
+      if (rc) {
+        return NULL;
+      }
+    }
   }
 
   // ownership of _pymessage is transferred to the caller

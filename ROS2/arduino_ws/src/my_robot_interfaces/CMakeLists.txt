@@ -21,9 +21,11 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/MotorCommand.msg"
   "msg/FindObstacle.msg"
   "msg/RealSense.msg"
-  "msg/Imu.msg"
+  "msg/ImuData.msg"
   "msg/Harvest.msg"
-  "srv/HarvestConfirmation.srv"
+  "msg/HarvestConfirmation.msg"
+  "msg/RealsenseImu.msg"
+  "action/Detection.action"
   DEPENDENCIES geometry_msgs
   DEPENDENCIES std_msgs
  )

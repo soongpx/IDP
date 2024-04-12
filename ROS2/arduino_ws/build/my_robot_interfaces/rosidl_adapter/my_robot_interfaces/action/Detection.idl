@@ -1,0 +1,26 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from my_robot_interfaces/action/Detection.action
+// generated code does not contain a copyright notice
+
+
+module my_robot_interfaces {
+  module action {
+    struct Detection_Goal {
+      boolean start;
+    };
+    struct Detection_Result {
+      boolean detected;
+
+      float fruit_depth;
+
+      uint8 fruit_number;
+
+      float target_pitch;
+
+      float target_yaw;
+    };
+    struct Detection_Feedback {
+      boolean fruit_detected;
+    };
+  };
+};

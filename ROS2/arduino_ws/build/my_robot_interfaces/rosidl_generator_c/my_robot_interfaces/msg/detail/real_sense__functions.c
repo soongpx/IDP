@@ -44,6 +44,7 @@ my_robot_interfaces__msg__RealSense__init(my_robot_interfaces__msg__RealSense * 
     my_robot_interfaces__msg__RealSense__fini(msg);
     return false;
   }
+  // pitch
   return true;
 }
 
@@ -61,6 +62,7 @@ my_robot_interfaces__msg__RealSense__fini(my_robot_interfaces__msg__RealSense * 
   rosidl_runtime_c__uint8__Sequence__fini(&msg->blue);
   // depth
   rosidl_runtime_c__uint32__Sequence__fini(&msg->depth);
+  // pitch
 }
 
 bool
@@ -91,6 +93,10 @@ my_robot_interfaces__msg__RealSense__are_equal(const my_robot_interfaces__msg__R
   if (!rosidl_runtime_c__uint32__Sequence__are_equal(
       &(lhs->depth), &(rhs->depth)))
   {
+    return false;
+  }
+  // pitch
+  if (lhs->pitch != rhs->pitch) {
     return false;
   }
   return true;
@@ -128,6 +134,8 @@ my_robot_interfaces__msg__RealSense__copy(
   {
     return false;
   }
+  // pitch
+  output->pitch = input->pitch;
   return true;
 }
 

@@ -70,6 +70,28 @@ class NintendoSwitchControllerPublisher(Node):
                         elif i == 10:
                             msg.button.append('Start')
                             self.joysticks[self.joystick_connected].rumble(0, 0.7, 500)
+                        elif i == 11:
+                            msg.button.append('Main')
+                        # if i == 0:
+                        #     msg.button.append('X')
+                        # elif i == 1:
+                        #     msg.button.append('A')
+                        # elif i == 2:
+                        #     msg.button.append('B')
+                        # elif i == 3:
+                        #     msg.button.append('Y')
+                        # elif i == 4:
+                        #     msg.button.append('LB')
+                        # elif i == 5:
+                        #     msg.button.append('RB')
+                        # elif i == 6:
+                        #     msg.button.append('LT')
+                        # elif i == 7:
+                        #     msg.button.append('RT')
+                        # elif i == 8:
+                        #     msg.button.append('Back')
+                        # elif i == 9:
+                        #     msg.button.append('Start')
                         self.get_logger().info(msg.button[-1])
 
                 hats = self.joysticks[self.joystick_connected].get_numhats()

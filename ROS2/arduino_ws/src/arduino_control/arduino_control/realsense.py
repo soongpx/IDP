@@ -4,8 +4,8 @@ import cv2
 from ultralytics import YOLO
 import rclpy
 from rclpy.node import Node
-from my_robot_interfaces.msg import FruitDepth, Imu
-from my_robot_interfaces.srv import HarvestConfirmation
+from my_robot_interfaces.msg import FruitDepth, ImuData, HarvestConfirmation
+# from my_robot_interfaces.srv import HarvestConfirmation
 
 
 class Points:
@@ -17,9 +17,11 @@ class Points:
 class DepthPublisherNode(Node):
     def __init__(self):
         super().__init__('camera_depth_node')
-        self.imu_subscriber = self.create_subscription(Imu, 'imu_data', self.imu_data, 10)
+        self.imu_subscriber = self.create_subscription(ImuData, 'imu_data', self.imu_data, 10)
         self.imu_subscriber
-        self.confirm_action_client = self.create_client(HarvestConfirmation, 'harvest_confirm')  # Create a service client
+        # self.confirm_action_client = self.create_client(HarvestConfirmation, 'harvest_confirm')  # Create a service client
+        self.confirm_subscriber = self.create_subscription(HarvestConfirmation, 'harvest_confirmation', self.harvest_confirm, 10)
+        self.confirm_subscriber
         self.publisher = self.create_publisher(FruitDepth, 'fruit_depth', 10)
         timer_period = 0.01  # seconds
         self.timer = self.create_timer(timer_period, self.process_frames)
@@ -30,11 +32,11 @@ class DepthPublisherNode(Node):
         self.frames = None
 
         # Variables for Machine Learning
-        self.crosshair_x_offset = 0.45
-        self.crosshair_y_offset = 0.75
-        self.confidence = 0.7
-        self.FOV_V = 58  # RGB
-        self.FOV_H = 87  # RGB
+        self.crosshair_x_offset = 0.44
+        self.crosshair_y_offset = 0.65
+        self.confidence = 0.6
+        self.FOV_V = 60  # RGB
+        self.FOV_H = 91.2  # RGB
         self.detected_palm_oil = False
         self.fruit_depth = 0.0
         self.palm_oil_num = 0
@@ -48,7 +50,7 @@ class DepthPublisherNode(Node):
         self.yaw_angle = 0
 
         # Variables for harvest status
-        self.harvest_end_counter = 0
+        self.harvest_counter = 0
         self.harvest_end = True
 
         # Variables for orientation
@@ -94,8 +96,20 @@ class DepthPublisherNode(Node):
     def imu_data(self, msg):
         self.yaw_angle = msg.yaw
 
+    def harvest_confirm(self, msg):
+        if msg.success:
+            self.harvest_counter += 1
+            if self.harvest_counter == 10:
+                self.harvest_end = True
+                self.harvest_counter = 0
+        else:
+            self.harvest_counter  = 0
+            self.harvest_end = False
+
     def process_frames(self):
         self.frames = self.pipe.wait_for_frames()
+        self.get_logger().warn(str(self.harvest_end))
+        self.get_logger().info(str(self.first_detected))
         if not self.detected_palm_oil and self.harvest_end:
             if self.harvest_end:
                 self.depth_frame = self.frames.get_depth_frame()
@@ -103,51 +117,54 @@ class DepthPublisherNode(Node):
                 self.color_image = np.asanyarray(self.color_frame.get_data())
                 self.process_frame()  # self.palm_oil_num, self.detected_palm_oil, self.pitch_angle, self.yaw_angle
         else:
-            request = HarvestConfirmation.Request()
-            future = self.confirm_action_client.call_async(request)
-            if future.done() and future.result().success:
-                self.harvest_end = True
-            else:
-                self.harvest_end = False
-                self.get_imu_data()  # self.yaw_angle, self.pitch_angle
-                if self.first_detected:
-                    if abs(self.pitch_angle - self.previous_pitch) < 0.03 and abs(self.yaw_angle - self.previous_yaw) < 0.03:
-                        self.angle_counter += 1
-                        self.pitch_direction = 2
-                        self.yaw_direction = 2
-                        if self.angle_counter == 20:
-                            self.target_yaw += self.yaw_angle
-                            self.target_pitch += self.pitch_angle
-                            self.first_detected = False
-                            self.angle_counter = 0
-                    else:
-                        self.previous_pitch = self.pitch_angle
-                        self.previous_yaw = self.yaw_angle
-                        self.first_detected = True
-                        self.pitch_direction = 2
-                        self.yaw_direction = 2
+            # request = HarvestConfirmation.Request()
+            # future = self.confirm_action_client.call_async(request)
+            # if future.done():            
+            #     self.get_logger().warn(str(future.result().success))
+            #     if future.result().success:
+            #         self.first_detected = True
+            #         self.harvest_end = True
+            self.get_imu_data()  # self.yaw_angle, self.pitch_angle
+            if self.first_detected:
+                if abs(self.pitch_angle - self.previous_pitch) < 0.03 and abs(self.yaw_angle - self.previous_yaw) < 0.03:
+                    self.angle_counter += 1
+                    self.pitch_direction = 2
+                    self.yaw_direction = 2
+                    if self.angle_counter == 20:
+                        self.target_yaw += self.yaw_angle
+                        self.target_pitch += self.pitch_angle 
+                        # self.get_logger().info(str(self.target_pitch))
+                        self.first_detected = False
                         self.angle_counter = 0
                 else:
-                    if (self.pitch_angle - self.target_pitch) > 2:
-                        self.pitch_direction = 1
-                    elif (self.pitch_angle - self.target_pitch) < -2:
-                        self.pitch_direction = -1
-                    else:
-                        self.pitch_direction = 0
+                    self.previous_pitch = self.pitch_angle
+                    self.previous_yaw = self.yaw_angle
+                    self.first_detected = True
+                    self.pitch_direction = 2
+                    self.yaw_direction = 2
+                    self.angle_counter = 0
+            else:
+                self.get_logger().info(str(self.target_yaw) + " , " + str(self.target_pitch))
+                if (self.pitch_angle - self.target_pitch) > 1:
+                    self.pitch_direction = -1
+                elif (self.pitch_angle - self.target_pitch) < -1:
+                    self.pitch_direction = 1
+                else:
+                    self.pitch_direction = 0
 
-                    if (self.yaw_angle - self.target_yaw) > 2:
-                        self.yaw_direction = 1
-                    elif (self.yaw_angle - self.target_yaw) < -2:
-                        self.yaw_direction = -1
-                    else:
-                        self.yaw_direction = 0
+                if (self.yaw_angle - self.target_yaw) > 2:
+                    self.yaw_direction = 1 # 1
+                elif (self.yaw_angle - self.target_yaw) < -2:
+                    self.yaw_direction = -1 # -1
+                else:
+                    self.yaw_direction = 0
 
-                    if self.pitch_direction == 0 and self.yaw_direction == 0:
-                        self.detected_palm_oil = False
-                        self.first_detected = True
+                if self.pitch_direction == 0 and self.yaw_direction == 0:
+                    self.detected_palm_oil = False
+                    cv2.destroyAllWindows()
 
-                    print(str(self.target_yaw) + " , " + str(self.target_pitch))
-                    print(str(self.yaw_angle) + " , " + str(self.pitch_angle))
+                # self.get_logger().info(str(self.target_yaw) + " , " + str(self.target_pitch))
+                # self.get_logger().info(str(self.yaw_angle) + " , " + str(self.pitch_angle))
 
         msg = FruitDepth()
         msg.detected = self.detected_palm_oil
@@ -162,10 +179,9 @@ class DepthPublisherNode(Node):
 
     def calc_pitch_angle(self, pt1_x, pt1_y, center_x, center_y):
         vertical = (center_y - pt1_y)
-        horizontal = (pt1_x - center_x)
+        horizontal = (center_x - pt1_x)
 
         self.target_pitch = (self.FOV_V / self.frame_height) * vertical
-        print(self.target_pitch)
         self.target_yaw = (self.FOV_H / self.frame_width) * horizontal
 
     def process_frame(self):
@@ -173,11 +189,22 @@ class DepthPublisherNode(Node):
         predictions = self.model.predict(self.color_image, conf=self.confidence)
         depth_arr = []
         coordinates = predictions[0].boxes.xywh.tolist()
+
         height, width, _ = self.color_image.shape
+
+        # Draw horizontal line (crosshair)
+        cv2.line(self.color_image, (0, int(height * self.crosshair_y_offset)), (width, int(height * self.crosshair_y_offset)), (0,255,0), 1)
+        # Draw vertical line (crosshair)
+        cv2.line(self.color_image, (int(width * self.crosshair_x_offset), 0), (int(width * self.crosshair_x_offset), height), (0,255,0), 1)
 
         for pts in coordinates:
             # Extract x, y, width, and height
             x, y, width, height = int(pts[0]), int(pts[1]), int(pts[2]), int(pts[3])
+
+            pts[0] = int(pts[0] - pts[2] / 2)
+            pts[1] = int(pts[1] - pts[3] / 2)
+            cv2.rectangle(self.color_image, (int(pts[0]), int(pts[1])), (int(pts[0] + pts[2]), int(pts[1] + pts[3])), (0, 255, 0), 2)
+            cv2.putText(self.color_image, 'palm oil', (pts[0], pts[1]), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3, cv2.LINE_AA)
             
             center_x = x
             center_y = y
@@ -205,6 +232,7 @@ class DepthPublisherNode(Node):
             print(f"x: {closest_pt.x}, y: {closest_pt.y}, z:{closest_pt.z}")
             self.calc_pitch_angle(closest_pt.x, closest_pt.y, int(width * self.crosshair_x_offset), int(height * self.crosshair_y_offset))
             self.detected_palm_oil = True
+            self.first_detected = True
             self.fruit_depth = closest_depth
             print(f"Closest Depth: {closest_depth}")
 

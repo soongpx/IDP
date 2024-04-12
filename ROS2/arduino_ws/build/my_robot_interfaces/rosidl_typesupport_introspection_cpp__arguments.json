@@ -10,9 +10,11 @@
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/MotorCommand.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/FindObstacle.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/RealSense.idl",
-    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/Imu.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/ImuData.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/Harvest.idl",
-    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:srv/HarvestConfirmation.idl"
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/HarvestConfirmation.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/RealsenseImu.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:action/Detection.idl"
   ],
   "ros_interface_dependencies": [
     "geometry_msgs:/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
@@ -75,7 +77,12 @@
     "std_msgs:/opt/ros/humble/share/std_msgs/msg/UInt8.idl",
     "std_msgs:/opt/ros/humble/share/std_msgs/msg/UInt8MultiArray.idl",
     "builtin_interfaces:/opt/ros/humble/share/builtin_interfaces/msg/Duration.idl",
-    "builtin_interfaces:/opt/ros/humble/share/builtin_interfaces/msg/Time.idl"
+    "builtin_interfaces:/opt/ros/humble/share/builtin_interfaces/msg/Time.idl",
+    "action_msgs:/opt/ros/humble/share/action_msgs/msg/GoalInfo.idl",
+    "action_msgs:/opt/ros/humble/share/action_msgs/msg/GoalStatus.idl",
+    "action_msgs:/opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl",
+    "action_msgs:/opt/ros/humble/share/action_msgs/srv/CancelGoal.idl",
+    "unique_identifier_msgs:/opt/ros/humble/share/unique_identifier_msgs/msg/UUID.idl"
   ],
   "target_dependencies": [
     "/opt/ros/humble/lib/rosidl_typesupport_introspection_cpp/rosidl_typesupport_introspection_cpp",
@@ -93,9 +100,11 @@
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/MotorCommand.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/FindObstacle.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/RealSense.idl",
-    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Imu.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/ImuData.idl",
     "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Harvest.idl",
-    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/srv/HarvestConfirmation.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/HarvestConfirmation.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/RealsenseImu.idl",
+    "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/action/Detection.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/Accel.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl",
     "/opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl",
@@ -156,6 +165,11 @@
     "/opt/ros/humble/share/std_msgs/msg/UInt8.idl",
     "/opt/ros/humble/share/std_msgs/msg/UInt8MultiArray.idl",
     "/opt/ros/humble/share/builtin_interfaces/msg/Duration.idl",
-    "/opt/ros/humble/share/builtin_interfaces/msg/Time.idl"
+    "/opt/ros/humble/share/builtin_interfaces/msg/Time.idl",
+    "/opt/ros/humble/share/action_msgs/msg/GoalInfo.idl",
+    "/opt/ros/humble/share/action_msgs/msg/GoalStatus.idl",
+    "/opt/ros/humble/share/action_msgs/msg/GoalStatusArray.idl",
+    "/opt/ros/humble/share/action_msgs/srv/CancelGoal.idl",
+    "/opt/ros/humble/share/unique_identifier_msgs/msg/UUID.idl"
   ]
 }

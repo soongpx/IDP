@@ -1,5 +1,6 @@
 [console_scripts]
 autonomous_control = arduino_control.autonomous_main:main
+detection = arduino_control.detection:main
 find_obstacle = arduino_control.find_obstacle:main
 fruit_harvest = arduino_control.fruit_harvest:main
 imu = arduino_control.imu:main
@@ -10,4 +11,5 @@ locomotion_control = arduino_control.arduino_led_node:main
 minimal_publisher = arduino_control.publisher:main
 obstacle_avoidance = arduino_control.obstacle_avoidance:main
 realsense = arduino_control.realsense:main
+realsense_imu = arduino_control.realsense_imu:main
 

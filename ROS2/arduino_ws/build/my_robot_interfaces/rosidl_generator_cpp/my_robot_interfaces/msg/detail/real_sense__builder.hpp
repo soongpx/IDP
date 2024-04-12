@@ -21,16 +21,32 @@ namespace msg
 namespace builder
 {
 
+class Init_RealSense_pitch
+{
+public:
+  explicit Init_RealSense_pitch(::my_robot_interfaces::msg::RealSense & msg)
+  : msg_(msg)
+  {}
+  ::my_robot_interfaces::msg::RealSense pitch(::my_robot_interfaces::msg::RealSense::_pitch_type arg)
+  {
+    msg_.pitch = std::move(arg);
+    return std::move(msg_);
+  }
+
+private:
+  ::my_robot_interfaces::msg::RealSense msg_;
+};
+
 class Init_RealSense_depth
 {
 public:
   explicit Init_RealSense_depth(::my_robot_interfaces::msg::RealSense & msg)
   : msg_(msg)
   {}
-  ::my_robot_interfaces::msg::RealSense depth(::my_robot_interfaces::msg::RealSense::_depth_type arg)
+  Init_RealSense_pitch depth(::my_robot_interfaces::msg::RealSense::_depth_type arg)
   {
     msg_.depth = std::move(arg);
-    return std::move(msg_);
+    return Init_RealSense_pitch(msg_);
   }
 
 private:

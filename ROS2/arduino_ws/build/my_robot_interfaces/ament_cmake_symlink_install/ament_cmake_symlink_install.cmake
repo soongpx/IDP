@@ -379,14 +379,20 @@ ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" 
 # install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/RealSense.idl" "DESTINATION" "share/my_robot_interfaces/msg")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/RealSense.idl" "DESTINATION" "share/my_robot_interfaces/msg")
 
-# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Imu.idl" "DESTINATION" "share/my_robot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Imu.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/ImuData.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/ImuData.idl" "DESTINATION" "share/my_robot_interfaces/msg")
 
 # install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Harvest.idl" "DESTINATION" "share/my_robot_interfaces/msg")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/Harvest.idl" "DESTINATION" "share/my_robot_interfaces/msg")
 
-# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/srv/HarvestConfirmation.idl" "DESTINATION" "share/my_robot_interfaces/srv")
-ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/srv/HarvestConfirmation.idl" "DESTINATION" "share/my_robot_interfaces/srv")
+# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/HarvestConfirmation.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/HarvestConfirmation.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+
+# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/RealsenseImu.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/msg/RealsenseImu.idl" "DESTINATION" "share/my_robot_interfaces/msg")
+
+# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/action/Detection.idl" "DESTINATION" "share/my_robot_interfaces/action")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces/action/Detection.idl" "DESTINATION" "share/my_robot_interfaces/action")
 
 # install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/LidarScan.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/LidarScan.msg" "DESTINATION" "share/my_robot_interfaces/msg")
@@ -409,20 +415,20 @@ ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" 
 # install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/RealSense.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/RealSense.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 
-# install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/Imu.msg" "DESTINATION" "share/my_robot_interfaces/msg")
-ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/Imu.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+# install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/ImuData.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/ImuData.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 
 # install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/Harvest.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/Harvest.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 
-# install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/srv/HarvestConfirmation.srv" "DESTINATION" "share/my_robot_interfaces/srv")
-ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/srv/HarvestConfirmation.srv" "DESTINATION" "share/my_robot_interfaces/srv")
+# install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/HarvestConfirmation.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/HarvestConfirmation.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 
-# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_cmake/srv/HarvestConfirmation_Request.msg" "DESTINATION" "share/my_robot_interfaces/srv")
-ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_cmake/srv/HarvestConfirmation_Request.msg" "DESTINATION" "share/my_robot_interfaces/srv")
+# install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/RealsenseImu.msg" "DESTINATION" "share/my_robot_interfaces/msg")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/msg/RealsenseImu.msg" "DESTINATION" "share/my_robot_interfaces/msg")
 
-# install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_cmake/srv/HarvestConfirmation_Response.msg" "DESTINATION" "share/my_robot_interfaces/srv")
-ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/rosidl_cmake/srv/HarvestConfirmation_Response.msg" "DESTINATION" "share/my_robot_interfaces/srv")
+# install(FILES "/home/px/arduino_ws/src/my_robot_interfaces/action/Detection.action" "DESTINATION" "share/my_robot_interfaces/action")
+ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/src/my_robot_interfaces/action/Detection.action" "DESTINATION" "share/my_robot_interfaces/action")
 
 # install(FILES "/home/px/arduino_ws/build/my_robot_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/my_robot_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")
 ament_cmake_symlink_install_files("/home/px/arduino_ws/src/my_robot_interfaces" FILES "/home/px/arduino_ws/build/my_robot_interfaces/ament_cmake_index/share/ament_index/resource_index/package_run_dependencies/my_robot_interfaces" "DESTINATION" "share/ament_index/resource_index/package_run_dependencies")

@@ -34,6 +34,8 @@ setup(
             'autonomous_control = arduino_control.autonomous_main:main',
             'fruit_harvest = arduino_control.fruit_harvest:main',
             'find_obstacle = arduino_control.find_obstacle:main',
+            'detection = arduino_control.detection:main',
+            'realsense_imu = arduino_control.realsense_imu:main',
         ],
     },
 )

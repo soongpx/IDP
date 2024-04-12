@@ -258,7 +258,7 @@ bool my_robot_interfaces__msg__RealSense__rosidl_typesupport_introspection_c__re
   return rosidl_runtime_c__uint32__Sequence__init(member, size);
 }
 
-static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__msg__RealSense__rosidl_typesupport_introspection_c__RealSense_message_member_array[4] = {
+static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__msg__RealSense__rosidl_typesupport_introspection_c__RealSense_message_member_array[5] = {
   {
     "red",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_UINT8,  // type
@@ -326,13 +326,30 @@ static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__ms
     my_robot_interfaces__msg__RealSense__rosidl_typesupport_introspection_c__fetch_function__RealSense__depth,  // fetch(index, &value) function pointer
     my_robot_interfaces__msg__RealSense__rosidl_typesupport_introspection_c__assign_function__RealSense__depth,  // assign(index, value) function pointer
     my_robot_interfaces__msg__RealSense__rosidl_typesupport_introspection_c__resize_function__RealSense__depth  // resize(index) function pointer
+  },
+  {
+    "pitch",  // name
+    rosidl_typesupport_introspection_c__ROS_TYPE_DOUBLE,  // type
+    0,  // upper bound of string
+    NULL,  // members of sub message
+    false,  // is array
+    0,  // array size
+    false,  // is upper bound
+    offsetof(my_robot_interfaces__msg__RealSense, pitch),  // bytes offset in struct
+    NULL,  // default value
+    NULL,  // size() function pointer
+    NULL,  // get_const(index) function pointer
+    NULL,  // get(index) function pointer
+    NULL,  // fetch(index, &value) function pointer
+    NULL,  // assign(index, value) function pointer
+    NULL  // resize(index) function pointer
   }
 };
 
 static const rosidl_typesupport_introspection_c__MessageMembers my_robot_interfaces__msg__RealSense__rosidl_typesupport_introspection_c__RealSense_message_members = {
   "my_robot_interfaces__msg",  // message namespace
   "RealSense",  // message name
-  4,  // number of fields
+  5,  // number of fields
   sizeof(my_robot_interfaces__msg__RealSense),
   my_robot_interfaces__msg__RealSense__rosidl_typesupport_introspection_c__RealSense_message_member_array,  // message members
   my_robot_interfaces__msg__RealSense__rosidl_typesupport_introspection_c__RealSense_init_function,  // function to initialize message memory (memory has to be allocated)

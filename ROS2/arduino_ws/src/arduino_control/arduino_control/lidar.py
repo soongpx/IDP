@@ -38,12 +38,25 @@ class LidarControllerNode(Node):
                 self.get_logger().info("LIDAR port: %s" % port)
 
                 self.laser.setlidaropt(ydlidar.LidarPropSerialPort, port)
+                self.laser.setlidaropt(ydlidar.LidarPropIgnoreArray, "")
                 self.laser.setlidaropt(ydlidar.LidarPropSerialBaudrate, 115200)
                 self.laser.setlidaropt(ydlidar.LidarPropLidarType, ydlidar.TYPE_TRIANGLE)
                 self.laser.setlidaropt(ydlidar.LidarPropDeviceType, ydlidar.YDLIDAR_TYPE_SERIAL)
-                self.laser.setlidaropt(ydlidar.LidarPropScanFrequency, 10.0)
                 self.laser.setlidaropt(ydlidar.LidarPropSampleRate, 3)
+                self.laser.setlidaropt(ydlidar.LidarPropAbnormalCheckCount, 4)
+                self.laser.setlidaropt(ydlidar.LidarPropFixedResolution, True)
+                self.laser.setlidaropt(ydlidar.LidarPropReversion, True)
+                self.laser.setlidaropt(ydlidar.LidarPropInverted, True)
+                self.laser.setlidaropt(ydlidar.LidarPropAutoReconnect, True)
                 self.laser.setlidaropt(ydlidar.LidarPropSingleChannel, True)
+                self.laser.setlidaropt(ydlidar.LidarPropIntenstiy, False)
+                self.laser.setlidaropt(ydlidar.LidarPropSupportMotorDtrCtrl, True)
+                self.laser.setlidaropt(ydlidar.LidarPropMaxAngle, 180.0)
+                self.laser.setlidaropt(ydlidar.LidarPropMinAngle, -180.0)
+                self.laser.setlidaropt(ydlidar.LidarPropMaxRange, 12.0)
+                self.laser.setlidaropt(ydlidar.LidarPropMinRange, 0.1)
+                self.laser.setlidaropt(ydlidar.LidarPropScanFrequency, 10.0)
+
 
                 ret = self.laser.initialize()
                 if ret:

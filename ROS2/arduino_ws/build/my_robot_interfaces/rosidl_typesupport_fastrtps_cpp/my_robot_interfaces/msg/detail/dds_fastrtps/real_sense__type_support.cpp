@@ -48,6 +48,8 @@ cdr_serialize(
   {
     cdr << ros_message.depth;
   }
+  // Member: pitch
+  cdr << ros_message.pitch;
   return true;
 }
 
@@ -76,6 +78,9 @@ cdr_deserialize(
   {
     cdr >> ros_message.depth;
   }
+
+  // Member: pitch
+  cdr >> ros_message.pitch;
 
   return true;
 }
@@ -131,6 +136,12 @@ get_serialized_size(
       eprosima::fastcdr::Cdr::alignment(current_alignment, padding);
     size_t item_size = sizeof(ros_message.depth[0]);
     current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // Member: pitch
+  {
+    size_t item_size = sizeof(ros_message.pitch);
+    current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
@@ -206,6 +217,15 @@ max_serialized_size_RealSense(
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
 
+  // Member: pitch
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
+
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
     // All members are plain, and type is not empty.
@@ -214,7 +234,7 @@ max_serialized_size_RealSense(
     using DataType = my_robot_interfaces::msg::RealSense;
     is_plain =
       (
-      offsetof(DataType, depth) +
+      offsetof(DataType, pitch) +
       last_member_size
       ) == ret_val;
   }

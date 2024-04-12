@@ -83,6 +83,11 @@ static bool _RealSense__cdr_serialize(
     cdr.serializeArray(array_ptr, size);
   }
 
+  // Field name: pitch
+  {
+    cdr << ros_message->pitch;
+  }
+
   return true;
 }
 
@@ -159,6 +164,11 @@ static bool _RealSense__cdr_deserialize(
     cdr.deserializeArray(array_ptr, size);
   }
 
+  // Field name: pitch
+  {
+    cdr >> ros_message->pitch;
+  }
+
   return true;
 }  // NOLINT(readability/fn_size)
 
@@ -218,6 +228,12 @@ size_t get_serialized_size_my_robot_interfaces__msg__RealSense(
     (void)array_ptr;
     size_t item_size = sizeof(array_ptr[0]);
     current_alignment += array_size * item_size +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
+  }
+  // field.name pitch
+  {
+    size_t item_size = sizeof(ros_message->pitch);
+    current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
 
@@ -294,6 +310,14 @@ size_t max_serialized_size_my_robot_interfaces__msg__RealSense(
     current_alignment += array_size * sizeof(uint32_t) +
       eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint32_t));
   }
+  // member: pitch
+  {
+    size_t array_size = 1;
+
+    last_member_size = array_size * sizeof(uint64_t);
+    current_alignment += array_size * sizeof(uint64_t) +
+      eprosima::fastcdr::Cdr::alignment(current_alignment, sizeof(uint64_t));
+  }
 
   size_t ret_val = current_alignment - initial_alignment;
   if (is_plain) {
@@ -303,7 +327,7 @@ size_t max_serialized_size_my_robot_interfaces__msg__RealSense(
     using DataType = my_robot_interfaces__msg__RealSense;
     is_plain =
       (
-      offsetof(DataType, depth) +
+      offsetof(DataType, pitch) +
       last_member_size
       ) == ret_val;
   }

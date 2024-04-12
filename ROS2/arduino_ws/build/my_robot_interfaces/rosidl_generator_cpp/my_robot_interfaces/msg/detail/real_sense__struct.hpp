@@ -35,13 +35,21 @@ struct RealSense_
 
   explicit RealSense_(rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   {
-    (void)_init;
+    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
+      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+    {
+      this->pitch = 0.0;
+    }
   }
 
   explicit RealSense_(const ContainerAllocator & _alloc, rosidl_runtime_cpp::MessageInitialization _init = rosidl_runtime_cpp::MessageInitialization::ALL)
   {
-    (void)_init;
     (void)_alloc;
+    if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
+      rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
+    {
+      this->pitch = 0.0;
+    }
   }
 
   // field types and members
@@ -57,6 +65,9 @@ struct RealSense_
   using _depth_type =
     std::vector<uint32_t, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<uint32_t>>;
   _depth_type depth;
+  using _pitch_type =
+    double;
+  _pitch_type pitch;
 
   // setters for named parameter idiom
   Type & set__red(
@@ -81,6 +92,12 @@ struct RealSense_
     const std::vector<uint32_t, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<uint32_t>> & _arg)
   {
     this->depth = _arg;
+    return *this;
+  }
+  Type & set__pitch(
+    const double & _arg)
+  {
+    this->pitch = _arg;
     return *this;
   }
 
@@ -136,6 +153,9 @@ struct RealSense_
       return false;
     }
     if (this->depth != other.depth) {
+      return false;
+    }
+    if (this->pitch != other.pitch) {
       return false;
     }
     return true;

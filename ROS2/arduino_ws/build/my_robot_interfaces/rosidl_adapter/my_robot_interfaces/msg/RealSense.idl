@@ -13,6 +13,8 @@ module my_robot_interfaces {
       sequence<uint8> blue;
 
       sequence<uint32> depth;
+
+      double pitch;
     };
   };
 };

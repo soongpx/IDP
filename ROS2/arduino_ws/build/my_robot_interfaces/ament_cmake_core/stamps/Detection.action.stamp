@@ -1,0 +1,9 @@
+bool start
+---
+bool detected
+float32 fruit_depth
+uint8 fruit_number
+float32 target_pitch
+float32 target_yaw
+---
+bool fruit_detected

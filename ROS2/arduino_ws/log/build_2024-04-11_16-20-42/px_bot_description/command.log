@@ -1,0 +1,4 @@
+Invoking command in '/home/px/arduino_ws/build/px_bot_description': /usr/bin/cmake --build /home/px/arduino_ws/build/px_bot_description -- -j8 -l8
+Invoked command in '/home/px/arduino_ws/build/px_bot_description' returned '0': /usr/bin/cmake --build /home/px/arduino_ws/build/px_bot_description -- -j8 -l8
+Invoking command in '/home/px/arduino_ws/build/px_bot_description': /usr/bin/cmake --install /home/px/arduino_ws/build/px_bot_description
+Invoked command in '/home/px/arduino_ws/build/px_bot_description' returned '0': /usr/bin/cmake --install /home/px/arduino_ws/build/px_bot_description
