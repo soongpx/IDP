@@ -12,6 +12,7 @@
     "/home/px/arduino_ws/src/my_robot_interfaces:msg/Harvest.msg",
     "/home/px/arduino_ws/src/my_robot_interfaces:msg/HarvestConfirmation.msg",
     "/home/px/arduino_ws/src/my_robot_interfaces:msg/RealsenseImu.msg",
-    "/home/px/arduino_ws/src/my_robot_interfaces:action/Detection.action"
+    "/home/px/arduino_ws/src/my_robot_interfaces:action/Detection.action",
+    "/home/px/arduino_ws/src/my_robot_interfaces:action/HarvestFruit.action"
   ]
 }

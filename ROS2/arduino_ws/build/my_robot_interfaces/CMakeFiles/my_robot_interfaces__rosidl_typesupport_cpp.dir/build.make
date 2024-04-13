@@ -87,6 +87,7 @@ rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp: ros
 rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp: rosidl_adapter/my_robot_interfaces/msg/HarvestConfirmation.idl
 rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp: rosidl_adapter/my_robot_interfaces/msg/RealsenseImu.idl
 rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp: rosidl_adapter/my_robot_interfaces/action/Detection.idl
+rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp: rosidl_adapter/my_robot_interfaces/action/HarvestFruit.idl
 rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl
@@ -188,6 +189,9 @@ rosidl_typesupport_cpp/my_robot_interfaces/msg/realsense_imu__type_support.cpp: 
 
 rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp: rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp
+
+rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp: rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp
 
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp.o: CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/flags.make
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp.o: rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp
@@ -357,6 +361,20 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/px/arduino_ws/build/my_robot_interfaces/rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp -o CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp.s
 
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o: CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/flags.make
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o: rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o: CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/px/arduino_ws/build/my_robot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o -MF CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o.d -o CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o -c /home/px/arduino_ws/build/my_robot_interfaces/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp
+
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/px/arduino_ws/build/my_robot_interfaces/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp > CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.i
+
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/px/arduino_ws/build/my_robot_interfaces/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp -o CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.s
+
 # Object files for target my_robot_interfaces__rosidl_typesupport_cpp
 my_robot_interfaces__rosidl_typesupport_cpp_OBJECTS = \
 "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/lidar_scan__type_support.cpp.o" \
@@ -370,7 +388,8 @@ my_robot_interfaces__rosidl_typesupport_cpp_OBJECTS = \
 "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/harvest__type_support.cpp.o" \
 "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/harvest_confirmation__type_support.cpp.o" \
 "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/realsense_imu__type_support.cpp.o" \
-"CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp.o"
+"CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp.o" \
+"CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o"
 
 # External object files for target my_robot_interfaces__rosidl_typesupport_cpp
 my_robot_interfaces__rosidl_typesupport_cpp_EXTERNAL_OBJECTS =
@@ -387,6 +406,7 @@ libmy_robot_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/my_robot_interface
 libmy_robot_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/harvest_confirmation__type_support.cpp.o
 libmy_robot_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/realsense_imu__type_support.cpp.o
 libmy_robot_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp.o
+libmy_robot_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o
 libmy_robot_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/build.make
 libmy_robot_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/libgeometry_msgs__rosidl_typesupport_cpp.so
 libmy_robot_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/libstd_msgs__rosidl_typesupport_cpp.so
@@ -398,7 +418,7 @@ libmy_robot_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/librosidl
 libmy_robot_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/librosidl_runtime_c.so
 libmy_robot_interfaces__rosidl_typesupport_cpp.so: /opt/ros/humble/lib/librcutils.so
 libmy_robot_interfaces__rosidl_typesupport_cpp.so: CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/px/arduino_ws/build/my_robot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX shared library libmy_robot_interfaces__rosidl_typesupport_cpp.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/px/arduino_ws/build/my_robot_interfaces/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Linking CXX shared library libmy_robot_interfaces__rosidl_typesupport_cpp.so"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -410,6 +430,7 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/clean:
 .PHONY : CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/clean
 
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp
+CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/my_robot_interfaces/msg/find_obstacle__type_support.cpp
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/my_robot_interfaces/msg/fruit_depth__type_support.cpp
 CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/depend: rosidl_typesupport_cpp/my_robot_interfaces/msg/harvest__type_support.cpp

@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "../rosidl_generator_py/my_robot_interfaces/action/__init__.py"
   "../rosidl_generator_py/my_robot_interfaces/action/_detection.py"
   "../rosidl_generator_py/my_robot_interfaces/action/_detection_s.c"
+  "../rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit.py"
+  "../rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit_s.c"
   "../rosidl_generator_py/my_robot_interfaces/msg/__init__.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_find_obstacle.py"
   "../rosidl_generator_py/my_robot_interfaces/msg/_find_obstacle_s.c"

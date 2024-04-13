@@ -1,0 +1,338 @@
+[0.019s] Invoking command in '/home/px/arduino_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/my_robot_interfaces -- -j8 -l8
+[0.079s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_generator_c[0m
+[0.090s] [  0%] Built target my_robot_interfaces__cpp
+[0.094s] [  0%] Built target ament_cmake_python_symlink_my_robot_interfaces
+[0.097s] [ 12%] Built target my_robot_interfaces__rosidl_generator_c
+[0.123s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_typesupport_cpp[0m
+[0.123s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_typesupport_fastrtps_cpp[0m
+[0.123s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_typesupport_introspection_c[0m
+[0.123s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_typesupport_introspection_cpp[0m
+[0.124s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_typesupport_c[0m
+[0.124s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_typesupport_fastrtps_c[0m
+[0.148s] [ 24%] Built target my_robot_interfaces__rosidl_typesupport_introspection_c
+[0.150s] [ 37%] Built target my_robot_interfaces__rosidl_typesupport_c
+[0.153s] [ 48%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_cpp
+[0.158s] [ 60%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_c
+[0.162s] [ 72%] Built target my_robot_interfaces__rosidl_typesupport_introspection_cpp
+[0.164s] [ 84%] Built target my_robot_interfaces__rosidl_typesupport_cpp
+[0.183s] [ 84%] Built target my_robot_interfaces
+[0.204s] [ 85%] Built target my_robot_interfaces__py
+[0.222s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_generator_py[0m
+[0.250s] [ 96%] Built target my_robot_interfaces__rosidl_generator_py
+[0.261s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext[0m
+[0.261s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_typesupport_c__pyext[0m
+[0.262s] [35m[1mConsolidate compiler generated dependencies of target my_robot_interfaces__rosidl_typesupport_introspection_c__pyext[0m
+[0.274s] [ 98%] Built target my_robot_interfaces__rosidl_typesupport_c__pyext
+[0.274s] [ 98%] Built target my_robot_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[0.279s] [100%] Built target my_robot_interfaces__rosidl_typesupport_introspection_c__pyext
+[0.441s] running egg_info
+[0.442s] writing my_robot_interfaces.egg-info/PKG-INFO
+[0.442s] writing dependency_links to my_robot_interfaces.egg-info/dependency_links.txt
+[0.442s] writing top-level names to my_robot_interfaces.egg-info/top_level.txt
+[0.445s] reading manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'
+[0.446s] writing manifest file 'my_robot_interfaces.egg-info/SOURCES.txt'
+[0.470s] [100%] Built target ament_cmake_python_build_my_robot_interfaces_egg
+[0.482s] Invoked command in '/home/px/arduino_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/my_robot_interfaces -- -j8 -l8
+[0.754s] Invoking command in '/home/px/arduino_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --install /home/px/arduino_ws/build/my_robot_interfaces
+[0.762s] -- Install configuration: ""
+[0.762s] -- Execute custom install script
+[0.762s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/ament_index/resource_index/rosidl_interfaces/my_robot_interfaces
+[0.763s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__functions.h
+[0.763s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__struct.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__type_support.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__functions.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__struct.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__type_support.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detection.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/harvest_fruit.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__functions.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__struct.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__type_support.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__functions.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__struct.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__type_support.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__functions.h
+[0.764s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__struct.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__type_support.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__functions.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__struct.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__type_support.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__functions.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__struct.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__type_support.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__functions.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__struct.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__type_support.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__functions.h
+[0.765s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__struct.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__type_support.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__functions.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__struct.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__type_support.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__functions.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__struct.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__type_support.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__functions.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__struct.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__type_support.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__functions.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__struct.h
+[0.766s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__type_support.h
+[0.767s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__functions.h
+[0.767s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__struct.h
+[0.767s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__type_support.h
+[0.767s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/find_obstacle.h
+[0.768s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/fruit_depth.h
+[0.768s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/harvest.h
+[0.768s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/harvest_confirmation.h
+[0.768s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/imu.h
+[0.768s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/imu_data.h
+[0.768s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/joystick.h
+[0.768s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/laser_scan.h
+[0.769s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/lidar_scan.h
+[0.769s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/motor_command.h
+[0.769s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/real_sense.h
+[0.769s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/realsense_imu.h
+[0.769s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_generator_c__visibility_control.h
+[0.769s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.sh
+[0.769s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/library_path.dsv
+[0.770s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_fastrtps_c.h
+[0.771s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_c.h
+[0.772s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__rosidl_typesupport_fastrtps_c.h
+[0.772s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__rosidl_typesupport_fastrtps_c.h
+[0.772s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[0.772s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__builder.hpp
+[0.772s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__struct.hpp
+[0.772s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__traits.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__builder.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__struct.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__traits.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detection.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/harvest_fruit.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__builder.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__struct.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__traits.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__builder.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__struct.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__traits.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__builder.hpp
+[0.773s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__struct.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__traits.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__builder.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__struct.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__traits.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__builder.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__struct.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__traits.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__builder.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__struct.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__traits.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__builder.hpp
+[0.774s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__struct.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__traits.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__builder.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__struct.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__traits.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__builder.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__struct.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__traits.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__builder.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__struct.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__traits.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__builder.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__struct.hpp
+[0.775s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__traits.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__builder.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__struct.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__traits.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/find_obstacle.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/fruit_depth.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/harvest.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/harvest_confirmation.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/imu.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/imu_data.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/joystick.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/laser_scan.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/lidar_scan.hpp
+[0.776s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/motor_command.hpp
+[0.777s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/real_sense.hpp
+[0.777s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/realsense_imu.hpp
+[0.777s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__rosidl_typesupport_fastrtps_cpp.hpp
+[0.777s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__rosidl_typesupport_fastrtps_cpp.hpp
+[0.777s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__rosidl_typesupport_fastrtps_cpp.hpp
+[0.778s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__rosidl_typesupport_fastrtps_cpp.hpp
+[0.779s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[0.779s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__rosidl_typesupport_introspection_c.h
+[0.779s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__rosidl_typesupport_introspection_c.h
+[0.779s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_introspection_c.h
+[0.779s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__rosidl_typesupport_introspection_c.h
+[0.779s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__rosidl_typesupport_introspection_c.h
+[0.779s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__rosidl_typesupport_introspection_c.h
+[0.779s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__rosidl_typesupport_introspection_c.h
+[0.779s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__rosidl_typesupport_introspection_c.h
+[0.780s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__rosidl_typesupport_introspection_c.h
+[0.780s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__rosidl_typesupport_introspection_c.h
+[0.780s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_c.h
+[0.780s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_c.h
+[0.780s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__rosidl_typesupport_introspection_c.h
+[0.780s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__rosidl_typesupport_introspection_c.h
+[0.780s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[0.780s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/detection__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/action/detail/harvest_fruit__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/fruit_depth__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/harvest_confirmation__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/imu_data__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/joystick__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/laser_scan__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/lidar_scan__rosidl_typesupport_introspection_cpp.hpp
+[0.781s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/motor_command__rosidl_typesupport_introspection_cpp.hpp
+[0.782s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/real_sense__rosidl_typesupport_introspection_cpp.hpp
+[0.782s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/include/my_robot_interfaces/my_robot_interfaces/msg/detail/realsense_imu__rosidl_typesupport_introspection_cpp.hpp
+[0.782s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.sh
+[0.782s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/pythonpath.dsv
+[0.782s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/PKG-INFO
+[0.782s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/SOURCES.txt
+[0.782s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/dependency_links.txt
+[0.782s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces-0.0.0-py3.10.egg-info/top_level.txt
+[0.783s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/__init__.py
+[0.783s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_c.c
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/action/__init__.py
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/action/_detection.py
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/action/_detection_s.c
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/action/_harvest_fruit.py
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/action/_harvest_fruit_s.c
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/libmy_robot_interfaces__rosidl_generator_py.so
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/__init__.py
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_find_obstacle.py
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_find_obstacle_s.c
+[0.784s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_fruit_depth.py
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_fruit_depth_s.c
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_harvest.py
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_harvest_confirmation.py
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_harvest_confirmation_s.c
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_harvest_s.c
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_imu.py
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_imu_data.py
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_imu_data_s.c
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_imu_s.c
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_joystick.py
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_joystick_s.c
+[0.785s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_laser_scan.py
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_laser_scan_s.c
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_lidar_scan.py
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_lidar_scan_s.c
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_motor_command.py
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_motor_command_s.c
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_real_sense.py
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_real_sense_s.c
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_realsense_imu.py
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg/_realsense_imu_s.c
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.786s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-x86_64-linux-gnu.so
+[0.787s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-x86_64-linux-gnu.so
+[0.787s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/my_robot_interfaces_s__rosidl_typesupport_c.cpython-310-x86_64-linux-gnu.so
+[0.787s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/LidarScan.idl
+[0.787s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/LaserScan.idl
+[0.787s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/FruitDepth.idl
+[0.787s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/Joystick.idl
+[0.787s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorCommand.idl
+[0.788s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/FindObstacle.idl
+[0.788s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/RealSense.idl
+[0.788s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/ImuData.idl
+[0.788s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/Harvest.idl
+[0.788s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/HarvestConfirmation.idl
+[0.788s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/RealsenseImu.idl
+[0.788s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/action/Detection.idl
+[0.788s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/action/HarvestFruit.idl
+[0.788s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/LidarScan.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/LaserScan.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/FruitDepth.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/Joystick.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/MotorCommand.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/FindObstacle.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/RealSense.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/ImuData.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/Harvest.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/HarvestConfirmation.msg
+[0.789s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/msg/RealsenseImu.msg
+[0.790s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/action/Detection.action
+[0.790s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/action/HarvestFruit.action
+[0.790s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/ament_index/resource_index/package_run_dependencies/my_robot_interfaces
+[0.790s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/ament_index/resource_index/parent_prefix_path/my_robot_interfaces
+[0.790s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.sh
+[0.790s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/ament_prefix_path.dsv
+[0.790s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.sh
+[0.790s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/environment/path.dsv
+[0.790s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.bash
+[0.791s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.sh
+[0.791s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.zsh
+[0.791s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/local_setup.dsv
+[0.791s] -- Symlinking: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.dsv
+[0.799s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/ament_index/resource_index/packages/my_robot_interfaces
+[0.799s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake-extras.cmake
+[0.799s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[0.800s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.800s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[0.800s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[0.800s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[0.800s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[0.800s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig.cmake
+[0.800s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfacesConfig-version.cmake
+[0.800s] -- Up-to-date symlink: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.xml
+[0.801s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_c.so
+[0.801s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_c.so
+[0.801s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[0.801s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_c.so
+[0.801s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_c.so
+[0.801s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_introspection_cpp.so
+[0.802s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_typesupport_cpp.so
+[0.840s] Listing '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces'...
+[0.840s] Listing '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/action'...
+[0.840s] Listing '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/msg'...
+[0.840s] Listing '/home/px/arduino_ws/install/my_robot_interfaces/local/lib/python3.10/dist-packages/my_robot_interfaces/srv'...
+[0.844s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/lib/libmy_robot_interfaces__rosidl_generator_py.so
+[0.844s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport.cmake
+[0.845s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cExport-noconfig.cmake
+[0.845s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[0.845s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[0.845s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_cppExport.cmake
+[0.845s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[0.845s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[0.845s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[0.845s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[0.845s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport.cmake
+[0.846s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[0.846s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[0.846s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[0.846s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport.cmake
+[0.846s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/my_robot_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[0.846s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport.cmake
+[0.846s] -- Up-to-date: /home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/cmake/export_my_robot_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[0.849s] Invoked command in '/home/px/arduino_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/py_launch_example:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --install /home/px/arduino_ws/build/my_robot_interfaces

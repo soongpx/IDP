@@ -20,7 +20,8 @@ extern "C"
 /// Struct defined in action/Detection in the package my_robot_interfaces.
 typedef struct my_robot_interfaces__action__Detection_Goal
 {
-  bool start;
+  /// 0 for checking # 1 for detection
+  bool mode;
 } my_robot_interfaces__action__Detection_Goal;
 
 // Struct for a sequence of my_robot_interfaces__action__Detection_Goal.

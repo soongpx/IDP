@@ -22,12 +22,12 @@ def generate_launch_description():
 
     ld.add_action(realsense_launch)
 
-    detection_node = Node(
+    imu_node = Node(
         package='arduino_control',
-        executable='detection',
-        name='detection'
+        executable='imu',
+        name='imu'
     )
-    ld.add_action(TimerAction(period=3.0, actions=[detection_node]))
+    ld.add_action(TimerAction(period=3.0, actions=[imu_node]))
 
     realsense_imu_node = Node(
         package='arduino_control',
@@ -35,6 +35,13 @@ def generate_launch_description():
         name='realsense_imu'
     )
     ld.add_action(TimerAction(period=3.0, actions=[realsense_imu_node]))
+
+    detection_node = Node(
+        package='arduino_control',
+        executable='detection',
+        name='detection'
+    )
+    ld.add_action(TimerAction(period=7.0, actions=[detection_node]))
 
     return ld
 

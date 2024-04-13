@@ -31,6 +31,7 @@ class LocomotionControl(Node):
         self.tilt_speed = 255
         self.extend_speed = 255
         self.vibrate_speed = 100
+        self.previous_direction = 0
 
     def __del__(self):
         if self.serial_port.is_open:
@@ -45,30 +46,36 @@ class LocomotionControl(Node):
             msg.left_speed = self.target_left_speed
             msg.right_speed = self.target_right_speed
             msg.direction += 3
+            self.previous_direction = 3
         elif self.loco_command == 'Down':
             msg.left_speed = self.target_left_speed
             msg.right_speed = self.target_right_speed
             msg.direction += 0
+            self.previous_direction = 0
         elif self.loco_command == 'Left':
             msg.left_speed = self.target_rotate_left_speed
             msg.right_speed = self.target_right_speed
             msg.direction += 3
+            self.previous_direction = 3
         elif self.loco_command == 'Right':
             msg.left_speed = self.target_left_speed
             msg.right_speed = self.target_rotate_right_speed
             msg.direction += 3
+            self.previous_direction = 3
         elif self.loco_command == "Rotate Left":
             msg.left_speed = self.target_rotate_left_speed
             msg.right_speed = self.target_rotate_right_speed
             msg.direction += 2
+            self.previous_direction = 2
         elif self.loco_command == "Rotate Right":
             msg.left_speed = self.target_rotate_left_speed
             msg.right_speed = self.target_rotate_right_speed
             msg.direction += 1
+            self.previous_direction = 1
         elif self.loco_command == '':
             msg.left_speed = 0
             msg.right_speed = 0
-            msg.direction += 0
+            msg.direction += self.previous_direction
             
         if (self.forward_detected and self.loco_command == 'Up'):
             msg.left_speed = 0

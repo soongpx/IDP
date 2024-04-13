@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp.o"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp.o.d"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp.o.d"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/find_obstacle__type_support.cpp.o"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/find_obstacle__type_support.cpp.o.d"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/my_robot_interfaces/msg/fruit_depth__type_support.cpp.o"
@@ -26,6 +28,7 @@ file(REMOVE_RECURSE
   "libmy_robot_interfaces__rosidl_typesupport_cpp.pdb"
   "libmy_robot_interfaces__rosidl_typesupport_cpp.so"
   "rosidl_typesupport_cpp/my_robot_interfaces/action/detection__type_support.cpp"
+  "rosidl_typesupport_cpp/my_robot_interfaces/action/harvest_fruit__type_support.cpp"
   "rosidl_typesupport_cpp/my_robot_interfaces/msg/find_obstacle__type_support.cpp"
   "rosidl_typesupport_cpp/my_robot_interfaces/msg/fruit_depth__type_support.cpp"
   "rosidl_typesupport_cpp/my_robot_interfaces/msg/harvest__type_support.cpp"

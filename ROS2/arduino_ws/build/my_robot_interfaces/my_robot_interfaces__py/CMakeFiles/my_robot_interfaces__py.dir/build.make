@@ -81,6 +81,7 @@ my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/
 my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/msg/_harvest_confirmation.py
 my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/msg/_realsense_imu.py
 my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/_detection.py
+my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit.py
 my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/msg/__init__.py
 my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/__init__.py
 my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/msg/_lidar_scan_s.c
@@ -95,6 +96,7 @@ my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/
 my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/msg/_harvest_confirmation_s.c
 my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/msg/_realsense_imu_s.c
 my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/_detection_s.c
+my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit_s.c
 
 rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/lib/rosidl_generator_py/rosidl_generator_py
 rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/local/lib/python3.10/dist-packages/rosidl_generator_py/__init__.py
@@ -121,6 +123,7 @@ rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesup
 rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/my_robot_interfaces/msg/HarvestConfirmation.idl
 rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/my_robot_interfaces/msg/RealsenseImu.idl
 rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/my_robot_interfaces/action/Detection.idl
+rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: rosidl_adapter/my_robot_interfaces/action/HarvestFruit.idl
 rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/geometry_msgs/msg/Accel.idl
 rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/geometry_msgs/msg/AccelStamped.idl
 rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c: /opt/ros/humble/share/geometry_msgs/msg/AccelWithCovariance.idl
@@ -232,6 +235,9 @@ rosidl_generator_py/my_robot_interfaces/msg/_realsense_imu.py: rosidl_generator_
 rosidl_generator_py/my_robot_interfaces/action/_detection.py: rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/my_robot_interfaces/action/_detection.py
 
+rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit.py: rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit.py
+
 rosidl_generator_py/my_robot_interfaces/msg/__init__.py: rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/my_robot_interfaces/msg/__init__.py
 
@@ -274,6 +280,9 @@ rosidl_generator_py/my_robot_interfaces/msg/_realsense_imu_s.c: rosidl_generator
 rosidl_generator_py/my_robot_interfaces/action/_detection_s.c: rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
 	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/my_robot_interfaces/action/_detection_s.c
 
+rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit_s.c: rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+	@$(CMAKE_COMMAND) -E touch_nocreate rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit_s.c
+
 my_robot_interfaces__py: my_robot_interfaces__py/CMakeFiles/my_robot_interfaces__py
 my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_c.c
 my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/_my_robot_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
@@ -281,6 +290,8 @@ my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/_my_robot_inter
 my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/__init__.py
 my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/_detection.py
 my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/_detection_s.c
+my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit.py
+my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/action/_harvest_fruit_s.c
 my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/msg/__init__.py
 my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/msg/_find_obstacle.py
 my_robot_interfaces__py: rosidl_generator_py/my_robot_interfaces/msg/_find_obstacle_s.c

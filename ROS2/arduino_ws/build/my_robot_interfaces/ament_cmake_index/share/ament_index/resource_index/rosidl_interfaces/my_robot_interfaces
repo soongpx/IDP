@@ -1,5 +1,7 @@
 action/Detection.action
 action/Detection.idl
+action/HarvestFruit.action
+action/HarvestFruit.idl
 msg/FindObstacle.idl
 msg/FindObstacle.msg
 msg/FruitDepth.idl

@@ -283,8 +283,13 @@ CMakeFiles/my_robot_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator
   rosidl_generator_c/my_robot_interfaces/action/detail/detection__type_support.h \
   rosidl_generator_c/my_robot_interfaces/action/detail/detection__struct.h \
   /opt/ros/humble/include/unique_identifier_msgs/unique_identifier_msgs/msg/detail/uuid__struct.h \
-  rosidl_generator_c/my_robot_interfaces/action/detail/detection__functions.h
+  rosidl_generator_c/my_robot_interfaces/action/detail/detection__functions.h \
+  rosidl_generator_c/my_robot_interfaces/action/detail/harvest_fruit__type_support.h \
+  rosidl_generator_c/my_robot_interfaces/action/detail/harvest_fruit__struct.h \
+  rosidl_generator_c/my_robot_interfaces/action/detail/harvest_fruit__functions.h
 
+
+rosidl_generator_c/my_robot_interfaces/action/detail/harvest_fruit__type_support.h:
 
 rosidl_generator_c/my_robot_interfaces/action/detail/detection__functions.h:
 
@@ -453,6 +458,8 @@ rosidl_generator_c/my_robot_interfaces/msg/detail/harvest__type_support.h:
 /usr/include/x86_64-linux-gnu/bits/time64.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h:
+
+rosidl_generator_c/my_robot_interfaces/action/detail/harvest_fruit__struct.h:
 
 /usr/include/python3.10/Python.h:
 
@@ -793,6 +800,8 @@ rosidl_generator_c/my_robot_interfaces/msg/detail/find_obstacle__functions.h:
 /usr/include/x86_64-linux-gnu/bits/types/struct___jmp_buf_tag.h:
 
 /usr/include/python3.10/context.h:
+
+rosidl_generator_c/my_robot_interfaces/action/detail/harvest_fruit__functions.h:
 
 /usr/include/python3.10/compile.h:
 

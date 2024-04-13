@@ -93,7 +93,7 @@ class ImuNode(Node):
         msg.pitch = self.pitch
         msg.roll = self.roll
         msg.yaw = self.yaw - self.yaw_offset
-        print(msg.yaw)
+        # self.get_logger().info(f"Yaw: {msg.yaw}")
         self.publisher.publish(msg)
 
     def stop(self):

@@ -9,6 +9,7 @@ arduino_control/fibonacci_action_server.py
 arduino_control/fibonacci_client.py
 arduino_control/find_obstacle.py
 arduino_control/fruit_harvest.py
+arduino_control/harvest_fruit.py
 arduino_control/imu.py
 arduino_control/joystick.py
 arduino_control/joystick_control.py
@@ -20,7 +21,6 @@ arduino_control/realsense_imu.py
 arduino_control/serial_test.py
 arduino_control/test.py
 arduino_control/test2.py
-arduino_control/test_1.py
 arduino_control.egg-info/PKG-INFO
 arduino_control.egg-info/SOURCES.txt
 arduino_control.egg-info/dependency_links.txt
@@ -31,5 +31,6 @@ arduino_control.egg-info/zip-safe
 launch/arduino_control_launch.py
 launch/fruit_harvest_launch.py
 launch/joystick_control_launch.py
+launch/test1_launch.py
 launch/test_launch.py
 resource/arduino_control

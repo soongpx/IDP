@@ -77,7 +77,7 @@ class DepthPublisherNode(Node):
 
     def compute_angles(self):
         self.get_imu_data()
-        self.get_logger().info(f"Roll: {self.roll_angle}, Pitch: {self.pitch_angle}, Yaw: {self.yaw_angle}")
+        # self.get_logger().info(f"Pitch: {self.pitch_angle}")
         msg = RealsenseImu()
         msg.roll = self.roll_angle
         msg.pitch = self.pitch_angle
@@ -91,8 +91,8 @@ class DepthPublisherNode(Node):
         self.yaw += self.gyro_z * self.dt
 
         # Compensate for drift using accelerometer data
-        roll_acc = np.arctan2(self.accel_y, self.accel_z)
-        pitch_acc = np.arctan2(-self.accel_x, np.sqrt(self.accel_y ** 2 + self.accel_z ** 2))
+        roll_acc = np.arctan2(self.accel_x, np.sqrt(self.accel_y ** 2 + self.accel_z ** 2))
+        pitch_acc = np.arctan2(self.accel_y, np.sqrt(self.accel_x ** 2 + self.accel_z ** 2))
 
         # Apply complementary filter for roll and pitch
         self.roll = self.beta * (self.roll + self.gyro_y * self.dt) + (1 - self.beta) * roll_acc

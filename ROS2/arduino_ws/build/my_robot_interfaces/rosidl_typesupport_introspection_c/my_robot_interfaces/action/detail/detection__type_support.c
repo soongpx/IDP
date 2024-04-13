@@ -33,14 +33,14 @@ void my_robot_interfaces__action__Detection_Goal__rosidl_typesupport_introspecti
 
 static rosidl_typesupport_introspection_c__MessageMember my_robot_interfaces__action__Detection_Goal__rosidl_typesupport_introspection_c__Detection_Goal_message_member_array[1] = {
   {
-    "start",  // name
+    "mode",  // name
     rosidl_typesupport_introspection_c__ROS_TYPE_BOOLEAN,  // type
     0,  // upper bound of string
     NULL,  // members of sub message
     false,  // is array
     0,  // array size
     false,  // is upper bound
-    offsetof(my_robot_interfaces__action__Detection_Goal, start),  // bytes offset in struct
+    offsetof(my_robot_interfaces__action__Detection_Goal, mode),  // bytes offset in struct
     NULL,  // default value
     NULL,  // size() function pointer
     NULL,  // get_const(index) function pointer

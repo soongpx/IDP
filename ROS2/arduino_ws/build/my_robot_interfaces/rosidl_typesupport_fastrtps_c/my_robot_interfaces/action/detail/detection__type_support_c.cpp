@@ -49,9 +49,9 @@ static bool _Detection_Goal__cdr_serialize(
     return false;
   }
   const _Detection_Goal__ros_msg_type * ros_message = static_cast<const _Detection_Goal__ros_msg_type *>(untyped_ros_message);
-  // Field name: start
+  // Field name: mode
   {
-    cdr << (ros_message->start ? true : false);
+    cdr << (ros_message->mode ? true : false);
   }
 
   return true;
@@ -66,11 +66,11 @@ static bool _Detection_Goal__cdr_deserialize(
     return false;
   }
   _Detection_Goal__ros_msg_type * ros_message = static_cast<_Detection_Goal__ros_msg_type *>(untyped_ros_message);
-  // Field name: start
+  // Field name: mode
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message->start = tmp ? true : false;
+    ros_message->mode = tmp ? true : false;
   }
 
   return true;
@@ -90,9 +90,9 @@ size_t get_serialized_size_my_robot_interfaces__action__Detection_Goal(
   (void)padding;
   (void)wchar_size;
 
-  // field.name start
+  // field.name mode
   {
-    size_t item_size = sizeof(ros_message->start);
+    size_t item_size = sizeof(ros_message->mode);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -125,7 +125,7 @@ size_t max_serialized_size_my_robot_interfaces__action__Detection_Goal(
   full_bounded = true;
   is_plain = true;
 
-  // member: start
+  // member: mode
   {
     size_t array_size = 1;
 
@@ -141,7 +141,7 @@ size_t max_serialized_size_my_robot_interfaces__action__Detection_Goal(
     using DataType = my_robot_interfaces__action__Detection_Goal;
     is_plain =
       (
-      offsetof(DataType, start) +
+      offsetof(DataType, mode) +
       last_member_size
       ) == ret_val;
   }

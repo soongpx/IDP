@@ -27,7 +27,7 @@ class FindObstacleNode(Node):
             filtered_angles = []
             filtered_distances = []
             for angle, distance in zip(self.angle, self.range):
-                if -2.3 < angle < 2.3:
+                if 3.2 > angle > 0.8 or -3.2 < angle < -0.8:
                     filtered_angles.append(angle)
                     filtered_distances.append(distance)   
             msg.nearest_distance1 = min(filter(lambda x: x != 0, filtered_distances))
@@ -43,8 +43,9 @@ class FindObstacleNode(Node):
             if msg.nearest_distance1 < 40:
                 msg.reach = True
 
-            self.get_logger().info(str(msg.nearest_distance1))
-            self.get_logger().info(str(msg.nearest_angle1))
+            # self.get_logger().info(str(msg.nearest_distance1))
+            # self.get_logger().info("")
+            # self.get_logger().info(str(msg.nearest_angle1))
             self.publisher_.publish(msg)
             self.sub = False
         else:

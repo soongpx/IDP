@@ -55,11 +55,11 @@ class Detection_Goal(metaclass=Metaclass_Detection_Goal):
     """Message class 'Detection_Goal'."""
 
     __slots__ = [
-        '_start',
+        '_mode',
     ]
 
     _fields_and_field_types = {
-        'start': 'boolean',
+        'mode': 'boolean',
     }
 
     SLOT_TYPES = (
@@ -70,7 +70,7 @@ class Detection_Goal(metaclass=Metaclass_Detection_Goal):
         assert all('_' + key in self.__slots__ for key in kwargs.keys()), \
             'Invalid arguments passed to constructor: %s' % \
             ', '.join(sorted(k for k in kwargs.keys() if '_' + k not in self.__slots__))
-        self.start = kwargs.get('start', bool())
+        self.mode = kwargs.get('mode', bool())
 
     def __repr__(self):
         typename = self.__class__.__module__.split('.')
@@ -101,7 +101,7 @@ class Detection_Goal(metaclass=Metaclass_Detection_Goal):
     def __eq__(self, other):
         if not isinstance(other, self.__class__):
             return False
-        if self.start != other.start:
+        if self.mode != other.mode:
             return False
         return True
 
@@ -111,17 +111,17 @@ class Detection_Goal(metaclass=Metaclass_Detection_Goal):
         return copy(cls._fields_and_field_types)
 
     @builtins.property
-    def start(self):
-        """Message field 'start'."""
-        return self._start
+    def mode(self):
+        """Message field 'mode'."""
+        return self._mode
 
-    @start.setter
-    def start(self, value):
+    @mode.setter
+    def mode(self, value):
         if __debug__:
             assert \
                 isinstance(value, bool), \
-                "The 'start' field must be of type 'bool'"
-        self._start = value
+                "The 'mode' field must be of type 'bool'"
+        self._mode = value
 
 
 # Import statements for member types

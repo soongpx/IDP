@@ -1,0 +1,12 @@
+bool detected
+float32 fruit_depth
+float32 target_pitch
+float32 target_yaw
+---
+bool end
+---
+uint8 rotate_speed
+uint8 tilt_speed 
+uint8 extend_speed 
+uint8 vibrate_speed 
+uint8 direction 

@@ -7,12 +7,12 @@ from launch.actions import TimerAction
 def generate_launch_description():
     ld = LaunchDescription()
 
-    node1 = Node(
+    imu_node = Node(
         package='arduino_control',
         executable='imu',
         name='imu'
     )
-    ld.add_action(node1)
+    ld.add_action(imu_node)
 
     node2 = Node(
         package='arduino_control',
@@ -27,7 +27,6 @@ def generate_launch_description():
         name='realsense'
     )
     ld.add_action(node3)
-    included_launch = launch.actions.IncludeLaunchDescription()
 
     node4 = Node(
         package='arduino_control',

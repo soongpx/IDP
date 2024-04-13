@@ -21,15 +21,15 @@ namespace action
 namespace builder
 {
 
-class Init_Detection_Goal_start
+class Init_Detection_Goal_mode
 {
 public:
-  Init_Detection_Goal_start()
+  Init_Detection_Goal_mode()
   : msg_(::rosidl_runtime_cpp::MessageInitialization::SKIP)
   {}
-  ::my_robot_interfaces::action::Detection_Goal start(::my_robot_interfaces::action::Detection_Goal::_start_type arg)
+  ::my_robot_interfaces::action::Detection_Goal mode(::my_robot_interfaces::action::Detection_Goal::_mode_type arg)
   {
-    msg_.start = std::move(arg);
+    msg_.mode = std::move(arg);
     return std::move(msg_);
   }
 
@@ -48,7 +48,7 @@ template<>
 inline
 auto build<::my_robot_interfaces::action::Detection_Goal>()
 {
-  return my_robot_interfaces::action::builder::Init_Detection_Goal_start();
+  return my_robot_interfaces::action::builder::Init_Detection_Goal_mode();
 }
 
 }  // namespace my_robot_interfaces

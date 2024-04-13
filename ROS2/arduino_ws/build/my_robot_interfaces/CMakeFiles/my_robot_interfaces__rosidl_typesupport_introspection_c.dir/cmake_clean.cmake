@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/action/detail/detection__type_support.c.o"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/action/detail/detection__type_support.c.o.d"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/action/detail/harvest_fruit__type_support.c.o"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/action/detail/harvest_fruit__type_support.c.o.d"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c.o"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c.o.d"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/fruit_depth__type_support.c.o"
@@ -27,6 +29,8 @@ file(REMOVE_RECURSE
   "libmy_robot_interfaces__rosidl_typesupport_introspection_c.so"
   "rosidl_typesupport_introspection_c/my_robot_interfaces/action/detail/detection__rosidl_typesupport_introspection_c.h"
   "rosidl_typesupport_introspection_c/my_robot_interfaces/action/detail/detection__type_support.c"
+  "rosidl_typesupport_introspection_c/my_robot_interfaces/action/detail/harvest_fruit__rosidl_typesupport_introspection_c.h"
+  "rosidl_typesupport_introspection_c/my_robot_interfaces/action/detail/harvest_fruit__type_support.c"
   "rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__rosidl_typesupport_introspection_c.h"
   "rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/find_obstacle__type_support.c"
   "rosidl_typesupport_introspection_c/my_robot_interfaces/msg/detail/fruit_depth__rosidl_typesupport_introspection_c.h"

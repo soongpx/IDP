@@ -38,7 +38,7 @@ struct Detection_Goal_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->start = false;
+      this->mode = false;
     }
   }
 
@@ -48,20 +48,20 @@ struct Detection_Goal_
     if (rosidl_runtime_cpp::MessageInitialization::ALL == _init ||
       rosidl_runtime_cpp::MessageInitialization::ZERO == _init)
     {
-      this->start = false;
+      this->mode = false;
     }
   }
 
   // field types and members
-  using _start_type =
+  using _mode_type =
     bool;
-  _start_type start;
+  _mode_type mode;
 
   // setters for named parameter idiom
-  Type & set__start(
+  Type & set__mode(
     const bool & _arg)
   {
-    this->start = _arg;
+    this->mode = _arg;
     return *this;
   }
 
@@ -107,7 +107,7 @@ struct Detection_Goal_
   // comparison operators
   bool operator==(const Detection_Goal_ & other) const
   {
-    if (this->start != other.start) {
+    if (this->mode != other.mode) {
       return false;
     }
     return true;

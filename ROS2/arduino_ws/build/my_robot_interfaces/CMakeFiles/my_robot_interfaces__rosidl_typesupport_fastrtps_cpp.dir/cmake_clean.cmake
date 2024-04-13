@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/action/detail/dds_fastrtps/detection__type_support.cpp.o"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/action/detail/dds_fastrtps/detection__type_support.cpp.o.d"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/action/detail/dds_fastrtps/harvest_fruit__type_support.cpp.o"
+  "CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/action/detail/dds_fastrtps/harvest_fruit__type_support.cpp.o.d"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/find_obstacle__type_support.cpp.o"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/find_obstacle__type_support.cpp.o.d"
   "CMakeFiles/my_robot_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/fruit_depth__type_support.cpp.o"
@@ -26,7 +28,9 @@ file(REMOVE_RECURSE
   "libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.pdb"
   "libmy_robot_interfaces__rosidl_typesupport_fastrtps_cpp.so"
   "rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/action/detail/dds_fastrtps/detection__type_support.cpp"
+  "rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/action/detail/dds_fastrtps/harvest_fruit__type_support.cpp"
   "rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/action/detail/detection__rosidl_typesupport_fastrtps_cpp.hpp"
+  "rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/action/detail/harvest_fruit__rosidl_typesupport_fastrtps_cpp.hpp"
   "rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/find_obstacle__type_support.cpp"
   "rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/fruit_depth__type_support.cpp"
   "rosidl_typesupport_fastrtps_cpp/my_robot_interfaces/msg/detail/dds_fastrtps/harvest__type_support.cpp"

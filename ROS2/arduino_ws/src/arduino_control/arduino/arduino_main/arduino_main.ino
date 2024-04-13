@@ -43,8 +43,8 @@ int serial_time_counter = 0;
 // Locomotion
 uint8_t left_speed = 0;
 uint8_t right_speed = 0;
-uint8_t LeftSpeed = -1;
-uint8_t RightSpeed = -1;
+uint8_t LeftSpeed = 0;
+uint8_t RightSpeed = 0;
 bool left_dir = 0;
 bool right_dir = 0;
 
@@ -154,7 +154,7 @@ void ProcessTaskCode()
 
       if (LeftSpeed < left_speed)
       {
-        if (left_counter == 100)
+        if (left_counter == 200)
         {
           LeftSpeed++;
           left_counter = 0;
@@ -165,7 +165,7 @@ void ProcessTaskCode()
         }
       } else if (LeftSpeed > left_speed)
       {
-        if (left_counter == 100)
+        if (left_counter == 200)
         {
           LeftSpeed--;
           left_counter = 0;
@@ -174,14 +174,14 @@ void ProcessTaskCode()
           left_counter++;
         }
       }
-      if (left_speed == 0)
-      {
-        LeftSpeed = 0;
-      }
+      // if (left_speed == 0)
+      // {
+      //   LeftSpeed = 0;
+      // }
 
       if (RightSpeed < right_speed)
       {
-        if (right_counter == 100)
+        if (right_counter == 200)
         {
           RightSpeed++;
           right_counter = 0;
@@ -191,7 +191,7 @@ void ProcessTaskCode()
         }
       } else if (RightSpeed > right_speed)
       {
-        if (right_counter == 100)
+        if (right_counter == 200)
         {
           RightSpeed--;
           right_counter = 0;
@@ -200,14 +200,14 @@ void ProcessTaskCode()
           right_counter++;
         }
       }
-      if (right_speed == 0)
-      {
-        RightSpeed = 0;
-      }
+      // if (right_speed == 0)
+      // {
+      //   RightSpeed = 0;
+      // }
 
       if (VibrateSpeed < vibrate_speed)
       {
-        if (vibrate_counter == 50)
+        if (vibrate_counter == 100)
         {
           VibrateSpeed++;
           vibrate_counter = 0;
@@ -215,11 +215,21 @@ void ProcessTaskCode()
         {
           vibrate_counter++;
         }
-      }
-      if (vibrate_speed == 0)
+      } else if (VibrateSpeed > vibrate_speed)
       {
-        VibrateSpeed = 0;
+        if (vibrate_counter == 100)
+        {
+          VibrateSpeed--;
+          vibrate_counter = 0;
+        } else
+        {
+          vibrate_counter++;
+        }
       }
+      // if (vibrate_speed == 0)
+      // {
+      //   VibrateSpeed = 0;
+      // }
 
       RotateSpeed = rotate_speed;
       TiltSpeed = tilt_speed;

@@ -1,4 +1,4 @@
-bool start
+bool mode # 0 for checking # 1 for detection
 ---
 bool detected
 float32 fruit_depth

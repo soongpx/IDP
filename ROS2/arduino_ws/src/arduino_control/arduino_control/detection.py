@@ -4,6 +4,7 @@ import rclpy
 from rclpy.node import Node
 from rclpy.action import ActionServer
 from my_robot_interfaces.action import Detection
+from my_robot_interfaces.msg import ImuData, RealsenseImu
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 from rclpy.executors import MultiThreadedExecutor
@@ -46,6 +47,8 @@ class DepthPublisherNode(Node):
         # Variables for orientation
         self.target_pitch = 0
         self.target_yaw = 0
+        self.current_pitch = 0.0
+        self.current_yaw = 0.0
 
         # Variables for sensor fusion
         self.dt = 1 / 200  # Time interval (assuming gyro runs at 200 Hz)
@@ -66,7 +69,7 @@ class DepthPublisherNode(Node):
     def process_frames(self, goal_handle):
         self.get_logger().info("Palm Oil Detection Starts...")
 
-        if goal_handle.request.start:
+        if goal_handle.request.mode:
             feedback_msg = Detection.Feedback()
 
             while True:
@@ -93,8 +96,45 @@ class DepthPublisherNode(Node):
             result.detected = feedback_msg.fruit_detected
             result.fruit_depth = self.fruit_depth
             result.fruit_number = self.palm_oil_num
-            result.target_pitch = self.target_pitch
-            result.target_yaw = self.target_yaw
+            result.target_pitch = self.target_pitch + self.current_pitch
+            result.target_yaw = self.target_yaw + self.current_yaw
+            self.get_logger().info(f"{result.detected}, {result.fruit_number}, {result.fruit_depth}, {result.target_pitch}, {result.target_yaw}")
+
+            goal_handle.succeed()
+
+            image_path = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame" + str(self.count) + ".jpg"
+            cv2.imwrite(image_path, self.color_image)
+            # cv2.destroyWindow(frame_name)
+            self.count += 1
+            return result
+        else:
+            feedback_msg = Detection.Feedback()
+
+            for _ in range(20):
+                self.detected_palm_oil = False
+                self.palm_oil_num = 0
+                self.fruit_depth = 0.0
+                if self.depth_image is not None and self.color_image is not None:
+                    self.process_frame()  # self.palm_oil_num, self.detected_palm_oil, self.pitch_angle, self.yaw_angle
+
+                    # Display color frame with bounding boxes around detected objects
+                    # frame_name = "Detection" + str(self.count)
+                    # cv2.imshow(frame_name, self.color_image)
+                    # cv2.waitKey(1)
+
+                    feedback_msg.fruit_detected = self.detected_palm_oil
+                    goal_handle.publish_feedback(feedback_msg)
+                    self.get_logger().info(str(feedback_msg.fruit_detected))
+
+                    if self.detected_palm_oil:
+                        break
+
+            result = Detection.Result()
+            result.detected = feedback_msg.fruit_detected
+            result.fruit_depth = self.fruit_depth
+            result.fruit_number = self.palm_oil_num
+            result.target_pitch = self.target_pitch + self.current_pitch
+            result.target_yaw = self.target_yaw + self.current_yaw
             self.get_logger().info(f"{result.detected}, {result.fruit_number}, {result.fruit_depth}, {result.target_pitch}, {result.target_yaw}")
 
             goal_handle.succeed()
@@ -167,15 +207,23 @@ class DepthPublisherNode(Node):
 
 class NodeSubscriber(Node):
     def __init__(self,actionServer):
-        super().__init__('minimal_subscriber')
+        super().__init__('detection_subscriber')
         self.rgb_image_subscriber = self.create_subscription(Image, 'camera/color/image_raw', self.image_callback, 10)
+        self.rgb_image_subscriber
         self.depth_image_subscriber = self.create_subscription(Image, 'camera/depth/image_rect_raw', self.depth_callback, 10)
+        self.depth_image_subscriber
+        self.realsense_imu_subscriber = self.create_subscription(RealsenseImu, 'realsense_imu', self.realsense_imu_callback, 10)
+        self.realsense_imu_subscriber
+        self.imu_subscriber = self.create_subscription(ImuData, 'imu_data', self.imu_callback, 10)
+        self.imu_subscriber
         self.create_timer(0.01, self.timer_callback)
 
         self.br = CvBridge()
         
         self.depth_image = None
         self.color_image = None
+        self.pitch = 0.0
+        self.yaw = 0.0
         self.action_server = actionServer
         self.color_image_show = False
 
@@ -186,9 +234,17 @@ class NodeSubscriber(Node):
     def depth_callback(self, msg):
         self.depth_image = self.br.imgmsg_to_cv2(msg)
 
+    def realsense_imu_callback(self, msg):
+        self.pitch = msg.pitch
+
+    def imu_callback(self, msg):
+        self.yaw = msg.yaw
+
     def timer_callback(self):
         self.action_server.depth_image = self.depth_image
-        self.action_server.color_image = self.color_image 
+        self.action_server.color_image = self.color_image
+        self.action_server.current_pitch = self.pitch
+        self.action_server.current_yaw = self.yaw 
 
 
 

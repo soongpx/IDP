@@ -26,6 +26,7 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/HarvestConfirmation.msg"
   "msg/RealsenseImu.msg"
   "action/Detection.action"
+  "action/HarvestFruit.action"
   DEPENDENCIES geometry_msgs
   DEPENDENCIES std_msgs
  )

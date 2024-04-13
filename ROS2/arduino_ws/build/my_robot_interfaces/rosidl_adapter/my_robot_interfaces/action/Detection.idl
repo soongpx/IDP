@@ -6,7 +6,9 @@
 module my_robot_interfaces {
   module action {
     struct Detection_Goal {
-      boolean start;
+      @verbatim (language="comment", text=
+        "0 for checking # 1 for detection")
+      boolean mode;
     };
     struct Detection_Result {
       boolean detected;

@@ -1,0 +1,32 @@
+// generated from rosidl_adapter/resource/action.idl.em
+// with input from my_robot_interfaces/action/HarvestFruit.action
+// generated code does not contain a copyright notice
+
+
+module my_robot_interfaces {
+  module action {
+    struct HarvestFruit_Goal {
+      boolean detected;
+
+      float fruit_depth;
+
+      float target_pitch;
+
+      float target_yaw;
+    };
+    struct HarvestFruit_Result {
+      boolean end;
+    };
+    struct HarvestFruit_Feedback {
+      uint8 rotate_speed;
+
+      uint8 tilt_speed;
+
+      uint8 extend_speed;
+
+      uint8 vibrate_speed;
+
+      uint8 direction;
+    };
+  };
+};

@@ -10,3 +10,4 @@
 /home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/HarvestConfirmation.idl
 /home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:msg/RealsenseImu.idl
 /home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:action/Detection.idl
+/home/px/arduino_ws/build/my_robot_interfaces/rosidl_adapter/my_robot_interfaces:action/HarvestFruit.idl

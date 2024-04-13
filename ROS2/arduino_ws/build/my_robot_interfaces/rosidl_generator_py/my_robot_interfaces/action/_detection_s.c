@@ -50,13 +50,13 @@ bool my_robot_interfaces__action__detection__goal__convert_from_py(PyObject * _p
     assert(strncmp("my_robot_interfaces.action._detection.Detection_Goal", full_classname_dest, 52) == 0);
   }
   my_robot_interfaces__action__Detection_Goal * ros_message = _ros_message;
-  {  // start
-    PyObject * field = PyObject_GetAttrString(_pymsg, "start");
+  {  // mode
+    PyObject * field = PyObject_GetAttrString(_pymsg, "mode");
     if (!field) {
       return false;
     }
     assert(PyBool_Check(field));
-    ros_message->start = (Py_True == field);
+    ros_message->mode = (Py_True == field);
     Py_DECREF(field);
   }
 
@@ -81,11 +81,11 @@ PyObject * my_robot_interfaces__action__detection__goal__convert_to_py(void * ra
     }
   }
   my_robot_interfaces__action__Detection_Goal * ros_message = (my_robot_interfaces__action__Detection_Goal *)raw_ros_message;
-  {  // start
+  {  // mode
     PyObject * field = NULL;
-    field = PyBool_FromLong(ros_message->start ? 1 : 0);
+    field = PyBool_FromLong(ros_message->mode ? 1 : 0);
     {
-      int rc = PyObject_SetAttrString(_pymessage, "start", field);
+      int rc = PyObject_SetAttrString(_pymessage, "mode", field);
       Py_DECREF(field);
       if (rc) {
         return NULL;

@@ -28,6 +28,7 @@ setup(
             'realsense = arduino_control.realsense:main',
             'lidar = arduino_control.lidar:main',
             'imu = arduino_control.imu:main',
+            'realsense_imu = arduino_control.realsense_imu:main',
             'joystick = arduino_control.joystick:main',
             'obstacle_avoidance = arduino_control.obstacle_avoidance:main',
             'joystick_control = arduino_control.joystick_control:main',
@@ -35,7 +36,7 @@ setup(
             'fruit_harvest = arduino_control.fruit_harvest:main',
             'find_obstacle = arduino_control.find_obstacle:main',
             'detection = arduino_control.detection:main',
-            'realsense_imu = arduino_control.realsense_imu:main',
+            'harvest_fruit = arduino_control.harvest_fruit:main',
         ],
     },
 )

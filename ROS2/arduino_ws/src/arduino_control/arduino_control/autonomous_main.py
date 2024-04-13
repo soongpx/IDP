@@ -1,6 +1,8 @@
 import rclpy
 from rclpy.node import Node
+from rclpy.action import ActionClient
 from my_robot_interfaces.msg import FindObstacle, LaserScan, Joystick, MotorCommand, FruitDepth
+from my_robot_interfaces.action import Detection, HarvestFruit
 
 
 class AutonomousNode(Node):
@@ -16,12 +18,14 @@ class AutonomousNode(Node):
         self.lidar_subscription
         self.joystick_subscription = self.create_subscription(Joystick, 'joystick', self.joystick_control, 10)
         self.joystick_subscription
-        self.fruit_subscription = self.create_subscription(FruitDepth, 'fruit_depth', self.detect_fruit, 10)
-        self.fruit_subscription
         
         # Declare publisher
         self.publisher_ = self.create_publisher(MotorCommand, 'motor_command', 10)
         self.timer = self.create_timer(0.01, self.timer_callback)
+
+        # Declare action client
+        self.detection_action_client = ActionClient(self, Detection, 'detection')
+        self.harvest_action_client = ActionClient(self, HarvestFruit, 'harvest_fruit')
         
         # Variables for find_obstacle
         self.nearest_distance1 = 0
@@ -41,9 +45,10 @@ class AutonomousNode(Node):
         
         # Variables for fruit depth
         self.fruit_detected = False
-        self.palm_oil_num = 0
-        self.pitch_direction = 0
-        self.yaw_direction = 0
+        self.fruit_depth = 0.0
+        self.fruit_number = 0
+        self.target_pitch = 0.0
+        self.target_yaw = 0.0
         
         # Variables for motor command
         self.left_speed = 0
@@ -53,6 +58,13 @@ class AutonomousNode(Node):
         self.extend_speed = 0
         self.vibrate_speed = 0
         self.direction = 0
+        self.previous_direction = 0
+
+        self.set_rotate_speed = 0
+        self.set_tilt_speed = 0
+        self.set_extend_speed = 0
+        self.set_vibrate_speed = 0
+        self.set_direction = 0
         
         # Variables for algorithm
         self.start = False
@@ -73,6 +85,9 @@ class AutonomousNode(Node):
         self.forward_state1 = 0
         self.target_next_angle = 0
 
+        self.first_detect = True
+        self.first_harvest = True
+
     # Function to find the nearest obstacle
     def find_obstacle(self, msg):
         self.nearest_distance1 = msg.nearest_distance1
@@ -89,12 +104,94 @@ class AutonomousNode(Node):
         self.buttons = msg.button
         self.axes = msg.axes
         self.axes_name = msg.axes_name
-        
-    def detect_fruit(self, msg):
-        self.fruit_detected = msg.detected
-        self.palm_oil_num = msg.palm_oil_num
-        self.pitch_direction = msg.pitch_direction
-        self.yaw_direction = msg.yaw_direction
+
+    # Detection Action #
+
+    def send_detection_goal(self, mode):
+        goal_msg = Detection.Goal()
+        goal_msg.mode = mode
+
+        self.detection_action_client.wait_for_server()
+        self._send_goal_future = self.detection_action_client.send_goal_async(goal_msg, feedback_callback=self.detection_feedback)
+        self._send_goal_future.add_done_callback(self.detection_goal_response_callback)
+
+    def detection_goal_response_callback(self, future):
+        goal_handle = future.result()
+        if not goal_handle.accepted:
+            self.get_logger().info('Failed to start detection')
+            return
+
+        self.get_logger().info('Start Detection')
+
+        self._get_result_future = goal_handle.get_result_async()
+        self._get_result_future.add_done_callback(self.detection_result)
+
+    def detection_result(self, future):
+        result = future.result().result
+        self.get_logger().info(f'Detected: {result.detected}, Depth: {result.fruit_depth}, Number: {result.fruit_number}, Pitch: {result.target_pitch}, Yaw: {result.target_yaw}')
+
+        self.fruit_detected = result.detected
+        self.fruit_depth = result.fruit_depth
+        self.fruit_number = result.fruit_number
+        self.target_pitch = result.target_pitch
+        self.target_yaw = result.target_yaw
+
+        if self.fruit_detected:
+            self.state = "Harvest"
+            self.first_detect = True
+        else:
+            self.state = "Next Obstacle"
+            self.first_detect = True
+
+    def detection_feedback(self, feedback_msg):
+        feedback = feedback_msg.feedback
+        self.get_logger().info(f'Fruit Detected: {feedback.fruit_detected}')
+
+    # Detection Action End #
+
+    # Harvest Action Start #
+
+    def send_harvest_goal(self):
+        goal_msg = HarvestFruit.Goal()
+        goal_msg.detected = self.fruit_detected
+        goal_msg.fruit_depth = self.fruit_depth
+        goal_msg.target_pitch = self.target_pitch
+        goal_msg.target_yaw = self.target_yaw
+
+        self.harvest_action_client.wait_for_server()
+        self._send_goal_future = self.harvest_action_client.send_goal_async(goal_msg, feedback_callback=self.harvest_feedback)
+        self._send_goal_future.add_done_callback(self.harvest_goal_response_callback)
+
+    def harvest_goal_response_callback(self, future):
+        goal_handle = future.result()
+        if not goal_handle.accepted:
+            self.get_logger().info('Harvest Action Fail')
+            return
+
+        self.get_logger().info('Start Harvest')
+
+        self._get_result_future = goal_handle.get_result_async()
+        self._get_result_future.add_done_callback(self.harvest_result)
+
+    def harvest_result(self, future):
+        result = future.result().result
+        self.get_logger().info(f'End: {result.end}')
+        self.end = result.end
+
+        if self.end:
+            self.state = "Check Detection"
+            self.first_harvest = True
+
+    def harvest_feedback(self, feedback_msg):
+        feedback = feedback_msg.feedback
+        self.get_logger().info(f'Rotate: {feedback.rotate_speed}, Tilt: {feedback.tilt_speed}, Extend: {feedback.extend_speed}, Vibrate: {feedback.vibrate_speed}, Dir: {feedback.direction}')
+        self.set_rotate_speed = feedback.rotate_speed
+        self.set_tilt_speed = feedback.tilt_speed
+        self.set_extend_speed = feedback.extend_speed
+        self.set_vibrate_speed = feedback.vibrate_speed
+        self.set_direction = feedback.direction
+
+    # Harvest Action End #
 
     def cap_255(self, speed):
         if speed > 255:
@@ -121,6 +218,12 @@ class AutonomousNode(Node):
             msg.vibrate_speed = 0
             msg.direction = 0
         if self.start:
+            self.left_speed = 0
+            self.right_speed = 0
+            self.rotate_speed = 0
+            self.tilt_speed = 0
+            self.extend_speed = 0
+            self.vibrate_speed = 0
             self.direction = 0
             if self.state == "Reaching tree":
                 if self.state1 == "Rotate":
@@ -138,7 +241,25 @@ class AutonomousNode(Node):
             elif self.state == "Speed Differential":
                 self.stop_counter1 = 0
                 self.start_speed_differential()
-                self.find_fruit()
+                if self.first_detect:
+                    self.send_detection_goal(True)
+                    self.first_detect = False
+            elif self.state == "Harvest":
+                self.get_logger().info("Harvesting")
+                if self.first_harvest:
+                    self.send_harvest_goal()
+                    self.first_harvest = False
+                self.rotate_speed = self.set_rotate_speed
+                self.tilt_speed = self.set_tilt_speed
+                self.extend_speed = self.set_extend_speed
+                self.vibrate_speed = self.set_vibrate_speed
+                self.direction += self.set_direction
+            elif self.state == "Check Detection":
+                self.get_logger().info("Check Detection")
+                self.start_speed_differential()
+                if self.first_detect:
+                    self.send_detection_goal(False)
+                    self.first_detect = False
             elif self.state == "Next Obstacle":
                 self.stop_counter2 = 0
                 self.timer_counter = 0
@@ -149,7 +270,12 @@ class AutonomousNode(Node):
                 elif self.state1 == "Forward":
                     self.stop_counter3 = 0
                     self.move_forward_to_next()
+            
+            # Ramp Down
+            if self.left_speed == 0 and self.right_speed == 0: 
+                self.direction += self.previous_direction
 
+            self.get_logger().info(str(self.rotate_speed))
             msg.left_speed = self.cap_255(self.left_speed)
             msg.right_speed = self.cap_255(self.right_speed)
             msg.extend_speed = self.cap_255(self.extend_speed)
@@ -169,19 +295,21 @@ class AutonomousNode(Node):
 
     # Function to rotate to face the nearest obstacle at front
     def rotate_to_face(self):
-        if -0.2 < self.nearest_angle1 < 0.2:
+        if self.nearest_angle1 >= 2.942 or self.nearest_angle1 <= -2.942:
             if self.forward_state >= 10:
                 self.state1 = "Forward"
             else:
                 self.forward_state += 1
-        elif 0.2 <= self.nearest_angle1 <= 3.142:
+        elif 0 <= self.nearest_angle1 < 2.942:
             self.left_speed = self.target_left_speed
             self.right_speed = self.target_right_speed
             self.direction += 1
-        elif -3.142 <= self.nearest_angle1 <= -0.2:
+            self.previous_direction = 1
+        elif -2.942 < self.nearest_angle1 < 0:
             self.left_speed = self.target_left_speed
             self.right_speed = self.target_right_speed
             self.direction += 2
+            self.previous_direction = 2
         
         self.get_logger().info("Rotate")
 
@@ -196,13 +324,14 @@ class AutonomousNode(Node):
                 self.left_speed = self.target_left_speed
                 self.right_speed = self.target_right_speed
                 self.direction += 3
-                if self.nearest_angle1 > 0.2:
+                self.previous_direction = 3
+                if 0 < self.nearest_angle1 < 2.942:
                     if self.increase_counter >= 50:
                         self.increase_counter = 0
                         self.increase_left_speed += 1
                     else:
                         self.increase_counter += 1
-                elif self.nearest_angle1 < -0.2:
+                elif -2.942 < self.nearest_angle1 < 0:
                     if self.increase_counter >= 50:
                         self.increase_counter = 0
                         self.increase_right_speed += 1
@@ -232,6 +361,7 @@ class AutonomousNode(Node):
                 self.left_speed = self.target_left_speed 
                 self.right_speed = self.target_right_speed 
                 self.direction += 1
+                self.previous_direction = 1
         self.get_logger().info("Rotate 90")
 
 
@@ -248,33 +378,26 @@ class AutonomousNode(Node):
             self.right_speed = 0
             self.stop_counter2 += 1
         else:
-            if self.timer_counter >= 2000:
-                self.state = "Next Obstacle"
-            else:
-                self.left_speed = self.target_left_speed - 25
-                self.right_speed = self.target_right_speed + 45
-                self.direction += 3
-                if self.nearest_distance1 < 0.3:
-                    if self.increase_counter >= 1:
-                        self.increase_counter = 0
-                        self.increase_right_speed -= 1
-                    else:
-                        self.increase_counter += 1
-                elif self.nearest_distance1 > 0.7:
-                    if self.increase_counter >= 1:
-                        self.increase_counter = 0
-                        self.increase_right_speed += 1
-                    else:
-                        self.increase_counter += 1
-                self.left_speed = self.cap100(self.left_speed + self.increase_right_speed)
-                self.timer_counter += 1
+            self.left_speed = self.target_left_speed - 25
+            self.right_speed = self.target_right_speed + 45
+            self.direction += 3
+            self.previous_direction = 3
+            if self.nearest_distance1 < 0.3:
+                if self.increase_counter >= 1:
+                    self.increase_counter = 0
+                    self.increase_right_speed -= 1
+                else:
+                    self.increase_counter += 1
+            elif self.nearest_distance1 > 0.7:
+                if self.increase_counter >= 1:
+                    self.increase_counter = 0
+                    self.increase_right_speed += 1
+                else:
+                    self.increase_counter += 1
+            self.left_speed = self.cap100(self.left_speed + self.increase_right_speed)
+            self.timer_counter += 1
 
         self.get_logger().info("Speed differential")
-
-    def find_fruit(self):
-        if self.fruit_detected:
-            self.left_speed = 0
-            self.right_speed = 0
 
 
     def reach_next_obstacle(self):
@@ -283,19 +406,21 @@ class AutonomousNode(Node):
             self.right_speed = 0
             self.stop_counter3 += 1
         else:
-            if -0.2 < self.nearest_angle2 < 0.2:
+            if self.nearest_angle2 >= 2.942 or self.nearest_angle2 <= -2.942:
                 if self.forward_state1 >= 30:
                     self.state1 = "Forward"
                 else:
                     self.forward_state1 += 1
-            elif 0.2 <= self.nearest_angle2 <= 3.142:
+            elif 0 <= self.nearest_angle2 < 2.942:
                 self.left_speed = self.target_left_speed
                 self.right_speed = self.target_right_speed
                 self.direction += 1
-            elif -3.142 <= self.nearest_angle2 <= -0.2:
+                self.previous_direction = 1
+            elif -2.942 < self.nearest_angle1 < 0:
                 self.left_speed = self.target_left_speed
                 self.right_speed = self.target_right_speed
                 self.direction += 2
+                self.previous_direction = 2
         self.get_logger().info("Next obstacle")
 
     def move_forward_to_next(self):
@@ -307,7 +432,7 @@ class AutonomousNode(Node):
             filtered_angle = []
             filtered_range = []
             for angle, distance in zip(self.angle, self.range):
-                if -0.2 < angle < 0.2:
+                if 3.2 > angle > 0.8 or -3.2 < angle < -0.8:
                     filtered_angle.append(angle)
                     filtered_range.append(distance)
 
@@ -317,13 +442,14 @@ class AutonomousNode(Node):
                 self.left_speed = self.target_left_speed
                 self.right_speed = self.target_right_speed
                 self.direction += 3
-                if nearest_angle > 0.2:
+                self.previous_direction = 3
+                if 0 <= self.nearest_angle2 < 2.942:
                     if self.increase_counter >= 50:
                         self.increase_counter = 0
                         self.increase_left_speed += 1
                     else:
                         self.increase_counter += 1
-                elif nearest_angle < -0.2:
+                elif -2.942 < self.nearest_angle1 < 0:
                     if self.increase_counter >= 50:
                         self.increase_counter = 0
                         self.increase_right_speed += 1

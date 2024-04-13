@@ -32,8 +32,8 @@ cdr_serialize(
   const my_robot_interfaces::action::Detection_Goal & ros_message,
   eprosima::fastcdr::Cdr & cdr)
 {
-  // Member: start
-  cdr << (ros_message.start ? true : false);
+  // Member: mode
+  cdr << (ros_message.mode ? true : false);
   return true;
 }
 
@@ -43,11 +43,11 @@ cdr_deserialize(
   eprosima::fastcdr::Cdr & cdr,
   my_robot_interfaces::action::Detection_Goal & ros_message)
 {
-  // Member: start
+  // Member: mode
   {
     uint8_t tmp;
     cdr >> tmp;
-    ros_message.start = tmp ? true : false;
+    ros_message.mode = tmp ? true : false;
   }
 
   return true;
@@ -66,9 +66,9 @@ get_serialized_size(
   (void)padding;
   (void)wchar_size;
 
-  // Member: start
+  // Member: mode
   {
-    size_t item_size = sizeof(ros_message.start);
+    size_t item_size = sizeof(ros_message.mode);
     current_alignment += item_size +
       eprosima::fastcdr::Cdr::alignment(current_alignment, item_size);
   }
@@ -96,7 +96,7 @@ max_serialized_size_Detection_Goal(
   is_plain = true;
 
 
-  // Member: start
+  // Member: mode
   {
     size_t array_size = 1;
 
@@ -112,7 +112,7 @@ max_serialized_size_Detection_Goal(
     using DataType = my_robot_interfaces::action::Detection_Goal;
     is_plain =
       (
-      offsetof(DataType, start) +
+      offsetof(DataType, mode) +
       last_member_size
       ) == ret_val;
   }

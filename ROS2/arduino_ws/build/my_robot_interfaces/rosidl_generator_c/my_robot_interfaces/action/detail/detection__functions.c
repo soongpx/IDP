@@ -17,7 +17,7 @@ my_robot_interfaces__action__Detection_Goal__init(my_robot_interfaces__action__D
   if (!msg) {
     return false;
   }
-  // start
+  // mode
   return true;
 }
 
@@ -27,7 +27,7 @@ my_robot_interfaces__action__Detection_Goal__fini(my_robot_interfaces__action__D
   if (!msg) {
     return;
   }
-  // start
+  // mode
 }
 
 bool
@@ -36,8 +36,8 @@ my_robot_interfaces__action__Detection_Goal__are_equal(const my_robot_interfaces
   if (!lhs || !rhs) {
     return false;
   }
-  // start
-  if (lhs->start != rhs->start) {
+  // mode
+  if (lhs->mode != rhs->mode) {
     return false;
   }
   return true;
@@ -51,8 +51,8 @@ my_robot_interfaces__action__Detection_Goal__copy(
   if (!input || !output) {
     return false;
   }
-  // start
-  output->start = input->start;
+  // mode
+  output->mode = input->mode;
   return true;
 }
 
