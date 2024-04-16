@@ -154,7 +154,7 @@ void ProcessTaskCode()
 
       if (LeftSpeed < left_speed)
       {
-        if (left_counter == 200)
+        if (left_counter >= 200)
         {
           LeftSpeed++;
           left_counter = 0;
@@ -165,7 +165,7 @@ void ProcessTaskCode()
         }
       } else if (LeftSpeed > left_speed)
       {
-        if (left_counter == 200)
+        if (left_counter >= 150)
         {
           LeftSpeed--;
           left_counter = 0;
@@ -181,7 +181,7 @@ void ProcessTaskCode()
 
       if (RightSpeed < right_speed)
       {
-        if (right_counter == 200)
+        if (right_counter >= 200)
         {
           RightSpeed++;
           right_counter = 0;
@@ -191,7 +191,7 @@ void ProcessTaskCode()
         }
       } else if (RightSpeed > right_speed)
       {
-        if (right_counter == 200)
+        if (right_counter >= 150)
         {
           RightSpeed--;
           right_counter = 0;

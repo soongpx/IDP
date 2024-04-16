@@ -2,7 +2,7 @@ import cv2
 from ultralytics import YOLO
 import rclpy
 from rclpy.node import Node
-from rclpy.action import ActionServer
+from rclpy.action import ActionServer, CancelResponse, GoalResponse
 from my_robot_interfaces.action import Detection
 from my_robot_interfaces.msg import ImuData, RealsenseImu
 from sensor_msgs.msg import Image
@@ -19,7 +19,13 @@ class Points:
 class DepthPublisherNode(Node):
     def __init__(self):
         super().__init__('detection')
-        self.detection_action_server = ActionServer(self, Detection, 'detection', self.process_frames)
+        self.detection_action_server = ActionServer(
+            self, 
+            Detection, 
+            'detection', 
+            execute_callback=self.process_frames, 
+            goal_callback=self.goal_callback,
+            cancel_callback=self.cancel_callback)
 
         # Variables for Camera frame
         self.frame_height = 480
@@ -91,6 +97,17 @@ class DepthPublisherNode(Node):
                     if self.detected_palm_oil:
                         break
 
+                    if goal_handle.is_cancel_requested:
+                        goal_handle.canceled()
+                        self.get_logger().info('Goal canceled')
+                        result = Detection.Result()
+                        result.detected = feedback_msg.fruit_detected
+                        result.fruit_depth = self.fruit_depth
+                        result.fruit_number = self.palm_oil_num
+                        result.target_pitch = self.target_pitch + self.current_pitch
+                        result.target_yaw = self.target_yaw + self.current_yaw
+                        return result
+
             print(self.fruit_depth)
             result = Detection.Result()
             result.detected = feedback_msg.fruit_detected
@@ -107,6 +124,7 @@ class DepthPublisherNode(Node):
             # cv2.destroyWindow(frame_name)
             self.count += 1
             return result
+        
         else:
             feedback_msg = Detection.Feedback()
 
@@ -201,6 +219,16 @@ class DepthPublisherNode(Node):
             self.fruit_depth = closest_depth
             print(f"Closest Depth: {closest_depth}")
 
+    def goal_callback(self, goal_request):
+        """Accept or reject a client request to begin an action."""
+        # This server allows multiple goals in parallel
+        self.get_logger().info('Received goal request')
+        return GoalResponse.ACCEPT
+
+    def cancel_callback(self, cancel_request):
+        self.get_logger().info("Cancel request from detection")
+        return CancelResponse.ACCEPT
+    
     def __del__(self):
         self.destroy_node()
 
@@ -253,7 +281,7 @@ def main(args=None):
     try:
         depth_publisher = DepthPublisherNode()
         py_sub = NodeSubscriber(actionServer=depth_publisher)
-        executor = MultiThreadedExecutor(num_threads=2)
+        executor = MultiThreadedExecutor()
         executor.add_node(depth_publisher)
         executor.add_node(py_sub)
 
@@ -261,6 +289,7 @@ def main(args=None):
             executor.spin()
         finally:
             executor.shutdown()
+            depth_publisher.detection_action_server.destroy()
             depth_publisher.destroy_node()
 
     finally:

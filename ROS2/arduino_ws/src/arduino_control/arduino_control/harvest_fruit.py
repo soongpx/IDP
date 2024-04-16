@@ -1,6 +1,6 @@
 import rclpy
 from rclpy.node import Node
-from rclpy.action import ActionServer
+from rclpy.action import ActionServer, GoalResponse, CancelResponse
 from my_robot_interfaces.action import HarvestFruit
 from my_robot_interfaces.msg import ImuData, RealsenseImu
 from cv_bridge import CvBridge
@@ -16,7 +16,13 @@ class Points:
 class HarvestFruitNode(Node):
     def __init__(self):
         super().__init__('harvest_fruit')
-        self.detection_action_server = ActionServer(self, HarvestFruit, 'harvest_fruit', self.execute_callback)
+        self.detection_action_server = ActionServer(
+            self, 
+            HarvestFruit, 
+            'harvest_fruit', 
+            execute_callback=self.execute_callback, 
+            goal_callback=self.goal_callback,
+            cancel_callback=self.cancel_callback)
 
         # Variables for Machine Learning
         self.detected_palm_oil = False
@@ -183,6 +189,12 @@ class HarvestFruitNode(Node):
                     self.set_extend_speed = 0
                     self.set_vibrate_speed = 0
 
+                if goal_handle.is_cancel_requested:
+                    goal_handle.canceled()
+                    self.get_logger().info('Goal canceled')
+                    result = HarvestFruit.Result()
+                    result.end = False
+                    return result
                 
                 feedback_msg.rotate_speed = self.set_rotate_speed
                 feedback_msg.tilt_speed = self.set_tilt_speed
@@ -202,6 +214,16 @@ class HarvestFruitNode(Node):
             goal_handle.succeed()
             
             return result
+
+    def goal_callback(self, goal_request):
+        """Accept or reject a client request to begin an action."""
+        # This server allows multiple goals in parallel
+        self.get_logger().info('Received goal request')
+        return GoalResponse.ACCEPT
+
+    def cancel_callback(self, cancel_request):
+        self.get_logger().info("Cancel request from detection")
+        return CancelResponse.ACCEPT
 
     def __del__(self):
         self.destroy_node()

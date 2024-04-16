@@ -1,6 +1,7 @@
 [console_scripts]
 autonomous_control = arduino_control.autonomous_main:main
-detection = arduino_control.detection:main
+detection_node = arduino_control.detection:main
+fibonacci_action_server = arduino_control.fibonacci_action_server:main
 find_obstacle = arduino_control.find_obstacle:main
 fruit_harvest = arduino_control.fruit_harvest:main
 harvest_fruit = arduino_control.harvest_fruit:main

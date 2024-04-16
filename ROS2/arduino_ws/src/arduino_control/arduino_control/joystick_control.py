@@ -25,8 +25,8 @@ class LocomotionControl(Node):
 
         self.target_left_speed = 70
         self.target_right_speed = 70
-        self.target_rotate_left_speed = 60
-        self.target_rotate_right_speed = 60
+        self.target_rotate_left_speed = 70
+        self.target_rotate_right_speed = 70
         self.rotate_speed = 20
         self.tilt_speed = 255
         self.extend_speed = 255
@@ -53,13 +53,13 @@ class LocomotionControl(Node):
             msg.direction += 0
             self.previous_direction = 0
         elif self.loco_command == 'Left':
-            msg.left_speed = self.target_rotate_left_speed
-            msg.right_speed = self.target_right_speed
+            msg.left_speed = self.target_left_speed - 25
+            msg.right_speed = self.target_right_speed + 35
             msg.direction += 3
             self.previous_direction = 3
         elif self.loco_command == 'Right':
-            msg.left_speed = self.target_left_speed
-            msg.right_speed = self.target_rotate_right_speed
+            msg.left_speed = self.target_left_speed + 35
+            msg.right_speed = self.target_right_speed - 25
             msg.direction += 3
             self.previous_direction = 3
         elif self.loco_command == "Rotate Left":

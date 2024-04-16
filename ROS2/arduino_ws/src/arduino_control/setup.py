@@ -35,8 +35,9 @@ setup(
             'autonomous_control = arduino_control.autonomous_main:main',
             'fruit_harvest = arduino_control.fruit_harvest:main',
             'find_obstacle = arduino_control.find_obstacle:main',
-            'detection = arduino_control.detection:main',
+            'detection_node = arduino_control.detection:main',
             'harvest_fruit = arduino_control.harvest_fruit:main',
+            'fibonacci_action_server = arduino_control.fibonacci_action_server:main',
         ],
     },
 )

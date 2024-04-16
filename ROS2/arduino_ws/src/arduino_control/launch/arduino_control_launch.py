@@ -58,8 +58,8 @@ def generate_launch_description():
 
     detection_node = Node(
         package='arduino_control',
-        executable='detection',
-        name='detection'
+        executable='detection_node',
+        name='detection_node'
     )
     ld.add_action(TimerAction(period=7.0, actions=[detection_node]))
 
@@ -82,7 +82,7 @@ def generate_launch_description():
         executable='locomotion_control',
         name='locomotion_control'
     )
-    ld.add_action(TimerAction(period=12.0, actions=[locomotion_node]))  # Add a 5-second delay before launching node4
+    ld.add_action(TimerAction(period=13.0, actions=[locomotion_node]))  # Add a 5-second delay before launching node4
 
     return ld
 

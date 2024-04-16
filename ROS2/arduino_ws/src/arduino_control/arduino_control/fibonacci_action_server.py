@@ -1,48 +1,125 @@
+# Copyright 2019 Open Source Robotics Foundation, Inc.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
 import time
 
+from example_interfaces.action import Fibonacci
+
 import rclpy
-from rclpy.action import ActionServer
+from rclpy.action import ActionServer, CancelResponse, GoalResponse
+from rclpy.callback_groups import ReentrantCallbackGroup
+from rclpy.executors import MultiThreadedExecutor
 from rclpy.node import Node
 
-from action_tutorials_interfaces.action import Fibonacci
 
-
-class FibonacciActionServer(Node):
+class MinimalActionServer(Node):
 
     def __init__(self):
-        super().__init__('fibonacci_action_server')
+        super().__init__('minimal_action_server')
+
         self._action_server = ActionServer(
             self,
             Fibonacci,
             'fibonacci',
-            self.execute_callback)
+            execute_callback=self.execute_callback,
+            goal_callback=self.goal_callback,
+            cancel_callback=self.cancel_callback)
 
-    def execute_callback(self, goal_handle):
+    def destroy(self):
+        self._action_server.destroy()
+        super().destroy_node()
+
+    def goal_callback(self, goal_request):
+        """Accept or reject a client request to begin an action."""
+        # This server allows multiple goals in parallel
+        self.get_logger().info('Received goal request')
+        return GoalResponse.ACCEPT
+
+    def cancel_callback(self, goal_handle):
+        """Accept or reject a client request to cancel an action."""
+        self.get_logger().info('Received cancel request')
+        return CancelResponse.ACCEPT
+
+    async def execute_callback(self, goal_handle):
+        """Execute a goal."""
         self.get_logger().info('Executing goal...')
 
+        # Append the seeds for the Fibonacci sequence
         feedback_msg = Fibonacci.Feedback()
-        feedback_msg.partial_sequence = [0, 1]
+        feedback_msg.sequence = [0, 1]
 
+        # Start executing the action
         for i in range(1, goal_handle.request.order):
-            feedback_msg.partial_sequence.append(
-                feedback_msg.partial_sequence[i] + feedback_msg.partial_sequence[i-1])
-            self.get_logger().info('Feedback: {0}'.format(feedback_msg.partial_sequence))
+            if goal_handle.is_cancel_requested:
+                goal_handle.canceled()
+                self.get_logger().info('Goal canceled')
+                return Fibonacci.Result()
+
+            # Update Fibonacci sequence
+            feedback_msg.sequence.append(feedback_msg.sequence[i] + feedback_msg.sequence[i-1])
+
+            self.get_logger().info('Publishing feedback: {0}'.format(feedback_msg.sequence))
+
+            # Publish the feedback
             goal_handle.publish_feedback(feedback_msg)
-            time.sleep(0.1)
+
+            # Sleep for demonstration purposes
+            time.sleep(1)
 
         goal_handle.succeed()
 
+        # Populate result message
         result = Fibonacci.Result()
-        result.sequence = feedback_msg.partial_sequence
+        result.sequence = feedback_msg.sequence
+
+        self.get_logger().info('Returning result: {0}'.format(result.sequence))
+
         return result
+
+
+
+class NodeSubscriber(Node):
+    def __init__(self,actionServer):
+        super().__init__('detection_subscriber')
+        self.create_timer(0.01, self.timer_callback)
+        
+        self.depth_image = None
+        self.color_image = None
+        self.pitch = 0.0
+        self.yaw = 0.0
+        self.action_server = actionServer
+        self.color_image_show = False
+
+    def timer_callback(self):
+        self.action_server.order = 5
 
 
 def main(args=None):
     rclpy.init(args=args)
 
-    fibonacci_action_server = FibonacciActionServer()
+    minimal_action_server = MinimalActionServer()
+    subscriber = NodeSubscriber(minimal_action_server)
 
-    rclpy.spin(fibonacci_action_server)
+    # Use a MultiThreadedExecutor to enable processing goals concurrently
+    executor = MultiThreadedExecutor()
+    executor.add_node(minimal_action_server)
+    executor.add_node(subscriber)
+
+    executor.spin()
+
+    minimal_action_server.destroy()
+    rclpy.shutdown()
 
 
 if __name__ == '__main__':
