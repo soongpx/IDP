@@ -1,0 +1,33 @@
+[1.387s] Invoking command in '/home/px/arduino_ws/build/arduino_control': CMAKE_PREFIX_PATH=/home/px/arduino_ws/install/my_robot_interfaces:/home/px/arduino_ws/install/px_bot_description:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps symlink_data
+[1.914s] running develop
+[2.275s] running egg_info
+[2.275s] writing arduino_control.egg-info/PKG-INFO
+[2.276s] writing dependency_links to arduino_control.egg-info/dependency_links.txt
+[2.276s] writing entry points to arduino_control.egg-info/entry_points.txt
+[2.277s] writing requirements to arduino_control.egg-info/requires.txt
+[2.277s] writing top-level names to arduino_control.egg-info/top_level.txt
+[2.283s] reading manifest file 'arduino_control.egg-info/SOURCES.txt'
+[2.284s] writing manifest file 'arduino_control.egg-info/SOURCES.txt'
+[2.287s] running build_ext
+[2.287s] Creating /home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages/arduino-control.egg-link (link to .)
+[2.289s] Installing autonomous_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.289s] Installing detection_node script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.290s] Installing fibonacci_action_server script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.291s] Installing find_obstacle script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.291s] Installing fruit_harvest script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.291s] Installing harvest_fruit script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.292s] Installing imu script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.292s] Installing joystick script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.292s] Installing joystick_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.292s] Installing lidar script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.292s] Installing locomotion_control script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.292s] Installing minimal_publisher script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.292s] Installing obstacle_avoidance script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.293s] Installing realsense script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.293s] Installing realsense_detection script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.293s] Installing realsense_imu script to /home/px/arduino_ws/install/arduino_control/lib/arduino_control
+[2.293s] 
+[2.293s] Installed /home/px/arduino_ws/build/arduino_control
+[2.293s] running symlink_data
+[2.293s] symbolically linking /home/px/arduino_ws/build/arduino_control/launch/test2_launch.py -> /home/px/arduino_ws/install/arduino_control/share/arduino_control/launch
+[2.356s] Invoked command in '/home/px/arduino_ws/build/arduino_control' returned '0': CMAKE_PREFIX_PATH=/home/px/arduino_ws/install/my_robot_interfaces:/home/px/arduino_ws/install/px_bot_description:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps symlink_data

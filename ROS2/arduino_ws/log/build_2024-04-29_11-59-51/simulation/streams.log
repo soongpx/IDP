@@ -1,0 +1,23 @@
+[1.466s] Invoking command in '/home/px/arduino_ws/build/simulation': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data
+[2.016s] running develop
+[2.427s] running egg_info
+[2.429s] creating simulation.egg-info
+[2.429s] writing simulation.egg-info/PKG-INFO
+[2.430s] writing dependency_links to simulation.egg-info/dependency_links.txt
+[2.430s] writing entry points to simulation.egg-info/entry_points.txt
+[2.430s] writing requirements to simulation.egg-info/requires.txt
+[2.432s] writing top-level names to simulation.egg-info/top_level.txt
+[2.433s] writing manifest file 'simulation.egg-info/SOURCES.txt'
+[2.436s] reading manifest file 'simulation.egg-info/SOURCES.txt'
+[2.437s] writing manifest file 'simulation.egg-info/SOURCES.txt'
+[2.440s] running build_ext
+[2.440s] Creating /home/px/arduino_ws/install/simulation/lib/python3.10/site-packages/simulation.egg-link (link to .)
+[2.441s] 
+[2.441s] Installed /home/px/arduino_ws/build/simulation
+[2.441s] running symlink_data
+[2.441s] creating /home/px/arduino_ws/install/simulation/share/ament_index
+[2.442s] creating /home/px/arduino_ws/install/simulation/share/ament_index/resource_index
+[2.442s] creating /home/px/arduino_ws/install/simulation/share/ament_index/resource_index/packages
+[2.442s] symbolically linking /home/px/arduino_ws/build/simulation/resource/simulation -> /home/px/arduino_ws/install/simulation/share/ament_index/resource_index/packages
+[2.442s] symbolically linking /home/px/arduino_ws/build/simulation/package.xml -> /home/px/arduino_ws/install/simulation/share/simulation
+[2.505s] Invoked command in '/home/px/arduino_ws/build/simulation' returned '0': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data

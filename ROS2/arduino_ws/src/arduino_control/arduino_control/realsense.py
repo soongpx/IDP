@@ -1,283 +1,66 @@
-import pyrealsense2 as rs
-import numpy as np
-import cv2
-from ultralytics import YOLO
 import rclpy
 from rclpy.node import Node
-from my_robot_interfaces.msg import FruitDepth, ImuData, HarvestConfirmation
-# from my_robot_interfaces.srv import HarvestConfirmation
+from sensor_msgs.msg import Image
+from cv_bridge import CvBridge
+import cv2
+import numpy as np
+import pyrealsense2 as rs
 
-
-class Points:
-    x = 0
-    y = 0
-    z = 0
-
-
-class DepthPublisherNode(Node):
+class RealSenseNode(Node):
     def __init__(self):
-        super().__init__('camera_depth_node')
-        self.imu_subscriber = self.create_subscription(ImuData, 'imu_data', self.imu_data, 10)
-        self.imu_subscriber
-        # self.confirm_action_client = self.create_client(HarvestConfirmation, 'harvest_confirm')  # Create a service client
-        self.confirm_subscriber = self.create_subscription(HarvestConfirmation, 'harvest_confirmation', self.harvest_confirm, 10)
-        self.confirm_subscriber
-        self.publisher = self.create_publisher(FruitDepth, 'fruit_depth', 10)
-        timer_period = 0.01  # seconds
-        self.timer = self.create_timer(timer_period, self.process_frames)
+        super().__init__('realsense')
+        self.bridge = CvBridge()
 
-        # Variables for Camera frame
-        self.frame_height = 480
-        self.frame_width = 640
-        self.frames = None
+        # Create a pipeline
+        self.pipeline = rs.pipeline()
 
-        # Variables for Machine Learning
-        self.crosshair_x_offset = 0.44
-        self.crosshair_y_offset = 0.65
-        self.confidence = 0.6
-        self.FOV_V = 60  # RGB
-        self.FOV_H = 91.2  # RGB
-        self.detected_palm_oil = False
-        self.fruit_depth = 0.0
-        self.palm_oil_num = 0
+        # Configure streams
+        config = rs.config()
+        config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
+        config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
 
-        # Variables for frame processing
-        self.depth_frame = None
-        self.color_frame = None
-        self.color_image = None
+        # Start streaming
+        self.pipeline.start(config)
 
-        # Variables for IMU
-        self.yaw_angle = 0
+    def capture_frames(self):
+        try:
+            while True:
+                # Wait for a coherent pair of frames: depth and color
+                frames = self.pipeline.wait_for_frames()
+                depth_frame = frames.get_depth_frame()
+                color_frame = frames.get_color_frame()
 
-        # Variables for harvest status
-        self.harvest_counter = 0
-        self.harvest_end = True
+                # If both frames are available, proceed
+                if depth_frame and color_frame:
+                    # Convert depth and color frames to numpy arrays
+                    depth_image = np.array(depth_frame.get_data())
+                    color_image = np.array(color_frame.get_data())
+                    
+                    # Apply color map to depth image
+                    depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
 
-        # Variables for orientation
-        self.pitch_angle = 0
-        self.yaw_angle = 0
-        self.pitch = 0
-        self.yaw = 0
-        self.target_pitch = 0
-        self.target_yaw = 0
-        self.previous_pitch = 100
-        self.previous_yaw = 100
-        self.angle_counter = 0
-        self.first_detected = True
-        self.yaw_direction = 0
-        self.pitch_direction = 0
+                    # Display color and depth images
+                    cv2.imshow('Color Image', color_image)
+                    cv2.imshow('Depth Image', depth_colormap)
+                    cv2.waitKey(1)
 
-        # Variables for sensor fusion
-        self.dt = 1 / 200  # Time interval (assuming gyro runs at 200 Hz)
-        self.beta = 0.98  # Complementary filter coefficient
-
-        # Starting camera setup
-        self.pipe = rs.pipeline()
-        self.cfg = rs.config()
-        self.cfg.enable_stream(rs.stream.color, self.frame_width, self.frame_height, rs.format.bgr8, 30)
-        self.cfg.enable_stream(rs.stream.depth, self.frame_width, self.frame_height, rs.format.z16, 30)
-        self.cfg.enable_stream(rs.stream.accel, rs.format.motion_xyz32f, 100)  # Accelerometer data
-        self.cfg.enable_stream(rs.stream.gyro, rs.format.motion_xyz32f, 200)
-        self.profile = self.pipe.start(self.cfg)
-        self.depth_sensor = self.profile.get_device().first_depth_sensor()
-        self.depth_scale = self.depth_sensor.get_depth_scale()
-        if self.depth_scale > 0:
-            self.get_logger().info("Camera opened successfully!")
-        self.clipping_distance_in_meters = 4  # 1 meter
-        self.clipping_distance = self.clipping_distance_in_meters / self.depth_scale
-        self.align_to = rs.stream.color
-        self.align = rs.align(self.align_to)
-
-        # Machine Learning Model
-        model_path = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/7_jan_palm_oil.pt"
-        self.model = YOLO(model_path)
-        self.DETECTED_FRAME_PATH = r"/home/px/arduino_ws/src/arduino_control/arduino_control/ML/detected_frame.jpg"
-
-    def imu_data(self, msg):
-        self.yaw_angle = msg.yaw
-
-    def harvest_confirm(self, msg):
-        if msg.success:
-            self.harvest_counter += 1
-            if self.harvest_counter == 10:
-                self.harvest_end = True
-                self.harvest_counter = 0
-        else:
-            self.harvest_counter  = 0
-            self.harvest_end = False
-
-    def process_frames(self):
-        self.frames = self.pipe.wait_for_frames()
-        self.get_logger().warn(str(self.harvest_end))
-        self.get_logger().info(str(self.first_detected))
-        if not self.detected_palm_oil and self.harvest_end:
-            if self.harvest_end:
-                self.depth_frame = self.frames.get_depth_frame()
-                self.color_frame = self.frames.get_color_frame()
-                self.color_image = np.asanyarray(self.color_frame.get_data())
-                self.process_frame()  # self.palm_oil_num, self.detected_palm_oil, self.pitch_angle, self.yaw_angle
-        else:
-            # request = HarvestConfirmation.Request()
-            # future = self.confirm_action_client.call_async(request)
-            # if future.done():            
-            #     self.get_logger().warn(str(future.result().success))
-            #     if future.result().success:
-            #         self.first_detected = True
-            #         self.harvest_end = True
-            self.get_imu_data()  # self.yaw_angle, self.pitch_angle
-            if self.first_detected:
-                if abs(self.pitch_angle - self.previous_pitch) < 0.03 and abs(self.yaw_angle - self.previous_yaw) < 0.03:
-                    self.angle_counter += 1
-                    self.pitch_direction = 2
-                    self.yaw_direction = 2
-                    if self.angle_counter == 20:
-                        self.target_yaw += self.yaw_angle
-                        self.target_pitch += self.pitch_angle 
-                        # self.get_logger().info(str(self.target_pitch))
-                        self.first_detected = False
-                        self.angle_counter = 0
-                else:
-                    self.previous_pitch = self.pitch_angle
-                    self.previous_yaw = self.yaw_angle
-                    self.first_detected = True
-                    self.pitch_direction = 2
-                    self.yaw_direction = 2
-                    self.angle_counter = 0
-            else:
-                self.get_logger().info(str(self.target_yaw) + " , " + str(self.target_pitch))
-                if (self.pitch_angle - self.target_pitch) > 1:
-                    self.pitch_direction = -1
-                elif (self.pitch_angle - self.target_pitch) < -1:
-                    self.pitch_direction = 1
-                else:
-                    self.pitch_direction = 0
-
-                if (self.yaw_angle - self.target_yaw) > 2:
-                    self.yaw_direction = 1 # 1
-                elif (self.yaw_angle - self.target_yaw) < -2:
-                    self.yaw_direction = -1 # -1
-                else:
-                    self.yaw_direction = 0
-
-                if self.pitch_direction == 0 and self.yaw_direction == 0:
-                    self.detected_palm_oil = False
-                    cv2.destroyAllWindows()
-
-                # self.get_logger().info(str(self.target_yaw) + " , " + str(self.target_pitch))
-                # self.get_logger().info(str(self.yaw_angle) + " , " + str(self.pitch_angle))
-
-        msg = FruitDepth()
-        msg.detected = self.detected_palm_oil
-        msg.palm_oil_num = self.palm_oil_num
-        msg.fruit_depth = self.fruit_depth
-        msg.yaw_direction = self.yaw_direction
-        msg.pitch_direction = self.pitch_direction
-        msg.pitch = float(self.pitch_angle)
-        msg.yaw = float(self.yaw_angle)
-        self.get_logger().info(f"{msg.detected}, {msg.palm_oil_num}, {msg.fruit_depth}, {msg.yaw_direction}, {msg.pitch_direction}, {msg.pitch}, {msg.yaw}")
-        self.publisher.publish(msg)
-
-    def calc_pitch_angle(self, pt1_x, pt1_y, center_x, center_y):
-        vertical = (center_y - pt1_y)
-        horizontal = (center_x - pt1_x)
-
-        self.target_pitch = (self.FOV_V / self.frame_height) * vertical
-        self.target_yaw = (self.FOV_H / self.frame_width) * horizontal
-
-    def process_frame(self):
-        self.detected_palm_oil = False
-        predictions = self.model.predict(self.color_image, conf=self.confidence)
-        depth_arr = []
-        coordinates = predictions[0].boxes.xywh.tolist()
-
-        height, width, _ = self.color_image.shape
-
-        # Draw horizontal line (crosshair)
-        cv2.line(self.color_image, (0, int(height * self.crosshair_y_offset)), (width, int(height * self.crosshair_y_offset)), (0,255,0), 1)
-        # Draw vertical line (crosshair)
-        cv2.line(self.color_image, (int(width * self.crosshair_x_offset), 0), (int(width * self.crosshair_x_offset), height), (0,255,0), 1)
-
-        for pts in coordinates:
-            # Extract x, y, width, and height
-            x, y, width, height = int(pts[0]), int(pts[1]), int(pts[2]), int(pts[3])
-
-            pts[0] = int(pts[0] - pts[2] / 2)
-            pts[1] = int(pts[1] - pts[3] / 2)
-            cv2.rectangle(self.color_image, (int(pts[0]), int(pts[1])), (int(pts[0] + pts[2]), int(pts[1] + pts[3])), (0, 255, 0), 2)
-            cv2.putText(self.color_image, 'palm oil', (pts[0], pts[1]), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3, cv2.LINE_AA)
-            
-            center_x = x
-            center_y = y
-
-            # Get depth value at the center point
-            depth_value = self.depth_frame.get_distance(center_x, center_y)
-
-            Points.x = center_x
-            Points.y = center_y
-            Points.z = depth_value
-            print("Depth at center point:", depth_value, "meters")
-            depth_arr.append(Points)
-
-        self.palm_oil_num = len(depth_arr)
-        closest_pt = Points()
-        closest_depth = 100
-        for pts in depth_arr:
-            if pts.z < closest_depth and pts.z != 0:
-                closest_depth = pts.z
-                closest_pt.x = pts.x
-                closest_pt.y = pts.y
-                closest_pt.z = pts.z
-        if closest_depth < 100:
-            height, width, _ = self.color_image.shape
-            print(f"x: {closest_pt.x}, y: {closest_pt.y}, z:{closest_pt.z}")
-            self.calc_pitch_angle(closest_pt.x, closest_pt.y, int(width * self.crosshair_x_offset), int(height * self.crosshair_y_offset))
-            self.detected_palm_oil = True
-            self.first_detected = True
-            self.fruit_depth = closest_depth
-            print(f"Closest Depth: {closest_depth}")
-
-        # Display color frame with bounding boxes around detected objects
-        cv2.imshow('Detection', self.color_image)
-        cv2.waitKey(1)  # Wait indefinitely until a key is pressed
-        # Save the frame with detections
-        # cv2.imwrite(self.DETECTED_FRAME_PATH, self.color_image)
-
-    def get_imu_data(self):
-        accel_data = None
-        for frame in self.frames:
-            if frame.is_motion_frame():
-                if frame.get_profile().stream_type() == rs.stream.accel:
-                    # Extract accelerometer data
-                    accel_data = frame.as_motion_frame().get_motion_data()
-
-                elif frame.get_profile().stream_type() == rs.stream.gyro:
-                    # Extract gyroscope data
-                    gyro_data = frame.as_motion_frame().get_motion_data()
-
-                    # Perform sensor fusion (complementary filter)
-                    self.pitch += gyro_data.x * self.dt
-
-                    # Compensate for drift using accelerometer data
-                    pitch_acc = np.arctan2(accel_data.y, np.sqrt(accel_data.x ** 2 + accel_data.z ** 2))
-
-                    self.pitch = self.beta * (self.pitch + gyro_data.x * self.dt) + (1 - self.beta) * pitch_acc
-
-                    # Convert angles to degrees
-                    self.pitch_angle = np.degrees(self.pitch)
+        except KeyboardInterrupt:
+            pass
 
     def __del__(self):
-        if self.pipe is not None:
-            self.pipe.stop()
-        self.destroy_node()
+        # Stop streaming
+        self.pipeline.stop()
         cv2.destroyAllWindows()
-
 
 def main(args=None):
     rclpy.init(args=args)
-    depth_publisher = DepthPublisherNode()
-    rclpy.spin(depth_publisher)
-    rclpy.shutdown()
 
+    try:
+        node = RealSenseNode()
+        node.capture_frames()
+    finally:
+        node.destroy_node()
+        rclpy.shutdown()
 
 if __name__ == '__main__':
     main()

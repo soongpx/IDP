@@ -26,6 +26,7 @@ setup(
         	'locomotion_control = arduino_control.arduino_led_node:main',
         	'minimal_publisher = arduino_control.publisher:main',
             'realsense = arduino_control.realsense:main',
+            'realsense_detection = arduino_control.realsense_detection:main',
             'lidar = arduino_control.lidar:main',
             'imu = arduino_control.imu:main',
             'realsense_imu = arduino_control.realsense_imu:main',

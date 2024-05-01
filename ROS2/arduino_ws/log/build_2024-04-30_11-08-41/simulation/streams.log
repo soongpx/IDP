@@ -1,0 +1,17 @@
+[1.577s] Invoking command in '/home/px/arduino_ws/build/simulation': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data
+[2.093s] running develop
+[2.504s] running egg_info
+[2.505s] writing simulation.egg-info/PKG-INFO
+[2.506s] writing dependency_links to simulation.egg-info/dependency_links.txt
+[2.506s] writing entry points to simulation.egg-info/entry_points.txt
+[2.507s] writing requirements to simulation.egg-info/requires.txt
+[2.507s] writing top-level names to simulation.egg-info/top_level.txt
+[2.511s] reading manifest file 'simulation.egg-info/SOURCES.txt'
+[2.520s] writing manifest file 'simulation.egg-info/SOURCES.txt'
+[2.523s] running build_ext
+[2.524s] Creating /home/px/arduino_ws/install/simulation/lib/python3.10/site-packages/simulation.egg-link (link to .)
+[2.526s] 
+[2.526s] Installed /home/px/arduino_ws/build/simulation
+[2.526s] running symlink_data
+[2.527s] symbolically linking /home/px/arduino_ws/build/simulation/launch/navigation_launch.py -> /home/px/arduino_ws/install/simulation/share/simulation/launch
+[2.598s] Invoked command in '/home/px/arduino_ws/build/simulation' returned '0': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data

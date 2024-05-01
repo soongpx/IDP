@@ -228,10 +228,8 @@ class AutonomousNode(Node):
     def cap_loco(self, speed):
         if speed > 100:
             return 100
-        elif speed < 1:
+        elif speed < 0:
             return 0
-        elif 1 < speed < 30:
-            return 30
         else:
             return speed
 

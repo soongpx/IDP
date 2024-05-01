@@ -50,8 +50,8 @@ class LocomotionControl(Node):
             data.extend(speed.to_bytes(1, byteorder='big')[0] for speed in self.target_speeds)  # Append each speed
             checksum = sum(data) % 256
             data.append(checksum)  # Append checksum
-            # self.get_logger().info(
-            #     f'Sending data: {str(data[0])}, {str(data[1])}, {str(data[2])}, {str(data[3])}, {str(data[4])}, {str(data[5])}, {str(data[6])}, {str(data[7])}, {str(data[8])}')
+            self.get_logger().info(
+                f'Sending data: {str(data[0])}, {str(data[1])}, {str(data[2])}, {str(data[3])}, {str(data[4])}, {str(data[5])}, {str(data[6])}, {str(data[7])}, {str(data[8])}')
             self.serial_port.write(data)
             self.get_input()
         else:

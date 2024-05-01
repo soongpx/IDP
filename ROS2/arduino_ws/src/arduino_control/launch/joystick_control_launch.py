@@ -20,6 +20,13 @@ def generate_launch_description():
     )
     ld.add_action(node3)
 
+    detection_node = Node(
+        package='arduino_control',
+        executable='realsense',
+        name='realsense'
+    )
+    ld.add_action(detection_node)
+
     node2 = Node(
         package='arduino_control',
         executable='obstacle_avoidance',

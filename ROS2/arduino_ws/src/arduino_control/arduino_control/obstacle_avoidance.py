@@ -34,7 +34,7 @@ class ObstacleAvoidanceNode(Node):
                     filtered_distances.append(distance)  
             for r, a in zip(filtered_distances, filtered_angles):
                 if r < 0.4 and r != 0:
-                    self.get_logger().info("Angle: %f Distance: %f" % (a, r))
+                    # self.get_logger().info("Angle: %f Distance: %f" % (a, r))
                     # self.get_logger().info("Danger at")  # You can add further actions based on this information
                     self.detected = True
                     scan_msg.angle.append(a)

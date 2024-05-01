@@ -23,14 +23,14 @@ class LocomotionControl(Node):
         self.obstacle = False
         self.forward_detected = False
 
-        self.target_left_speed = 70
-        self.target_right_speed = 70
-        self.target_rotate_left_speed = 70
-        self.target_rotate_right_speed = 70
+        self.target_left_speed = 60
+        self.target_right_speed = 55
+        self.target_rotate_left_speed = 100
+        self.target_rotate_right_speed = 90
         self.rotate_speed = 20
         self.tilt_speed = 255
         self.extend_speed = 255
-        self.vibrate_speed = 100
+        self.vibrate_speed = 200
         self.previous_direction = 0
 
     def __del__(self):
@@ -53,13 +53,13 @@ class LocomotionControl(Node):
             msg.direction += 0
             self.previous_direction = 0
         elif self.loco_command == 'Left':
-            msg.left_speed = self.target_left_speed - 25
-            msg.right_speed = self.target_right_speed + 35
+            msg.left_speed = self.target_left_speed - 30
+            msg.right_speed = self.target_right_speed + 10
             msg.direction += 3
             self.previous_direction = 3
         elif self.loco_command == 'Right':
-            msg.left_speed = self.target_left_speed + 35
-            msg.right_speed = self.target_right_speed - 25
+            msg.left_speed = self.target_left_speed + 10
+            msg.right_speed = self.target_right_speed - 30
             msg.direction += 3
             self.previous_direction = 3
         elif self.loco_command == "Rotate Left":
@@ -77,10 +77,10 @@ class LocomotionControl(Node):
             msg.right_speed = 0
             msg.direction += self.previous_direction
             
-        if (self.forward_detected and self.loco_command == 'Up'):
-            msg.left_speed = 0
-            msg.right_speed = 0
-            msg.direction += 0
+        # if (self.forward_detected and self.loco_command == 'Up'):
+        #     msg.left_speed = 0
+        #     msg.right_speed = 0
+        #     msg.direction += 0
 
         if self.rotate_command == 1:
             msg.rotate_speed = self.rotate_speed

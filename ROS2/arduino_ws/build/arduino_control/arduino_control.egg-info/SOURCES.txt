@@ -17,6 +17,7 @@ arduino_control/lidar.py
 arduino_control/obstacle_avoidance.py
 arduino_control/publisher.py
 arduino_control/realsense.py
+arduino_control/realsense_detection.py
 arduino_control/realsense_imu.py
 arduino_control/serial_test.py
 arduino_control/test.py
@@ -30,7 +31,9 @@ arduino_control.egg-info/top_level.txt
 arduino_control.egg-info/zip-safe
 launch/arduino_control_launch.py
 launch/fruit_harvest_launch.py
+launch/joystick_control1_launch.py
 launch/joystick_control_launch.py
 launch/test1_launch.py
+launch/test2_launch.py
 launch/test_launch.py
 resource/arduino_control

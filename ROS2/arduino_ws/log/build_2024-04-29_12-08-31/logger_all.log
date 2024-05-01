@@ -1,0 +1,320 @@
+[0.110s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.110s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x73f2c6168520>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x73f2c6137fd0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x73f2c6137fd0>>, mixin_verb=('build',))
+[0.316s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.316s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.316s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.316s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.316s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.316s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.316s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/px/arduino_ws'
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.316s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.317s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.336s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.337s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_control) by extensions ['ignore', 'ignore_ament_install']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_control) by extension 'ignore'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_control) by extension 'ignore_ament_install'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_control) by extensions ['colcon_pkg']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_control) by extension 'colcon_pkg'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_control) by extensions ['colcon_meta']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_control) by extension 'colcon_meta'
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_control) by extensions ['ros']
+[0.338s] Level 1:colcon.colcon_core.package_identification:_identify(src/arduino_control) by extension 'ros'
+[0.340s] DEBUG:colcon.colcon_core.package_identification:Package 'src/arduino_control' with type 'ros.ament_python' and name 'arduino_control'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['ignore', 'ignore_ament_install']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'ignore'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'ignore_ament_install'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['colcon_pkg']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'colcon_pkg'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['colcon_meta']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'colcon_meta'
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extensions ['ros']
+[0.341s] Level 1:colcon.colcon_core.package_identification:_identify(src/my_robot_interfaces) by extension 'ros'
+[0.342s] DEBUG:colcon.colcon_core.package_identification:Package 'src/my_robot_interfaces' with type 'ros.ament_cmake' and name 'my_robot_interfaces'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/px_bot_description) by extensions ['ignore', 'ignore_ament_install']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/px_bot_description) by extension 'ignore'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/px_bot_description) by extension 'ignore_ament_install'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/px_bot_description) by extensions ['colcon_pkg']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/px_bot_description) by extension 'colcon_pkg'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/px_bot_description) by extensions ['colcon_meta']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/px_bot_description) by extension 'colcon_meta'
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/px_bot_description) by extensions ['ros']
+[0.342s] Level 1:colcon.colcon_core.package_identification:_identify(src/px_bot_description) by extension 'ros'
+[0.343s] DEBUG:colcon.colcon_core.package_identification:Package 'src/px_bot_description' with type 'ros.ament_cmake' and name 'px_bot_description'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extensions ['ignore', 'ignore_ament_install']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'ignore'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'ignore_ament_install'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extensions ['colcon_pkg']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'colcon_pkg'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extensions ['colcon_meta']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'colcon_meta'
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extensions ['ros']
+[0.343s] Level 1:colcon.colcon_core.package_identification:_identify(src/simulation) by extension 'ros'
+[0.343s] DEBUG:colcon.colcon_core.package_identification:Package 'src/simulation' with type 'ros.ament_python' and name 'simulation'
+[0.343s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.343s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.344s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.344s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.344s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.366s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/px/ydlidar_ros2_ws/install
+[0.366s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/px/arduino_ws/install
+[0.368s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 409 installed packages in /opt/ros/humble
+[0.370s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.417s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_args' from command line to 'None'
+[0.417s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_target' from command line to 'None'
+[0.417s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.417s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_clean_cache' from command line to 'False'
+[0.417s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_clean_first' from command line to 'False'
+[0.417s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'cmake_force_configure' from command line to 'False'
+[0.417s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'ament_cmake_args' from command line to 'None'
+[0.417s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'catkin_cmake_args' from command line to 'None'
+[0.417s] Level 5:colcon.colcon_core.verb:set package 'my_robot_interfaces' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.417s] DEBUG:colcon.colcon_core.verb:Building package 'my_robot_interfaces' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/px/arduino_ws/build/my_robot_interfaces', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/px/arduino_ws/install/my_robot_interfaces', 'merge_install': False, 'path': '/home/px/arduino_ws/src/my_robot_interfaces', 'symlink_install': True, 'test_result_base': None}
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'px_bot_description' build argument 'cmake_args' from command line to 'None'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'px_bot_description' build argument 'cmake_target' from command line to 'None'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'px_bot_description' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'px_bot_description' build argument 'cmake_clean_cache' from command line to 'False'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'px_bot_description' build argument 'cmake_clean_first' from command line to 'False'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'px_bot_description' build argument 'cmake_force_configure' from command line to 'False'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'px_bot_description' build argument 'ament_cmake_args' from command line to 'None'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'px_bot_description' build argument 'catkin_cmake_args' from command line to 'None'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'px_bot_description' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.418s] DEBUG:colcon.colcon_core.verb:Building package 'px_bot_description' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/px/arduino_ws/build/px_bot_description', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/px/arduino_ws/install/px_bot_description', 'merge_install': False, 'path': '/home/px/arduino_ws/src/px_bot_description', 'symlink_install': True, 'test_result_base': None}
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_args' from command line to 'None'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_target' from command line to 'None'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_clean_cache' from command line to 'False'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_clean_first' from command line to 'False'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'cmake_force_configure' from command line to 'False'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'ament_cmake_args' from command line to 'None'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'catkin_cmake_args' from command line to 'None'
+[0.418s] Level 5:colcon.colcon_core.verb:set package 'simulation' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.418s] DEBUG:colcon.colcon_core.verb:Building package 'simulation' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/px/arduino_ws/build/simulation', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/px/arduino_ws/install/simulation', 'merge_install': False, 'path': '/home/px/arduino_ws/src/simulation', 'symlink_install': True, 'test_result_base': None}
+[0.419s] Level 5:colcon.colcon_core.verb:set package 'arduino_control' build argument 'cmake_args' from command line to 'None'
+[0.419s] Level 5:colcon.colcon_core.verb:set package 'arduino_control' build argument 'cmake_target' from command line to 'None'
+[0.419s] Level 5:colcon.colcon_core.verb:set package 'arduino_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.419s] Level 5:colcon.colcon_core.verb:set package 'arduino_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.419s] Level 5:colcon.colcon_core.verb:set package 'arduino_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.419s] Level 5:colcon.colcon_core.verb:set package 'arduino_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.419s] Level 5:colcon.colcon_core.verb:set package 'arduino_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.419s] Level 5:colcon.colcon_core.verb:set package 'arduino_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.419s] Level 5:colcon.colcon_core.verb:set package 'arduino_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.419s] DEBUG:colcon.colcon_core.verb:Building package 'arduino_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/px/arduino_ws/build/arduino_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/px/arduino_ws/install/arduino_control', 'merge_install': False, 'path': '/home/px/arduino_ws/src/arduino_control', 'symlink_install': True, 'test_result_base': None}
+[0.419s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.420s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.420s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/px/arduino_ws/src/my_robot_interfaces' with build type 'ament_cmake'
+[0.421s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/px/arduino_ws/src/my_robot_interfaces'
+[0.422s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.422s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.422s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.426s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/px/arduino_ws/src/px_bot_description' with build type 'ament_cmake'
+[0.426s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/px/arduino_ws/src/px_bot_description'
+[0.426s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.427s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.430s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/px/arduino_ws/src/simulation' with build type 'ament_python'
+[0.430s] Level 1:colcon.colcon_core.shell:create_environment_hook('simulation', 'ament_prefix_path')
+[0.430s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/simulation/share/simulation/hook/ament_prefix_path.ps1'
+[0.431s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/simulation/share/simulation/hook/ament_prefix_path.dsv'
+[0.431s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/simulation/share/simulation/hook/ament_prefix_path.sh'
+[0.432s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.432s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.441s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/px/arduino_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/my_robot_interfaces -- -j8 -l8
+[0.444s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/px/arduino_ws/build/px_bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/px_bot_description -- -j8 -l8
+[0.768s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/px/arduino_ws/src/simulation'
+[0.769s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.769s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.774s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/px/arduino_ws/build/px_bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/px_bot_description -- -j8 -l8
+[0.803s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/px/arduino_ws/build/px_bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --install /home/px/arduino_ws/build/px_bot_description
+[0.825s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px_bot_description)
+[0.826s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/px/arduino_ws/build/px_bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --install /home/px/arduino_ws/build/px_bot_description
+[0.827s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description' for CMake module files
+[0.828s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description' for CMake config files
+[0.828s] Level 1:colcon.colcon_core.shell:create_environment_hook('px_bot_description', 'cmake_prefix_path')
+[0.828s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/hook/cmake_prefix_path.ps1'
+[0.829s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/hook/cmake_prefix_path.dsv'
+[0.829s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/hook/cmake_prefix_path.sh'
+[0.829s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description/bin'
+[0.829s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description/lib/pkgconfig/px_bot_description.pc'
+[0.830s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description/lib/python3.10/site-packages'
+[0.830s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description/bin'
+[0.830s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.ps1'
+[0.831s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.dsv'
+[0.831s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.sh'
+[0.832s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.bash'
+[0.833s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.zsh'
+[0.833s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/px/arduino_ws/install/px_bot_description/share/colcon-core/packages/px_bot_description)
+[0.845s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/px/arduino_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/my_robot_interfaces -- -j8 -l8
+[0.855s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(px_bot_description)
+[0.855s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description' for CMake module files
+[0.856s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description' for CMake config files
+[0.856s] Level 1:colcon.colcon_core.shell:create_environment_hook('px_bot_description', 'cmake_prefix_path')
+[0.856s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/hook/cmake_prefix_path.ps1'
+[0.857s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/hook/cmake_prefix_path.dsv'
+[0.857s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/hook/cmake_prefix_path.sh'
+[0.857s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description/bin'
+[0.857s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description/lib/pkgconfig/px_bot_description.pc'
+[0.858s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description/lib/python3.10/site-packages'
+[0.858s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/px_bot_description/bin'
+[0.858s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.ps1'
+[0.858s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.dsv'
+[0.859s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.sh'
+[0.859s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.bash'
+[0.859s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.zsh'
+[0.860s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/px/arduino_ws/install/px_bot_description/share/colcon-core/packages/px_bot_description)
+[1.099s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/px/arduino_ws/build/my_robot_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --install /home/px/arduino_ws/build/my_robot_interfaces
+[1.172s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/px/arduino_ws/build/simulation': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data
+[1.190s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_interfaces)
+[1.190s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces' for CMake module files
+[1.191s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/px/arduino_ws/build/my_robot_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --install /home/px/arduino_ws/build/my_robot_interfaces
+[1.191s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces' for CMake config files
+[1.191s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_interfaces', 'cmake_prefix_path')
+[1.192s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.ps1'
+[1.192s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.dsv'
+[1.192s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.sh'
+[1.193s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/lib'
+[1.193s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_interfaces', 'ld_library_path_lib')
+[1.193s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.ps1'
+[1.194s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.dsv'
+[1.194s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.sh'
+[1.194s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/bin'
+[1.194s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/lib/pkgconfig/my_robot_interfaces.pc'
+[1.194s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/lib/python3.10/site-packages'
+[1.194s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/bin'
+[1.195s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.ps1'
+[1.195s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.dsv'
+[1.196s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.sh'
+[1.196s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.bash'
+[1.196s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.zsh'
+[1.196s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/px/arduino_ws/install/my_robot_interfaces/share/colcon-core/packages/my_robot_interfaces)
+[1.446s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_robot_interfaces)
+[1.447s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces' for CMake module files
+[1.447s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces' for CMake config files
+[1.447s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_interfaces', 'cmake_prefix_path')
+[1.448s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.ps1'
+[1.448s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.dsv'
+[1.448s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/cmake_prefix_path.sh'
+[1.449s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/lib'
+[1.449s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_robot_interfaces', 'ld_library_path_lib')
+[1.449s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.ps1'
+[1.450s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.dsv'
+[1.450s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/hook/ld_library_path_lib.sh'
+[1.450s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/bin'
+[1.450s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/lib/pkgconfig/my_robot_interfaces.pc'
+[1.451s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/lib/python3.10/site-packages'
+[1.451s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/my_robot_interfaces/bin'
+[1.451s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.ps1'
+[1.452s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.dsv'
+[1.452s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.sh'
+[1.453s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.bash'
+[1.453s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/my_robot_interfaces/share/my_robot_interfaces/package.zsh'
+[1.453s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/px/arduino_ws/install/my_robot_interfaces/share/colcon-core/packages/my_robot_interfaces)
+[1.453s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/px/arduino_ws/src/arduino_control' with build type 'ament_python'
+[1.454s] Level 1:colcon.colcon_core.shell:create_environment_hook('arduino_control', 'ament_prefix_path')
+[1.454s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/arduino_control/share/arduino_control/hook/ament_prefix_path.ps1'
+[1.455s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/arduino_control/share/arduino_control/hook/ament_prefix_path.dsv'
+[1.455s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/arduino_control/share/arduino_control/hook/ament_prefix_path.sh'
+[1.456s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.456s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.764s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/px/arduino_ws/src/arduino_control'
+[1.764s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.764s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.769s] Level 1:colcon.colcon_core.shell:create_environment_hook('simulation', 'pythonpath_develop')
+[1.769s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/build/simulation/share/simulation/hook/pythonpath_develop.ps1'
+[1.770s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/px/arduino_ws/build/simulation' returned '0': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data
+[1.770s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/build/simulation/share/simulation/hook/pythonpath_develop.dsv'
+[1.770s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/build/simulation/share/simulation/hook/pythonpath_develop.sh'
+[1.771s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/simulation' for CMake module files
+[1.771s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/simulation' for CMake config files
+[1.771s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/simulation/lib'
+[1.771s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/simulation/bin'
+[1.771s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/simulation/lib/pkgconfig/simulation.pc'
+[1.772s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages'
+[1.772s] Level 1:colcon.colcon_core.shell:create_environment_hook('simulation', 'pythonpath')
+[1.772s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/simulation/share/simulation/hook/pythonpath.ps1'
+[1.772s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/simulation/share/simulation/hook/pythonpath.dsv'
+[1.772s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/simulation/share/simulation/hook/pythonpath.sh'
+[1.773s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/simulation/bin'
+[1.773s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(simulation)
+[1.773s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/simulation/share/simulation/package.ps1'
+[1.774s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/px/arduino_ws/install/simulation/share/simulation/package.dsv'
+[1.774s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/simulation/share/simulation/package.sh'
+[1.774s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/simulation/share/simulation/package.bash'
+[1.775s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/simulation/share/simulation/package.zsh'
+[1.775s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/px/arduino_ws/install/simulation/share/colcon-core/packages/simulation)
+[2.164s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/px/arduino_ws/build/arduino_control': CMAKE_PREFIX_PATH=/home/px/arduino_ws/install/my_robot_interfaces:/home/px/arduino_ws/install/px_bot_description:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps symlink_data
+[2.712s] Level 1:colcon.colcon_core.shell:create_environment_hook('arduino_control', 'pythonpath_develop')
+[2.712s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/build/arduino_control/share/arduino_control/hook/pythonpath_develop.ps1'
+[2.712s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/px/arduino_ws/build/arduino_control' returned '0': CMAKE_PREFIX_PATH=/home/px/arduino_ws/install/my_robot_interfaces:/home/px/arduino_ws/install/px_bot_description:/home/px/ydlidar_ros2_ws/install/ydlidar_ros2_driver PYTHONPATH=/home/px/arduino_ws/build/arduino_control/prefix_override:/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/arduino_control/build --no-deps symlink_data
+[2.713s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/build/arduino_control/share/arduino_control/hook/pythonpath_develop.dsv'
+[2.713s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/build/arduino_control/share/arduino_control/hook/pythonpath_develop.sh'
+[2.713s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/arduino_control' for CMake module files
+[2.714s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/arduino_control' for CMake config files
+[2.715s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/arduino_control/lib'
+[2.715s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/arduino_control/bin'
+[2.715s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/arduino_control/lib/pkgconfig/arduino_control.pc'
+[2.715s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/arduino_control/lib/python3.10/site-packages'
+[2.715s] Level 1:colcon.colcon_core.shell:create_environment_hook('arduino_control', 'pythonpath')
+[2.715s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/arduino_control/share/arduino_control/hook/pythonpath.ps1'
+[2.715s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/px/arduino_ws/install/arduino_control/share/arduino_control/hook/pythonpath.dsv'
+[2.716s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/px/arduino_ws/install/arduino_control/share/arduino_control/hook/pythonpath.sh'
+[2.716s] Level 1:colcon.colcon_core.environment:checking '/home/px/arduino_ws/install/arduino_control/bin'
+[2.716s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(arduino_control)
+[2.716s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/arduino_control/share/arduino_control/package.ps1'
+[2.717s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/px/arduino_ws/install/arduino_control/share/arduino_control/package.dsv'
+[2.717s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/arduino_control/share/arduino_control/package.sh'
+[2.717s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/arduino_control/share/arduino_control/package.bash'
+[2.718s] INFO:colcon.colcon_core.shell:Creating package script '/home/px/arduino_ws/install/arduino_control/share/arduino_control/package.zsh'
+[2.718s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/px/arduino_ws/install/arduino_control/share/colcon-core/packages/arduino_control)
+[2.718s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.718s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.719s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.719s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.723s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.723s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.724s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.734s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.735s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/px/arduino_ws/install/local_setup.ps1'
+[2.736s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/px/arduino_ws/install/_local_setup_util_ps1.py'
+[2.737s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/px/arduino_ws/install/setup.ps1'
+[2.739s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/px/arduino_ws/install/local_setup.sh'
+[2.740s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/px/arduino_ws/install/_local_setup_util_sh.py'
+[2.740s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/px/arduino_ws/install/setup.sh'
+[2.742s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/px/arduino_ws/install/local_setup.bash'
+[2.743s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/px/arduino_ws/install/setup.bash'
+[2.744s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/px/arduino_ws/install/local_setup.zsh'
+[2.745s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/px/arduino_ws/install/setup.zsh'

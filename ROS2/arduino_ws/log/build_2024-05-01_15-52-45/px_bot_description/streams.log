@@ -1,0 +1,27 @@
+[0.859s] Invoking command in '/home/px/arduino_ws/build/px_bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/px_bot_description -- -j8 -l8
+[1.033s] Invoked command in '/home/px/arduino_ws/build/px_bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --build /home/px/arduino_ws/build/px_bot_description -- -j8 -l8
+[1.172s] Invoking command in '/home/px/arduino_ws/build/px_bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --install /home/px/arduino_ws/build/px_bot_description
+[1.186s] -- Install configuration: ""
+[1.195s] -- Execute custom install script
+[1.206s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/src/description/px_bot_description.urdf
+[1.207s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/launch/display_launch.py
+[1.208s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/rviz/urdf_config.rviz
+[1.208s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/config/ekf.yaml
+[1.209s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/config/nav2_params.yaml
+[1.210s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/world/my_world.sdf
+[1.210s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/ament_index/resource_index/package_run_dependencies/px_bot_description
+[1.211s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/ament_index/resource_index/parent_prefix_path/px_bot_description
+[1.214s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/environment/ament_prefix_path.sh
+[1.214s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/environment/ament_prefix_path.dsv
+[1.215s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/environment/path.sh
+[1.216s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/environment/path.dsv
+[1.216s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/local_setup.bash
+[1.218s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/local_setup.sh
+[1.218s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/local_setup.zsh
+[1.218s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/local_setup.dsv
+[1.218s] -- Symlinking: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.dsv
+[1.241s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/ament_index/resource_index/packages/px_bot_description
+[1.242s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/cmake/px_bot_descriptionConfig.cmake
+[1.242s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/cmake/px_bot_descriptionConfig-version.cmake
+[1.242s] -- Up-to-date symlink: /home/px/arduino_ws/install/px_bot_description/share/px_bot_description/package.xml
+[1.245s] Invoked command in '/home/px/arduino_ws/build/px_bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/px/arduino_ws/install/simulation:/home/px/arduino_ws/install/arduino_control:/opt/ros/humble /usr/bin/cmake --install /home/px/arduino_ws/build/px_bot_description

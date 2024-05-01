@@ -56,7 +56,7 @@ uint8_t vibrate_speed = 0;
 uint8_t RotateSpeed = -1;
 uint8_t TiltSpeed = -1;
 uint8_t ExtendSpeed = -1;
-uint8_t VibrateSpeed = -1;
+uint8_t VibrateSpeed = 0;
 int left_counter = 0;
 int right_counter = 0;
 int vibrate_counter = 0;
@@ -154,7 +154,7 @@ void ProcessTaskCode()
 
       if (LeftSpeed < left_speed)
       {
-        if (left_counter >= 200)
+        if (left_counter >= 80)
         {
           LeftSpeed++;
           left_counter = 0;
@@ -165,7 +165,7 @@ void ProcessTaskCode()
         }
       } else if (LeftSpeed > left_speed)
       {
-        if (left_counter >= 150)
+        if (left_counter >= 200)
         {
           LeftSpeed--;
           left_counter = 0;
@@ -181,7 +181,7 @@ void ProcessTaskCode()
 
       if (RightSpeed < right_speed)
       {
-        if (right_counter >= 200)
+        if (right_counter >= 100)
         {
           RightSpeed++;
           right_counter = 0;
@@ -191,7 +191,7 @@ void ProcessTaskCode()
         }
       } else if (RightSpeed > right_speed)
       {
-        if (right_counter >= 150)
+        if (right_counter >= 200)
         {
           RightSpeed--;
           right_counter = 0;
@@ -207,7 +207,7 @@ void ProcessTaskCode()
 
       if (VibrateSpeed < vibrate_speed)
       {
-        if (vibrate_counter == 100)
+        if (vibrate_counter >= 100)
         {
           VibrateSpeed++;
           vibrate_counter = 0;
@@ -217,7 +217,7 @@ void ProcessTaskCode()
         }
       } else if (VibrateSpeed > vibrate_speed)
       {
-        if (vibrate_counter == 100)
+        if (vibrate_counter >= 100)
         {
           VibrateSpeed--;
           vibrate_counter = 0;
@@ -256,8 +256,7 @@ void OutputTaskCode()
   else if(extend_dir == 0 && extend_speed > 0)  Retract();
   else                                          Stop_Extend();
 
-  if(vibrate_speed > 0)                         Vibrate(VibrateSpeed);
-  else                                          Stop_Vibrate();
+  if(VibrateSpeed >= 0)                         Vibrate(VibrateSpeed);
 }
 
 //Locomotion
