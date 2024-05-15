@@ -23,14 +23,14 @@ class LocomotionControl(Node):
         self.obstacle = False
         self.forward_detected = False
 
-        self.target_left_speed = 60
-        self.target_right_speed = 55
-        self.target_rotate_left_speed = 100
-        self.target_rotate_right_speed = 90
-        self.rotate_speed = 20
+        self.target_left_speed = 90
+        self.target_right_speed = 85
+        self.target_rotate_left_speed = 150
+        self.target_rotate_right_speed = 140
+        self.rotate_speed = 50
         self.tilt_speed = 255
         self.extend_speed = 255
-        self.vibrate_speed = 200
+        self.vibrate_speed = 240
         self.previous_direction = 0
 
     def __del__(self):

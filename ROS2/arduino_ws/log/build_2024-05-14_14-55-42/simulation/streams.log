@@ -1,0 +1,17 @@
+[1.821s] Invoking command in '/home/px/arduino_ws/build/simulation': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data
+[2.450s] running develop
+[2.836s] running egg_info
+[2.837s] writing simulation.egg-info/PKG-INFO
+[2.837s] writing dependency_links to simulation.egg-info/dependency_links.txt
+[2.837s] writing entry points to simulation.egg-info/entry_points.txt
+[2.837s] writing requirements to simulation.egg-info/requires.txt
+[2.837s] writing top-level names to simulation.egg-info/top_level.txt
+[2.841s] reading manifest file 'simulation.egg-info/SOURCES.txt'
+[2.842s] writing manifest file 'simulation.egg-info/SOURCES.txt'
+[2.844s] running build_ext
+[2.845s] Creating /home/px/arduino_ws/install/simulation/lib/python3.10/site-packages/simulation.egg-link (link to .)
+[2.846s] Installing waypoint_follow script to /home/px/arduino_ws/install/simulation/lib/simulation
+[2.846s] 
+[2.847s] Installed /home/px/arduino_ws/build/simulation
+[2.847s] running symlink_data
+[2.903s] Invoked command in '/home/px/arduino_ws/build/simulation' returned '0': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data

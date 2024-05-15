@@ -2,11 +2,15 @@ package.xml
 setup.cfg
 setup.py
 launch/bringup_launch.py
+launch/cartographer_launch.py
 launch/gazebo_launch.py
+launch/gazebo_map_launch.py
 launch/navigation_launch.py
+launch/occupancy_grid.launch.py
 launch/simulation_launch.py
 resource/simulation
 simulation/__init__.py
+simulation/waypoint_follow.py
 simulation.egg-info/PKG-INFO
 simulation.egg-info/SOURCES.txt
 simulation.egg-info/dependency_links.txt

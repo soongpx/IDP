@@ -1,0 +1,17 @@
+[1.679s] Invoking command in '/home/px/arduino_ws/build/simulation': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data
+[2.389s] running develop
+[2.944s] running egg_info
+[2.945s] writing simulation.egg-info/PKG-INFO
+[2.945s] writing dependency_links to simulation.egg-info/dependency_links.txt
+[2.946s] writing entry points to simulation.egg-info/entry_points.txt
+[2.946s] writing requirements to simulation.egg-info/requires.txt
+[2.947s] writing top-level names to simulation.egg-info/top_level.txt
+[2.951s] reading manifest file 'simulation.egg-info/SOURCES.txt'
+[2.954s] writing manifest file 'simulation.egg-info/SOURCES.txt'
+[2.971s] running build_ext
+[2.973s] Creating /home/px/arduino_ws/install/simulation/lib/python3.10/site-packages/simulation.egg-link (link to .)
+[2.975s] 
+[2.976s] Installed /home/px/arduino_ws/build/simulation
+[2.976s] running symlink_data
+[2.979s] symbolically linking /home/px/arduino_ws/build/simulation/launch/occupancy_grid.launch.py -> /home/px/arduino_ws/install/simulation/share/simulation/launch
+[3.059s] Invoked command in '/home/px/arduino_ws/build/simulation' returned '0': PYTHONPATH=/home/px/arduino_ws/build/simulation/prefix_override:/home/px/arduino_ws/install/simulation/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/px/arduino_ws/build/simulation/build --no-deps symlink_data
