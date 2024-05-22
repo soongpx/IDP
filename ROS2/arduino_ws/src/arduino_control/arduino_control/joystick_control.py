@@ -23,11 +23,11 @@ class LocomotionControl(Node):
         self.obstacle = False
         self.forward_detected = False
 
-        self.target_left_speed = 90
-        self.target_right_speed = 85
-        self.target_rotate_left_speed = 150
-        self.target_rotate_right_speed = 140
-        self.rotate_speed = 50
+        self.target_left_speed = 110
+        self.target_right_speed = 110
+        self.target_rotate_left_speed = 150 #150
+        self.target_rotate_right_speed = 150 #140
+        self.rotate_speed = 30
         self.tilt_speed = 255
         self.extend_speed = 255
         self.vibrate_speed = 240

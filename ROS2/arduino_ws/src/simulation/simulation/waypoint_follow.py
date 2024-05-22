@@ -77,7 +77,8 @@ from action_msgs.msg import GoalStatus
 from geometry_msgs.msg import PoseStamped
 from geometry_msgs.msg import PoseWithCovarianceStamped
 from lifecycle_msgs.srv import GetState
-from nav2_msgs.action import NavigateThroughPoses, NavigateToPose, FollowWaypoints, ComputePathToPose, ComputePathThroughPoses
+from nav2_msgs.action import NavigateThroughPoses, NavigateToPose, FollowWaypoints, ComputePathToPose, \
+    ComputePathThroughPoses
 from nav2_msgs.srv import LoadMap, ClearEntireCostmap, ManageLifecycleNodes, GetCostmap
 
 import rclpy
@@ -92,7 +93,7 @@ class NavigationResult(Enum):
     UKNOWN = 0
     SUCCEEDED = 1
     CANCELED = 2
-    FAILED = 3 
+    FAILED = 3
 
 
 class BasicNavigator(Node):
@@ -106,10 +107,10 @@ class BasicNavigator(Node):
         self.status = None
 
         amcl_pose_qos = QoSProfile(
-          durability=QoSDurabilityPolicy.TRANSIENT_LOCAL,
-          reliability=QoSReliabilityPolicy.RELIABLE,
-          history=QoSHistoryPolicy.KEEP_LAST,
-          depth=1)
+            durability=QoSDurabilityPolicy.TRANSIENT_LOCAL,
+            reliability=QoSReliabilityPolicy.RELIABLE,
+            history=QoSHistoryPolicy.KEEP_LAST,
+            depth=1)
 
         self.initial_pose_received = False
         self.nav_through_poses_client = ActionClient(self,
@@ -172,7 +173,7 @@ class BasicNavigator(Node):
         goal_msg.pose = pose
 
         self.info('Navigating to goal: ' + str(pose.pose.position.x) + ' ' +
-                      str(pose.pose.position.y) + '...')
+                  str(pose.pose.position.y) + '...')
         send_goal_future = self.nav_to_pose_client.send_goal_async(goal_msg,
                                                                    self._feedbackCallback)
         rclpy.spin_until_future_complete(self, send_goal_future)
@@ -180,7 +181,7 @@ class BasicNavigator(Node):
 
         if not self.goal_handle.accepted:
             self.error('Goal to ' + str(pose.pose.position.x) + ' ' +
-                           str(pose.pose.position.y) + ' was rejected!')
+                       str(pose.pose.position.y) + ' was rejected!')
             return False
 
         self.result_future = self.goal_handle.get_result_async()
@@ -464,183 +465,233 @@ class BasicNavigator(Node):
         self.get_logger().debug(msg)
         return
 
-import time # Time library
 
-from geometry_msgs.msg import PoseStamped # Pose with ref frame and timestamp
-from rclpy.duration import Duration # Handles time for ROS 2
-import rclpy # Python client library for ROS 2
+import time  # Time library
+
+from geometry_msgs.msg import PoseStamped  # Pose with ref frame and timestamp
+from rclpy.duration import Duration  # Handles time for ROS 2
+import rclpy  # Python client library for ROS 2
 
 '''
 Follow waypoints using the ROS 2 Navigation Stack (Nav2)
 '''
+
+
+class Tree:
+    def __init__(self, centre):
+        self.centre = centre
+        self.pose_data = []
+        self.pose_data[0] = (self.centre[0]-0.25, self.centre[1]-0.35, -0.3827, 0.9239)
+        self.pose_data[1] = (self.centre[0]+0.25, self.centre[1]-0.35, -0.3827, -0.9239)
+        self.pose_data[2] = (self.centre[0]+0.25, self.centre[1]+0.35, -0.9239, -0.3827)
+        self.pose_data[3] = (self.centre[0]-0.25, self.centre[1]+0.35, -0.9239, 0.3827)
+
+    def fourpoints(self):
+        return self.pose_data
+
+    def onepoint(self, order):
+        if order <= 3:
+            return self.pose_data[order]
+        else:
+            self.get_logger().warn("Order exceed")
+            return None
+
 def main():
+    # Start the ROS 2 Python Client Library
+    rclpy.init()
 
-  # Start the ROS 2 Python Client Library
-  rclpy.init()
+    # Launch the ROS 2 Navigation Stack
+    navigator = BasicNavigator()
 
-  # Launch the ROS 2 Navigation Stack
-  navigator = BasicNavigator()
+    # Set the robot's initial pose if necessary
+    # initial_pose = PoseStamped()
+    # initial_pose.header.frame_id = 'map'
+    # initial_pose.header.stamp = navigator.get_clock().now().to_msg()
+    # initial_pose.pose.position.x = 0.0
+    # initial_pose.pose.position.y = 0.0
+    # initial_pose.pose.position.z = 0.0
+    # initial_pose.pose.orientation.x = 0.0
+    # initial_pose.pose.orientation.y = 0.0
+    # initial_pose.pose.orientation.z = 0.0
+    # initial_pose.pose.orientation.w = 1.0
+    # navigator.setInitialPose(initial_pose)
 
-  # Set the robot's initial pose if necessary
-  # initial_pose = PoseStamped()
-  # initial_pose.header.frame_id = 'map'
-  # initial_pose.header.stamp = navigator.get_clock().now().to_msg()
-  # initial_pose.pose.position.x = 0.0
-  # initial_pose.pose.position.y = 0.0
-  # initial_pose.pose.position.z = 0.0
-  # initial_pose.pose.orientation.x = 0.0
-  # initial_pose.pose.orientation.y = 0.0
-  # initial_pose.pose.orientation.z = 0.0
-  # initial_pose.pose.orientation.w = 1.0
-  # navigator.setInitialPose(initial_pose)
+    # Activate navigation, if not autostarted. This should be called after setInitialPose()
+    # or this will initialize at the origin of the map and update the costmap with bogus readings.
+    # If autostart, you should `waitUntilNav2Active()` instead.
+    # navigator.lifecycleStartup()
 
-  # Activate navigation, if not autostarted. This should be called after setInitialPose()
-  # or this will initialize at the origin of the map and update the costmap with bogus readings.
-  # If autostart, you should `waitUntilNav2Active()` instead.
-  # navigator.lifecycleStartup()
+    # Wait for navigation to fully activate. Use this line if autostart is set to true.
+    navigator.waitUntilNav2Active()
 
-  # Wait for navigation to fully activate. Use this line if autostart is set to true.
-  navigator.waitUntilNav2Active()
+    # If desired, you can change or load the map as well
+    # navigator.changeMap('/path/to/map.yaml')
 
-  # If desired, you can change or load the map as well
-  # navigator.changeMap('/path/to/map.yaml')
+    # You may use the navigator to clear or obtain costmaps
+    # navigator.clearAllCostmaps()  # also have clearLocalCostmap() and clearGlobalCostmap()
+    # global_costmap = navigator.getGlobalCostmap()
+    # local_costmap = navigator.getLocalCostmap()
 
-  # You may use the navigator to clear or obtain costmaps
-  # navigator.clearAllCostmaps()  # also have clearLocalCostmap() and clearGlobalCostmap()
-  # global_costmap = navigator.getGlobalCostmap()
-  # local_costmap = navigator.getLocalCostmap()
+    # Set the robot's goal poses
+    goal_poses = []
 
-  # Set the robot's goal poses
-  goal_poses = []
-  
-  goal_pose = PoseStamped()
-  goal_pose.header.frame_id = 'map'
-  goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-  goal_pose.pose.position.x = 0.4
-  goal_pose.pose.position.y = -0.9
-  goal_pose.pose.position.z = 0.0
-  goal_pose.pose.orientation.x = 0.0
-  goal_pose.pose.orientation.y = 0.0
-  goal_pose.pose.orientation.z = -0.3827
-  goal_pose.pose.orientation.w = 0.9239
-  goal_poses.append(goal_pose)
-  
-  goal_pose = PoseStamped()
-  goal_pose.header.frame_id = 'map'
-  goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-  goal_pose.pose.position.x = 1.1
-  goal_pose.pose.position.y = -0.9
-  goal_pose.pose.position.z = 0.0
-  goal_pose.pose.orientation.x = 0.0
-  goal_pose.pose.orientation.y = 0.0
-  goal_pose.pose.orientation.z = 0.3115
-  goal_pose.pose.orientation.w = 0.9502
-  goal_poses.append(goal_pose)
-  
-  goal_pose = PoseStamped()
-  goal_pose.header.frame_id = 'map'
-  goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-  goal_pose.pose.position.x = 1.1
-  goal_pose.pose.position.y = -0.2
-  goal_pose.pose.position.z = 0.0
-  goal_pose.pose.orientation.x = 0.0
-  goal_pose.pose.orientation.y = 0.0
-  goal_pose.pose.orientation.z = 0.8739
-  goal_pose.pose.orientation.w = 0.4861
-  goal_poses.append(goal_pose)
-  
-  goal_pose = PoseStamped()
-  goal_pose.header.frame_id = 'map'
-  goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-  goal_pose.pose.position.x = 0.7739
-  goal_pose.pose.position.y = -0.2
-  goal_pose.pose.position.z = 0.0
-  goal_pose.pose.orientation.x = 0.0
-  goal_pose.pose.orientation.y = 0.0
-  goal_pose.pose.orientation.z = 0.9571
-  goal_pose.pose.orientation.w = -0.2898
-  goal_poses.append(goal_pose)
- 
-  goal_pose = PoseStamped()
-  goal_pose.header.frame_id = 'map'
-  goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-  goal_pose.pose.position.x = 0.0
-  goal_pose.pose.position.y = 0.0
-  goal_pose.pose.position.z = 0.0
-  goal_pose.pose.orientation.x = 0.0
-  goal_pose.pose.orientation.y = 0.0
-  goal_pose.pose.orientation.z = 0.0
-  goal_pose.pose.orientation.w = 1.0
-  goal_poses.append(goal_pose)
-  
-#   goal_pose = PoseStamped()
-#   goal_pose.header.frame_id = 'map'
-#   goal_pose.header.stamp = navigator.get_clock().now().to_msg()
-#   goal_pose.pose.position.x = 0.0
-#   goal_pose.pose.position.y = 0.0
-#   goal_pose.pose.position.z = 0.0
-#   goal_pose.pose.orientation.x = 0.0
-#   goal_pose.pose.orientation.y = 0.0
-#   goal_pose.pose.orientation.z = 0.0
-#   goal_pose.pose.orientation.w = 1.0
-#   goal_poses.append(goal_pose)
+    # Tree1 = Tree([0.85, 1.05])
+    # Tree2 = Tree([0.85, 0.25])
+    # Tree3 = Tree([0.85, -0.55])
+    # Tree4 = Tree([1.65, -0.55])
+    # Tree5 = Tree([1.65, 0.25])
+    # Tree6 = Tree([1.65, 1.05])
+    # Tree7 = Tree([2.45, 1.05])
+    # Tree8 = Tree([2.45, 0.25])
+    # Tree9 = Tree([2.45, -0.55])
+    # Home = (0, 0, 0.0, 1.0)
 
-  # sanity check a valid path exists
-  # path = navigator.getPathThroughPoses(initial_pose, goal_poses)
+    pose_data = [
+        # 1, 1
+        [
+            (0.6, 1.2, -0.3827, 0.9239),
+            (1.1, 1.2, -0.3827, -0.9239),
+            (1.1, 1.9, -0.9239, -0.3827),
+            (0.6, 1.9, -0.9239, 0.3827)
+        ],
+        # 1, 2
+        [
+            (0.6, -0.1, -0.3827, 0.9239),
+            (1.1, -0.1, -0.3827, -0.9239),
+            (1.1, 0.6, -0.9239, -0.3827),
+            (0.6, 0.6, -0.9239, 0.3827)
+        ],
+        # 1, 3
+        [
+            (0.6, -0.9, -0.3827, 0.9239),
+            (1.1, -0.9, -0.3827, -0.9239),
+            (1.1, -0.2, -0.9239, -0.3827),
+            (0.6, -0.2, -0.9239, 0.3827)
+        ],
+        # 2, 3
+        [
+            (1.4, -0.9, -0.3827, 0.9239),
+            (1.9, -0.9, -0.3827, -0.9239),
+            (1.9, -0.2, -0.9239, -0.3827),
+            (1.4, -0.2, -0.9239, 0.3827)
+        ],
+        # 2, 2
+        [
+            (1.4, -0.1, -0.3827, 0.9239),
+            (1.9, -0.1, -0.3827, -0.9239),
+            (1.9, 0.6, -0.9239, -0.3827),
+            (1.4, 0.6, -0.9239, 0.3827)
+        ],
+        # 2, 1
+        [
+            (1.4, 0.7, -0.3827, 0.9239),
+            (1.9, 0.7, -0.3827, -0.9239),
+            (1.9, 1.4, -0.9239, -0.3827),
+            (1.4, 1.4, -0.9239, 0.3827)
+        ],
+        # 3, 1
+        [
+            (2.2, 0.7, -0.3827, 0.9239),
+            (2.7, 0.7, -0.3827, -0.9239),
+            (2.7, 1.4, -0.9239, -0.3827),
+            (2.2, 1.4, -0.9239, 0.3827)
+        ],
+        # 3, 2
+        [
+            (2.2, -0.1, -0.3827, 0.9239),
+            (2.7, -0.1, -0.3827, -0.9239),
+            (2.7, 0.6, -0.9239, -0.3827),
+            (2.2, 0.6, -0.9239, 0.3827)
+        ],
+        # 3, 3
+        [
+            (2.2, -0.9, -0.3827, 0.9239),
+            (2.7, -0.9, -0.3827, -0.9239),
+            (2.7, -0.2, -0.9239, -0.3827),
+            (2.2, -0.2, -0.9239, 0.3827)
+        ],
+    ]
 
-  nav_start = navigator.get_clock().now()
-  navigator.followWaypoints(goal_poses)
+    for tree in pose_data:
+        for pose_info in tree:
+            goal_pose = PoseStamped()
+            goal_pose.header.frame_id = 'map'
+            goal_pose.header.stamp = navigator.get_clock().now().to_msg()
+            goal_pose.pose.position.x, goal_pose.pose.position.y, goal_pose.pose.orientation.z, goal_pose.pose.orientation.w = pose_info
+            goal_pose.pose.position.z = 0.0
+            goal_pose.pose.orientation.x = 0.0
+            goal_pose.pose.orientation.y = 0.0
+            goal_poses.append(goal_pose)
 
-  i = 0
-  while not navigator.isNavComplete():
-    ################################################
-    #
-    # Implement some code here for your application!
-    #
-    ################################################
+    #   goal_pose = PoseStamped()
+    #   goal_pose.header.frame_id = 'map'
+    #   goal_pose.header.stamp = navigator.get_clock().now().to_msg()
+    #   goal_pose.pose.position.x = 0.0
+    #   goal_pose.pose.position.y = 0.0
+    #   goal_pose.pose.position.z = 0.0
+    #   goal_pose.pose.orientation.x = 0.0
+    #   goal_pose.pose.orientation.y = 0.0
+    #   goal_pose.pose.orientation.z = 0.0
+    #   goal_pose.pose.orientation.w = 1.0
+    #   goal_poses.append(goal_pose)
 
-    # Do something with the feedback
-    i = i + 1
-    feedback = navigator.getFeedback()
-    if feedback and i % 5 == 0:
-      print('Executing current waypoint: ' +
-            str(feedback.current_waypoint + 1) + '/' + str(len(goal_poses)))
-      now = navigator.get_clock().now()
+    # sanity check a valid path exists
+    # path = navigator.getPathThroughPoses(initial_pose, goal_poses)
 
-      # Some navigation timeout to demo cancellation
-      if now - nav_start > Duration(seconds=100000000.0):
-        navigator.cancelNav()
+    nav_start = navigator.get_clock().now()
+    navigator.followWaypoints(goal_poses)
 
-      # Some follow waypoints request change to demo preemption
-      if now - nav_start > Duration(seconds=500000.0):
-        goal_pose_alt = PoseStamped()
-        goal_pose_alt.header.frame_id = 'map'
-        goal_pose_alt.header.stamp = now.to_msg()
-        goal_pose_alt.pose.position.x = -6.5
-        goal_pose_alt.pose.position.y = -4.2
-        goal_pose_alt.pose.position.z = 0.0
-        goal_pose_alt.pose.orientation.x = 0.0
-        goal_pose_alt.pose.orientation.y = 0.0   
-        goal_pose_alt.pose.orientation.z = 0.0
-        goal_pose_alt.pose.orientation.w = 1.0
-        goal_poses = [goal_pose_alt]
-        nav_start = now
-        navigator.followWaypoints(goal_poses)
+    i = 0
+    while not navigator.isNavComplete():
+        ################################################
+        #
+        # Implement some code here for your application!
+        #
+        ################################################
 
-  # Do something depending on the return code
-  result = navigator.getResult()
-  if result == NavigationResult.SUCCEEDED:
-    print('Goal succeeded!')
-  elif result == NavigationResult.CANCELED:
-    print('Goal was canceled!')
-  elif result == NavigationResult.FAILED:
-    print('Goal failed!')
-  else:
-    print('Goal has an invalid return status!')
+        # Do something with the feedback
+        i = i + 1
+        feedback = navigator.getFeedback()
+        if feedback and i % 5 == 0:
+            print('Executing current waypoint: ' +
+                  str(feedback.current_waypoint + 1) + '/' + str(len(goal_poses)))
+            now = navigator.get_clock().now()
 
-  navigator.lifecycleShutdown()
+            # Some navigation timeout to demo cancellation
+            if now - nav_start > Duration(seconds=100000000.0):
+                navigator.cancelNav()
 
-  exit(0)
+            # Some follow waypoints request change to demo preemption
+            if now - nav_start > Duration(seconds=500000.0):
+                goal_pose_alt = PoseStamped()
+                goal_pose_alt.header.frame_id = 'map'
+                goal_pose_alt.header.stamp = now.to_msg()
+                goal_pose_alt.pose.position.x = 0.0
+                goal_pose_alt.pose.position.y = 0.0
+                goal_pose_alt.pose.position.z = 0.0
+                goal_pose_alt.pose.orientation.x = 0.0
+                goal_pose_alt.pose.orientation.y = 0.0
+                goal_pose_alt.pose.orientation.z = 0.0
+                goal_pose_alt.pose.orientation.w = 1.0
+                goal_poses = [goal_pose_alt]
+                nav_start = now
+                navigator.followWaypoints(goal_poses)
+
+    # Do something depending on the return code
+    result = navigator.getResult()
+    if result == NavigationResult.SUCCEEDED:
+        print('Goal succeeded!')
+    elif result == NavigationResult.CANCELED:
+        print('Goal was canceled!')
+    elif result == NavigationResult.FAILED:
+        print('Goal failed!')
+    else:
+        print('Goal has an invalid return status!')
+
+    navigator.lifecycleShutdown()
+
+    exit(0)
+
 
 if __name__ == '__main__':
-  main()
+    main()

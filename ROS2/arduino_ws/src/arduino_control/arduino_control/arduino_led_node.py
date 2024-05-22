@@ -46,6 +46,7 @@ class LocomotionControl(Node):
     def send_data(self):
         # data = [0, 0, 0, 0, 0, 0, 0, 0]
         if self.target_speeds:
+            # self.target_speeds[1] = 0
             data = bytearray([self.header_byte])  # Start with the header byte
             data.extend(speed.to_bytes(1, byteorder='big')[0] for speed in self.target_speeds)  # Append each speed
             checksum = sum(data) % 256

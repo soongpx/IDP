@@ -1,8 +1,8 @@
 // Locomotion
-#define Left_Pwm 2
-#define Left_Dir 22
-#define Right_Pwm 3
-#define Right_Dir 23
+#define Left_Pwm 3
+#define Left_Dir 23
+#define Right_Pwm 2
+#define Right_Dir 22
 
 // Mechanism
 #define Rotate_Pwm 4
