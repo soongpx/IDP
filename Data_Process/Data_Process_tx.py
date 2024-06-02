@@ -5,26 +5,70 @@ import glob
 import os
 import time
 from datetime import datetime
-import threading
+from queue import Queue
+from threading import Thread
+import requests
+import logging
 import random
-csv_path = "Palm_oil_Harvesting_Data_Record.csv"
+import pandas as pd
+
+#GLOBAL VARS
+total_harvested_fruits = 0
+total_detected_fruits = 0
+csv_path = "data.csv"
+
+#LOGGER CFG
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
 
 #GET MACHINE DATA
-def update_machine_location(queue):
+def update_location_and_fruit_data(queue):
+    global total_harvested_fruits, total_detected_fruits
     while True:
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         machine_latitude = random.uniform(-90, 90)
         machine_longitude = random.uniform(-180, 180)
+        harvested_fruits = total_harvested_fruits
+        detected_fruits = total_detected_fruits
+        total_detected_fruits += 1
+        total_harvested_fruits += 1
 
         # Enqueue data
-        queue.put(('machine_location', timestamp, machine_latitude, machine_longitude))
+        queue.put((timestamp, machine_latitude, machine_longitude, detected_fruits, harvested_fruits))
         time.sleep(20)  # Sleep for 20 seconds
 
 
+#WRITE TO CSV FILE
+def clear_csv_file():
+    df_csv = pd.DataFrame(columns=['Timestamp', 'Machine_Latitude', 'Machine_Longitude', 'Detected Fruits', 'Harvested_Fruits'])
+    df_csv.to_csv(csv_path, index=False)
 
+
+def write_to_csv(queue):
+    with open(csv_path, 'a', newline='') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        while True:
+            data = queue.get()
+            if data:
+                csvwriter.writerow(data)
+                print(f"Written to CSV: {data}")  # For debugging/logging
+            queue.task_done()
 
 
 # UPLOADING DATA TO FIREBASE
+def is_internet_available():
+    try:
+        response = requests.get('http://www.google.com', timeout=5)
+        return response.status_code == 200
+    except requests.ConnectionError:
+        logger.error("Connection error occurred while trying to reach www.google.com")
+        return False
+    except requests.Timeout:
+        logger.error("Timeout occurred while trying to reach www.google.com")
+        return False
+
+
 def read_csv(filepath):
     location_name ="location"
     location_idx = 1
@@ -99,11 +143,25 @@ def upload_data(coordinates):
         firebase_helper.upload_data(example_data, example_location)
 
 
+#MAIN FUNC
+def update_data_in_csv():
+    clear_csv_file()
+
+    # Initialize the queue
+    queue = Queue()
+
+    # Create and start the threads
+    thread1 = Thread(target=update_location_and_fruit_data, args=(queue,))
+    thread2 = Thread(target=write_to_csv, args=(queue,))
+
+    thread1.start()
+    thread2.start()
+
+    # Join threads
+    thread1.join()
+    thread2.join()
+
 if __name__ == "__main__":
-    # offlinesync()
     firebase_helper = FirebaseHelper(firebaseConfig, service_account_path)
     coordinates = read_csv(csv_path)
-
-    upload_data(coordinates)
-    upload_images()
-    upload_robot_images()
+    update_data_in_csv()
