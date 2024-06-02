@@ -1,0 +1,138 @@
+[debug] [2024-01-17T10:27:16.957Z] ----------------------------------------------------------------------
+[debug] [2024-01-17T10:27:16.959Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2024-01-17T10:27:16.959Z] CLI Version:   13.0.3
+[debug] [2024-01-17T10:27:16.959Z] Platform:      win32
+[debug] [2024-01-17T10:27:16.959Z] Node Version:  v20.11.0
+[debug] [2024-01-17T10:27:16.959Z] Time:          Wed Jan 17 2024 18:27:16 GMT+0800 (Malaysia Time)
+[debug] [2024-01-17T10:27:16.959Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-01-17T10:27:16.963Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-17T10:27:16.964Z] > authorizing via signed-in user (khawthongxiang@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\USER\source\repos\YOLO
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2024-01-17T10:27:26.909Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2024-01-17T10:27:27.557Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2024-01-17T10:27:27.557Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]
+[info] i  Using project rodent-palm-oil-analysis (Rodent Palm Oil Analysis) 
+[info] 
+=== Database Setup
+[info] i  database: ensuring required API firebasedatabase.googleapis.com is enabled... 
+[debug] [2024-01-17T10:27:29.720Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/firebasedatabase.googleapis.com [none]
+[debug] [2024-01-17T10:27:29.720Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/firebasedatabase.googleapis.com x-goog-quota-user=projects/rodent-palm-oil-analysis
+[debug] [2024-01-17T10:27:31.140Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/firebasedatabase.googleapis.com 200
+[debug] [2024-01-17T10:27:31.140Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/firebasedatabase.googleapis.com [omitted]
+[info] +  database: required API firebasedatabase.googleapis.com is enabled 
+[info] 
+[debug] [2024-01-17T10:27:31.142Z] >>> [apiv2][query] GET https://firebasedatabase.googleapis.com/v1beta/projects/rodent-palm-oil-analysis/locations/-/instances/rodent-palm-oil-analysis-default-rtdb [none]
+[debug] [2024-01-17T10:27:32.686Z] <<< [apiv2][status] GET https://firebasedatabase.googleapis.com/v1beta/projects/rodent-palm-oil-analysis/locations/-/instances/rodent-palm-oil-analysis-default-rtdb 200
+[debug] [2024-01-17T10:27:32.686Z] <<< [apiv2][body] GET https://firebasedatabase.googleapis.com/v1beta/projects/rodent-palm-oil-analysis/locations/-/instances/rodent-palm-oil-analysis-default-rtdb {"name":"projects/486061030096/locations/asia-southeast1/instances/rodent-palm-oil-analysis-default-rtdb","project":"projects/486061030096","databaseUrl":"https://rodent-palm-oil-analysis-default-rtdb.asia-southeast1.firebasedatabase.app","type":"DEFAULT_DATABASE","state":"ACTIVE"}
+[info] 
+[info] Firebase Realtime Database Security Rules allow you to define how your data should be
+[info] structured and when your data can be read from and written to.
+[info] 
+[info] Skipping overwrite of Realtime Database Security Rules.
+[info] The security rules defined in database.rules.json will be published when you run firebase deploy.
+[info] 
+=== Firestore Setup
+[debug] [2024-01-17T10:27:41.731Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/firestore.googleapis.com [none]
+[debug] [2024-01-17T10:27:41.731Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/firestore.googleapis.com x-goog-quota-user=projects/rodent-palm-oil-analysis
+[debug] [2024-01-17T10:27:43.331Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/firestore.googleapis.com 200
+[debug] [2024-01-17T10:27:43.331Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/firestore.googleapis.com [omitted]
+[debug] [2024-01-17T10:27:43.331Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/rodent-palm-oil-analysis/databases/(default) [none]
+[debug] [2024-01-17T10:27:43.437Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/rodent-palm-oil-analysis/databases/(default) 200
+[debug] [2024-01-17T10:27:43.437Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/rodent-palm-oil-analysis/databases/(default) {"name":"projects/rodent-palm-oil-analysis/databases/(default)","uid":"e1f4cdd8-9e94-40db-a697-3985e092690c","createTime":"2024-01-17T10:26:46.919768Z","updateTime":"2024-01-17T10:26:46.919768Z","locationId":"asia-southeast1","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2024-01-17T10:26:46.919768Z","appEngineIntegrationMode":"DISABLED","keyPrefix":"zas","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","etag":"IPqTj5Sb5IMDMNjcjPma5IMD"}
+[debug] [2024-01-17T10:27:43.437Z] database_type: FIRESTORE_NATIVE
+[debug] [2024-01-17T10:27:43.438Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-17T10:27:43.438Z] > authorizing via signed-in user (khawthongxiang@gmail.com)
+[debug] [2024-01-17T10:27:43.439Z] [iam] checking project rodent-palm-oil-analysis for permissions ["firebase.projects.get"]
+[debug] [2024-01-17T10:27:43.439Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions [none]
+[debug] [2024-01-17T10:27:43.439Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions x-goog-quota-user=projects/rodent-palm-oil-analysis
+[debug] [2024-01-17T10:27:43.440Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-01-17T10:27:44.570Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions 200
+[debug] [2024-01-17T10:27:44.570Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions {"permissions":["firebase.projects.get"]}
+[info] 
+[info] Firestore Security Rules allow you to define how and when to allow
+[info] requests. You can keep these rules in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-01-17T10:27:49.313Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/rodent-palm-oil-analysis/releases pageSize=10&pageToken=
+[debug] [2024-01-17T10:27:50.753Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/rodent-palm-oil-analysis/releases 200
+[debug] [2024-01-17T10:27:50.753Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/rodent-palm-oil-analysis/releases {"releases":[{"name":"projects/rodent-palm-oil-analysis/releases/cloud.firestore","rulesetName":"projects/rodent-palm-oil-analysis/rulesets/3029c885-537f-492c-bf62-c288c4c7c3a3","createTime":"2024-01-17T10:26:58.899001Z","updateTime":"2024-01-17T10:26:58.899001Z"}]}
+[debug] [2024-01-17T10:27:50.754Z] Found ruleset: projects/rodent-palm-oil-analysis/rulesets/3029c885-537f-492c-bf62-c288c4c7c3a3
+[debug] [2024-01-17T10:27:50.754Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/rodent-palm-oil-analysis/rulesets/3029c885-537f-492c-bf62-c288c4c7c3a3 [none]
+[debug] [2024-01-17T10:27:52.027Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/rodent-palm-oil-analysis/rulesets/3029c885-537f-492c-bf62-c288c4c7c3a3 200
+[debug] [2024-01-17T10:27:52.027Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/rodent-palm-oil-analysis/rulesets/3029c885-537f-492c-bf62-c288c4c7c3a3 [omitted]
+[info] 
+[info] Firestore indexes allow you to perform complex queries while
+[info] maintaining performance that scales with the size of the result
+[info] set. You can keep index definitions in your project directory
+[info] and publish them with firebase deploy.
+[info] 
+[debug] [2024-01-17T10:27:55.462Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/rodent-palm-oil-analysis/databases/(default)/collectionGroups/-/indexes [none]
+[debug] [2024-01-17T10:27:55.464Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/rodent-palm-oil-analysis/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* [none]
+[debug] [2024-01-17T10:27:55.559Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/rodent-palm-oil-analysis/databases/(default)/collectionGroups/-/indexes 200
+[debug] [2024-01-17T10:27:55.560Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/rodent-palm-oil-analysis/databases/(default)/collectionGroups/-/indexes {}
+[debug] [2024-01-17T10:27:55.799Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/rodent-palm-oil-analysis/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* 200
+[debug] [2024-01-17T10:27:55.799Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/rodent-palm-oil-analysis/databases/(default)/collectionGroups/-/fields?filter=indexConfig.usesAncestorConfig=false OR ttlConfig:* {"fields":[{"name":"projects/rodent-palm-oil-analysis/databases/(default)/collectionGroups/__default__/fields/*","indexConfig":{"indexes":[{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"ASCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","order":"DESCENDING"}],"state":"READY"},{"queryScope":"COLLECTION","fields":[{"fieldPath":"*","arrayConfig":"CONTAINS"}],"state":"READY"}]}}]}
+[info] 
+=== Functions Setup
+[debug] [2024-01-17T10:27:55.803Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-01-17T10:27:55.803Z] > authorizing via signed-in user (khawthongxiang@gmail.com)
+[debug] [2024-01-17T10:27:55.803Z] [iam] checking project rodent-palm-oil-analysis for permissions ["firebase.projects.get"]
+[debug] [2024-01-17T10:27:55.804Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions [none]
+[debug] [2024-01-17T10:27:55.804Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions x-goog-quota-user=projects/rodent-palm-oil-analysis
+[debug] [2024-01-17T10:27:55.804Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-01-17T10:27:56.853Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions 200
+[debug] [2024-01-17T10:27:56.853Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/rodent-palm-oil-analysis:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-01-17T10:27:56.854Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-17T10:27:56.854Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/rodent-palm-oil-analysis
+[debug] [2024-01-17T10:27:56.857Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/runtimeconfig.googleapis.com [none]
+[debug] [2024-01-17T10:27:56.858Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/runtimeconfig.googleapis.com x-goog-quota-user=projects/rodent-palm-oil-analysis
+[debug] [2024-01-17T10:27:58.327Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/runtimeconfig.googleapis.com 200
+[debug] [2024-01-17T10:27:58.328Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/runtimeconfig.googleapis.com [omitted]
+[debug] [2024-01-17T10:27:58.532Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-17T10:27:58.532Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com [omitted]
+[debug] [2024-01-17T10:27:58.532Z] >>> [apiv2][query] POST https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com:enable [none]
+[debug] [2024-01-17T10:27:58.532Z] >>> [apiv2][(partial)header] POST https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com:enable x-goog-quota-user=projects/rodent-palm-oil-analysis
+[debug] [2024-01-17T10:28:00.136Z] <<< [apiv2][status] POST https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com:enable 200
+[debug] [2024-01-17T10:28:00.136Z] <<< [apiv2][body] POST https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com:enable [omitted]
+[debug] [2024-01-17T10:28:10.142Z] >>> [apiv2][query] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com [none]
+[debug] [2024-01-17T10:28:10.143Z] >>> [apiv2][(partial)header] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com x-goog-quota-user=projects/rodent-palm-oil-analysis
+[debug] [2024-01-17T10:28:11.743Z] <<< [apiv2][status] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com 200
+[debug] [2024-01-17T10:28:11.743Z] <<< [apiv2][body] GET https://serviceusage.googleapis.com/v1/projects/rodent-palm-oil-analysis/services/cloudfunctions.googleapis.com [omitted]
+[info] Let's create a new codebase for your functions.
+[info] A directory corresponding to the codebase will be created in your project
+[info] with sample code pre-configured.
+
+[info] See https://firebase.google.com/docs/functions/organize-functions for
+[info] more information on organizing your functions using codebases.
+
+[info] Functions can be deployed with firebase deploy.
+
+[info] +  Wrote functions/requirements.txt 
+[info] +  Wrote functions/.gitignore 
+[info] +  Wrote functions/main.py 
+[debug] [2024-01-17T10:28:27.592Z] Running command with virtualenv: command="C:\Users\USER\source\repos\YOLO\functions\venv\Scripts\activate.bat", args=["","&&","pip3","install","--upgrade","pip"]
+[debug] [2024-01-17T10:28:45.383Z] Error: spawn "C:\Users\USER\source\repos\YOLO\functions\venv\Scripts\activate.bat" ENOENT
+    at notFoundError (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:6:26)
+    at verifyENOENT (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:40:16)
+    at cp.emit (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\cross-spawn\lib\enoent.js:27:25)
+    at ChildProcess._handle.onexit (node:internal/child_process:294:12)
+[error] 
+[error] Error: An unexpected error has occurred.

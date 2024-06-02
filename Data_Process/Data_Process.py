@@ -25,7 +25,7 @@ df_lock = threading.Lock()
 total_harvested_fruits = 1
 
 # CSV path
-csv_path = 'C:\\Users\\ASUS\\PycharmProjects\\IDP\\Data_Process\\Palm_oil_Harvesting_Data_Record.csv'
+csv_path = 'Palm_oil_Harvesting_Data_Record.csv'
 last_uploaded_index = 0
 
 
