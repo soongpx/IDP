@@ -1,7 +1,7 @@
 import firebase_admin
 import pyrebase
 from firebase_admin import credentials, storage, db
-from firebase_mod.firebase_config import firebaseConfig, service_account_path
+# from firebase_config import firebaseConfig, service_account_path
 import os
 from datetime import timezone, datetime
 
@@ -87,4 +87,4 @@ class FirebaseHelper:
         print(location_data)
         return location_data
 
-firebase_helper = FirebaseHelper(firebaseConfig, service_account_path)
+# firebase_helper = FirebaseHelper(firebaseConfig, service_account_path)
