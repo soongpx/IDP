@@ -198,12 +198,10 @@ if __name__ == "__main__":
     thread1 = Thread(target=update_location_and_fruit_data, args=(queue,))
     thread2 = Thread(target=write_to_csv, args=(queue,))
     thread3 = Thread(target=upload_to_firebase)
-    thread4 = Thread(target=open_cam)
 
     thread1.start()
     thread2.start()
     thread3.start()
-    thread4.start()
 
 
     # Join threads
