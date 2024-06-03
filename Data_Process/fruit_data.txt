@@ -1,0 +1,2 @@
+detected:5
+harvested:5
