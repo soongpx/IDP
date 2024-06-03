@@ -48,9 +48,6 @@ def update_location_and_fruit_data(queue):
         # Enqueue data
         queue.put((timestamp, machine_latitude, machine_longitude, fruit_data.detected_fruits, fruit_data.harvested_fruits))
         time.sleep(sleep_time)  # Sleep for 10 seconds
-#
-# def update_robot_image():
-#
 
 
 #WRITE TO CSV FILE
