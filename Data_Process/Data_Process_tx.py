@@ -12,6 +12,7 @@ import logging
 import random
 import pandas as pd
 import cv2
+from txt_helper import txt_data
 
 #GLOBAL VARS
 total_harvested_fruits = 0
@@ -34,13 +35,10 @@ def update_location_and_fruit_data(queue):
         machine_longitude = random.uniform(-180, 180)
 
         # change to read from txt file
-        harvested_fruits = total_harvested_fruits
-        detected_fruits = total_detected_fruits
-        total_detected_fruits += 1
-        total_harvested_fruits += 1
+        fruit_data = txt_data('fruit_data.txt')
 
         # Enqueue data
-        queue.put((timestamp, machine_latitude, machine_longitude, detected_fruits, harvested_fruits))
+        queue.put((timestamp, machine_latitude, machine_longitude, fruit_data.detected_fruits, fruit_data.harvested_fruits))
         time.sleep(20)  # Sleep for 20 seconds
 #
 # def update_robot_image():
@@ -166,26 +164,6 @@ def upload_to_firebase():
          time.sleep(20)
 
 
-def open_cam():
-    cap = cv2.VideoCapture(0)  # or cap = cv2.VideoCapture(0) for webcam
-
-    if not cap.isOpened():
-        print("Error: Could not open video.")
-    else:
-        while True:
-            ret, frame = cap.read()
-            if not ret:
-                print("Error: Failed to capture image.")
-                break
-
-            cv2.imshow('Video Frame', frame)
-
-            if cv2.waitKey(1) & 0xFF == ord('q'):
-                break
-
-        cap.release()
-        cv2.destroyAllWindows()
-
 if __name__ == "__main__":
     firebase_helper = FirebaseHelper(firebaseConfig, service_account_path)
 
@@ -208,5 +186,5 @@ if __name__ == "__main__":
     thread1.join()
     thread2.join()
     thread3.join()
-    thread4.join()
+
 
