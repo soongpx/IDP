@@ -6,7 +6,7 @@ class txt_data:
 
     def read_txt(self):
         # Open the file in read mode
-        with open('fruit_data.txt', 'r') as file:
+        with open('/home/px/Documents/GitHub/IDP/Data_Process/fruit_data.txt', 'r') as file:
             # Read the entire content of the file
             data = file.read()
             # Print the content

@@ -18,14 +18,14 @@ import shutil
 #GLOBAL VARS
 total_harvested_fruits = 0
 total_detected_fruits = 0
-csv_path = "data.csv"
+csv_path = "/home/px/Documents/GitHub/IDP/Data_Process/data.csv"
 location_idx = 1
 sleep_time = 10
 internet_availability = True
 offline_img_dir = 1
 offline_img__dir_str = ""
 offline_location_idx = location_idx
-detected_img_path = "detected_pics/3.jpg"
+detected_img_path = "/home/px/Documents/GitHub/IDP/Data_Process/detected_pics/detected.jpg"
 
 #LOGGER CFG
 logging.basicConfig(level=logging.INFO)
@@ -39,11 +39,11 @@ def update_location_and_fruit_data(queue):
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
         # change to read from GPS
-        machine_latitude = random.uniform(-90, 90)
-        machine_longitude = random.uniform(-180, 180)
+        machine_latitude = 3.11638+random.uniform(-0.00005, 0.00005)
+        machine_longitude = 101.65590 + random.uniform(-0.00005, 0.00005)
 
         # change to read from txt file
-        fruit_data = txt_data('fruit_data.txt')
+        fruit_data = txt_data('/home/px/Documents/GitHub/IDP/Data_Process/fruit_data.txt')
 
         # Enqueue data
         queue.put((timestamp, machine_latitude, machine_longitude, fruit_data.detected_fruits, fruit_data.harvested_fruits))
@@ -142,10 +142,10 @@ def read_csv_last(filepath):
 
 
 def upload_robot_images(uploaded_file_path):
-    directory = "robot_location"
+    directory = "/home/px/Documents/GitHub/IDP/Data_Process/robot_location"
     jpeg_files = glob.glob(directory + "/*.jpg")
     for file in jpeg_files:
-        uploaded_file_path = file.replace("\\", "/")
+        uploaded_file_path = r"robot_location/POV.jpg"
         firebase_helper.upload_image(file, uploaded_file_path)
 
 
@@ -166,7 +166,7 @@ def upload_images(uploaded_file_path, internet):
     directory = "detected_pics"
     print(uploaded_file_path)
     offline_img_dir_str = directory + "/" + uploaded_file_path
-    uploaded_file_path = directory + "/" + uploaded_file_path + "/" + detected_img_path.split("/")[1]
+    uploaded_file_path = directory + "/" + uploaded_file_path + "/" + detected_img_path.split("/")[-1]
 
     if not os.path.exists(offline_img_dir_str): os.makedirs(offline_img_dir_str)
     shutil.copy2(detected_img_path, offline_img_dir_str)
