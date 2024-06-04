@@ -45,6 +45,12 @@ def update_location_and_fruit_data(queue):
         # change to read from txt file
         fruit_data = txt_data('/home/px/Documents/GitHub/IDP/Data_Process/fruit_data.txt')
 
+        glob_directory = "/home/px/Documents/GitHub/IDP/Data_Process/detected_pics"
+        jpeg_files = glob.glob(glob_directory + "/*.jpg")
+        if len(jpeg_files) > 0:
+            fruit_data.detected_fruits = 0
+            fruit_data.harvested_fruits = 0
+
         # Enqueue data
         queue.put((timestamp, machine_latitude, machine_longitude, fruit_data.detected_fruits, fruit_data.harvested_fruits))
         time.sleep(sleep_time)  # Sleep for 10 seconds
@@ -164,32 +170,41 @@ def upload_images(uploaded_file_path, internet):
     global offline_img_dir, offline_img_dir_str, detected_img_path
 
     directory = "detected_pics"
-    print(uploaded_file_path)
-    offline_img_dir_str = directory + "/" + uploaded_file_path
-    uploaded_file_path = directory + "/" + uploaded_file_path + "/" + detected_img_path.split("/")[-1]
+    glob_directory = "/home/px/Documents/GitHub/IDP/Data_Process/detected_pics"
+    jpeg_files = glob.glob(glob_directory + "/*.jpg")
+    if len(jpeg_files) > 0:
+        print(uploaded_file_path)
+        offline_img_dir_str = directory + "/" + uploaded_file_path
+        uploaded_file_path = directory + "/" + uploaded_file_path + "/" + detected_img_path.split("/")[-1]
 
-    if not os.path.exists(offline_img_dir_str): os.makedirs(offline_img_dir_str)
-    shutil.copy2(detected_img_path, offline_img_dir_str)
-    offline_img_dir += 1
+        if not os.path.exists(offline_img_dir_str): os.makedirs(offline_img_dir_str)
+        shutil.copy2(detected_img_path, offline_img_dir_str)
+        os.remove(detected_img_path)
+        offline_img_dir += 1
+    
+        if internet:
+            items = os.listdir(directory)
+            dates = [item for item in items if os.path.isdir(os.path.join(directory, item))]
 
-    if internet:
-        items = os.listdir(directory)
-        dates = [item for item in items if os.path.isdir(os.path.join(directory, item))]
-
-        for date in dates:
-            date_path = os.path.join(directory, date)
-            location = os.listdir(date_path)
-            for loc in location:
-                location_path = os.path.join(date_path, loc)
-                jpeg_files = glob.glob(location_path + "/*.jpg")
-                for file in jpeg_files:
-                    firebase_helper.upload_image(file, uploaded_file_path)
-                    try:
-                        os.remove(file)
-                    except Exception as e:
-                        print(f"Failed to delete {file}. Reason: {e}")
-                os.rmdir(location_path)
-            os.rmdir(date_path)
+            for date in dates:
+                date_path = os.path.join(directory, date)
+                location = os.listdir(date_path)
+                for loc in location:
+                    location_path = os.path.join(date_path, loc)
+                    jpeg_files = glob.glob(location_path + "/*.jpg")
+                    for file in jpeg_files:
+                        firebase_helper.upload_image(file, uploaded_file_path)
+                        try:
+                            os.remove(file)
+                        except Exception as e:
+                            print(f"Failed to delete {file}. Reason: {e}")
+                    os.rmdir(location_path)
+                os.rmdir(date_path)
+    else:
+        with open('/home/px/Documents/GitHub/IDP/Data_Process/fruit_data.txt', 'w') as file:
+            file.write(f"detected:0\n")
+            file.write(f"harvested:0")
+            file.close()
 
 #UPLOAD ALL DATA TO FIREBASE
 def upload_data(coordinates, internet=True):

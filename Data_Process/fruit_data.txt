@@ -1,2 +1,2 @@
-detected:1
-harvested:1
+detected:0
+harvested:0
