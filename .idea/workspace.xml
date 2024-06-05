@@ -2,13 +2,373 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2835285a-a570-4779-b269-2df4135385be" name="Changes" comment="Update">
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/002-8_jpg.rf.c4a0d60c0644f95c29d10bb31912c6c5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/1_cvP_yovSv0zvPi87tTGcTw_jpg.rf.13a8e8b7ee4119908ae324701e20048a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/3a870650f7cefb6aaa80888f91f7adfe_small_jpg.rf.179c465c33e7aef04c7a6dbd6aa8302f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/3c15f8d3bab31fc7bb614b0056e955e0_jpg.rf.5f95609910f0930ee2369efccaba2e39.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/4fd9750a0ccad3320c7798bf60c69b233bf1f2a1_jpg.rf.d7e6b6d9f78c7ddaba1d0705109e1507.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/5f6a1bea353d3749b614dc32_o_U_v2_jpg.rf.05a1c5c31ba48ed26477709f5df32f66.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/5f97f119cc3c6_jpg.rf.d9997d26d391784a01646ff0edbb465d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/6-1_jpg.rf.b563c92c400f2f2f0159c8ac7300a516.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/7-11-png_jpg.rf.81eefd5a3af33102186e94bf6daee36f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/test/images/7D8hnxvTcurHsRWJKi2Q_Monzon-et-al-Cover-pic-5_jpg.rf.31646b476490812a750481d83c93c7a8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/---------60250741_jpg.rf.ccd6aa705f8c20f468489f691ab75f41.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/002-8_jpg.rf.c4a0d60c0644f95c29d10bb31912c6c5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/0220_palmoel2_z_jpg.rf.02c1efddc79f7b694b1ab78bd0eb132a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/0258936f179dab1e7d212fa8aba84c17_jpg.rf.c87329e6ea20779b3ff37c813f37d64d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/107561962_129846232096068_6316384530646276695_n_jpg.rf.fd0c847bab6671622e4fdcf927248b9a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/1137167_palm_tree_jpga7e91f97be809c78a759a0fbd3fe2d9a--2-_jpg.rf.06e6d05546044d0af899a88e1d0cb211.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/1200px-Elaeis_guineensis_oil_palm_fruit_Portoviejo_Ecuador_jpg.rf.6fbac9040118122c93a8c3278a2731b8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/12345526-oil-palm-fruit-bunches-on-the-oil-palm-tree_jpg.rf.dc458f7f0c8b4e8363938ebaa1f4555c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/12345597-grappes-l-huile-de-palme-au-palmier-a-huile_jpg.rf.fcf92074458c3c81047ecec2b8d96fc2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/127200024-close-view-of-oil-palm-tree-top-with-fruit-palm-oil-cultivation-has-been-criticized-for-impacts-on-t_jpg.rf.b653122ed23d1a62df296e702077f7bf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/13006808361300680874l_jpg.rf.813e0387515d7ec60a8bfd6b19b5bde4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/13186774_images5_jpeg_jpeg1e52807b9931d5cfcf296bb78d4e5f7e_jpg.rf.9dbdad8c0342856cb5cdd7e06be9dcd7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/1580812172-9665_jpg.rf.06963905ab7fa58893c18e3168ddb24c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/15885208_403_jpg.rf.98e03c9200f2e781831ffb83cbaacac6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/1595320982_5_jpg.rf.940fa836b869b6032366da8edd870330.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/1600x960_1016902-oil_jpg.rf.4552ca5e75ef7dd73a9fabfeba25da08.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/160229020132281_qoj1c9Ng6ri4Wc7up6l0_jpg.rf.7eea403460fd96cc9ee929264d11a1f4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/1621029829_66-p-maslichnaya-palma-foto-84_jpg.rf.eac8e6460e6b7f5daa602bb6da6d139e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/18-4-4_jpg.rf.595f33687b7f647041f8594670c66ace.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/188300501_2525577097737303_1322862127904726711_n_jpg.rf.aca48a1eb653243d71d85604259079dd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/1_cvP_yovSv0zvPi87tTGcTw_jpg.rf.13a8e8b7ee4119908ae324701e20048a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/2016-OIL-PALM-SLIDE-1---2-_jpg.rf.448d50030d95db8f92a64df2dd586e1e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/20170710_132713-jpg_jpg.rf.64a42b1bf20cf8b50663472d36e9d5c4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/2365226-1035687454_jpg.rf.9aea48d17c965917ef1178a6fdddd7ad.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/26853793846_f442ca9bfd_o_jpg.rf.7554ad9b1af178a367c8ff5a9dab6817.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/26feb-harvesting_jpg.rf.db0df55d7bb1b9141fc8656e01f23698.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/312285688_jpg.rf.d9c19e6331b6f987baa064ea28ec41ab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/3a870650f7cefb6aaa80888f91f7adfe_small_jpg.rf.179c465c33e7aef04c7a6dbd6aa8302f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/3c15f8d3bab31fc7bb614b0056e955e0_jpg.rf.5f95609910f0930ee2369efccaba2e39.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/41d1c6dcebe91a10fd03fc9ea232a7ea--palm-oil-tropical-fruits_jpg.rf.0c263dd12d041f6159dcfa4264f73872.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/42040499-close-up-of-palm-oil-tree-_jpg.rf.e4f18b95bb22c1ab6e5f29031be8581a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/44150538-close-up-of-bunches-of-oil-palm-fruit-on-tree_jpg.rf.3e589bd0158e133e407ca5bc72fb1b4b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/4445f44367bcfb05c4a65754476ea290_jpg.rf.97483d921ef1116fa005f296b50e3f54.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/4fd9750a0ccad3320c7798bf60c69b233bf1f2a1_jpg.rf.d7e6b6d9f78c7ddaba1d0705109e1507.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/53213734_5GG_jpg.rf.d3b6cd95297ca40486ab3ec99673c5f0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/5f6a1bea353d3749b614dc32_o_U_v2_jpg.rf.05a1c5c31ba48ed26477709f5df32f66.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/5f97f119cc3c6_jpg.rf.d9997d26d391784a01646ff0edbb465d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/6-1_jpg.rf.b563c92c400f2f2f0159c8ac7300a516.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/6503318_orig_jpg.rf.be5300fc22ee43162b91d2e677b830e1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/66e0c0b54c131dac6c1939e98f1c21c7_jpg.rf.e5e51b5656993a2ffa345e38e004c6bc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/66ef2aaf28bf8bda287b57d8e0433da8_jpg.rf.1e0f66f0bf0c7d74ed034de0581e4057.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/7-11-png_jpg.rf.81eefd5a3af33102186e94bf6daee36f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/76734605-fresh-fruit-of-the-oil-palm-on-tree-elaeis-guineensis-_jpg.rf.c79a4491fba7ba5e3df8c70f5c15a4db.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/7D8hnxvTcurHsRWJKi2Q_Monzon-et-al-Cover-pic-5_jpg.rf.31646b476490812a750481d83c93c7a8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/87-Figure41-1_jpg.rf.d8368489517d71afa669b34ea93b8168.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/90398a2b5b88146255d05c44581c954b_jpg.rf.ca8875d25b6a909e0305f0ca226a0436.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/A_palm_nut_bunch_on_a_tree_jpg.rf.fb10e3bf1d348b24a7cad643994f2999.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/Avalanche_6_anos_jpg.rf.84194ab5f54fcaae1cbb27a724f82386.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/C0018800-Oil_palm_tree_with_fruits_jpg.rf.120aa4dfab9da2b801553a320223aa07.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/DB670B4C-D48A-4B97-8843-C6EEE82D520C_jpg.rf.fa9d792d0190202211045f3b98ed098b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/DSC_0673-Small_jpg.rf.42a731c04f59333be680f3dd9b407207.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/Dtbezn3nNUxytg04aocimU1c7UmaPw7NTwHJ3k6mLQWD8u_jpg.rf.c1486a11c78371229533f4d626c9769a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/Elaeis_guineensis184MSk_jpg.rf.854f1a0b8430329ffd1ecd69fa1585f8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/GSM-0-04644-unripe-palm-fruit-bunches-stock-photo--1-_jpg.rf.5f065523a51d84fc3045a7427b4ac0db.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/Imagen7_jpg.rf.e28706eb9f1ae3f5e05caf834c9d192c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/Kimanis_Sabah_Palm-oil-fruits-of-Kimanis-Estate-02_jpg.rf.4db2203e239b990fcb55d1ce6f4f3077.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/a-Oil-Palm-after-treatment-by-ADOPSY-eventually-increase-numbers-of-FFB_Q640_jpg.rf.d105054d9db57a463873de8220b8ee5b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/a85b442212ce3d1f090db465602c86d9b973e172_jpg.rf.59029631c340d44056bf7d6e6f7daed8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/african-oil-palm-elaeis-guineensis-fruit-in-tree-labuk-bay-sabah-borneo-CNMCW8_jpg.rf.cf4a3d8f733b6347f1116f07a48495ee.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/b_jpg.rf.546cd7c93191c763f3b93774ce6dbfc3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/belle-couronne-algp26-obj17-po4003dxpo4736p-lm2txsi10t-aek-loba-07-2006-2_medium_jpg.rf.ab7c5450a14e89ecd674f6ed78ee99aa.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/benih3_jpg.rf.7195bbfbeb2d8e8585de4c0de092e3de.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/blogger-image--97783552_jpg.rf.50160436c017219e7bd054393dd4b216.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/c633c0cfd8bb33d293b2ddcf379d36ee_jpg.rf.4fdff9bb3ec1cfe52209e5d5cc44fa87.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/canstockphoto3912087_jpg.rf.9865f64762761a7626f110644328b79c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/close-view-of-oil-palm-tree-top-with-fruit-palm-oil-cultivation-has-been-criticized-for-impacts-on-the-natural-environment-including-deforestation-a-2A3X2AE_jpg.rf.b1a873b8e52520efb68be6a2853dbde3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/close-view-of-oil-palm-tree-top-with-fruit-palm-oil-cultivation-has-been-criticized-for-impacts-on-the-natural-environment-including-deforestation-a-2A3X324_jpg.rf.2b023a6580ee5d84fe2c69e20e3413bd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/close-view-oil-palm-tree-top-fruit-cultivation-has-been-criticized-impacts-natural-environment-including-151464576_jpg.rf.f5e60403c0311c7c975cbd8eb9a25ea2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/close-view-oil-palm-tree-top-fruit-cultivation-has-been-criticized-impacts-natural-environment-including-151464884_jpg.rf.704890b6f0f35856f3160a06e86da37f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/couronne-materiel-deli-x-la-me-cirad-r_jpg.rf.7306633cd5f335c8e0c4b3e5783f8475.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/couronnepalmier_jpg.rf.41c8a2f4eda949586137ed0d685fbe99.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/depositphotos_277983056-stock-photo-close-view-of-oil-palm_jpg.rf.e217015b452bc097f94fbeb601fc1633.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/depositphotos_277983744-stock-photo-close-view-of-oil-palm_jpg.rf.e00878751c574ad98c5f6fff407a996b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/depositphotos_277984002-stock-photo-close-view-of-oil-palm_jpg.rf.a3b985ffc6c53ebeaf3e20dd69a3ae8b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/depositphotos_377711944-stock-photo-close-shot-of-a-cluster_jpg.rf.a32dfe9c0983bcadc9409b20549c0730.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/depositphotos_87813760-close-up-of-palm-oil-tree_jpg.rf.d42979b98d8dfa990b4721cb1360a4cf.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/download_jpg.rf.cf8e9683e9b66dbe9e363a25b6ae00e9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/esta_jpg.rf.a76ddf451cba15e4ac1be9c12c5d04b2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/file_jpg.rf.bc1283da2299a48f76e3d88f1030f1de.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/fresh-fruit-oil-palm-on-260nw-626209787_jpg.rf.258aa23342b59dcc4c7f697bfc4d92e6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/fresh-fruit-seeds-oil-palm-fresh-fruit-seeds-oil-palm-plantation-101366787_jpg.rf.fe6b26f48837a648770629431501dcee.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/frisches-obst-trauben-auf-einem-ol-palm-tree-in-einem-orang-asli-reservierung-umgebung-plantage-in-perak-malaysia-juli-2018-reifung-prg4xn_jpg.rf.26a8a3d4dc8853c80a8d8257ba06112e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/fruit-oil-palm-tree-elaeis-guineensis-fresh-90743378_jpg.rf.e580a87563b5ba0c12d3b99de5ffa061.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/fruit-oil-palm-tree-elaeis-guineensis-fresh-90743453_jpg.rf.b6eb7e6c0cdcce124a8d08ffd73c4924.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/fruit-oil-palm-tree-elaeis-guineensis-fresh-91044231_jpg.rf.9cdb959c79312533f7ad3f6af5ca338b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/fruits_of_oilpalm_3_jpg.rf.f869d21c35e9a87c42d554176f3e74cd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/full_jpg.rf.508234d9abe5e489a6300bdf3960163a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/g34g4_jpg.rf.497d196231b53364dc7e77ce92a35947.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/gettyimages-528284034-170667a_jpg.rf.46fdd6babfa297bfaafb51c586bd74a0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/hrthrthrt_jpg.rf.d443f2d4fce63492c831625b8e1b2259.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/iStock-528284034-1_jpg.rf.2e5284c47f14e0d9c6738ee4316d2e24.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/images174_jpg.rf.af6636c2a1c90f694701d3c8786373c9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/images280_jpg.rf.572555837dcb013d3a83c4c3a843632d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/images408--2-_jpg.rf.f3b26453f42d4f86ad6d3b9d3e3b0dd4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/images591_jpg.rf.9b6aab144af279b67fe5590d047103dc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/in-der-nahe-von-ol-palm-tree-top-mit-obst-palmol-anbau-wurde-kritisiert-fur-auswirkungen-auf-die-naturliche-umwelt-einschliesslich-der-entwaldung-ein-2a3x1p8_jpg.rf.aaa66bfb4e6548671cc99305f9aebe84.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/istockphoto-670079910-170667a_jpg.rf.135d607dde60526a205fbc03cb1efe5e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/istockphoto-687951722-170667a_jpg.rf.ad9482eb4dfc925539556492dc0b1c74.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/jyy5fef1ol_jpg.rf.260db18441f914ceb09c9794993cb019.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/images/kumbang_jpg.rf.940598969a07e77ab915eb2c9e28e081.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/---------60250741_jpg.rf.ccd6aa705f8c20f468489f691ab75f41.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/002-8_jpg.rf.c4a0d60c0644f95c29d10bb31912c6c5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/0220_palmoel2_z_jpg.rf.02c1efddc79f7b694b1ab78bd0eb132a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/0258936f179dab1e7d212fa8aba84c17_jpg.rf.c87329e6ea20779b3ff37c813f37d64d.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/107561962_129846232096068_6316384530646276695_n_jpg.rf.fd0c847bab6671622e4fdcf927248b9a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/1137167_palm_tree_jpga7e91f97be809c78a759a0fbd3fe2d9a--2-_jpg.rf.06e6d05546044d0af899a88e1d0cb211.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/1200px-Elaeis_guineensis_oil_palm_fruit_Portoviejo_Ecuador_jpg.rf.6fbac9040118122c93a8c3278a2731b8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/12345526-oil-palm-fruit-bunches-on-the-oil-palm-tree_jpg.rf.dc458f7f0c8b4e8363938ebaa1f4555c.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/12345597-grappes-l-huile-de-palme-au-palmier-a-huile_jpg.rf.fcf92074458c3c81047ecec2b8d96fc2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/127200024-close-view-of-oil-palm-tree-top-with-fruit-palm-oil-cultivation-has-been-criticized-for-impacts-on-t_jpg.rf.b653122ed23d1a62df296e702077f7bf.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/13006808361300680874l_jpg.rf.813e0387515d7ec60a8bfd6b19b5bde4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/13186774_images5_jpeg_jpeg1e52807b9931d5cfcf296bb78d4e5f7e_jpg.rf.9dbdad8c0342856cb5cdd7e06be9dcd7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/1580812172-9665_jpg.rf.06963905ab7fa58893c18e3168ddb24c.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/15885208_403_jpg.rf.98e03c9200f2e781831ffb83cbaacac6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/1595320982_5_jpg.rf.940fa836b869b6032366da8edd870330.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/1600x960_1016902-oil_jpg.rf.4552ca5e75ef7dd73a9fabfeba25da08.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/160229020132281_qoj1c9Ng6ri4Wc7up6l0_jpg.rf.7eea403460fd96cc9ee929264d11a1f4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/1621029829_66-p-maslichnaya-palma-foto-84_jpg.rf.eac8e6460e6b7f5daa602bb6da6d139e.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/18-4-4_jpg.rf.595f33687b7f647041f8594670c66ace.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/188300501_2525577097737303_1322862127904726711_n_jpg.rf.aca48a1eb653243d71d85604259079dd.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/1_cvP_yovSv0zvPi87tTGcTw_jpg.rf.13a8e8b7ee4119908ae324701e20048a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/2016-OIL-PALM-SLIDE-1---2-_jpg.rf.448d50030d95db8f92a64df2dd586e1e.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/20170710_132713-jpg_jpg.rf.64a42b1bf20cf8b50663472d36e9d5c4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/2365226-1035687454_jpg.rf.9aea48d17c965917ef1178a6fdddd7ad.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/26853793846_f442ca9bfd_o_jpg.rf.7554ad9b1af178a367c8ff5a9dab6817.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/26feb-harvesting_jpg.rf.db0df55d7bb1b9141fc8656e01f23698.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/312285688_jpg.rf.d9c19e6331b6f987baa064ea28ec41ab.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/3a870650f7cefb6aaa80888f91f7adfe_small_jpg.rf.179c465c33e7aef04c7a6dbd6aa8302f.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/3c15f8d3bab31fc7bb614b0056e955e0_jpg.rf.5f95609910f0930ee2369efccaba2e39.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/41d1c6dcebe91a10fd03fc9ea232a7ea--palm-oil-tropical-fruits_jpg.rf.0c263dd12d041f6159dcfa4264f73872.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/42040499-close-up-of-palm-oil-tree-_jpg.rf.e4f18b95bb22c1ab6e5f29031be8581a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/44150538-close-up-of-bunches-of-oil-palm-fruit-on-tree_jpg.rf.3e589bd0158e133e407ca5bc72fb1b4b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/4445f44367bcfb05c4a65754476ea290_jpg.rf.97483d921ef1116fa005f296b50e3f54.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/4fd9750a0ccad3320c7798bf60c69b233bf1f2a1_jpg.rf.d7e6b6d9f78c7ddaba1d0705109e1507.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/53213734_5GG_jpg.rf.d3b6cd95297ca40486ab3ec99673c5f0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/5f6a1bea353d3749b614dc32_o_U_v2_jpg.rf.05a1c5c31ba48ed26477709f5df32f66.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/5f97f119cc3c6_jpg.rf.d9997d26d391784a01646ff0edbb465d.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/6-1_jpg.rf.b563c92c400f2f2f0159c8ac7300a516.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/6503318_orig_jpg.rf.be5300fc22ee43162b91d2e677b830e1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/66e0c0b54c131dac6c1939e98f1c21c7_jpg.rf.e5e51b5656993a2ffa345e38e004c6bc.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/66ef2aaf28bf8bda287b57d8e0433da8_jpg.rf.1e0f66f0bf0c7d74ed034de0581e4057.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/7-11-png_jpg.rf.81eefd5a3af33102186e94bf6daee36f.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/76734605-fresh-fruit-of-the-oil-palm-on-tree-elaeis-guineensis-_jpg.rf.c79a4491fba7ba5e3df8c70f5c15a4db.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/7D8hnxvTcurHsRWJKi2Q_Monzon-et-al-Cover-pic-5_jpg.rf.31646b476490812a750481d83c93c7a8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/87-Figure41-1_jpg.rf.d8368489517d71afa669b34ea93b8168.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/90398a2b5b88146255d05c44581c954b_jpg.rf.ca8875d25b6a909e0305f0ca226a0436.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/A_palm_nut_bunch_on_a_tree_jpg.rf.fb10e3bf1d348b24a7cad643994f2999.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/Avalanche_6_anos_jpg.rf.84194ab5f54fcaae1cbb27a724f82386.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/C0018800-Oil_palm_tree_with_fruits_jpg.rf.120aa4dfab9da2b801553a320223aa07.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/DB670B4C-D48A-4B97-8843-C6EEE82D520C_jpg.rf.fa9d792d0190202211045f3b98ed098b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/DSC_0673-Small_jpg.rf.42a731c04f59333be680f3dd9b407207.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/Dtbezn3nNUxytg04aocimU1c7UmaPw7NTwHJ3k6mLQWD8u_jpg.rf.c1486a11c78371229533f4d626c9769a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/Elaeis_guineensis184MSk_jpg.rf.854f1a0b8430329ffd1ecd69fa1585f8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/GSM-0-04644-unripe-palm-fruit-bunches-stock-photo--1-_jpg.rf.5f065523a51d84fc3045a7427b4ac0db.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/Imagen7_jpg.rf.e28706eb9f1ae3f5e05caf834c9d192c.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/Kimanis_Sabah_Palm-oil-fruits-of-Kimanis-Estate-02_jpg.rf.4db2203e239b990fcb55d1ce6f4f3077.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/a-Oil-Palm-after-treatment-by-ADOPSY-eventually-increase-numbers-of-FFB_Q640_jpg.rf.d105054d9db57a463873de8220b8ee5b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/a85b442212ce3d1f090db465602c86d9b973e172_jpg.rf.59029631c340d44056bf7d6e6f7daed8.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/african-oil-palm-elaeis-guineensis-fruit-in-tree-labuk-bay-sabah-borneo-CNMCW8_jpg.rf.cf4a3d8f733b6347f1116f07a48495ee.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/b_jpg.rf.546cd7c93191c763f3b93774ce6dbfc3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/belle-couronne-algp26-obj17-po4003dxpo4736p-lm2txsi10t-aek-loba-07-2006-2_medium_jpg.rf.ab7c5450a14e89ecd674f6ed78ee99aa.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/benih3_jpg.rf.7195bbfbeb2d8e8585de4c0de092e3de.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/blogger-image--97783552_jpg.rf.50160436c017219e7bd054393dd4b216.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/c633c0cfd8bb33d293b2ddcf379d36ee_jpg.rf.4fdff9bb3ec1cfe52209e5d5cc44fa87.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/canstockphoto3912087_jpg.rf.9865f64762761a7626f110644328b79c.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/close-view-of-oil-palm-tree-top-with-fruit-palm-oil-cultivation-has-been-criticized-for-impacts-on-the-natural-environment-including-deforestation-a-2A3X2AE_jpg.rf.b1a873b8e52520efb68be6a2853dbde3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/close-view-of-oil-palm-tree-top-with-fruit-palm-oil-cultivation-has-been-criticized-for-impacts-on-the-natural-environment-including-deforestation-a-2A3X324_jpg.rf.2b023a6580ee5d84fe2c69e20e3413bd.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/close-view-oil-palm-tree-top-fruit-cultivation-has-been-criticized-impacts-natural-environment-including-151464576_jpg.rf.f5e60403c0311c7c975cbd8eb9a25ea2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/close-view-oil-palm-tree-top-fruit-cultivation-has-been-criticized-impacts-natural-environment-including-151464884_jpg.rf.704890b6f0f35856f3160a06e86da37f.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/couronne-materiel-deli-x-la-me-cirad-r_jpg.rf.7306633cd5f335c8e0c4b3e5783f8475.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/couronnepalmier_jpg.rf.41c8a2f4eda949586137ed0d685fbe99.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/depositphotos_277983056-stock-photo-close-view-of-oil-palm_jpg.rf.e217015b452bc097f94fbeb601fc1633.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/depositphotos_277983744-stock-photo-close-view-of-oil-palm_jpg.rf.e00878751c574ad98c5f6fff407a996b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/depositphotos_277984002-stock-photo-close-view-of-oil-palm_jpg.rf.a3b985ffc6c53ebeaf3e20dd69a3ae8b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/depositphotos_377711944-stock-photo-close-shot-of-a-cluster_jpg.rf.a32dfe9c0983bcadc9409b20549c0730.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/depositphotos_87813760-close-up-of-palm-oil-tree_jpg.rf.d42979b98d8dfa990b4721cb1360a4cf.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/download_jpg.rf.cf8e9683e9b66dbe9e363a25b6ae00e9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/esta_jpg.rf.a76ddf451cba15e4ac1be9c12c5d04b2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/file_jpg.rf.bc1283da2299a48f76e3d88f1030f1de.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/fresh-fruit-oil-palm-on-260nw-626209787_jpg.rf.258aa23342b59dcc4c7f697bfc4d92e6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/fresh-fruit-seeds-oil-palm-fresh-fruit-seeds-oil-palm-plantation-101366787_jpg.rf.fe6b26f48837a648770629431501dcee.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/frisches-obst-trauben-auf-einem-ol-palm-tree-in-einem-orang-asli-reservierung-umgebung-plantage-in-perak-malaysia-juli-2018-reifung-prg4xn_jpg.rf.26a8a3d4dc8853c80a8d8257ba06112e.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/fruit-oil-palm-tree-elaeis-guineensis-fresh-90743378_jpg.rf.e580a87563b5ba0c12d3b99de5ffa061.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/fruit-oil-palm-tree-elaeis-guineensis-fresh-90743453_jpg.rf.b6eb7e6c0cdcce124a8d08ffd73c4924.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/fruit-oil-palm-tree-elaeis-guineensis-fresh-91044231_jpg.rf.9cdb959c79312533f7ad3f6af5ca338b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/fruits_of_oilpalm_3_jpg.rf.f869d21c35e9a87c42d554176f3e74cd.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/full_jpg.rf.508234d9abe5e489a6300bdf3960163a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/g34g4_jpg.rf.497d196231b53364dc7e77ce92a35947.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/gettyimages-528284034-170667a_jpg.rf.46fdd6babfa297bfaafb51c586bd74a0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/hrthrthrt_jpg.rf.d443f2d4fce63492c831625b8e1b2259.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/iStock-528284034-1_jpg.rf.2e5284c47f14e0d9c6738ee4316d2e24.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/images174_jpg.rf.af6636c2a1c90f694701d3c8786373c9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/images280_jpg.rf.572555837dcb013d3a83c4c3a843632d.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/images408--2-_jpg.rf.f3b26453f42d4f86ad6d3b9d3e3b0dd4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/images591_jpg.rf.9b6aab144af279b67fe5590d047103dc.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/in-der-nahe-von-ol-palm-tree-top-mit-obst-palmol-anbau-wurde-kritisiert-fur-auswirkungen-auf-die-naturliche-umwelt-einschliesslich-der-entwaldung-ein-2a3x1p8_jpg.rf.aaa66bfb4e6548671cc99305f9aebe84.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/istockphoto-670079910-170667a_jpg.rf.135d607dde60526a205fbc03cb1efe5e.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/istockphoto-687951722-170667a_jpg.rf.ad9482eb4dfc925539556492dc0b1c74.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/jyy5fef1ol_jpg.rf.260db18441f914ceb09c9794993cb019.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/train/labels/kumbang_jpg.rf.940598969a07e77ab915eb2c9e28e081.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Malaysia-to-roll-out-pic-Biofuels-11-9-768x512_jpg.rf.b8b175d16a87e4f35334f33bd7f45f48.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Maybe-Hard-Label_jpg.rf.db3455fe049637fd70096c7056a91988.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Northern-Foods-steps-up-to-plate-on-sustainable-palm_jpg.rf.d61a89040582c7bb5661742679c64b2a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/OIPHxofoII76WPBTty7GhV1gwHaLH_jpg.rf.2945bc5659dea62073e79a6d1954d1a6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Oil-Palm-Cultivation1_jpg.rf.62d334665d9aef2e699088f68cf40d80.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/OilPalmNeilHuth2--2-_jpg.rf.bf99c03b1943037ef65e415313a0665e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Palm-Farm06-640x360_jpg.rf.54db439b76315eafd70543053d79f615.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Palm-Oil-Tree_jpg.rf.e93e79856b9ae27e738b273b0a57b0cb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Palm-Oil_20191115101607_theedgemarkets_jpg.rf.dd7880d0d363faadc3d0169bd4c8b635.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/PalmOilFruit_5552528Medium2529_jpg.rf.c841598ff48f39ec16e1456759d3832f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Palm_Oil__What_You_Need_to_Know_and_What_You_Can_Do_2048x_jpg.rf.1da579f40f7fb518b13854a400a7312f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Sb54e4bdf381742ba990c5d426219f20cA_jpg.rf.5e1b7675929fcc4d0f531a071a48de36.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Seed-production-female-genitor-Photo-T-Durand-Gasselin_jpg.rf.3fd280475eef39025c63289ca2c82fb7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/Split_jpg.rf.ccbcde099ccc01878a7fe46f2e531826.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/WhatsApp-Image-2021-08-24-at-17-15-44_jpeg.rf.a5d20f1d8076ee1e629d36cb7d33b1f5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/WhatsApp-Image-2021-08-24-at-17-16-50_jpeg.rf.d613a69d7ca4c5925fa4282acf384e70.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/WhatsApp-Image-2021-08-24-at-17-19-45_jpeg.rf.5474bc86cb5d7e2c20851a48086b5096.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/large_ipeVu4mXvdos_jpg.rf.134d9f0454bfa104fa8c8e8b911e3d0c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/maxresdefault_jpg.rf.b783690c075f48726df56178c8077c56.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/nahe-ansicht-des-olpalmenwipfels-mit-frucht-palmolbearbeitung-ist-fur-auswirkungen-auf-die-naturliche-umwelt-einschlieslich-151464884_jpg.rf.b88c3524149c631f0e0c52b393ff2b2e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-287888_960_720_jpg.rf.8c23a3139d083591385f21e99285262b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-elaeis-guineensis-in-a-plantation-with-dark-mature-fruit-before-harvesting-for-oil-extraction-malaysia-february-2B4YE6E_jpg.rf.699c8de1d2754a6f0fed0fe3cacc0270.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-fruit-bunch-tree-vegetable-oil_jpg.rf.e3fab319ecc98589c72a641ca136ccc7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-fruit-bunches-on-600w-94919797_jpg.rf.05101919a7ed47c6deb5a8fd61abe1a9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-fruit-lump-tree-45490071_jpg.rf.c7723fc7b329cc43dad6e4b53d7724d2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-fruits_jpg.rf.740996952c504bbf346968ffb2bc3ca7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-labuk-bay-sabah-borneo-malysia-elaeis-guineensis-DTETAP_jpg.rf.9636e363502e1b1c96881f9f8d436bb0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-tree-fruit-ripen-39796175_jpg.rf.ccfdae8902a90afdd3c29eaa390a84eb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-tree-nut-clusters-stock-photography_csp8529120_jpg.rf.9e2279b801a385e16558ffaa5e46b476.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm-trees-testimony-820x615_jpg.rf.bf878e02881fe4f4ef166c064a5c18a4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil-palm_jpg.rf.6502fc2e5bfcffb20cf85ff4a0e0281a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil20palmJPG_jpg.rf.2b92552a39d003fe825de4d071fc0a7e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oil_palm_dura_nigeria_jpg.rf.aeb84e32d413bb7ae4c4a5a1237eba28.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oilpalm0_jpg.rf.ed52931483cc5606089dffcae9cb233d.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/oilpalm2--2-_jpg.rf.6c1432108c207da8b6c5f8669e14f328.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/ojon-nuts-in-tree1_jpg.rf.e440cd666c8bc036b8e4a322c9e43bb7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/olaj-teto-fa-gyumolcs-palma-becsuk-kepek_csp70785282_jpg.rf.8437f2778e1c755d1683c96c6648f419.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/original_15885208_7_jpg.rf.e4ac5d16c9b96e9b624a1ae763a1b0f2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/palm-oil-fruits-fruit-bunches-tree-malaysia-35512235_jpg.rf.e0a1b914fb115e65efd71de4c24db95e.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/palm-oil-fruits-tree-garden-close-up-126135999_jpg.rf.d8444604fd1548ee039b87dc048ef25b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/palm-oil-pic--2-_jpg.rf.98b218022b6651d329b6afedc49a44c9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/palm-tree-oil-810x524_jpg.rf.d400e3d75aff59c34c6d127483063a8f.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/palm_oil-jpg-dynamic-1280w720h-1a92d9a7178c06e8973e39100ce743429741e010_jpg.rf.2e81ad7ead6c1e6c3e1fabb00876c637.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/palmoil_jpg.rf.e10da2a822d72fd3ea5fff377b9d1033.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/palmoilprodu_jpg.rf.ef4c6ccd5462741e6d663e6c9b30973a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/palmoiltree_jpg.rf.d14880956d1496ee9890de8882b3bfbc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/plentifully-oil-palm-tree-450w-623836703_jpg.rf.76247690bab7e98bb540a60d959d7dcb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/prg4xn_jpg.rf.6853dcc6b53723b3f6ab8c9ef102cda1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/scale_1200_jpg.rf.b5d113934ecb81a50be3ca1e8f6cdb1a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/sprzedam_oil-plants-oil-plants-other-_agromarket_gielda-rolna-240642-66657_jpg.rf.d5bed62061eda9a36e0bb88d8d25ebd3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/tree-palm-oil-grow-well-mineral-soil-oilgrow-181781668_jpg.rf.2196e39f6da25507648a4eecb559390a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/tree-palm-oil-grow-well-mineral-soils-oilthat-fruit-ripe-unripe-colorful-177017322_jpg.rf.ac427eac34b0e6df9ff055669060ff17.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/unnamed_jpg.rf.68416e2c63297fc3aa8c8fb0975532ab.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/images/zx1smd_jpg.rf.4a71c06de968cf9a1cdf1eabdec7f306.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels.cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Malaysia-to-roll-out-pic-Biofuels-11-9-768x512_jpg.rf.b8b175d16a87e4f35334f33bd7f45f48.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Maybe-Hard-Label_jpg.rf.db3455fe049637fd70096c7056a91988.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Northern-Foods-steps-up-to-plate-on-sustainable-palm_jpg.rf.d61a89040582c7bb5661742679c64b2a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/OIPHxofoII76WPBTty7GhV1gwHaLH_jpg.rf.2945bc5659dea62073e79a6d1954d1a6.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Oil-Palm-Cultivation1_jpg.rf.62d334665d9aef2e699088f68cf40d80.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/OilPalmNeilHuth2--2-_jpg.rf.bf99c03b1943037ef65e415313a0665e.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Palm-Farm06-640x360_jpg.rf.54db439b76315eafd70543053d79f615.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Palm-Oil-Tree_jpg.rf.e93e79856b9ae27e738b273b0a57b0cb.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Palm-Oil_20191115101607_theedgemarkets_jpg.rf.dd7880d0d363faadc3d0169bd4c8b635.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/PalmOilFruit_5552528Medium2529_jpg.rf.c841598ff48f39ec16e1456759d3832f.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Palm_Oil__What_You_Need_to_Know_and_What_You_Can_Do_2048x_jpg.rf.1da579f40f7fb518b13854a400a7312f.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Sb54e4bdf381742ba990c5d426219f20cA_jpg.rf.5e1b7675929fcc4d0f531a071a48de36.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Seed-production-female-genitor-Photo-T-Durand-Gasselin_jpg.rf.3fd280475eef39025c63289ca2c82fb7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/Split_jpg.rf.ccbcde099ccc01878a7fe46f2e531826.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/WhatsApp-Image-2021-08-24-at-17-15-44_jpeg.rf.a5d20f1d8076ee1e629d36cb7d33b1f5.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/WhatsApp-Image-2021-08-24-at-17-16-50_jpeg.rf.d613a69d7ca4c5925fa4282acf384e70.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/WhatsApp-Image-2021-08-24-at-17-19-45_jpeg.rf.5474bc86cb5d7e2c20851a48086b5096.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/large_ipeVu4mXvdos_jpg.rf.134d9f0454bfa104fa8c8e8b911e3d0c.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/maxresdefault_jpg.rf.b783690c075f48726df56178c8077c56.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/nahe-ansicht-des-olpalmenwipfels-mit-frucht-palmolbearbeitung-ist-fur-auswirkungen-auf-die-naturliche-umwelt-einschlieslich-151464884_jpg.rf.b88c3524149c631f0e0c52b393ff2b2e.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-287888_960_720_jpg.rf.8c23a3139d083591385f21e99285262b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-elaeis-guineensis-in-a-plantation-with-dark-mature-fruit-before-harvesting-for-oil-extraction-malaysia-february-2B4YE6E_jpg.rf.699c8de1d2754a6f0fed0fe3cacc0270.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-fruit-bunch-tree-vegetable-oil_jpg.rf.e3fab319ecc98589c72a641ca136ccc7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-fruit-bunches-on-600w-94919797_jpg.rf.05101919a7ed47c6deb5a8fd61abe1a9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-fruit-lump-tree-45490071_jpg.rf.c7723fc7b329cc43dad6e4b53d7724d2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-fruits_jpg.rf.740996952c504bbf346968ffb2bc3ca7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-labuk-bay-sabah-borneo-malysia-elaeis-guineensis-DTETAP_jpg.rf.9636e363502e1b1c96881f9f8d436bb0.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-tree-fruit-ripen-39796175_jpg.rf.ccfdae8902a90afdd3c29eaa390a84eb.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-tree-nut-clusters-stock-photography_csp8529120_jpg.rf.9e2279b801a385e16558ffaa5e46b476.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm-trees-testimony-820x615_jpg.rf.bf878e02881fe4f4ef166c064a5c18a4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil-palm_jpg.rf.6502fc2e5bfcffb20cf85ff4a0e0281a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil20palmJPG_jpg.rf.2b92552a39d003fe825de4d071fc0a7e.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oil_palm_dura_nigeria_jpg.rf.aeb84e32d413bb7ae4c4a5a1237eba28.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oilpalm0_jpg.rf.ed52931483cc5606089dffcae9cb233d.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/oilpalm2--2-_jpg.rf.6c1432108c207da8b6c5f8669e14f328.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/ojon-nuts-in-tree1_jpg.rf.e440cd666c8bc036b8e4a322c9e43bb7.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/olaj-teto-fa-gyumolcs-palma-becsuk-kepek_csp70785282_jpg.rf.8437f2778e1c755d1683c96c6648f419.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/original_15885208_7_jpg.rf.e4ac5d16c9b96e9b624a1ae763a1b0f2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/palm-oil-fruits-fruit-bunches-tree-malaysia-35512235_jpg.rf.e0a1b914fb115e65efd71de4c24db95e.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/palm-oil-fruits-tree-garden-close-up-126135999_jpg.rf.d8444604fd1548ee039b87dc048ef25b.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/palm-oil-pic--2-_jpg.rf.98b218022b6651d329b6afedc49a44c9.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/palm-tree-oil-810x524_jpg.rf.d400e3d75aff59c34c6d127483063a8f.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/palm_oil-jpg-dynamic-1280w720h-1a92d9a7178c06e8973e39100ce743429741e010_jpg.rf.2e81ad7ead6c1e6c3e1fabb00876c637.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/palmoil_jpg.rf.e10da2a822d72fd3ea5fff377b9d1033.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/palmoilprodu_jpg.rf.ef4c6ccd5462741e6d663e6c9b30973a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/palmoiltree_jpg.rf.d14880956d1496ee9890de8882b3bfbc.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/plentifully-oil-palm-tree-450w-623836703_jpg.rf.76247690bab7e98bb540a60d959d7dcb.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/prg4xn_jpg.rf.6853dcc6b53723b3f6ab8c9ef102cda1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/scale_1200_jpg.rf.b5d113934ecb81a50be3ca1e8f6cdb1a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/sprzedam_oil-plants-oil-plants-other-_agromarket_gielda-rolna-240642-66657_jpg.rf.d5bed62061eda9a36e0bb88d8d25ebd3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/tree-palm-oil-grow-well-mineral-soil-oilgrow-181781668_jpg.rf.2196e39f6da25507648a4eecb559390a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/tree-palm-oil-grow-well-mineral-soils-oilthat-fruit-ripe-unripe-colorful-177017322_jpg.rf.ac427eac34b0e6df9ff055669060ff17.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/unnamed_jpg.rf.68416e2c63297fc3aa8c8fb0975532ab.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/FFB/valid/labels/zx1smd_jpg.rf.4a71c06de968cf9a1cdf1eabdec7f306.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/config/data_config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/data.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/train/args.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/train2/args.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/train3/args.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/train4/args.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/train4/labels.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/train4/labels_correlogram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB/args.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB/labels.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB/labels_correlogram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB2/args.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB2/labels.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB2/labels_correlogram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB3/args.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB3/labels.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB3/labels_correlogram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB3/train_batch0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB3/train_batch1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB3/train_batch2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB4/args.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB4/labels.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB4/labels_correlogram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB5/args.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB5/labels.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/runs/detect/yolov8_obb_FFB5/labels_correlogram.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/training.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/trf_learning.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ML/yolov8-architecture/yolov8l-large.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_6_2024_9_52_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_6_2024_9_52_PM__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_6_2024_2_51_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_4_6_2024_2_51_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ML/color segmentation.py" beforeDir="false" afterPath="$PROJECT_DIR$/ML/color segmentation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ML/detection/detected_frame.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ML/detection/detected_frame.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ML/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ML/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,7 +397,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Data_Process" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -45,6 +405,7 @@
       <recent name="C:\Users\USER\source\repos\IDP\Data_Process" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\source\repos\IDP\ML" />
       <recent name="C:\Users\ASUS\Documents\GitHub\IDP\ROS2\arduino_ws\src\arduino_control\arduino_control" />
     </key>
   </component>
@@ -91,9 +452,75 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IDP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ML" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="training" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IDP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ML" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML/training.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="trf_learning" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="IDP" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ML" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML/trf_learning.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.Data_Process_tx" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.training" />
+        <item itemvalue="Python.trf_learning" />
       </list>
     </recent_temporary>
   </component>

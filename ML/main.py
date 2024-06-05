@@ -50,9 +50,10 @@ def process_img(path):
         cv2.rectangle(frame, (int(pts[0]), int(pts[1])), (int(pts[0] + pts[2]), int(pts[1] + pts[3])), (0, 255, 0), 2)
         cv2.putText(frame, 'palm oil', (pts[0], pts[1]), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3, cv2.LINE_AA)
 
-    cv2.imshow('prediction', frame)
+    resized_frame = cv2.resize(frame, (800, 600))
+    cv2.imshow('prediction', resized_frame)
     cv2.imwrite(DETECTED_FRAME_PATH, frame)
     cv2.waitKey(0)
 
 # palm_oil_detection()
-process_img(r"C:\Users\USER\source\repos\fieldtest\dataset_1\frame_113.jpg")
+process_img(r"detection/test.jpg")
