@@ -1,0 +1,171 @@
+Index: Data_Process/Data_Process_tx.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import csv\r\nfrom firebase_mod.firebase_helper import FirebaseHelper\r\nfrom firebase_mod.firebase_config import firebaseConfig, service_account_path\r\nimport glob\r\nimport os\r\nimport time\r\nfrom datetime import datetime\r\nfrom queue import Queue\r\nfrom threading import Thread\r\nimport requests\r\nimport logging\r\nimport random\r\nimport pandas as pd\r\nimport cv2\r\nfrom txt_helper import txt_data\r\nimport shutil\r\n\r\n#GLOBAL VARS\r\ntotal_harvested_fruits = 0\r\ntotal_detected_fruits = 0\r\ncsv_path = \"data.csv\"\r\nlocation_idx = 1\r\nsleep_time = 10\r\ninternet_availability = True\r\noffline_img_dir = 1\r\noffline_img__dir_str = \"\"\r\noffline_location_idx = location_idx\r\ndetected_img_path = \"detected_pics/3.jpg\"\r\n\r\n#LOGGER CFG\r\nlogging.basicConfig(level=logging.INFO)\r\nlogger = logging.getLogger(__name__)\r\n\r\n\r\n#GET MACHINE DATA\r\ndef update_location_and_fruit_data(queue):\r\n    global total_harvested_fruits, total_detected_fruits, sleep_time\r\n    while True:\r\n        timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')\r\n\r\n        # change to read from GPS\r\n        machine_latitude = random.uniform(-90, 90)\r\n        machine_longitude = random.uniform(-180, 180)\r\n\r\n        # change to read from txt file\r\n        fruit_data = txt_data('fruit_data.txt')\r\n\r\n        # Enqueue data\r\n        queue.put((timestamp, machine_latitude, machine_longitude, fruit_data.detected_fruits, fruit_data.harvested_fruits))\r\n        time.sleep(sleep_time)  # Sleep for 10 seconds\r\n\r\n\r\n#WRITE TO CSV FILE\r\ndef clear_csv_file():\r\n    df_csv = pd.DataFrame(columns=['Timestamp', 'Machine_Latitude', 'Machine_Longitude', 'Detected_Fruits', 'Harvested_Fruits'])\r\n    df_csv.to_csv(csv_path, index=False)\r\n\r\n\r\ndef write_to_csv(queue):\r\n    while True:\r\n        data = queue.get()\r\n        print(data)\r\n        if data:\r\n            # Read DataFrame\r\n            dataframe = pd.read_csv(csv_path)\r\n            date = data[0]\r\n            new_row = pd.DataFrame([[date, data[1], data[2], data[3], data[4]]],\r\n                                   columns=['Timestamp', 'Machine_Latitude', 'Machine_Longitude', 'Detected_Fruits', 'Harvested_Fruits'])\r\n\r\n\r\n            # Ensure that the DataFrame dtypes are consistent\r\n            new_row = new_row.astype(dataframe.dtypes)\r\n\r\n            # Concatenate DataFrames\r\n            dataframe = pd.concat([dataframe, new_row], ignore_index=True)\r\n\r\n            # Write DataFrame back to CSV\r\n            dataframe.to_csv(csv_path, index=False)\r\n\r\n            logger.info(\"Data written to CSV\")\r\n\r\n\r\n# UPLOADING DATA TO FIREBASE\r\ndef is_internet_available():\r\n    try:\r\n        response = requests.get('http://www.google.com', timeout=5)\r\n        return True if response.status_code == 200 else False\r\n    except requests.ConnectionError:\r\n        logger.error(\"Connection error occurred while trying to reach www.google.com\")\r\n        return False\r\n    except requests.Timeout:\r\n        logger.error(\"Timeout occurred while trying to reach www.google.com\")\r\n        return False\r\n\r\n\r\ndef read_csv(filepath):\r\n    location_name =\"location\"\r\n    global location_idx, offline_location_idx\r\n    coordinates = []\r\n    with open(filepath, mode='r', newline='') as file:\r\n        csv_reader = csv.reader(file)\r\n\r\n        # Optionally, get the header\r\n        headers = next(csv_reader, None)\r\n\r\n        # Read each row of the CSV file\r\n        for row in csv_reader:\r\n            if row[1] != \"\":\r\n                new_location = location_name + str(location_idx)\r\n                date_time = row[0].split()\r\n                new_coordinates = {\"date\": date_time[0], \"time\": date_time[1], \"name\": new_location,\r\n                                   \"lat\": float(row[1]), \"lon\": float(row[2]), \"detected\": int(row[3]),\r\n                                   \"harvested\": int(row[4])}\r\n                coordinates.append(new_coordinates)\r\n                location_idx += 1\r\n                offline_location_idx = location_idx\r\n\r\n        return coordinates\r\n\r\n\r\ndef read_csv_last(filepath):\r\n    location_name =\"location\"\r\n    global offline_location_idx, location_idx\r\n    coordinates = []\r\n    with open(filepath, mode='r', newline='') as file:\r\n        csv_reader = csv.reader(file)\r\n\r\n        # Optionally, get the header\r\n        headers = next(csv_reader, None)\r\n\r\n        # Read each row of the CSV file\r\n        for row in csv_reader:\r\n            if row[1] != \"\":\r\n                new_location = location_name + str(offline_location_idx)\r\n                date_time = row[0].split()\r\n                new_coordinates = {\"date\": date_time[0], \"time\": date_time[1], \"name\": new_location,\r\n                                   \"lat\": float(row[1]), \"lon\": float(row[2]), \"detected\": int(row[3]),\r\n                                   \"harvested\": int(row[4])}\r\n\r\n        offline_location_idx+= 1\r\n        return [new_coordinates]\r\n\r\n\r\ndef upload_robot_images(uploaded_file_path):\r\n    directory = \"robot_location\"\r\n    jpeg_files = glob.glob(directory + \"/*.jpg\")\r\n    for file in jpeg_files:\r\n        uploaded_file_path = file.replace(\"\\\\\", \"/\")\r\n        firebase_helper.upload_image(file, uploaded_file_path)\r\n\r\n\r\ndef upload_images(uploaded_file_path, internet):\r\n    # global internet_availability\r\n    # directory = \"detected_pics\"\r\n    # jpeg_files = glob.glob(directory + \"/*.jpg\")\r\n    # for file in jpeg_files:\r\n    #     uploaded_file_path = directory + \"/\" + uploaded_file_path + \"/\" + file.split(\"\\\\\")[1]\r\n    #     firebase_helper.upload_image(file, uploaded_file_path)\r\n    #     try:\r\n    #         os.remove(file)\r\n    #         print(f\"Deleted file: {file}\")\r\n    #     except Exception as e:\r\n    #         print(f\"Failed to delete {file}. Reason: {e}\")\r\n    global offline_img_dir, offline_img_dir_str, detected_img_path\r\n\r\n    directory = \"detected_pics\"\r\n    print(uploaded_file_path)\r\n    offline_img_dir_str = directory + \"/\" + uploaded_file_path\r\n    uploaded_file_path = directory + \"/\" + uploaded_file_path + \"/\" + detected_img_path.split(\"/\")[1]\r\n\r\n    if not os.path.exists(offline_img_dir_str): os.makedirs(offline_img_dir_str)\r\n    shutil.copy2(detected_img_path, offline_img_dir_str)\r\n    offline_img_dir += 1\r\n\r\n    if internet:\r\n        items = os.listdir(directory)\r\n        dates = [item for item in items if os.path.isdir(os.path.join(directory, item))]\r\n\r\n        for date in dates:\r\n            date_path = os.path.join(directory, date)\r\n            location = os.listdir(date_path)\r\n            for loc in location:\r\n                location_path = os.path.join(date_path, loc)\r\n                jpeg_files = glob.glob(location_path + \"/*.jpg\")\r\n                for file in jpeg_files:\r\n                    firebase_helper.upload_image(file, uploaded_file_path)\r\n                    try:\r\n                        os.remove(file)\r\n                    except Exception as e:\r\n                        print(f\"Failed to delete {file}. Reason: {e}\")\r\n                os.rmdir(location_path)\r\n            os.rmdir(date_path)\r\n\r\n#UPLOAD ALL DATA TO FIREBASE\r\ndef upload_data(coordinates, internet=True):\r\n    for coordinate in coordinates:\r\n        day = coordinate['date'].replace(\"/\", \"\")\r\n        example_data = {\r\n            \"timestamp\" : coordinate['time'],\r\n            \"latitude\": coordinate['lat'],\r\n            \"longitude\": coordinate['lon'],\r\n            \"palm oils detected\": coordinate['detected'],\r\n            \"palm oils harvested\": coordinate['harvested']\r\n        }\r\n        location = coordinate['name']\r\n        word_to_split_by = \"location\"\r\n        split_strings = location.split(word_to_split_by)\r\n        if int(split_strings[1])<10:\r\n            split_strings[1] = \"0\" + split_strings[1]\r\n        coordinate['name'] = \"location\" + split_strings[1]\r\n\r\n        data_path = day + \"/\" + coordinate['name']\r\n\r\n        if internet:\r\n            # Call upload_data function, multhreading to increase upload speed\r\n            upload_data_thread = Thread(target=firebase_helper.upload_data, args=(example_data, data_path))\r\n            upload_img_thread = Thread(target=upload_images, args=(data_path, internet))\r\n            upload_robot_img_thread = Thread(target=upload_robot_images, args=(data_path,))\r\n\r\n            upload_data_thread.start()\r\n            upload_img_thread.start()\r\n            upload_robot_img_thread.start()\r\n\r\n            upload_data_thread.join()\r\n            upload_img_thread.join()\r\n            upload_robot_img_thread.join()\r\n        else:\r\n            upload_img_thread = Thread(target=upload_images, args=(data_path, internet))\r\n            upload_img_thread.start()\r\n            upload_img_thread.join()\r\n        # firebase_helper.upload_data(example_data, data_path)\r\n        # upload_images(data_path)\r\n        # upload_robot_images(data_path)\r\n\r\n\r\ndef upload_to_firebase():\r\n    global internet_availability\r\n    while True:\r\n        logger.info(\"Uploading to Firebase\")\r\n        internet_availability = is_internet_available()\r\n        if internet_availability:\r\n            internet_availability = True\r\n            coordinates = read_csv(csv_path)\r\n            upload_data(coordinates)\r\n            print(\"data uploaded to firebase\")\r\n            clear_csv_file()\r\n            time.sleep(sleep_time)\r\n            # break\r\n        else:\r\n            internet_availability = False\r\n            coordinates = read_csv_last(csv_path)\r\n            print(coordinates)\r\n            upload_data(coordinates, False)\r\n            time.sleep(sleep_time)\r\n\r\n\r\nif __name__ == \"__main__\":\r\n    firebase_helper = FirebaseHelper(firebaseConfig, service_account_path)\r\n\r\n    clear_csv_file()\r\n\r\n    # Initialize the queue\r\n    queue = Queue()\r\n\r\n    # Create and start the threads\r\n    thread1 = Thread(target=update_location_and_fruit_data, args=(queue,))\r\n    thread2 = Thread(target=write_to_csv, args=(queue,))\r\n    thread3 = Thread(target=upload_to_firebase)\r\n\r\n    thread1.start()\r\n    thread2.start()\r\n    thread3.start()\r\n\r\n\r\n    # Join threads\r\n    thread1.join()\r\n    thread2.join()\r\n    thread3.join()\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Data_Process/Data_Process_tx.py b/Data_Process/Data_Process_tx.py
+--- a/Data_Process/Data_Process_tx.py	(revision 0c9100467b792dbcd94b85db14be86a15133267f)
++++ b/Data_Process/Data_Process_tx.py	(date 1717617107993)
+@@ -20,12 +20,12 @@
+ total_detected_fruits = 0
+ csv_path = "data.csv"
+ location_idx = 1
+-sleep_time = 10
++sleep_time = 5
+ internet_availability = True
+ offline_img_dir = 1
+ offline_img__dir_str = ""
+ offline_location_idx = location_idx
+-detected_img_path = "detected_pics/3.jpg"
++detected_img_path = "detected_pics/detected_palm_oils.jpg"
+ 
+ #LOGGER CFG
+ logging.basicConfig(level=logging.INFO)
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"2835285a-a570-4779-b269-2df4135385be\" name=\"Changes\" comment=\"Update\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/Data_Process/Data_Process_tx.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/Data_Process/Data_Process_tx.py\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/ML/main.py\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/ML/main.py\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Python Script\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"main\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitSEFilterConfiguration\">\r\n    <file-type-list>\r\n      <filtered-out-file-type name=\"LOCAL_BRANCH\" />\r\n      <filtered-out-file-type name=\"REMOTE_BRANCH\" />\r\n      <filtered-out-file-type name=\"TAG\" />\r\n      <filtered-out-file-type name=\"COMMIT_BY_MESSAGE\" />\r\n    </file-type-list>\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2dxQwjmfb0nOUOpf6ujmW79zsQQ\" />\r\n  <component name=\"ProjectLevelVcsManager\">\r\n    <ConfirmationsSetting value=\"2\" id=\"Add\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"ASKED_ADD_EXTERNAL_FILES\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$PROJECT_DIR$/../UNET\" />\r\n    <property name=\"settings.editor.selected.configurable\" value=\"com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable\" />\r\n  </component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\USER\\source\\repos\\IDP\\Data_Process\\detected_pics\\02\" />\r\n      <recent name=\"C:\\Users\\USER\\source\\repos\\IDP\\Data_Process\\detected_pics\\01\" />\r\n      <recent name=\"C:\\Users\\USER\\source\\repos\\IDP\\Data_Process\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\ASUS\\Documents\\GitHub\\IDP\\ROS2\\arduino_ws\\src\\arduino_control\\arduino_control\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"Python.main\">\r\n    <configuration name=\"Data_Process_tx\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"IDP\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Data_Process\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Data_Process/Data_Process_tx.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"color segmentation\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"IDP\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/ML\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"C:\\Users\\USER\\source\\repos\\IDP\\ML\\color segmentation.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"main\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"IDP\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/ML\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/ML/main.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"test\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"IDP\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Data_Process\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"$PROJECT_DIR$/Data_Process/test.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <configuration name=\"txt_helper\" type=\"PythonConfigurationType\" factoryName=\"Python\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"IDP\" />\r\n      <option name=\"INTERPRETER_OPTIONS\" value=\"\" />\r\n      <option name=\"PARENT_ENVS\" value=\"true\" />\r\n      <envs>\r\n        <env name=\"PYTHONUNBUFFERED\" value=\"1\" />\r\n      </envs>\r\n      <option name=\"SDK_HOME\" value=\"\" />\r\n      <option name=\"WORKING_DIRECTORY\" value=\"$PROJECT_DIR$/Data_Process\" />\r\n      <option name=\"IS_MODULE_SDK\" value=\"true\" />\r\n      <option name=\"ADD_CONTENT_ROOTS\" value=\"true\" />\r\n      <option name=\"ADD_SOURCE_ROOTS\" value=\"true\" />\r\n      <option name=\"SCRIPT_NAME\" value=\"C:\\Users\\USER\\source\\repos\\IDP\\Data_Process\\txt_helper.py\" />\r\n      <option name=\"PARAMETERS\" value=\"\" />\r\n      <option name=\"SHOW_COMMAND_LINE\" value=\"false\" />\r\n      <option name=\"EMULATE_TERMINAL\" value=\"false\" />\r\n      <option name=\"MODULE_MODE\" value=\"false\" />\r\n      <option name=\"REDIRECT_INPUT\" value=\"false\" />\r\n      <option name=\"INPUT_FILE\" value=\"\" />\r\n      <method v=\"2\" />\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Python.main\" />\r\n        <item itemvalue=\"Python.color segmentation\" />\r\n        <item itemvalue=\"Python.Data_Process_tx\" />\r\n        <item itemvalue=\"Python.test\" />\r\n        <item itemvalue=\"Python.txt_helper\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"2835285a-a570-4779-b269-2df4135385be\" name=\"Changes\" comment=\"\" />\r\n      <created>1710947491659</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1710947491659</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Code Rearrange\">\r\n      <created>1711345989879</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1711345989879</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Update\">\r\n      <created>1711361509797</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1711361509797</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"3\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <option name=\"ADD_EXTERNAL_FILES_SILENTLY\" value=\"true\" />\r\n    <MESSAGE value=\"Code Rearrange\" />\r\n    <MESSAGE value=\"Update\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Update\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 0c9100467b792dbcd94b85db14be86a15133267f)
++++ b/.idea/workspace.xml	(date 1717616663539)
+@@ -4,7 +4,7 @@
+     <list default="true" id="2835285a-a570-4779-b269-2df4135385be" name="Changes" comment="Update">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/Data_Process/Data_Process_tx.py" beforeDir="false" afterPath="$PROJECT_DIR$/Data_Process/Data_Process_tx.py" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/ML/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/ML/main.py" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/Data_Process/detected_pics/3.jpg" beforeDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -21,7 +21,7 @@
+   <component name="Git.Settings">
+     <option name="RECENT_BRANCH_BY_REPOSITORY">
+       <map>
+-        <entry key="$PROJECT_DIR$" value="main" />
++        <entry key="$PROJECT_DIR$" value="tx-webpage" />
+       </map>
+     </option>
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+@@ -63,8 +63,8 @@
+       <recent name="C:\Users\ASUS\Documents\GitHub\IDP\ROS2\arduino_ws\src\arduino_control\arduino_control" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Python.main">
+-    <configuration name="Data_Process_tx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++  <component name="RunManager" selected="Python.Data_Process_tx">
++    <configuration name="Data_Process" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="IDP" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -76,7 +76,7 @@
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data_Process/Data_Process_tx.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data_Process/Data_Process.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -85,7 +85,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="color segmentation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="Data_Process_tx" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="IDP" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -93,11 +93,11 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ML" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Data_Process" />
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="C:\Users\USER\source\repos\IDP\ML\color segmentation.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data_Process/Data_Process_tx.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -106,7 +106,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="color segmentation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="IDP" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -118,7 +118,7 @@
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML/main.py" />
++      <option name="SCRIPT_NAME" value="C:\Users\USER\source\repos\IDP\ML\color segmentation.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -127,7 +127,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="IDP" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -135,11 +135,11 @@
+         <env name="PYTHONUNBUFFERED" value="1" />
+       </envs>
+       <option name="SDK_HOME" value="" />
+-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Data_Process" />
++      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ML" />
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data_Process/test.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ML/main.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -148,7 +148,7 @@
+       <option name="INPUT_FILE" value="" />
+       <method v="2" />
+     </configuration>
+-    <configuration name="txt_helper" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
++    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+       <module name="IDP" />
+       <option name="INTERPRETER_OPTIONS" value="" />
+       <option name="PARENT_ENVS" value="true" />
+@@ -160,7 +160,7 @@
+       <option name="IS_MODULE_SDK" value="true" />
+       <option name="ADD_CONTENT_ROOTS" value="true" />
+       <option name="ADD_SOURCE_ROOTS" value="true" />
+-      <option name="SCRIPT_NAME" value="C:\Users\USER\source\repos\IDP\Data_Process\txt_helper.py" />
++      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Data_Process/test.py" />
+       <option name="PARAMETERS" value="" />
+       <option name="SHOW_COMMAND_LINE" value="false" />
+       <option name="EMULATE_TERMINAL" value="false" />
+@@ -171,11 +171,11 @@
+     </configuration>
+     <recent_temporary>
+       <list>
+-        <item itemvalue="Python.main" />
+-        <item itemvalue="Python.color segmentation" />
+         <item itemvalue="Python.Data_Process_tx" />
+-        <item itemvalue="Python.test" />
+-        <item itemvalue="Python.txt_helper" />
++        <item itemvalue="Python.Data_Process" />
++        <item itemvalue="Python.Data_Process_tx" />
++        <item itemvalue="Python.Data_Process" />
++        <item itemvalue="Python.Data_Process_tx" />
+       </list>
+     </recent_temporary>
+   </component>

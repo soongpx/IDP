@@ -1,13 +1,13 @@
 from ultralytics import YOLO
 import cv2
 video_path = r"videos/palm oil.mp4"
-video1_path = r"videos/Harvesting Palm Oil Using a Machine.mp4"
-model = YOLO(r"model/7_jan_palm_oil.pt")
+video1_path = r"videos/testing2.mp4"
+model = YOLO(r"model/best.pt")
 DETECTED_FRAME_PATH = "detection/detected_frame.jpg"
 
 
 def palm_oil_detection():
-    cap = cv2.VideoCapture(video1_path)
+    cap = cv2.VideoCapture(video_path)
     while True:
         # Read a frame from the video
         ret, frame = cap.read()
@@ -32,6 +32,7 @@ def process_frame(frame):
         cv2.rectangle(frame, (int(pts[0]), int(pts[1])), (int(pts[0] + pts[2]), int(pts[1] + pts[3])), (0, 255, 0), 2)
         cv2.putText(frame, 'palm oil', (pts[0], pts[1]), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3, cv2.LINE_AA)
 
+    # frame = cv2.resize(frame, (800, 600))
     cv2.imshow('prediction', frame)
     cv2.imwrite(DETECTED_FRAME_PATH, frame)
     cv2.waitKey(1)
@@ -40,7 +41,7 @@ def process_frame(frame):
 
 def process_img(path):
     frame = cv2.imread(path)
-    predictions = model.predict(frame, conf=0.5)
+    predictions = model.predict(frame, conf=0.8)
 
     coordinates = predictions[0].boxes.xywh.tolist()
     for pts in coordinates:
@@ -55,5 +56,5 @@ def process_img(path):
     cv2.imwrite(DETECTED_FRAME_PATH, frame)
     cv2.waitKey(0)
 
-# palm_oil_detection()
-process_img(r"detection/test.jpg")
+palm_oil_detection()
+# process_img(r"detection/test.jpg")

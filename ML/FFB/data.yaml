@@ -1,0 +1,14 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names:
+  0 : 'palm-oil'
+
+#roboflow:
+#  workspace: 1171102868
+#  project: ffb-oil-palm-1
+#  version: 17
+#  license: Public Domain
+#  url: https://universe.roboflow.com/1171102868/ffb-oil-palm-1/dataset/17
